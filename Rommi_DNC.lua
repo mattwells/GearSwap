@@ -1,9 +1,7 @@
 function get_sets()
     AccIndex = 1
     AccArray = {"LowAcc", "MidAcc", "HighAcc"}
-
-    PDT = false
-    MDT = false
+    Armor = null
 
     sets.Idle = {
         main="Izhiikoh", sub="Atoyac", ammo="Ginsen",
@@ -23,9 +21,12 @@ function get_sets()
     sets.Engaged.MidAcc = sets.Engaged.LowAcc
     sets.Engaged.HighAcc = sets.Engaged.LowAcc
 
-    sets.PDT = {}
+    sets.PDT = {
+        head="Uk'uxkaj cap", neck="Twilight Torque",
+        body="Emet harness +1", hands="Iuitl Wristbands +1", ring1="Dark Ring", ring2="Shadow Ring",
+        back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1",
+    }
     sets.MDT = {}
-    sets.Hybrid = {}
 
     -- Weapon Skills
     sets.WeaponSkill = {}
@@ -84,7 +85,7 @@ function precast(spell)
     -- Check we have enough TP
     if spell.tp_cost > player.tp then
         cancel_spell()
-        add_to_chat(8, "You need more TP to " .. spell.name)
+        add_to_chat(123, "You need more TP to " .. spell.name)
     end
 
     -- Waltzes
@@ -95,7 +96,11 @@ function precast(spell)
 
     -- Steps
     if "Step" == spell.type then
-        equip(sets.Set[spell.name] ? sets.Step[spell.name] : sets.Step)
+        if sets.Step[spell.name] then
+            equip(sets.Set[spell.name])
+        else
+            equip(sets.Step)
+        end
         return
     end
 
@@ -110,14 +115,14 @@ function precast(spell)
         -- Check Engaged
         if "Engaged" ~= player.status then
             cancel_spell()
-            add_to_chat(8, "You need to be Engaged to WeaponSkill")
+            add_to_chat(123, "You need to be Engaged to WeaponSkill")
             return
         end
 
         -- Check TP levels
-        if 1000 < player.tp then
+        if 1000 > player.tp then
             cancel_spell()
-            add_to_chat(8, "You need more TP to WeaponSkill")
+            add_to_chat(123, "You need more TP to WeaponSkill")
             return
         end
 
@@ -145,7 +150,8 @@ end
 
 function status_change(status, old)
     -- Check DT sets
-    if equipDT() then
+    if Armor then
+        equip(sets[Armor])
         return
     end
 
@@ -158,40 +164,30 @@ function status_change(status, old)
     equip(sets.Idle)
 end
 
+ArmorWhitelist = S{"PDT", "MDT", "EVA"}
 function self_command(command)
+    command = string.upper(command)
+
     -- Toggle Accuracy
-    if "acc" == command then
+    if "ACC" == command then
         AccIndex = (AccIndex % #AccArray) + 1
         status_change(player.status, player.status)
-        add_to_chat(8, "Set " .. AccArray[AccIndex])
+        add_to_chat(123, "Set " .. AccArray[AccIndex])
         return
     end
 
-    -- Toggle PDT
-    if "pdt" == command then
-        PDT = not PDT
+    -- Toggle Armor
+    if ArmorWhitelist:contains(command) then
+        if command == Armor then
+            Armor = nil
+            add_to_chat(123, "Unlocked turtle mode")
+        else
+            Armor = command
+            add_to_chat(123, "Turtle mode " .. Armor)
+        end
+
         status_change(player.status, player.status)
-        add_to_chat(8, (PDT ? "Locked" : "Unlocked") .. " PDT")
+        return
     end
 
-    if "mdt" == command then
-        MDT = not MDT
-        status_change(player.status, player.status)
-        add_to_chat(8, (MDT ? "Locked" : "Unlocked") .. " MDT")
-    end
-
-end
-
-function equipDT()
-    if PDT then
-        equip(sets.PDT)
-        return true
-    end
-
-    if MDT then
-        equip(sets.MDT)
-        return true
-    end
-
-    return false
 end
