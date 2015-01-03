@@ -1,30 +1,33 @@
 function get_sets()
-    debug = true
+    AccIndex = 1
+    AccArray = {"LowAcc", "MidAcc", "HighAcc"}
 
-    SetIndex = 1
-    SetArray = {"Fodder", "StoreTP", "Evasion", "PDT", "MDT", "MidAcc", "HighAcc"}
+    PDT = false
+    MDT = false
 
     sets.Idle = {
         main="Izhiikoh", sub="Atoyac", ammo="Ginsen",
         head="Horos tiara +1", neck="Twilight torque", ear1="Dudgeon earring", ear2="Heartseeker earring",
-        body="Horos casaque", hands="Horos bangles", ring1="Rajas ring", ring2="Dark ring",
-        back="Repulse mantle", waist="Flume belt", legs="Horos tights", feet="Horos toe shoes",
+        body="Horos casaque +1", hands="Horos bangles", ring1="Rajas ring", ring2="Dark ring",
+        back="Repulse mantle", waist="Flume belt", legs="Horos tights", feet="Horos toe shoes +1",
     }
 
-    sets.Engaged = {
+    -- TP Sets
+    sets.Engaged = {}
+    sets.Engaged.LowAcc = {
         main="Izhiikoh", sub="Atoyac", ammo="Ginsen",
         head="Whirlpool mask", neck="Asperity necklace", ear1="Dudgeon earring", ear2="Heartseeker earring",
         body="Thaumas coat", hands="Qaaxo mitaines", ring1="Rajas ring", ring2="Epona's ring",
-        back="Athling mantle", waist="Patentia sash", legs="Quiahuiz trousers", feet="Qaaxo leggings",
+        back="Atheling mantle", waist="Patentia sash", legs="Iuitl tights +1", feet="Horos toe shoes +1",
     }
-    sets.Engaged.Aftermath = {}
+    sets.Engaged.MidAcc = sets.Engaged.LowAcc
+    sets.Engaged.HighAcc = sets.Engaged.LowAcc
 
-    sets.Engaged.MidHaste = sets.Engaged
-    sets.Engaged.MidHaste.Aftermath = {}
+    sets.PDT = {}
+    sets.MDT = {}
+    sets.Hybrid = {}
 
-    sets.Engaged.HighHaste = sets.Engaged
-    sets.Engaged.HighHaste.Aftermath = {}
-
+    -- Weapon Skills
     sets.WeaponSkill = {}
     sets.WeaponSkill.Evisceration = {
         head="Uk'uxkaj cap", neck="Shadow gorget", ear1="Moonshade earring", ear2="Brutal earring",
@@ -32,9 +35,9 @@ function get_sets()
         back="Rancorous mantle", waist="Shadow belt", legs="Maxixi tights +1", feet="Maxixi toe shoes +1",
     }
     sets.WeaponSkill["Pyrrhic Kleos"] = {
-        head="Uk'uxkaj cap", neck="Snow gorget", ear1="Steelflash earring", ear2="Bladeborn earring",
+        head="Uk'uxkaj cap", neck="Aqua gorget", ear1="Steelflash earring", ear2="Bladeborn earring",
         body="Maxixi casaque +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Epona's ring",
-        back="Buquwik cape", waist="Snow belt", legs="Maxixi tights +1", feet="Maxixi toe shoes +1",
+        back="Buquwik cape", waist="Aqua belt", legs="Maxixi tights +1", feet="Maxixi toe shoes +1",
     }
     sets.WeaponSkill["Rudra's Storm"] = {
         head="Horos tiara +1", neck="Love torque", ear1="Moonshade earring", ear2="Brutal earring",
@@ -42,7 +45,7 @@ function get_sets()
         back="Kayapa cape", waist="Chiner's belt", legs="Maxixi tights +1", feet="Maxixi toe shoes +1",
     }
 
-    -- Waltz
+    -- Waltzes
     sets.Waltz = {
         head="Horos tiara +1", -- 11%
         body="Maxixi casaque +1", -- 15%
@@ -57,56 +60,83 @@ function get_sets()
     sets.Step["Feather Step"] = {feet="Charis toe shoes +2",}
 
     -- Jigs
-    sets.Jig = {feet="Horos toe shoes",}
+    sets.Jig = {feet="Horos toe shoes +1",}
 
     -- Flourishes
     sets.Flourish = {}
     sets.Flourish["Striking Flourish"] = {body="Charis casaque +2",}
     sets.Flourish["Reverse Flourish"] = {hands="Charis bangles +2",}
     sets.Flourish["Climactic Flourish"] = {head="Charis tiara +2",}
-
     sets.Flourish2 = sets.Flourish
     sets.Flourish3 = sets.Flourish
 
     -- Other JAs
     sets.JobAbility = {}
     sets.JobAbility.Trance = {head="Horos tiara +1",}
-    sets.JobAbility["No Foot Rise"] = {body="Horos casaque",}
+    sets.JobAbility["No Foot Rise"] = {body="Horos casaque +1",}
     sets.JobAbility["Fan Dance"] = {hands="Horos bangles",}
     sets.JobAbility["Saber Dance"] = {legs="Horos tights",}
-    sets.JobAbility["Closed Position"] = {feet="Horos toe shoes",}
-
-    sets.Fodder = clone(sets)
-
-    sets.Evasion = clone(sets.Fodder)
-    sets.Evasion.Engaged = {}
-
-    sets.PDT = clone(sets.Fodder)
-    sets.PDT.Engaged = {}
-
-    sets.MDT = clone(sets.Fodder)
-    sets.MDT.Engaged = {}
-
-    sets.StoreTP = clone(sets.Fodder)
-    sets.StoreTP.Engaged = {}
-
-    sets.MidAcc = clone(sets.Fodder)
-    sets.MidAcc.Engaged = {}
-
-    sets.HighAcc = clone(sets.Fodder)
-    sets.HighAcc.Engaged = {}
-
-    sets.PDT.Idle = sets.PDT.Engaged
-    sets.MDT.Idle = sets.MDT.Engaged
 
 end
 
 function precast(spell)
-    change_equip(spell.type, spell.name, "Precast")
-end
 
-function midcast(spell)
-    change_equip(spell.type, spell.name, "Midcast")
+    -- Check we have enough TP
+    if spell.tp_cost > player.tp then
+        cancel_spell()
+        add_to_chat(8, "You need more TP to " .. spell.name)
+    end
+
+    -- Waltzes
+    if "Waltz" == spell.type then
+        equip(sets.Waltz)
+        return
+    end
+
+    -- Steps
+    if "Step" == spell.type then
+        equip(sets.Set[spell.name] ? sets.Step[spell.name] : sets.Step)
+        return
+    end
+
+    -- Sambas
+    if "Samba" == spell.type then
+        equip(sets.Samba)
+        return
+    end
+
+    -- Weapon Skills
+    if "WeaponSkill" == spell.type then
+        -- Check Engaged
+        if "Engaged" ~= player.status then
+            cancel_spell()
+            add_to_chat(8, "You need to be Engaged to WeaponSkill")
+            return
+        end
+
+        -- Check TP levels
+        if 1000 < player.tp then
+            cancel_spell()
+            add_to_chat(8, "You need more TP to WeaponSkill")
+            return
+        end
+
+        -- Check we have a set for the WeaponSkill
+        if sets.WeaponSkill[spell.name] then
+            equip(sets.WeaponSkill[spell.name])
+        end
+
+        return
+    end
+
+    -- Catch all
+    if sets[spell.type] and sets[spell.type][spell.name] then
+        -- Specific Set
+        if sets[spell.type][spell.name] then
+            equip(sets[spell.type][spell.name])
+            return
+        end
+    end
 end
 
 function aftercast()
@@ -114,118 +144,54 @@ function aftercast()
 end
 
 function status_change(status, old)
-    local AM3 = buffactive["Aftermath: Lv.3"]
-    local setName = SetArray[SetIndex]
-
-    dbg(old .. " -> " .. status .. " Set: " .. setName)
-
-    if sets[status] then
-        dbg("Status")
-
-        if sets[setName][status] then
-            dbg("Status Set")
-
-            if AM3 && sets[setName][status]["Aftermath"] then
-                dbg("Status Set Aftermath")
-                equip(sets[setName][status]["Aftermath"])
-                return
-            end
-
-            equip(sets[setName][status])
-            return
-        end
-
-        if AM3 && sets[status]["Aftermath"] then
-            dbg("Status Aftermath")
-            equip(sets[status]["Aftermath"])
-            return
-        end
-
-        equip(sets[status])
-    end
-end
-
-function change_equip(type, name, cast)
-    local s = sets[SetArray[SetIndex]]
-
-    dbg(type .. "[\"" .. name .. "\"]." .. cast)
-
-    if s[type] then
-        dbg("Type")
-
-        if s[type][name] then
-            dbg("Type Name")
-
-            if s[type][name][cast] then
-                dbg("Type Name Cast")
-
-                equip(s[type][name][cast])
-                dbg("Type: " .. type .. " Name: '" .. name .. "' Cast: " .. cast)
-                return true
-            end
-
-            equip(s[type][name])
-            dbg("Type: " .. type .. " Name: '" .. name .. "'")
-            return true
-        end
-
-        if s[type][cast] then
-            equip(s[type][cast])
-
-            dbg("Type: " .. type .. " Cast: " .. cast)
-            return true
-        end
-
-        equip(s[type])
-        dbg("Type: " .. type)
-        return true
+    -- Check DT sets
+    if equipDT() then
+        return
     end
 
-    dbg("None")
-    return false
+    -- Engaged Statuses
+    if "Engaged" == status then
+        equip(sets.Engaged[AccArray[AccIndex]])
+        return
+    end
+
+    equip(sets.Idle)
 end
 
 function self_command(command)
-    if command == 'set' then -- Accuracy Level Toggle --
-        SetIndex = (SetIndex % #SetArray) + 1
+    -- Toggle Accuracy
+    if "acc" == command then
+        AccIndex = (AccIndex % #AccArray) + 1
         status_change(player.status, player.status)
-        add_to_chat(158,'Set: ' .. SetArray[SetIndex])
-    end
-end
-
-function findLeafSet(...) 
-    local after = {}
-
-    do
-
-end
-
---- Debug Message
--- Outputs any information into FFXI chat window to help with debugging when the
--- debug variable is set to true.
--- @param message String to display
-function dbg(message)
-    if debug then
-        add_to_chat(8, message)
-    end
-end
-
---- Deep clone a table
--- @see http://lua-users.org/wiki/CopyTable
-function clone(orig)
-    local orig_type = type(orig)
-    local copy
-    if orig_type == 'table' then
-        copy = {}
-        for orig_key, orig_value in next, orig, nil do
-            copy[clone(orig_key)] = clone(orig_value)
-        end
-
-        setmetatable(copy, clone(getmetatable(orig)))
-
-    else -- number, string, boolean, etc
-        copy = orig
+        add_to_chat(8, "Set " .. AccArray[AccIndex])
+        return
     end
 
-    return copy
+    -- Toggle PDT
+    if "pdt" == command then
+        PDT = not PDT
+        status_change(player.status, player.status)
+        add_to_chat(8, (PDT ? "Locked" : "Unlocked") .. " PDT")
+    end
+
+    if "mdt" == command then
+        MDT = not MDT
+        status_change(player.status, player.status)
+        add_to_chat(8, (MDT ? "Locked" : "Unlocked") .. " MDT")
+    end
+
+end
+
+function equipDT()
+    if PDT then
+        equip(sets.PDT)
+        return true
+    end
+
+    if MDT then
+        equip(sets.MDT)
+        return true
+    end
+
+    return false
 end
