@@ -108,7 +108,7 @@ function get_sets()
 	-- PDT/MDT Sets --
 	sets.PDT = {-- neck="Twilight Torque",
 		head="Iuitl Headgear +1", neck="Warder's charm", ear1="Black Earring", ear2="Darkness Earring",
-		body="Emet harness", hands="Iuitl Wristbands +1", ring1="Dark Ring", ring2="Shadow Ring",
+		body="Emet harness +1", hands="Iuitl Wristbands +1", ring1="Dark Ring", ring2="Shadow Ring",
 		back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1"
 	}
 
