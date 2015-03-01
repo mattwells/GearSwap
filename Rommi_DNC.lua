@@ -1,49 +1,63 @@
 function get_sets()
     AccIndex = 1
     AccArray = {"LowAcc", "MidAcc", "HighAcc"}
+    HasteIndex = 1
+    HasteArray = {"NoHaste", "MidHaste", "HighHaste"}
     Armor = null
 
+    send_command('input /macro book 9;wait .1;input /macro set 1')
+
     sets.Idle = {
-        main="Izhiikoh", sub="Atoyac", ammo="Ginsen",
+        main="Terpsichore", sub="Izhiikoh", ammo="Ginsen",
         head="Horos tiara +1", neck="Twilight torque", ear1="Dudgeon earring", ear2="Heartseeker earring",
-        body="Horos casaque +1", hands="Horos bangles", ring1="Rajas ring", ring2="Dark ring",
-        back="Repulse mantle", waist="Flume belt", legs="Horos tights", feet="Horos toe shoes +1",
+        body="Horos casaque +1", hands="Horos bangles +1", ring1="Haverton Ring", ring2="Dark ring",
+        back="Repulse mantle", waist="Flume belt", legs="Horos tights +1", feet="Horos toe shoes +1",
     }
 
     -- TP Sets
     sets.Engaged = {}
     sets.Engaged.LowAcc = {
-        main="Izhiikoh", sub="Atoyac", ammo="Ginsen",
-        head="Whirlpool mask", neck="Asperity necklace", ear1="Dudgeon earring", ear2="Heartseeker earring",
-        body="Thaumas coat", hands="Qaaxo mitaines", ring1="Rajas ring", ring2="Epona's ring",
-        back="Atheling mantle", waist="Patentia sash", legs="Iuitl tights +1", feet="Horos toe shoes +1",
+        main="Terpsichore", sub="Izhiikoh", ammo="Ginsen",
+        head="Taeon chapeau", neck="Asperity necklace", ear1="Steelflash earring", ear2="Bladeborn earring", -- ear1="Dudgeon earring", ear2="Heartseeker earring",
+        body="Qaaxo Harness", hands="Qaaxo mitaines", ring1="Haverton ring", ring2="Epona's ring",
+        back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+4',}},
+        waist="Windbuffet belt +1", legs="Taeon Tights", feet="Taeon boots",
     }
     sets.Engaged.MidAcc = sets.Engaged.LowAcc
-    sets.Engaged.HighAcc = sets.Engaged.LowAcc
+    sets.Engaged.HighAcc = {
+        main="Terpsichore", sub="Izhiikoh", ammo="Ginsen",
+        head="Horos Tiara +1", neck="Iqabi Necklace", ear1="Steelflash Earring", ear2="Heartseeker Earring",
+        body="Qaaxo Harness", hands="Qaaxo Mitaines", ring1="Haverton Ring", ring2="Epona's Ring",
+        back="Grounded Mantle", waist="Olseni Belt", legs="Maxixi Tights +1", feet="Taeon boots",
+    }
 
     sets.PDT = {
         head="Uk'uxkaj cap", neck="Twilight Torque",
-        body="Emet harness +1", hands="Iuitl Wristbands +1", ring1="Dark Ring", ring2="Shadow Ring",
+        body="Emet harness +1", hands="Iuitl Wristbands +1", ring1="Shadow Ring", ring2="Dark Ring", 
         back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1",
     }
-    sets.MDT = {}
+    sets.MDT = sets.PDT
 
     -- Weapon Skills
     sets.WeaponSkill = {}
     sets.WeaponSkill.Evisceration = {
-        head="Uk'uxkaj cap", neck="Shadow gorget", ear1="Moonshade earring", ear2="Brutal earring",
-        body="Maxixi casaque +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Epona's ring",
-        back="Rancorous mantle", waist="Shadow belt", legs="Maxixi tights +1", feet="Maxixi toe shoes +1",
+        head="Uk'uxkaj cap", neck="Fotia gorget", ear1="Moonshade earring", ear2="Brutal earring",
+        body="Horos Casaque +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Epona's ring",
+        back="Rancorous mantle", waist="Fotia belt", legs="Manibozho brais", feet="Qaaxo Leggings",
     }
+    -- Manibozho brais: A
+    -- Jupiter's pearl
     sets.WeaponSkill["Pyrrhic Kleos"] = {
-        head="Uk'uxkaj cap", neck="Aqua gorget", ear1="Steelflash earring", ear2="Bladeborn earring",
-        body="Maxixi casaque +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Epona's ring",
-        back="Buquwik cape", waist="Aqua belt", legs="Maxixi tights +1", feet="Maxixi toe shoes +1",
+        ammo="Potestas Bomblet",
+        head="Horos tiara +1", neck="Fotia gorget", ear1="Steelflash earring", ear2="Bladeborn earring",
+        body="Horos Casaque +1", hands="Nilas gloves", ring1="Ifrit ring", ring2="Epona's ring",
+        back="Vespid Mantle", waist="Fotia belt", legs="Quiahuiz Trousers", feet="Qaaxo Leggings",
     }
     sets.WeaponSkill["Rudra's Storm"] = {
+        ammo="Potestas Bomblet",
         head="Horos tiara +1", neck="Love torque", ear1="Moonshade earring", ear2="Brutal earring",
-        body="Maxixi casaque +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Ramuh ring",
-        back="Kayapa cape", waist="Chiner's belt", legs="Maxixi tights +1", feet="Maxixi toe shoes +1",
+        body="Horos Casaque +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Ramuh ring",
+        back="Vespid Mantle", waist="Chiner's belt", legs="Manibozho brais", feet="Qaaxo Leggings",
     }
 
     -- Waltzes
@@ -66,7 +80,10 @@ function get_sets()
     -- Flourishes
     sets.Flourish = {}
     sets.Flourish["Striking Flourish"] = {body="Charis casaque +2",}
-    sets.Flourish["Reverse Flourish"] = {hands="Charis bangles +2",}
+    sets.Flourish["Reverse Flourish"] = {
+        hands="Charis bangles +2",
+        back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Rev. Flourish"+14','Weapon skill damage +3%',}},
+    }
     sets.Flourish["Climactic Flourish"] = {head="Charis tiara +2",}
     sets.Flourish2 = sets.Flourish
     sets.Flourish3 = sets.Flourish
@@ -75,8 +92,8 @@ function get_sets()
     sets.JobAbility = {}
     sets.JobAbility.Trance = {head="Horos tiara +1",}
     sets.JobAbility["No Foot Rise"] = {body="Horos casaque +1",}
-    sets.JobAbility["Fan Dance"] = {hands="Horos bangles",}
-    sets.JobAbility["Saber Dance"] = {legs="Horos tights",}
+    sets.JobAbility["Fan Dance"] = {hands="Horos bangles +1",}
+    sets.JobAbility["Saber Dance"] = {legs="Horos tights +1",}
 
 end
 
@@ -119,12 +136,12 @@ function precast(spell)
             return
         end
 
-        -- Check TP levels
-        if 1000 > player.tp then
-            cancel_spell()
-            add_to_chat(123, "You need more TP to WeaponSkill")
-            return
-        end
+        -- -- Check TP levels
+        -- if 1000 > player.tp then
+        --     cancel_spell()
+        --     add_to_chat(123, "You need more TP to WeaponSkill")
+        --     return
+        -- end
 
         -- Check we have a set for the WeaponSkill
         if sets.WeaponSkill[spell.name] then
@@ -173,6 +190,14 @@ function self_command(command)
         AccIndex = (AccIndex % #AccArray) + 1
         status_change(player.status, player.status)
         add_to_chat(123, "Set " .. AccArray[AccIndex])
+        return
+    end
+
+    -- Toggle Haste
+    if "HASTE" == command then
+        HasteIndex = (HasteIndex % #HasteArray) + 1
+        status_change(player.status, player.status)
+        add_to_chat(123, "Set " .. HasteArray[HasteIndex])
         return
     end
 

@@ -40,9 +40,10 @@ function get_sets()
 	-- Normal TP Sets --
 	sets.TP = {
 		-- head="Felistris mask"
-		head="Whirlpool mask", neck="Asperity necklace", ear1="Dudgeon earring", ear2="Heartseeker earring",
-		body="Thaumas coat", hands="Qaaxo Mitaines", ring1="Rajas ring", ring2="Epona's ring",
-		back="Canny cape", waist="Patentia sash", legs="Iuitl tights +1", feet="Plunderer's poulaines +1"
+		head="Taeon chapeau", neck="Asperity necklace", ear1="Dudgeon earring", ear2="Heartseeker earring",
+		body="Qaaxo Harness", hands="Qaaxo Mitaines", ring1="Haverton ring", ring2="Epona's ring",
+		back="Canny cape", waist="Patentia sash", legs="Taeon Tights", feet="Taeon boots",
+		-- Canny cape (DW2%), Patentia sash (DW5%), Taeon boots (DW9%), earrings (DW7%)
 	}
 	sets.TP.MidACC = set_combine(sets.TP,{
 		-- neck="Ej necklace +1",
@@ -50,7 +51,7 @@ function get_sets()
 		-- back="Letalis Mantle", feet="Qaaxo Leggings"
 	})
 	sets.TP.HighACC = set_combine(sets.TP.MidACC,{
-		head="Whirlpool Mask", neck="Iqabi necklace",
+		neck="Iqabi necklace",
 		body="Emet harness +1", -- ring1="Mars's Ring",
 		-- waist="Anguinus Belt"
 	})
@@ -134,9 +135,9 @@ function get_sets()
 
 	-- WS Sets --
 	sets.WS.Evisceration = {
-		head="Uk'uxkaj cap", neck="Shadow gorget", ear1="Moonshade Earring", ear2="Brutal earring",
+		head="Uk'uxkaj cap", neck="Fotia gorget", ear1="Moonshade Earring", ear2="Brutal earring",
 		body="Pillager's Vest +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Epona's ring",
-		back="Rancorous mantle", waist="Shadow belt", legs="Pillager's culottes +1", feet="Plunderer's poulaines +1"
+		back="Rancorous mantle", waist="Fotia belt", legs="Pillager's culottes +1", feet="Plunderer's poulaines +1"
 	}
 	sets.WS.Evisceration.SA = set_combine(sets.WS.Evisceration,{
 		hands="Raider's Armlets +2"
@@ -146,7 +147,7 @@ function get_sets()
 	sets.WS["Rudra's Storm"] = {
 		head="Pillager's Bonnet +1", neck="Love torque", ear1="Moonshade Earring", ear2="Brutal earring",
 		body="Pillager's Vest +1", hands="Pillager's armlets +1", ring1="Ramuh ring", ring2="Ramuh ring",
-		back="Kayapa cape", waist="Chiner's belt", legs="Pillager's culottes +1", feet="Plunderer's poulaines +1"
+		back="Vespid Mantle", waist="Chiner's belt", legs="Pillager's culottes +1", feet="Plunderer's poulaines +1"
 	}
 	sets.WS["Rudra's Storm"].SA = set_combine(sets.WS["Rudra's Storm"], {
 		hands="Raider's Armlets +2"
