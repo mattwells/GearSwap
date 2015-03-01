@@ -23,7 +23,7 @@ function get_sets()
 	--Mecisto. Mantle
 	sets.precast.IdleLuopan = {
 		range="Dunna",
-		body="Bagua tunic", 
+		body="Bagua tunic",
 		head="Nahtirah Hat", neck="Twilight Torque", ear1="Flashward earring", ear2="Spellbreaker Earring",
 		hands="Geomancy Mitaines +1", ring1="Dark Ring", ring2="Dark Ring",
 		back="Repulse Mantle", waist="Isa belt",legs="Geomancy Pants +1",feet="Hagondes Sabots +1"
@@ -61,7 +61,7 @@ function get_sets()
 	sets.midcast.Geomancy = {
 		range="Dunna",
 		head="Nares Cap", ear1="Gwati earring", ear2="Magnetic earring",
-		body="Bagua Tunic", hands="Geomancy Mitaines +1", 
+		body="Bagua Tunic", hands="Geomancy Mitaines +1",
 		back="Lifestream Cape", waist="Austerity Belt", legs="Bagua Pants", feet="Umbani Boots"
 	}
 			--Geomancy Skill:	373+38 = 411  ??
@@ -72,7 +72,7 @@ function get_sets()
 	sets.midcast.Enhancing = {
 		neck="Colossus's Torque",
 		body="Anhur Robe", head="Umuthi Hat", ear1="Loquac. Earring",
-		hands="Augur's Gloves", 
+		hands="Augur's Gloves",
 		waist="Olympus Sash", legs="Shedir Seraweels", feet="Geomancy Sandals"
 	}
 
