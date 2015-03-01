@@ -48,7 +48,7 @@ function get_sets()
 	sets.midcast.Elemental = {}
 
 	sets.midcast.Dark = {}
-	
+
 end
 
 function precast(spell)
