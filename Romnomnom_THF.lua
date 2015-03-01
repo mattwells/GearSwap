@@ -29,7 +29,7 @@ function get_sets()
 	sets.TP = {
 	    range="Raider's Bmrng.",
 	    head="Whirlpool Mask", neck="Asperity Necklace", ear1="Brutal Earring", ear2="Suppanomimi",
-	    body="Pillager's Vest", hands="Asn. Armlets +2", ring1="Rajas Ring", ring2="Demonry Ring",
+	    body="Pillager's Vest", hands="Asn. Armlets +2", ring1="Rajas Ring", ring2="Epona's Ring",
 	    back="Canny Cape", waist="Twilight Belt", legs="Iuitl Tights +1", feet="Pillager's Poulaines"
 	}
 	sets.TP.MidACC = set_combine(sets.TP,{
@@ -138,7 +138,7 @@ function get_sets()
 
 	sets.WS["Rudra's Storm"] = {
 	    main="Izhiikoh", sub="Atoyac", range="Raider's Bmrng.",
-	    head="Pillager's Bonnet", neck="Asperity Necklace", ear1="Dudgeon Earring", ear1="Pixie Earring",
+	    head="Pillager's Bonnet", neck="Asperity Necklace", ear2="Moonshade earring", ear1="Pixie Earring",
 	    body="Pillager's Vest", hands="Asn. Armlets +2", ring1="Rajas Ring", ring2="Demonry Ring",
 	    back="Kayapa Cape", waist="Twilight Belt", legs="Pillager's Culottes", feet="Espial Socks",
 	}
@@ -231,7 +231,7 @@ function pretarget(spell,action)
                 return
         end
 end
- 
+
 function precast(spell,action)
         if spell.type == "WeaponSkill" then
                 if player.status ~= 'Engaged' then -- Cancel WS If You Are Not Engaged. Can Delete It If You Don't Need It --
@@ -288,7 +288,7 @@ function precast(spell,action)
                 send_command('cancel Sneak')
         end
 end
- 
+
 function midcast(spell,action)
         if spell.english == 'Ranged' then
                 equip(TH_Gear)
@@ -308,14 +308,14 @@ function midcast(spell,action)
                 end
         end
 end
- 
+
 function aftercast(spell,action)
         if spell.type == "WeaponSkill" and not spell.interrupted then
                 send_command('wait 0.2;gs c TP')
         end
         status_change(player.status)
 end
- 
+
 function status_change(new,old)
         if player.equipment.range ~= 'empty' then
                 disable('range','ammo')
@@ -366,7 +366,7 @@ function status_change(new,old)
                 equip(equipSet)
         end
 end
- 
+
 function buff_change(buff,gain)
         buff = string.lower(buff)
         if buff == "sneak attack" then
@@ -384,7 +384,7 @@ function buff_change(buff,gain)
                 status_change(player.status)
         end
 end
- 
+
 -- In Game: //gs c (command), Macro: /console gs c (command), Bind: gs c (command) --
 function self_command(command)
         if command == 'acc' then -- Accuracy Level Toggle --
@@ -462,21 +462,21 @@ function self_command(command)
                 send_command('//' .. sc_map[command])
         end
 end
- 
+
 function refine_waltz(spell,action)
         if spell.type ~= 'Waltz' then
                 return
         end
- 
+
         if spell.name == "Healing Waltz" or spell.name == "Divine Waltz" or spell.name == "Divine Waltz II" then
                 return
         end
- 
+
         local newWaltz = spell.english
         local waltzID
- 
+
         local missingHP
- 
+
         if spell.target.type == "SELF" then
                 missingHP = player.max_hp - player.hp
         elseif spell.target.isallymember then
@@ -484,7 +484,7 @@ function refine_waltz(spell,action)
                 local est_max_hp = target.hp / (target.hpp/100)
                 missingHP = math.floor(est_max_hp - target.hp)
         end
- 
+
         if missingHP ~= nil then
                 if player.sub_job == 'DNC' then
                         if missingHP < 40 and spell.target.name == player.name then
@@ -505,14 +505,14 @@ function refine_waltz(spell,action)
                         return
                 end
         end
- 
+
         local waltzTPCost = {['Curing Waltz'] = 20, ['Curing Waltz II'] = 35, ['Curing Waltz III'] = 50}
         local tpCost = waltzTPCost[newWaltz]
- 
+
         local downgrade
- 
+
         if player.tp < tpCost and not buffactive.trance then
- 
+
                 if player.tp < 20 then
                         add_to_chat(123, 'Insufficient TP ['..tostring(player.tp)..']. Cancelling.')
                         cancel_spell()
@@ -522,10 +522,10 @@ function refine_waltz(spell,action)
                 elseif player.tp < 50 then
                         newWaltz = 'Curing Waltz II'
                 end
- 
+
                 downgrade = 'Insufficient TP ['..tostring(player.tp)..']. Downgrading to '..newWaltz..'.'
         end
- 
+
         if newWaltz ~= spell.english then
                 send_command('@input /ja "'..newWaltz..'" '..tostring(spell.target.raw))
                 if downgrade then
@@ -534,12 +534,12 @@ function refine_waltz(spell,action)
                 cancel_spell()
                 return
         end
- 
+
         if missingHP > 0 then
                 add_to_chat(158,'Trying to cure '..tostring(missingHP)..' HP using '..newWaltz..'.')
         end
 end
- 
+
 function find_player_in_alliance(name)
         for i,v in ipairs(alliance) do
                 for k,p in ipairs(v) do
@@ -549,11 +549,11 @@ function find_player_in_alliance(name)
                 end
         end
 end
- 
+
 function sub_job_change(newSubjob, oldSubjob)
         select_default_macro_book()
 end
- 
+
 function set_macro_page(set,book)
         if not tonumber(set) then
                 add_to_chat(123,'Error setting macro page: Set is not a valid number ('..tostring(set)..').')
@@ -563,7 +563,7 @@ function set_macro_page(set,book)
                 add_to_chat(123,'Error setting macro page: Macro set ('..tostring(set)..') must be between 1 and 10.')
                 return
         end
- 
+
         if book then
                 if not tonumber(book) then
                         add_to_chat(123,'Error setting macro page: book is not a valid number ('..tostring(book)..').')
@@ -578,7 +578,7 @@ function set_macro_page(set,book)
                 send_command('@input /macro set '..tostring(set))
         end
 end
- 
+
 function select_default_macro_book()
         -- Default macro set/book
         if player.sub_job == 'WAR' then
