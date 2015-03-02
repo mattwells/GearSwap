@@ -8,7 +8,7 @@ function get_sets()
     send_command('input /macro book 9;wait .1;input /macro set 1')
 
     sets.Idle = {
-        main="Terpsichore", sub="Izhiikoh", ammo="Ginsen",
+        main="Terpsichore", sub="Atoyac", ammo="Ginsen",
         head="Horos tiara +1", neck="Twilight torque", ear1="Dudgeon earring", ear2="Heartseeker earring",
         body="Horos casaque +1", hands="Horos bangles +1", ring1="Haverton Ring", ring2="Dark ring",
         back="Repulse mantle", waist="Flume belt", legs="Horos tights +1", feet="Horos toe shoes +1",
@@ -17,7 +17,7 @@ function get_sets()
     -- TP Sets
     sets.Engaged = {}
     sets.Engaged.LowAcc = {
-        main="Terpsichore", sub="Izhiikoh", ammo="Ginsen",
+        main="Terpsichore", sub="Atoyac", ammo="Ginsen",
         head="Taeon chapeau", neck="Asperity necklace", ear1="Steelflash earring", ear2="Bladeborn earring", -- ear1="Dudgeon earring", ear2="Heartseeker earring",
         body="Qaaxo Harness", hands="Qaaxo mitaines", ring1="Haverton ring", ring2="Epona's ring",
         back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+4',}},
@@ -25,7 +25,7 @@ function get_sets()
     }
     sets.Engaged.MidAcc = sets.Engaged.LowAcc
     sets.Engaged.HighAcc = {
-        main="Terpsichore", sub="Izhiikoh", ammo="Ginsen",
+        main="Terpsichore", sub="Atoyac", ammo="Ginsen",
         head="Horos Tiara +1", neck="Iqabi Necklace", ear1="Steelflash Earring", ear2="Heartseeker Earring",
         body="Qaaxo Harness", hands="Qaaxo Mitaines", ring1="Haverton Ring", ring2="Epona's Ring",
         back="Grounded Mantle", waist="Olseni Belt", legs="Maxixi Tights +1", feet="Taeon boots",
@@ -33,7 +33,7 @@ function get_sets()
 
     sets.PDT = {
         head="Uk'uxkaj cap", neck="Twilight Torque",
-        body="Emet harness +1", hands="Iuitl Wristbands +1", ring1="Shadow Ring", ring2="Dark Ring", 
+        body="Emet harness +1", hands="Iuitl Wristbands +1", ring1="Shadow Ring", ring2="Dark Ring",
         back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1",
     }
     sets.MDT = sets.PDT
@@ -215,4 +215,23 @@ function self_command(command)
         return
     end
 
+end
+
+
+function buff_change(buff,gain)
+	buff = string.lower(buff)
+	if buff == "aftermath: lv.3" then -- AM3 Timer/Countdown --
+		if gain then
+			send_command('timers create "Aftermath: Lv.3" 180 down;wait 120;input /echo Aftermath: Lv.3 [WEARING OFF IN 60 SEC.];wait 30;input /echo Aftermath: Lv.3 [WEARING OFF IN 30 SEC.];wait 20;input /echo Aftermath: Lv.3 [WEARING OFF IN 10 SEC.]')
+		else
+			send_command('timers delete "Aftermath: Lv.3"')
+			add_to_chat(123,'AM3: [OFF]')
+		end
+	elseif buff == 'weakness' then -- Weakness Timer --
+		if gain then
+			send_command('timers create "Weakness" 300 up')
+		else
+			send_command('timers delete "Weakness"')
+		end
+	end
 end
