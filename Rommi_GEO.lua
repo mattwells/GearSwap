@@ -14,7 +14,7 @@ function get_sets()
 	}  --Fast Cast = 47%
 
 	sets.precast.IdleRefresh = {
-		range="Dunna", head="Nahtirah Hat",
+		main="Boleabunga", sub="Sors shield", range="Dunna", head="Nahtirah Hat",
 		neck="Twilight torque", ear1="Flashward earring", ear2="Spellbreaker earring",
 		body="Respite cloak", hands="Bagua Mitaines", ring1="Dark ring", ring2="Meridian ring",
 		back="Repulse Mantle", waist="Fucho-no-Obi", legs="Nares Trews", feet="Geomancy sandals"
@@ -22,7 +22,7 @@ function get_sets()
 	--Repulse Mantle
 	--Mecisto. Mantle
 	sets.precast.IdleLuopan = {
-		range="Dunna",
+		main="Boleabunga", sub="Sors shield", range="Dunna",
 		body="Bagua tunic",
 		head="Nahtirah Hat", neck="Twilight Torque", ear1="Flashward earring", ear2="Spellbreaker Earring",
 		hands="Geomancy Mitaines +1", ring1="Dark Ring", ring2="Dark Ring",
@@ -45,17 +45,20 @@ function get_sets()
 	sets.midcast = {}
 
 	sets.midcast.Cure = {
-		main="Tamaxchi", sub="Genbu's Shield", ammo="Oreiad's Tathlum",
-		head="Kaabnax Hat", neck="Imbodla Necklace", ear1="Loquac. Earring", ear2="Lifestorm Earring",
-		body="Geomancy Tunic", hands="Bokwus Gloves", ring1="Sirona's Ring", ring2="Solemn Ring",
-		back="Pahtli Cape", waist="Witch Sash", legs="Nares Trews", feet="Umbani Boots"
+		main="Tamaxchi", sub="Genbu's Shield", -- ammo="Oreiad's Tathlum",
+		-- head="Kaabnax Hat", neck="Imbodla Necklace",
+		ear1="Loquac. Earring", ear2="Lifestorm Earring",
+		body="Geomancy Tunic",-- hands="Bokwus Gloves", ring1="Sirona's Ring", ring2="Solemn Ring",
+		back="Pahtli Cape", -- waist="Witch Sash",
+		legs="Nares Trews",-- feet="Umbani Boots"
 	} --MND=96+131, Cure Pot.=46%
 
 	sets.midcast.Enfeeble = {
-		main="", sub="", ammo="",
-		head="Bagua Galero +1", neck="Imbodla Necklace", ear1="Psystorm Earring", ear2="Lifestorm Earring",
-		body="Ischemia Chasuble", hands="Lurid Mitts", ring1="Strendu Ring", ring2="Sangoma Ring",
-		back="Lifestream Cape", waist="Yamabuki-no-Obi", legs="Hagondes Pants +1", feet="Uk'uxkaj Boots"
+		-- main="", sub="", ammo="",
+		head="Bagua Galero", -- neck="Imbodla Necklace",
+		ear1="Psystorm Earring", ear2="Lifestorm Earring",
+		-- body="Ischemia Chasuble", hands="Lurid Mitts", ring1="Strendu Ring", ring2="Sangoma Ring",
+		back="Lifestream Cape", waist="Yamabuki-no-Obi", -- legs="Hagondes Pants +1", feet="Uk'uxkaj Boots"
 	}
 
 	sets.midcast.Geomancy = {
@@ -71,38 +74,43 @@ function get_sets()
 	--Enhancing needs work
 	sets.midcast.Enhancing = {
 		neck="Colossus's Torque",
-		body="Anhur Robe", head="Umuthi Hat", ear1="Loquac. Earring",
-		hands="Augur's Gloves",
-		waist="Olympus Sash", legs="Shedir Seraweels", feet="Geomancy Sandals"
+		head="Umuthi Hat", ear1="Loquac. Earring",
+		-- body="Anhur Robe", hands="Augur's Gloves",
+		-- waist="Olympus Sash", legs="Shedir Seraweels",
+		feet="Geomancy Sandals"
 	}
 
 	sets.midcast.ElementalMagic = {
-		head="Hagondes Hat +1", neck="Eddy Necklace", ear1="Crematio Earring", ear2="Friomisi Earring",
-		body="Artsieq Jubbah", hands="Yaoyotl Gloves", ring1="Acumen Ring", ring2="Strendu ring",
-		back="Toro Cape", waist="Yamabuki-no-Obi", legs="Perdition Slops", feet="Umbani Boots"
+		-- head="Hagondes Hat +1",
+		neck="Eddy Necklace", ear1="Crematio Earring", ear2="Friomisi Earring",
+		body="Artsieq Jubbah", -- hands="Yaoyotl Gloves", ring1="Acumen Ring", ring2="Strendu ring",
+		-- back="Toro Cape", waist="Yamabuki-no-Obi", legs="Perdition Slops",
+		feet="Umbani Boots"
 	}
 
 	sets.midcast.DarkMagic = {
-		head="Bagua Galero +1", neck="Imbodla Necklace", ear1="Psystorm Earring", ear2="Lifestorm Earring",
-		body="Hagondes Coat +1", hands="Hagondes Cuffs +1", ring1="Acumen Ring", ring2="Sangoma Ring",
-		back="Refraction Cape", waist="Fucho-no-Obi", legs="Mes'yohi Slacks", feet="Hagondes Sabots +1"
+		head="Bagua Galero", -- neck="Imbodla Necklace",
+		ear1="Psystorm Earring", ear2="Lifestorm Earring",
+		body="Hagondes Coat +1", hands="Hagondes Cuffs", -- ring1="Acumen Ring", ring2="Sangoma Ring",
+		back="Refraction Cape", waist="Fucho-no-Obi", -- legs="Mes'yohi Slacks",
+		feet="Hagondes Sabots +1"
 	}
 
 	sets.TP = {
-		head="Espial Cap", neck="Asperity Necklace", ear1="Steelflash Earring", ear2="Bladeborn Earring",
-		body="Ischemia Chasuble", hands="Geomancy Mitaines +1", ring1="Mars's Ring", ring2="Patricius Ring",
-		back="Kayapa Cape", waist="Cetl Belt", legs="Hagondes Pants +1", feet="Battlecast Gaiters"
+		-- head="Espial Cap", neck="Asperity Necklace", ear1="Steelflash Earring", ear2="Bladeborn Earring",
+		-- body="Ischemia Chasuble", hands="Geomancy Mitaines +1", ring1="Mars's Ring", ring2="Patricius Ring",
+		-- back="Kayapa Cape", waist="Cetl Belt", legs="Hagondes Pants +1", feet="Battlecast Gaiters"
 	}
 
-    sets.WS = set_combine(sets.TP, {
-    	head="Sukeroku Hachimaki", neck="Flame Gorget", ear1="Brutal Earring", ear2="Zennaroi Earring",
-		body="Ischemia Chasuble", hands="Otomi Gloves", ring1="Leviathan Ring", ring2="Leviathan Ring",
-		back="Kayapa Cape", waist="Flame Belt", legs="Perdition Slops", feet="Battlecast Gaiters"
-	})
+    -- sets.WS = set_combine(sets.TP, {
+    -- 	head="Sukeroku Hachimaki", neck="Flame Gorget", ear1="Brutal Earring", ear2="Zennaroi Earring",
+	-- 	body="Ischemia Chasuble", hands="Otomi Gloves", ring1="Leviathan Ring", ring2="Leviathan Ring",
+	-- 	back="Kayapa Cape", waist="Flame Belt", legs="Perdition Slops", feet="Battlecast Gaiters"
+	-- })
 
     sets.DontForget = {
-    	neck="Quanpur Necklace", ear1="Reraise Earring", ear2 = "Linkpearl",
-		ring1="Excelsis Ring"
+    	-- neck="Quanpur Necklace", ear1="Reraise Earring", ear2 = "Linkpearl",
+		-- ring1="Excelsis Ring"
 	}
 
 
@@ -164,7 +172,7 @@ function midcast(spell)
 	elseif spell.skill == 'Dark Magic' then
 		equip(sets.midcast.DarkMagic)
 		if spell.english:startswith('Aspir') or spell.english == 'Drain' then
-			equip({head="Bagua Galero +1", waist="Fucho-no-Obi"})
+			equip({head="Bagua Galero", waist="Fucho-no-Obi"})
 		end
 	elseif spell.skill == 'Enfeebling Magic' then
 		equip(sets.midcast.Enfeeble)
