@@ -24,7 +24,7 @@ function get_sets()
 
 	sets.Midcast.Cure = {
 		ear1="Roundel Earring",
-		body="Heka's Kalasiris", 
+		body="Heka's Kalasiris",
 		back="Orison Cape", legs="Orsn. Pantaln. +2",
 	}
 
@@ -33,7 +33,7 @@ function get_sets()
 	}
 end
 
-function precast(spell, action) 
+function precast(spell, action)
 	if spell.type:endswith('Magic') or spell.type == "BardSong" or spell.type == "Ninjutsu" then
 
 		if buffactive.silence then -- Cancel Magic or Ninjutsu or BardSong If You Are Silenced or Out of Range --
@@ -45,7 +45,7 @@ function precast(spell, action)
 			if string.find(spell.english,'Cur') and spell.english ~= "Cursna" then
 				equip(sets.Precast.Cure)
 				debug('Precast: Cure')
-		
+
 			elseif string.find(spell.english, 'Bar') then
 				equip(sets.Midcast.Bar)
 				debug('Midcast: Bar')
@@ -69,7 +69,7 @@ function midcast(spell, action)
 		elseif string.find(spell.english,'Cura') then
 			equip(sets.Midcast.Curaga)
 			debug('Midcast: Curaga')
-		
+
 		elseif string.find(spell.english, 'Bar') then
 			equip(sets.Midcast.Bar)
 			debug('Midcast: Bar')
@@ -84,5 +84,5 @@ function aftercast(spell, action)
 end
 
 function debug(s)
-	windower.add_to_chat(14, s)
+	-- windower.add_to_chat(123, s)
 end
