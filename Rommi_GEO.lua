@@ -22,7 +22,7 @@ function get_sets()
 	--Repulse Mantle
 	--Mecisto. Mantle
 	sets.precast.IdleLuopan = {
-		main="Boleabunga", sub="Sors shield", range="Dunna",
+		main="Boleabunga", sub="Sors shield", Orange="Dunna",
 		body="Bagua tunic",
 		head="Nahtirah Hat", neck="Twilight Torque", ear1="Flashward earring", ear2="Spellbreaker Earring",
 		hands="Geomancy Mitaines +1", ring1="Dark Ring", ring2="Dark Ring",
