@@ -20,7 +20,7 @@ function get_sets()
         main="Terpsichore", sub="Atoyac", ammo="Ginsen",
         head="Taeon chapeau", neck="Asperity necklace", ear1="Steelflash earring", ear2="Bladeborn earring", -- ear1="Dudgeon earring", ear2="Heartseeker earring",
         body="Qaaxo Harness", hands="Qaaxo mitaines", ring1="Haverton ring", ring2="Epona's ring",
-        back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+4',}},
+        back={ name="Toetapper Mantle", augments={'"Dual Wield"+4',}},
         waist="Windbuffet belt +1", legs="Taeon Tights", feet="Taeon boots",
     }
     sets.Engaged.MidAcc = sets.Engaged.LowAcc
@@ -82,7 +82,7 @@ function get_sets()
     sets.Flourish["Striking Flourish"] = {body="Charis casaque +2",}
     sets.Flourish["Reverse Flourish"] = {
         hands="Charis bangles +2",
-        back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Rev. Flourish"+14','Weapon skill damage +3%',}},
+        back={ name="Toetapper Mantle", augments={'"Rev. Flourish"+29'}},
     }
     sets.Flourish["Climactic Flourish"] = {head="Charis tiara +2",}
     sets.Flourish2 = sets.Flourish
@@ -95,9 +95,19 @@ function get_sets()
     sets.JobAbility["Fan Dance"] = {hands="Horos bangles +1",}
     sets.JobAbility["Saber Dance"] = {legs="Horos tights +1",}
 
+    include('Mote-Utility.lua')
 end
 
-function precast(spell)
+function precast(spell, action, spellMap, eventArgs)
+    local eventArgs = {handled = false, cancel = false}
+    cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
+    if "Waltz" == spell.type then
+        refine_waltz(spell, action, spellMap, eventArgs)
+    end
+    if eventArgs.cancel then
+        cancel_spell()
+        return;
+    end
 
     -- Check we have enough TP
     if spell.tp_cost > player.tp then
@@ -217,7 +227,6 @@ function self_command(command)
 
 end
 
-
 function buff_change(buff,gain)
 	buff = string.lower(buff)
 	if buff == "aftermath: lv.3" then -- AM3 Timer/Countdown --
@@ -226,12 +235,6 @@ function buff_change(buff,gain)
 		else
 			send_command('timers delete "Aftermath: Lv.3"')
 			add_to_chat(123,'AM3: [OFF]')
-		end
-	elseif buff == 'weakness' then -- Weakness Timer --
-		if gain then
-			send_command('timers create "Weakness" 300 up')
-		else
-			send_command('timers delete "Weakness"')
 		end
 	end
 end
