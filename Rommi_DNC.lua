@@ -18,17 +18,17 @@ function get_sets()
     sets.Engaged = {}
     sets.Engaged.LowAcc = {
         main="Terpsichore", sub="Atoyac", ammo="Ginsen",
-        head="Taeon chapeau", neck="Asperity necklace", ear1="Steelflash earring", ear2="Bladeborn earring", -- ear1="Dudgeon earring", ear2="Heartseeker earring",
-        body="Qaaxo Harness", hands="Qaaxo mitaines", ring1="Haverton ring", ring2="Epona's ring",
+        head="Taeon chapeau", neck="Asperity necklace", ear1="Steelflash earring", ear2="Bladeborn earring",
+        body="Taeon tabard", hands="Qaaxo mitaines", ring1="Haverton ring", ring2="Epona's ring",
         back={ name="Toetapper Mantle", augments={'"Dual Wield"+4',}},
         waist="Windbuffet belt +1", legs="Taeon Tights", feet="Taeon boots",
     }
     sets.Engaged.MidAcc = sets.Engaged.LowAcc
     sets.Engaged.HighAcc = {
         main="Terpsichore", sub="Atoyac", ammo="Ginsen",
-        head="Horos Tiara +1", neck="Iqabi Necklace", ear1="Steelflash Earring", ear2="Heartseeker Earring",
-        body="Qaaxo Harness", hands="Qaaxo Mitaines", ring1="Haverton Ring", ring2="Epona's Ring",
-        back="Grounded Mantle", waist="Olseni Belt", legs="Maxixi Tights +1", feet="Taeon boots",
+        head="Taeon Chapeau", neck="Iqabi Necklace", ear1="Zennaroi Earring", ear2="Heartseeker Earring",
+        body="Taeon Tabard", hands="Taeon Gloves", ring1="Haverton Ring", ring2="Epona's Ring",
+        back="Grounded Mantle", waist="Olseni Belt", legs="Taeon Tights", feet="Taeon Boots",
     }
 
     sets.PDT = {
@@ -41,23 +41,24 @@ function get_sets()
     -- Weapon Skills
     sets.WeaponSkill = {}
     sets.WeaponSkill.Evisceration = {
-        head="Uk'uxkaj cap", neck="Fotia gorget", ear1="Moonshade earring", ear2="Brutal earring",
-        body="Horos Casaque +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Epona's ring",
-        back="Rancorous mantle", waist="Fotia belt", legs="Manibozho brais", feet="Qaaxo Leggings",
+        ammo="Potestas Bomblet",
+        head="Taeon Chapeau", neck="Fotia Gorget", ear1="Moonshade Earring", ear2="Brutal Earring",
+        body="Taeon Tabard", hands="Taeon Gloves", ring1="Ramuh Ring +1", ring2="Epona's Ring",
+        back="Rancorous Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots",
     }
     -- Manibozho brais: A
     -- Jupiter's pearl
     sets.WeaponSkill["Pyrrhic Kleos"] = {
         ammo="Potestas Bomblet",
-        head="Horos tiara +1", neck="Fotia gorget", ear1="Steelflash earring", ear2="Bladeborn earring",
-        body="Horos Casaque +1", hands="Nilas gloves", ring1="Ifrit ring", ring2="Epona's ring",
-        back="Vespid Mantle", waist="Fotia belt", legs="Quiahuiz Trousers", feet="Qaaxo Leggings",
+        head="Taeon Chapeau", neck="Fotia Gorget", ear1="Steelflash Earring", ear2="Bladeborn Earring",
+        body="Taeon Tabard", hands="Taeon Gloves", ring1="Ifrit Ring", ring2="Epona's Ring",
+        back="Vespid Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots",
     }
     sets.WeaponSkill["Rudra's Storm"] = {
         ammo="Potestas Bomblet",
         head="Horos tiara +1", neck="Love torque", ear1="Moonshade earring", ear2="Brutal earring",
-        body="Horos Casaque +1", hands="Nilas gloves", ring1="Ramuh ring", ring2="Ramuh ring",
-        back="Vespid Mantle", waist="Chiner's belt", legs="Manibozho brais", feet="Qaaxo Leggings",
+        body="Taeon Tabard", hands="Taeon Gloves", ring1="Ramuh ring +1", ring2="Ramuh ring",
+        back="Vespid Mantle", waist="Chiner's belt", legs="Taeon Tights", feet="Taeon Boots",
     }
 
     -- Waltzes
