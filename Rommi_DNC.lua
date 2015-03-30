@@ -19,7 +19,7 @@ function get_sets()
     sets.Engaged.LowAcc = {
         main="Terpsichore", sub="Atoyac", ammo="Ginsen",
         head="Taeon chapeau", neck="Asperity necklace", ear1="Steelflash earring", ear2="Bladeborn earring",
-        body="Taeon tabard", hands="Qaaxo mitaines", ring1="Haverton ring", ring2="Epona's ring",
+        body="Taeon tabard", hands="Taeon gloves", ring1="Haverton ring", ring2="Epona's ring",
         back={ name="Toetapper Mantle", augments={'"Dual Wield"+4',}},
         waist="Windbuffet belt +1", legs="Taeon Tights", feet="Taeon boots",
     }
@@ -73,19 +73,19 @@ function get_sets()
 
     -- Steps
     sets.Step = {}
-    sets.Step["Feather Step"] = {feet="Charis toe shoes +2",}
+    sets.Step["Feather Step"] = {feet="Maculele toeshoes +1",}
 
     -- Jigs
     sets.Jig = {feet="Horos toe shoes +1",}
 
     -- Flourishes
     sets.Flourish = {}
-    sets.Flourish["Striking Flourish"] = {body="Charis casaque +2",}
+    sets.Flourish["Striking Flourish"] = {body="Maculele casaque",}
     sets.Flourish["Reverse Flourish"] = {
-        hands="Charis bangles +2",
+        hands="Maculele bangles +1",
         back={ name="Toetapper Mantle", augments={'"Rev. Flourish"+29'}},
     }
-    sets.Flourish["Climactic Flourish"] = {head="Charis tiara +2",}
+    sets.Flourish["Climactic Flourish"] = {head="Maculele tiara",}
     sets.Flourish2 = sets.Flourish
     sets.Flourish3 = sets.Flourish
 

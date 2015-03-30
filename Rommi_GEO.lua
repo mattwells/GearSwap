@@ -58,7 +58,7 @@ function get_sets()
 		head="Bagua Galero", -- neck="Imbodla Necklace",
 		ear1="Psystorm Earring", ear2="Lifestorm Earring",
 		-- body="Ischemia Chasuble", hands="Lurid Mitts", ring1="Strendu Ring", ring2="Sangoma Ring",
-		back="Lifestream Cape", waist="Yamabuki-no-Obi", -- legs="Hagondes Pants +1", feet="Uk'uxkaj Boots"
+		back="Lifestream Cape", waist="Yamabuki-no-Obi", legs="Hagondes Pants +1" --, feet="Uk'uxkaj Boots"
 	}
 
 	sets.midcast.Geomancy = {
@@ -91,7 +91,7 @@ function get_sets()
 	sets.midcast.DarkMagic = {
 		head="Bagua Galero", -- neck="Imbodla Necklace",
 		ear1="Psystorm Earring", ear2="Lifestorm Earring",
-		body="Hagondes Coat +1", hands="Hagondes Cuffs", -- ring1="Acumen Ring", ring2="Sangoma Ring",
+		body="Hagondes Coat +1", hands="Hagondes Cuffs +1", -- ring1="Acumen Ring", ring2="Sangoma Ring",
 		back="Refraction Cape", waist="Fucho-no-Obi", -- legs="Mes'yohi Slacks",
 		feet="Hagondes Sabots +1"
 	}
