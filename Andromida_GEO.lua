@@ -14,34 +14,34 @@ function get_sets()
 	}  --Fast Cast = 47%
 
 	sets.precast.IdleRefresh = {
-		main="Boleabunga", sub="Sors shield", range="Dunna", head="Nahtirah Hat",
-		neck="Twilight torque", ear1="Flashward earring", ear2="Spellbreaker earring",
+		main="Bolelabunga", sub="Sors shield", range="Dunna",
+		head="Nahtirah Hat", neck="Twilight torque", ear1="Flashward earring", ear2="Spellbreaker earring",
 		body="Respite cloak", hands="Bagua Mitaines", ring1="Dark ring", ring2="Meridian ring",
 		back="Repulse Mantle", waist="Fucho-no-Obi", legs="Nares Trews", feet="Geomancy sandals"
 	}
 	--Repulse Mantle
 	--Mecisto. Mantle
 	sets.precast.IdleLuopan = {
-		main="Boleabunga", sub="Sors shield", Orange="Dunna",
-		body="Bagua tunic",
-		head="Nahtirah Hat", neck="Twilight Torque", ear1="Flashward earring", ear2="Spellbreaker Earring",
+		main="Bolelabunga", sub="Sors shield", range="Dunna",
+		head="Azimuth hood +1", neck="Twilight Torque", ear1="Flashward earring", ear2="Spellbreaker Earring",
+		body="Azimuth coat +1",
 		hands="Geomancy Mitaines +1", ring1="Dark Ring", ring2="Dark Ring",
-		back="Repulse Mantle", waist="Isa belt",legs="Geomancy Pants +1",feet="Hagondes Sabots +1"
+		back="Repulse Mantle", waist="Isa belt", legs="Geomancy Pants +1", feet="Hagondes Sabots +1"
 	}
 	--Lifestream Cape
 
 	sets.precast.Idle = sets.precast.IdleRefresh
 
-	sets.precast.Rest = {main=""}
+	--sets.precast.Rest = {main=""}
 
---Job Ability--
+	--Job Ability--
 	sets.JA = {}
 	sets.JA['Collimated Fervor'] = {head="Bagua Galero"}
 	sets.JA.Bolster = {body="Bagua Tunic"}
 	sets.JA['Full Circle'] = {hands="Bagua Mitaines"}
 	sets.JA['Life Cycle'] = {body="Geomancy Tunic"}
 
---Midcast
+	--Midcast
 	sets.midcast = {}
 
 	sets.midcast.Cure = {
@@ -57,19 +57,17 @@ function get_sets()
 		-- main="", sub="", ammo="",
 		head="Bagua Galero", -- neck="Imbodla Necklace",
 		ear1="Psystorm Earring", ear2="Lifestorm Earring",
-		-- body="Ischemia Chasuble", hands="Lurid Mitts", ring1="Strendu Ring", ring2="Sangoma Ring",
+		-- body="Ischemia Chasuble",
+		hands="Azimuth gloves", -- ring1="Strendu Ring", ring2="Sangoma Ring",
 		back="Lifestream Cape", waist="Yamabuki-no-Obi", legs="Hagondes Pants +1" --, feet="Uk'uxkaj Boots"
 	}
 
 	sets.midcast.Geomancy = {
 		range="Dunna",
-		head="Nares Cap", ear1="Gwati earring", ear2="Magnetic earring",
+		head="Azimuth hood +1", ear1="Gwati earring", ear2="Magnetic earring",
 		body="Bagua Tunic", hands="Geomancy Mitaines +1",
-		back="Lifestream Cape", waist="Austerity Belt", legs="Bagua Pants", feet="Umbani Boots"
+		back="Lifestream Cape", waist="Austerity Belt", legs="Bagua Pants", feet="Azimuth gaiters +1"
 	}
-			--Geomancy Skill:	373+38 = 411  ??
-			--Handbell Skill:	373+18 = 391
-			--Total:			802
 
 	--Enhancing needs work
 	sets.midcast.Enhancing = {
@@ -81,11 +79,9 @@ function get_sets()
 	}
 
 	sets.midcast.ElementalMagic = {
-		-- head="Hagondes Hat +1",
-		neck="Eddy Necklace", ear1="Crematio Earring", ear2="Friomisi Earring",
-		body="Artsieq Jubbah", -- hands="Yaoyotl Gloves", ring1="Acumen Ring", ring2="Strendu ring",
-		-- back="Toro Cape", waist="Yamabuki-no-Obi", legs="Perdition Slops",
-		feet="Umbani Boots"
+		head="Helios band", neck="Eddy Necklace", ear1="Crematio Earring", ear2="Friomisi Earring",
+		body="Azimuth coat +1", hands="Helios gloves", ring1="Acumen Ring", -- ring2="Strendu ring",
+		back="Refraction cape", waist="Yamabuki-no-Obi", legs="Azimuth tights", feet="Umbani Boots"
 	}
 
 	sets.midcast.DarkMagic = {
@@ -182,6 +178,10 @@ function midcast(spell)
 end
 
 function aftercast(spell)
+	if spell.english:startswith('Indi-') then
+		send_command('timers create "' .. spell.english .. '" 215 down;wait 215;input /echo ' .. spell.english .. ' has worn off.;')
+	end
+
 	if player.status == 'Idle' then
 		equip(sets.precast.Idle)
 	elseif player.status == 'Resting' then
@@ -189,6 +189,7 @@ function aftercast(spell)
 	elseif player.status == 'Engaged' then
 		equip(sets.TP)
 	end
+
 	if buffactive['Reive Mark'] then
 		equip({neck="Arciela's Grace +1"})
 	end
