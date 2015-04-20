@@ -1,5 +1,5 @@
 function get_sets()
-	debug('Rommi Scripts')
+	debug('Rommi>> <3')
 	-- Idle Sets --
 	sets.Idle = {
 			main="Terra's Staff",
@@ -7,23 +7,23 @@ function get_sets()
 			head="Bihu roundlet +1",
 			neck="Twilight Torque",
 			ear1="Loquac. Earring",
-			ear2="Aoidos' Earring",
+			ear2="Enchanter Earring +1",
 			body="Bihu justaucorps +1",
 			hands="Marduk's dastanas +1",
 			ring1="Patricius Ring",
 			ring2="Sangoma ring",
-			back="Kumbira cape",
+			back="Mecistopins mantle",
 			waist="Ovate rope",
 			legs="Bihu cannions +1",
-			feet="Aoidos' Cothrn. +2"}
+			feet="Coalrake sabots"}
 
 	sets.Resting = set_combine(sets.Idle,{})
 
 	-- JA Sets --
 	sets.JA = {}
-	sets.JA.Nightingale = {feet="Brd. Slippers +2"}
-	sets.JA.Troubadour = {body="Bard's Justaucorps +2"}
-	sets.JA["Soul Voice"] = {legs="Brd. Cannions +2"}
+	sets.JA.Nightingale = {feet="Bihu Slippers +1"}
+	sets.JA.Troubadour = {body="Bihu Justaucorps +1"}
+	sets.JA["Soul Voice"] = {legs="Bihu cannions +1"}
 
 	-- Song Precast Set --
 	sets.Precast = {}
@@ -32,25 +32,26 @@ function get_sets()
 			head="Aoidos' Calot +2",
 			neck="Orunmila's Torque",
 			ear1="Loquac. Earring",
-			ear2="Aoidos' Earring",
-			body="Sha'ir Manteel",
+			ear2="Enchanter Earring +1",
+			body="Sheikh Manteel",
 			hands="Marduk's dastanas +1",
 			ring1="Prolix Ring",
-			ring2="Dawnsoul ring",
+			ring2="Weatherspoon ring",
 			back="Swith Cape +1",
 			waist="Witful Belt",
-			legs="Gendewitha Spats",
-			feet="Bard Slippers +2"}
+			legs="Artsieq hose",
+			feet="Coalrake sabots"}
 
 	-- Fastcast Set --
 	sets.Precast.FastCast = {
 			main="Felibre's dague",
 			head="Nahtirah Hat",
 			neck="Orunmila's Torque",
-			ear1="Loquac. Earring",
+			ear1="Enchanter Earring +1",
 			body="Vanir Cotehardie",
 			hands="Gendewitha Gages +1",
 			ring1="Prolix Ring",
+			ring2="Weatherspoon ring",
 			back="Swith Cape +1",
 			waist="Witful Belt",
 			legs="Artsieq hose",
@@ -68,9 +69,9 @@ function get_sets()
 			waist="Witful Belt",
 			legs="Artsieq hose",
 			feet="Chelona Boots"}
-	
+
 	sets.Midcast = {}
-	
+
 	-- Song Debuff Set --
 	sets.Midcast.Wind ={
 			main="Twebuliij",
@@ -79,15 +80,15 @@ function get_sets()
 			head="Brioso Roundlet +1",
 			neck="Piper's Torque",
 			ear1="Gwati earring",
-			ear2="Musical earring",
+			ear2="Enchanter earring +1",
 			body="Brioso Just. +1",
 			hands="Brioso cuffs +1",
-			ring1="Perception Ring",
-			ring2="Sangoma Ring",
+			ring1="Carbuncle ring +1",
+			ring2="Carbuncle ring +1",
 			back="Rhapsode's Cape",
 			waist="Ovate rope",
 			legs="Bihu Cannions +1",
-			feet="Bokwus Boots"}
+			feet="Artsieq Boots"}
 
 			-- Song Buff Set --
 	sets.Midcast.WindBuff = {
@@ -253,8 +254,8 @@ function song_equip(spell)
 		debug('Midcast: WindBuff')
 	end
 
-	for _, song in ipairs(song_set_names) do 
-		if string.find(spell.english, song) then 
+	for _, song in ipairs(song_set_names) do
+		if string.find(spell.english, song) then
 			if sets.Midcast[song] then
 				equip(sets.Midcast[song])
 				debug('Midcast: ' .. song)

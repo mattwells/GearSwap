@@ -79,9 +79,10 @@ function get_sets()
 	}
 
 	sets.midcast.ElementalMagic = {
-		head="Helios band", neck="Eddy Necklace", ear1="Crematio Earring", ear2="Friomisi Earring",
-		body="Azimuth coat +1", hands="Helios gloves", ring1="Acumen Ring", -- ring2="Strendu ring",
-		back="Refraction cape", waist="Yamabuki-no-Obi", legs="Azimuth tights", feet="Umbani Boots"
+		main="Eminent staff", sub="Zuuxowu grip",
+		head="Helios band", neck="Eddy necklace", ear1="Crematio earring", ear2="Friomisi earring",
+		body="Azimuth coat +1", hands="Helios gloves", ring1="Acumen ring", -- ring2="Strendu ring",
+		back="Refraction cape", waist="Yamabuki-no-obi", legs="Hagondes pants +1", feet="Helios Boots"
 	}
 
 	sets.midcast.DarkMagic = {
@@ -111,7 +112,7 @@ function get_sets()
 
 
 	send_command('input /macro book 8;wait .1;input /macro set 1')
-
+	include('organizer-lib.lua')
 end
 
 function precast(spell)
@@ -179,7 +180,12 @@ end
 
 function aftercast(spell)
 	if spell.english:startswith('Indi-') then
-		send_command('timers create "' .. spell.english .. '" 215 down;wait 215;input /echo ' .. spell.english .. ' has worn off.;')
+		local timer = tostring(245)
+		if player.equipment.back == 'Mecisto. Mantle' then
+			timer = tostring(215)
+		end
+
+		send_command('timers create "' .. spell.english .. '" ' .. timer .. ' down;wait ' .. timer .. ';input /echo ' .. spell.english .. ' has worn off.;')
 	end
 
 	if player.status == 'Idle' then

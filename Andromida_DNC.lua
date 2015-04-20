@@ -15,7 +15,7 @@ function get_sets()
     }
 
     -- TP Sets
-    sets.Engaged = {}
+    sets.Engaged = {sub="Odium"}
     sets.Engaged.LowAcc = {
         main="Terpsichore", sub="Atoyac", ammo="Ginsen",
         head="Taeon chapeau", neck="Asperity necklace", ear1="Steelflash earring", ear2="Bladeborn earring",
@@ -51,15 +51,16 @@ function get_sets()
     sets.WeaponSkill["Pyrrhic Kleos"] = {
         ammo="Potestas Bomblet",
         head="Taeon Chapeau", neck="Fotia Gorget", ear1="Steelflash Earring", ear2="Bladeborn Earring",
-        body="Taeon Tabard", hands="Taeon Gloves", ring1="Ifrit Ring", ring2="Epona's Ring",
+        body="Taeon Tabard", hands="Taeon Gloves", ring1="Ifrit Ring +1", ring2="Epona's Ring",
         back="Vespid Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots",
     }
     sets.WeaponSkill["Rudra's Storm"] = {
         ammo="Potestas Bomblet",
         head="Horos tiara +1", neck="Love torque", ear1="Moonshade earring", ear2="Brutal earring",
         body="Taeon Tabard", hands="Taeon Gloves", ring1="Ramuh ring +1", ring2="Ramuh ring",
-        back="Vespid Mantle", waist="Chiner's belt", legs="Taeon Tights", feet="Taeon Boots",
+        back="Vespid Mantle", waist="Chiner's belt +1", legs="Taeon Tights", feet="Taeon Boots",
     }
+    sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
 
     -- Waltzes
     sets.Waltz = {
@@ -80,12 +81,12 @@ function get_sets()
 
     -- Flourishes
     sets.Flourish = {}
-    sets.Flourish["Striking Flourish"] = {body="Maculele casaque",}
+    sets.Flourish["Striking Flourish"] = {body="Maculele casaque +1",}
     sets.Flourish["Reverse Flourish"] = {
         hands="Maculele bangles +1",
         back={ name="Toetapper Mantle", augments={'"Rev. Flourish"+29'}},
     }
-    sets.Flourish["Climactic Flourish"] = {head="Maculele tiara",}
+    sets.Flourish["Climactic Flourish"] = {head="Maculele tiara +1",}
     sets.Flourish2 = sets.Flourish
     sets.Flourish3 = sets.Flourish
 
@@ -96,7 +97,24 @@ function get_sets()
     sets.JobAbility["Fan Dance"] = {hands="Horos bangles +1",}
     sets.JobAbility["Saber Dance"] = {legs="Horos tights +1",}
 
+    sets.Emp = {
+        head="Maculele tiara +1",
+        body="Maculele casaque +1", hands="Maculele bangles +1",
+        legs="Maculele tights +1", feet="Maculele toeshoes +1"
+    }
+    sets.AF = {
+        head="Maxixi tiara +1",
+        body="Maxixi casaque +1", hands="Maxixi bangles +1",
+        legs="Maxixi tights +1", feet="Maxixi toe shoes +1"
+    }
+    sets.Relic = {
+        head="Horos tiara +1",
+        body="Horos casaque +1", hands="Horos bangles +1",
+        legs="Horos tights +1", feet="Horos toe shoes +1"
+    }
+
     include('Mote-Utility.lua')
+	include('organizer-lib.lua')
 end
 
 function precast(spell, action, spellMap, eventArgs)

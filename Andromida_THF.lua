@@ -41,18 +41,18 @@ function get_sets()
 	sets.TP = {
 		-- head="Felistris mask"
 		head="Taeon chapeau", neck="Asperity necklace", ear1="Dudgeon earring", ear2="Heartseeker earring",
-		body="Qaaxo Harness", hands="Qaaxo Mitaines", ring1="Haverton ring", ring2="Epona's ring",
+		body="Taeon Tabard", hands="Taeon Gloves", ring1="Haverton ring", ring2="Epona's ring",
 		back="Canny cape", waist="Patentia sash", legs="Taeon Tights", feet="Taeon boots",
 		-- Canny cape (DW2%), Patentia sash (DW5%), Taeon boots (DW9%), earrings (DW7%)
 	}
 	sets.TP.MidACC = set_combine(sets.TP,{
 		-- neck="Ej necklace +1",
-		body="Emet harness +1", -- hands="Qaaxo Mitaines",
+		-- body="Emet harness +1", -- hands="Qaaxo Mitaines",
 		-- back="Letalis Mantle", feet="Qaaxo Leggings"
 	})
 	sets.TP.HighACC = set_combine(sets.TP.MidACC,{
 		neck="Iqabi necklace",
-		body="Emet harness +1", -- ring1="Mars's Ring",
+		-- body="Emet harness +1", -- ring1="Mars's Ring",
 		-- waist="Anguinus Belt"
 	})
 
@@ -156,7 +156,7 @@ function get_sets()
 
 	-- JA Sets --
 	sets.JA = {}
-	TH_Gear = {
+	sets.TH = {
 		hands="Plunderer's Armlets +1",
 		waist="Chaac Belt", feet="Raider's Poulaines +2"
 	}
@@ -189,7 +189,7 @@ function get_sets()
 	sets.JA.Hide = {
 		body="Pillager's Vest +1"
 	}
-	sets.JA.Provoke = TH_Gear
+	sets.JA.Provoke = sets.TH
 	sets.JA["Sneak Attack"] = {
 		head="Pillager's Bonnet +1",
 		body="Pillager's Vest +1", hands="Raider's Armlets +2",
@@ -200,10 +200,10 @@ function get_sets()
 	})
 
 	-- Step Set --
-	sets.Step = set_combine({},TH_Gear)
+	sets.Step = set_combine({},sets.TH)
 
 	-- Flourish Set --
-	sets.Flourish = set_combine({},TH_Gear)
+	sets.Flourish = set_combine({},sets.TH)
 
 	-- Waltz Set --
 	sets.Waltz = {}
@@ -223,6 +223,8 @@ function get_sets()
 	sets.Midcast = {}
 	-- Magic Haste Set --
 	sets.Midcast.Haste = set_combine(sets.PDT,{})
+
+	include('organizer-lib.lua')
 end
 
 function pretarget(spell,action)
@@ -306,7 +308,7 @@ end
 
 function midcast(spell,action)
         if spell.english == 'Ranged' then
-                equip(TH_Gear)
+                equip(sets.TH)
         elseif spell.type:endswith('Magic') or spell.type == "Ninjutsu" then
                 if string.find(spell.english,'Utsusemi') then
                         if spell.english == 'Utsusemi: Ichi' and (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
