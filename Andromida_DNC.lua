@@ -1,259 +1,267 @@
 function get_sets()
-    AccIndex = 1
-    AccArray = {"LowAcc", "MidAcc", "HighAcc"}
-    HasteIndex = 1
-    HasteArray = {"NoHaste", "MidHaste", "HighHaste"}
-    Armor = null
+	debug('Rommi>> <3')
+	-- Idle Sets --
+	sets.Idle = {
+		main="Terpsichore",
+		sub="Odium",
+		ammo="Ginsen",
+		head="Mummu Bonnet +1",
+		body="Emet Harness +1",
+		hands={ name="Iuitl Wristbands +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%',}},
+		legs="Meg. Chausses +1",
+		feet="Tandava Crackows",
+		neck="Twilight Torque",
+		waist="Flume Belt",
+		left_ear="Dudgeon Earring",
+		right_ear="Heartseeker Earring",
+		left_ring="Shadow Ring",
+		right_ring={ name="Dark Ring", augments={'Magic dmg. taken -5%','Phys. dmg. taken -3%',}},
+		back="Repulse Mantle",
+	}
 
-    send_command('input /macro book 9;wait .1;input /macro set 1')
+	sets.Resting = set_combine(sets.Idle,{})
 
-    sets.Idle = {
-        main="Terpsichore", sub="Atoyac", ammo="Ginsen",
-        head="Horos tiara +1", neck="Twilight torque", ear1="Dudgeon earring", ear2="Heartseeker earring",
-        body="Horos casaque +1", hands="Horos bangles +1", ring1="Haverton Ring", ring2="Dark ring",
-        back="Repulse mantle", waist="Flume belt", legs="Horos tights +1", feet="Horos toe shoes +1",
-    }
+	-- JA Sets --
+	sets.JA = {}
 
-    -- TP Sets
-    sets.Engaged = {sub="Odium"}
-    sets.Engaged.LowAcc = {
-        main="Terpsichore", sub="Atoyac", ammo="Ginsen",
-        head="Taeon chapeau", neck="Asperity necklace", ear1="Steelflash earring", ear2="Bladeborn earring",
-        body="Taeon tabard", hands="Taeon gloves", ring1="Haverton ring", ring2="Epona's ring",
-        back={ name="Toetapper Mantle", augments={'"Dual Wield"+4',}},
-        waist="Windbuffet belt +1", legs="Taeon Tights", feet="Taeon boots",
-    }
-    sets.Engaged.MidAcc = sets.Engaged.LowAcc
-    sets.Engaged.HighAcc = {
-        main="Terpsichore", sub="Atoyac", ammo="Ginsen",
-        head="Taeon Chapeau", neck="Iqabi Necklace", ear1="Zennaroi Earring", ear2="Heartseeker Earring",
-        body="Taeon Tabard", hands="Taeon Gloves", ring1="Haverton Ring", ring2="Epona's Ring",
-        back="Grounded Mantle", waist="Olseni Belt", legs="Taeon Tights", feet="Taeon Boots",
-    }
+	sets["Fan Dance"] = {
+		hands="Horos Bangles +1",
+	}
 
-    sets.PDT = {
-        head="Uk'uxkaj cap", neck="Twilight Torque",
-        body="Emet harness +1", hands="Iuitl Wristbands +1", ring1="Shadow Ring", ring2="Dark Ring",
-        back="Mollusca Mantle", waist="Flume Belt", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1",
-    }
-    sets.MDT = sets.PDT
+	sets["Saber Dance"] = {
+		legs="Horos Tights +1",
 
-    -- Weapon Skills
-    sets.WeaponSkill = {}
-    sets.WeaponSkill.Evisceration = {
-        ammo="Potestas Bomblet",
-        head="Taeon Chapeau", neck="Fotia Gorget", ear1="Moonshade Earring", ear2="Brutal Earring",
-        body="Taeon Tabard", hands="Taeon Gloves", ring1="Ramuh Ring +1", ring2="Epona's Ring",
-        back="Rancorous Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots",
-    }
-    -- Manibozho brais: A
-    -- Jupiter's pearl
-    sets.WeaponSkill["Pyrrhic Kleos"] = {
-        ammo="Potestas Bomblet",
-        head="Taeon Chapeau", neck="Fotia Gorget", ear1="Steelflash Earring", ear2="Bladeborn Earring",
-        body="Taeon Tabard", hands="Taeon Gloves", ring1="Ifrit Ring +1", ring2="Epona's Ring",
-        back="Vespid Mantle", waist="Fotia Belt", legs="Taeon Tights", feet="Taeon Boots",
-    }
-    sets.WeaponSkill["Rudra's Storm"] = {
-        ammo="Potestas Bomblet",
-        head="Horos tiara +1", neck="Love torque", ear1="Moonshade earring", ear2="Brutal earring",
-        body="Taeon Tabard", hands="Taeon Gloves", ring1="Ramuh ring +1", ring2="Ramuh ring",
-        back="Vespid Mantle", waist="Chiner's belt +1", legs="Taeon Tights", feet="Taeon Boots",
-    }
-    sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
+	}
 
-    -- Waltzes
-    sets.Waltz = {
-        head="Horos tiara +1", -- 11%
-        body="Maxixi casaque +1", -- 15%
-        feet="Maxixi toe shoes +1", -- 10%
-    }
+	sets.Jig = {
+		legs="Horos Tights +1",
+		feet="Maxixi Shoes +1",
+	}
 
-    -- Sambas
-    sets.Samba = {head="Maxixi tiara +1",}
+	sets.Flourish = {}
+	sets.Flourish["Reverse Flourish"] = {
+		hands="Macu. Bangles +1",
+		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Rev. Flourish"+29','Weapon skill damage +1%',}},
+	}
 
-    -- Steps
-    sets.Step = {}
-    sets.Step["Feather Step"] = {feet="Maculele toeshoes +1",}
+	sets["No Foot Rise"] = {
+		body="Horos Casaque +1",
+	}
 
-    -- Jigs
-    sets.Jig = {feet="Horos toe shoes +1",}
+	sets.Waltz = {
+		head={ name="Horos Tiara +1", augments={'Enhances "Trance" effect',}},
+		body="Maxixi Casaque +1",
+		feet="Maxixi Shoes +1",
+		back={ name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+4','"Rev. Flourish"+20',}},
+	}
 
-    -- Flourishes
-    sets.Flourish = {}
-    sets.Flourish["Striking Flourish"] = {body="Maculele casaque +1",}
-    sets.Flourish["Reverse Flourish"] = {
-        hands="Maculele bangles +1",
-        back={ name="Toetapper Mantle", augments={'"Rev. Flourish"+29'}},
-    }
-    sets.Flourish["Climactic Flourish"] = {head="Maculele tiara +1",}
-    sets.Flourish2 = sets.Flourish
-    sets.Flourish3 = sets.Flourish
+	sets.Samba = {
+		head="Maculele Tiara +1",
+		body="Macu. Casaque +1",
+		hands="Macu. Bangles +1",
+		legs="Maculele Tights +1",
+		feet="Macu. Toeshoes +1",
+	}
 
-    -- Other JAs
-    sets.JobAbility = {}
-    sets.JobAbility.Trance = {head="Horos tiara +1",}
-    sets.JobAbility["No Foot Rise"] = {body="Horos casaque +1",}
-    sets.JobAbility["Fan Dance"] = {hands="Horos bangles +1",}
-    sets.JobAbility["Saber Dance"] = {legs="Horos tights +1",}
+	sets.Step = {
+		head="Maxixi Tiara +1",
+		body="Horos Casaque +1",
+		hands="Maxixi Bangles +1",
+		legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','STR+5 DEX+5',}},
+		feet={ name="Horos Toe Shoes +1", augments={'Enhances "Closed Position" effect',}},
+		neck="Iqabi Necklace",
+		waist="Olseni Belt",
+		left_ear="Zennaroi Earring",
+		right_ear="Heartseeker Earring",
+		left_ring="Ramuh Ring +1",
+		right_ring="Oneiros Ring",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
+	}
 
-    sets.Emp = {
-        head="Maculele tiara +1",
-        body="Maculele casaque +1", hands="Maculele bangles +1",
-        legs="Maculele tights +1", feet="Maculele toeshoes +1"
-    }
-    sets.AF = {
-        head="Maxixi tiara +1",
-        body="Maxixi casaque +1", hands="Maxixi bangles +1",
-        legs="Maxixi tights +1", feet="Maxixi toe shoes +1"
-    }
-    sets.Relic = {
-        head="Horos tiara +1",
-        body="Horos casaque +1", hands="Horos bangles +1",
-        legs="Horos tights +1", feet="Horos toe shoes +1"
-    }
+	-- WS Sets --
+	sets.WS = {
+		head="Mummu Bonnet +1",
+		body="Mummu Jacket +1",
+		hands="Meg. Gloves +1",
+		legs="Mummu Kecks +1",
+		feet="Mummu Gamash. +1",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Dudgeon Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+		left_ring="Ilabrat Ring",
+		right_ring="Ramuh Ring +1",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
+	}
 
-    include('Mote-Utility.lua')
-	include('organizer-lib.lua')
+	-- Song Precast Set --
+	sets.Precast = {}
+
+	-- Fastcast Set --
+	sets.Precast.FastCast = {}
+
+	-- Cure Precast Set --
+	sets.Precast.Cure = {}
+
+	sets.Midcast = {}
+
+	-- Song Debuff Set --
+	sets.Midcast.Wind = {}
+
+	-- Cure Set --
+	sets.Midcast.Cure = {}
+
+	-- Curaga Set --
+	sets.Midcast.Curaga = {}
+
+	-- Haste Set --
+	sets.Midcast.Haste = set_combine(sets.Precast.FastCast,{})
+
+	-- Stoneskin Set --
+	sets.Midcast.Stoneskin = set_combine(sets.Midcast.Haste)
+	
+	-- Melee --
+	sets.TP = {
+		head="Mummu Bonnet +1",
+		body="Mummu Jacket +1",
+		hands="Mummu Wrists +1",
+		legs="Mummu Kecks +1",
+		feet="Mummu Gamash. +1",
+		neck="Asperity Necklace",
+		waist="Patentia Sash",
+		left_ear="Dudgeon Earring",
+		right_ear="Heartseeker Earring",
+		left_ring="Ilabrat Ring",
+		right_ring="Epona's Ring",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
+	}
 end
 
-function precast(spell, action, spellMap, eventArgs)
-    local eventArgs = {handled = false, cancel = false}
-    cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
-    if "Waltz" == spell.type then
-        refine_waltz(spell, action, spellMap, eventArgs)
-    end
-    if eventArgs.cancel then
-        cancel_spell()
-        return;
-    end
-
-    -- Check we have enough TP
-    if spell.tp_cost > player.tp then
-        cancel_spell()
-        add_to_chat(123, "You need more TP to " .. spell.name)
-    end
-
-    -- Waltzes
-    if "Waltz" == spell.type then
-        equip(sets.Waltz)
-        return
-    end
-
-    -- Steps
-    if "Step" == spell.type then
-        if sets.Step[spell.name] then
-            equip(sets.Set[spell.name])
-        else
-            equip(sets.Step)
-        end
-        return
-    end
-
-    -- Sambas
-    if "Samba" == spell.type then
-        equip(sets.Samba)
-        return
-    end
-
-    -- Weapon Skills
-    if "WeaponSkill" == spell.type then
-        -- Check Engaged
-        if "Engaged" ~= player.status then
-            cancel_spell()
-            add_to_chat(123, "You need to be Engaged to WeaponSkill")
-            return
-        end
-
-        -- -- Check TP levels
-        -- if 1000 > player.tp then
-        --     cancel_spell()
-        --     add_to_chat(123, "You need more TP to WeaponSkill")
-        --     return
-        -- end
-
-        -- Check we have a set for the WeaponSkill
-        if sets.WeaponSkill[spell.name] then
-            equip(sets.WeaponSkill[spell.name])
-        end
-
-        return
-    end
-
-    -- Catch all
-    if sets[spell.type] and sets[spell.type][spell.name] then
-        -- Specific Set
-        if sets[spell.type][spell.name] then
-            equip(sets[spell.type][spell.name])
-            return
-        end
-    end
-end
-
-function aftercast()
-    status_change(player.status, player.status)
-end
-
-function status_change(status, old)
-    -- Check DT sets
-    if Armor then
-        equip(sets[Armor])
-        return
-    end
-
-    -- Engaged Statuses
-    if "Engaged" == status then
-        equip(sets.Engaged[AccArray[AccIndex]])
-        return
-    end
-
-    equip(sets.Idle)
-end
-
-ArmorWhitelist = S{"PDT", "MDT", "EVA"}
-function self_command(command)
-    command = string.upper(command)
-
-    -- Toggle Accuracy
-    if "ACC" == command then
-        AccIndex = (AccIndex % #AccArray) + 1
-        status_change(player.status, player.status)
-        add_to_chat(123, "Set " .. AccArray[AccIndex])
-        return
-    end
-
-    -- Toggle Haste
-    if "HASTE" == command then
-        HasteIndex = (HasteIndex % #HasteArray) + 1
-        status_change(player.status, player.status)
-        add_to_chat(123, "Set " .. HasteArray[HasteIndex])
-        return
-    end
-
-    -- Toggle Armor
-    if ArmorWhitelist:contains(command) then
-        if command == Armor then
-            Armor = nil
-            add_to_chat(123, "Unlocked turtle mode")
-        else
-            Armor = command
-            add_to_chat(123, "Turtle mode " .. Armor)
-        end
-
-        status_change(player.status, player.status)
-        return
-    end
-
-end
-
-function buff_change(buff,gain)
-	buff = string.lower(buff)
-	if buff == "aftermath: lv.3" then -- AM3 Timer/Countdown --
-		if gain then
-			send_command('timers create "Aftermath: Lv.3" 180 down;wait 120;input /echo Aftermath: Lv.3 [WEARING OFF IN 60 SEC.];wait 30;input /echo Aftermath: Lv.3 [WEARING OFF IN 30 SEC.];wait 20;input /echo Aftermath: Lv.3 [WEARING OFF IN 10 SEC.]')
+function precast(spell,action)
+	if spell.type:endswith('Magic') or spell.type == "BardSong" or spell.type == "Ninjutsu" then
+		if buffactive.silence then -- Cancel Magic or Ninjutsu or BardSong If You Are Silenced or Out of Range --
+			cancel_spell()
+			debug(spell.name..' Canceled: [Silence has fallen]')
+			return
 		else
-			send_command('timers delete "Aftermath: Lv.3"')
-			add_to_chat(123,'AM3: [OFF]')
+			if spell.type == 'BardSong' then
+				if buffactive.nightingale then
+					song_equip(spell)
+					return
+				else
+					equip(sets.Precast.SongCast)
+					debug('Precast: Song')
+				end
+			elseif string.find(spell.english,'Cur') and spell.english ~= "Cursna" then
+				equip(sets.Precast.Cure)
+				debug('Precast: Cure')
+			else
+				equip(sets.Precast.FastCast)
+				debug('Precast: Fast Cast')
+			end
+		end
+	elseif spell.english == 'Spectral Jig' and buffactive.Sneak then
+		cast_delay(0.2)
+		send_command('cancel Sneak')
+	elseif spell.type == "JobAbility" then
+		if sets.JA[spell.english] then
+			equip(sets.JA[spell.english])
+			debug('Precast: ' ..  spell.english)
+		end
+		debug(spell.english)
+	elseif spell.type == "WeaponSkill" then
+		if sets.WS[spell.english] then
+			equip(sets.WS[spell.english])
+			debug('Precast: ' .. spell.english)
+		else
+			equip(sets.WS)
+			debug('Precast: WS')
+		end
+	elseif sets[spell.type] then
+		if sets[spell.type][spell.english] then
+			equip(sets[spell.type][spell.english])
+			debug(spell.type .. ' ' .. spell.english)
+		else
+			equip(sets[spell.type])
+			debug(spell.type)
 		end
 	end
+end
+
+function midcast(spell, action)
+	if sets.Midcast[spell.english] then
+		equip(sets.Midcast[spell.english])
+		debug('Midcast: ' .. spell.english)
+		return
+
+	elseif spell.type:endswith('Magic') or spell.type == 'Ninjutsu' or spell.type == "BardSong" then
+
+		if spell.type == "BardSong" then
+			song_equip(spell)
+		elseif string.find(spell.english,'Cure') then
+			equip(sets.Midcast.Cure)
+			debug('Midcast: Cure')
+		elseif string.find(spell.english,'Cura') then
+			equip(sets.Midcast.Curaga)
+			debug('Midcast: Curaga')
+		end
+
+	end
+end
+
+function aftercast(spell,action)
+	status_change(player.status)
+end
+
+function status_change(new,old)
+	if new == 'Idle' then
+		equip(sets.Idle)
+		debug('Aftercast: Idle')
+	elseif new == 'Resting' then
+		equip(sets.Resting)
+		debug('Aftercast: Resting')
+	elseif new == 'Engaged' then
+		equipSet = sets.TP
+		equip(equipSet)
+		debug('Engaged')
+	else
+		equipSet = sets.Idle
+		if equipSet[IdleArray[IdleIndex]] then
+			equipSet = equipSet[IdleArray[IdleIndex]]
+		end
+		if equipSet[WeaponArray[WeaponIndex]] then
+			equipSet = equipSet[WeaponArray[WeaponIndex]]
+		end
+		equip(equipSet)
+	end
+end
+
+song_set_names = {'Finale', 'Lullaby', 'March', 'Minuet', 'Madrigal', 'Ballad', 'Scherzo', 'Mazurka', 'Paeon'}
+function song_equip(spell)
+	if spell.target.type == 'MONSTER' then
+		equip(sets.Midcast.Wind)
+		debug('Midcast: Wind')
+	else
+		if 'Daurdabla' == player.equipment.range then
+			debug('Midcast: Dummy Song')
+			return
+		end
+
+		equip(sets.Midcast.WindBuff)
+		debug('Midcast: WindBuff')
+	end
+
+	for _, song in ipairs(song_set_names) do
+		if string.find(spell.english, song) then
+			if sets.Midcast[song] then
+				equip(sets.Midcast[song])
+				debug('Midcast: ' .. song)
+				break
+			end
+		end
+	end
+end
+
+function debug(s)
+	send_command('@input /echo ' .. s)
 end
