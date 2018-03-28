@@ -1,10 +1,11 @@
 function get_sets()
 	debug('Rommi>> <3')
+
 	-- Idle Sets --
 	sets.Idle = {
 		main="Terpsichore",
-		sub="Odium",
-		ammo="Ginsen",
+		sub="Twashtar",
+		ammo="Yamarang",
 		head="Mummu Bonnet +1",
 		body="Emet Harness +1",
 		hands={ name="Iuitl Wristbands +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%',}},
@@ -35,7 +36,7 @@ function get_sets()
 
 	sets.Jig = {
 		legs="Horos Tights +1",
-		feet="Maxixi Shoes +1",
+		feet="Maxixi Shoes +2",
 	}
 
 	sets.Flourish = {}
@@ -49,9 +50,10 @@ function get_sets()
 	}
 
 	sets.Waltz = {
+		ammo="Yamarang",
 		head={ name="Horos Tiara +1", augments={'Enhances "Trance" effect',}},
-		body="Maxixi Casaque +1",
-		feet="Maxixi Shoes +1",
+		body="Maxixi Casaque +2",
+		feet="Maxixi Shoes +2",
 		back={ name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+4','"Rev. Flourish"+20',}},
 	}
 
