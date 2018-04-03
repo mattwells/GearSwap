@@ -13,9 +13,9 @@ function get_sets()
 		feet="Tandava Crackows",
 		neck="Twilight Torque",
 		waist="Flume Belt",
-		left_ear="Dudgeon Earring",
-		right_ear="Heartseeker Earring",
-		left_ring="Shadow Ring",
+		left_ear="Telos Earring",
+		right_ear="Infused Earring",
+		left_ring="Warden's ring",
 		right_ring={ name="Dark Ring", augments={'Magic dmg. taken -5%','Phys. dmg. taken -3%',}},
 		back="Repulse Mantle",
 	}
@@ -96,32 +96,10 @@ function get_sets()
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
 	}
 
-	-- Song Precast Set --
 	sets.Precast = {}
-
-	-- Fastcast Set --
-	sets.Precast.FastCast = {}
-
-	-- Cure Precast Set --
-	sets.Precast.Cure = {}
 
 	sets.Midcast = {}
 
-	-- Song Debuff Set --
-	sets.Midcast.Wind = {}
-
-	-- Cure Set --
-	sets.Midcast.Cure = {}
-
-	-- Curaga Set --
-	sets.Midcast.Curaga = {}
-
-	-- Haste Set --
-	sets.Midcast.Haste = set_combine(sets.Precast.FastCast,{})
-
-	-- Stoneskin Set --
-	sets.Midcast.Stoneskin = set_combine(sets.Midcast.Haste)
-	
 	-- Melee --
 	sets.TP = {
 		head="Mummu Bonnet +1",
@@ -131,8 +109,8 @@ function get_sets()
 		feet="Mummu Gamash. +1",
 		neck="Asperity Necklace",
 		waist="Patentia Sash",
-		left_ear="Dudgeon Earring",
-		right_ear="Heartseeker Earring",
+		left_ear="Telos Earring",
+		right_ear="Sherida Earring",
 		left_ring="Ilabrat Ring",
 		right_ring="Epona's Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
