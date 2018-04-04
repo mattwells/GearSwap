@@ -1,10 +1,10 @@
 function get_sets()
 
 	sets.Idle = {
-		main="Owleyes", sub="Genbu's Shield", ammo="Incantor Stone",
+		main="Tamachi", sub="Genbu's Shield", ammo="Incantor Stone",
 		head="Gendewitha caubeen +1", neck="Orison Locket", ear1="Roundel Earring", ear2="Loquac. Earring",
 		body="Gendewitha bliaut +1", hands="Iuvenalis mittens +1", ring1="Serket Ring", ring2="Prolix Ring",
-		back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Espial socks",
+		back="Orison Cape", waist="Cascade Belt", legs="Piety Pantaln. +2", feet="Espial socks",
 	}
 
 	sets.Precast = {}
