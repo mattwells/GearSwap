@@ -7,7 +7,7 @@ function get_sets()
 		sub="Twashtar",
 		ammo="Yamarang",
 		head="Mummu Bonnet +1",
-		body="Emet Harness +1",
+		body="Meg. Cuirie +2",
 		hands={ name="Iuitl Wristbands +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%',}},
 		legs="Meg. Chausses +2",
 		feet="Tandava Crackows",
@@ -17,7 +17,7 @@ function get_sets()
 		right_ear="Infused Earring",
 		left_ring="Warden's ring",
 		right_ring={ name="Dark Ring", augments={'Magic dmg. taken -5%','Phys. dmg. taken -3%',}},
-		back="Repulse Mantle",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','System: 1 ID: 1155 Val: 4',}},
 	}
 
 	sets.Resting = set_combine(sets.Idle,{})
@@ -31,12 +31,11 @@ function get_sets()
 
 	sets["Saber Dance"] = {
 		legs="Horos Tights +1",
-
 	}
 
 	sets.Jig = {
 		legs="Horos Tights +1",
-		feet="Maxixi Shoes +2",
+		feet="Maxixi Toeshoes +2",
 	}
 
 	sets.Flourish = {}
@@ -53,7 +52,7 @@ function get_sets()
 		ammo="Yamarang",
 		head={ name="Horos Tiara +1", augments={'Enhances "Trance" effect',}},
 		body="Maxixi Casaque +2",
-		feet="Maxixi Shoes +2",
+		feet="Maxixi Toeshoes +2",
 		back={ name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+4','"Rev. Flourish"+20',}},
 	}
 
@@ -70,7 +69,7 @@ function get_sets()
 		body="Horos Casaque +1",
 		hands="Maxixi Bangles +1",
 		legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','STR+5 DEX+5',}},
-		feet={ name="Horos Toe Shoes +1", augments={'Enhances "Closed Position" effect',}},
+		feet="Horos Toe Shoes +2",
 		neck="Iqabi Necklace",
 		waist="Olseni Belt",
 		left_ear="Zennaroi Earring",
@@ -82,14 +81,32 @@ function get_sets()
 
 	-- WS Sets --
 	sets.WS = {
+		ammo="Jukukik Feather",
 		head="Mummu Bonnet +1",
-		body="Mummu Jacket +1",
+		body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
 		hands="Meg. Gloves +1",
-		legs="Mummu Kecks +1",
+		legs="Mummu Kecks +2",
 		feet="Mummu Gamash. +1",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear="Dudgeon Earring",
+		left_ear="Sherida Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+		left_ring="Ilabrat Ring",
+		right_ring="Ramuh Ring +1",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','System: 1 ID: 1155 Val: 4',}},
+		-- DEX30 Acc/Att DblAtt
+	}
+
+	sets.WS["Rudra's Storm"] = {
+		ammo="Jukukik Feather",
+		head="Mummu Bonnet +1",
+		body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
+		hands="Meg. Gloves +1",
+		legs="Mummu Kecks +2",
+		feet="Mummu Gamash. +1",
+		neck="Love Torque",
+		waist="Chiner's Belt +1",
+		left_ear="Sherida Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
 		left_ring="Ilabrat Ring",
 		right_ring="Ramuh Ring +1",
@@ -102,18 +119,19 @@ function get_sets()
 
 	-- Melee --
 	sets.TP = {
+		ammo="Jukukik Feather",
 		head="Mummu Bonnet +1",
-		body="Mummu Jacket +1",
-		hands="Adhemar Wrist. +1",
+		body="Mummu Jacket +2",
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Mummu Kecks +2",
 		feet="Mummu Gamash. +1",
-		neck="Asperity Necklace",
-		waist="Patentia Sash",
-		left_ear="Telos Earring",
-		right_ear="Sherida Earring",
+		neck="Iqabi Necklace",
+		waist="Windbuffet Belt +1",
+		left_ear="Sherida Earring",
+		right_ear="Telos Earring",
 		left_ring="Ilabrat Ring",
 		right_ring="Epona's Ring",
-		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','System: 1 ID: 1155 Val: 4',}},
 	}
 end
 
