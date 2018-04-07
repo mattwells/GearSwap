@@ -104,7 +104,7 @@ function get_sets()
 		hands="Meg. Gloves +1",
 		legs="Mummu Kecks +2",
 		feet="Mummu Gamash. +1",
-		neck="Love Torque",
+		neck="Caro necklace",
 		waist="Chiner's Belt +1",
 		left_ear="Sherida Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
@@ -119,7 +119,7 @@ function get_sets()
 
 	-- Melee --
 	sets.TP = {
-		ammo="Jukukik Feather",
+		ammo="Yamarang",
 		head="Mummu Bonnet +1",
 		body="Mummu Jacket +2",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
@@ -130,7 +130,7 @@ function get_sets()
 		left_ear="Sherida Earring",
 		right_ear="Telos Earring",
 		left_ring="Ilabrat Ring",
-		right_ring="Epona's Ring",
+		right_ring="Petrov Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','System: 1 ID: 1155 Val: 4',}},
 	}
 end
