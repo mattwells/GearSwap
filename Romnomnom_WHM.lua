@@ -1,10 +1,10 @@
 function get_sets()
 
 	sets.Idle = {
-		main="Tamachi", sub="Genbu's Shield", ammo="Incantor Stone",
+		main="Tamaxchi", sub="Genbu's Shield", ammo="Incantor Stone",
 		head="Gendewitha caubeen +1", neck="Orison Locket", ear1="Roundel Earring", ear2="Loquac. Earring",
 		body="Gendewitha bliaut +1", hands="Iuvenalis mittens +1", ring1="Serket Ring", ring2="Prolix Ring",
-		back="Orison Cape", waist="Cascade Belt", legs="Piety Pantaln. +2", feet="Espial socks",
+		back="Orison Cape", waist="Cascade Belt", legs="Piety Pantaloons", feet="Espial socks",
 	}
 
 	sets.Precast = {}
@@ -25,10 +25,10 @@ function get_sets()
 	sets.Midcast = {}
 
 	sets.Midcast.Cure = {
-		main="Tamachi", sub="Genbu's Shield",
+		main="Tamaxchi", sub="Genbu's Shield",
 		head="Gendewitha caubeen +1", neck="Phalaina locket", ear1="Roundel Earring",
 		body="Heka's Kalasiris", hands="Augur's gloves",
-		back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Orison Duckbills +1",
+		back="Orison Cape", waist="Cascade Belt", legs="Orsn. Pantaln. +2", feet="Orison Duckbills +2",
 	}
 
 	sets.Midcast.Bar = {

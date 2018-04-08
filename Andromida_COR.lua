@@ -23,7 +23,7 @@ function get_sets()
         range="Molybdosis",
         head="Meghanada Visor +1",
         body="Meg. Cuirie +2",
-        hands="Meg. Gloves +1",
+        hands="Adherar Wrist. +1",
         legs="Meg. Chausses +2",
         feet="Meg. Jam. +1",
         neck="Iqabi Necklace",
