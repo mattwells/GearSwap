@@ -1,8 +1,5 @@
 function get_sets()
     sets.Idle = {
-        main="Odium",
-        sub={ name="Atoyac", augments={'Occ. atk. twice+8','Weapon skill damage +2%',}},
-        range="Molybdosis",
         head="Meghanada Visor +1",
         body="Meg. Cuirie +2",
         hands="Meg. Gloves +1",
@@ -18,9 +15,6 @@ function get_sets()
     }
 
     sets.Engaged = {
-        main="Odium",
-        sub={ name="Atoyac", augments={'Occ. atk. twice+8','Weapon skill damage +2%',}},
-        range="Molybdosis",
         head="Meghanada Visor +1",
         body="Meg. Cuirie +2",
         hands="Adherar Wrist. +1",
@@ -39,7 +33,7 @@ function get_sets()
     sets.Misc.Ranged = {
         head="Meghanada Visor +1",
         body="Meg. Cuirie +2",
-        hands="Meg. Gloves +1",
+        hands="Carmine Fin. Ga. +1",
         legs="Meg. Chausses +2",
         feet="Meg. Jam. +1",
         neck="Iqabi Necklace",
@@ -52,6 +46,20 @@ function get_sets()
 
     sets.WeaponSkill = {}
     -- sets.WeaponSkill["Last Stand"] = {}
+    sets.WeaponSkill["Leaden Salute"] = {
+        head="Pixie Hairpin +1",
+        body="Meg. Cuirie +2",
+        hands="Carmine Fin. Ga. +1",
+        legs="Meg. Chausses +2",
+        feet="Meg. Jam. +1",
+        neck="Iqabi Necklace",
+        waist="Eschan Stone",
+        left_ear="Friomisi Earring",
+        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+        left_ring="Ilabrat Ring",
+        right_ring="Acumen Ring",
+        back="Toro Cape",
+    }
 
     sets.CorsairRoll = {
         head={ name="Lanun Tricorne", augments={'Enhances "Winning Streak" effect',}},
