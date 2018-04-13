@@ -8,7 +8,7 @@ function get_sets()
 		ammo="Yamarang",
 		head="Mummu Bonnet +1",
 		body="Meg. Cuirie +2",
-		hands={ name="Iuitl Wristbands +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%',}},
+		hands="Meg. Gloves +1",
 		legs="Meg. Chausses +2",
 		feet="Tandava Crackows",
 		neck="Twilight Torque",
