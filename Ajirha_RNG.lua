@@ -1,6 +1,6 @@
 function get_sets()
 
-	--binds--
+    --binds--
     send_command('bind !f2 gs equip sets.CP; gs disable back; input /echo <----- CP mantle locked ----->') -- Alt F2 locks CP mantle
     send_command('bind ^f2 gs enable back; input /echo <----- CP mantle unlocked ----->') -- Ctrl F2 unlocks CP mantle
 
@@ -11,12 +11,12 @@ function get_sets()
     send_command('bind !f6 gs c status check;') -- Alt F6 return sets status
 
 
-	--SubJob list--
+    --SubJob list--
     sets.SJ = {}
     sets.SJ.index = {'Other','Ninja','Dancer'}
     SJ_ind = 1
 
-	--Weapon Sets--
+    --Weapon Sets--
     sets.Weapon_melee = {}
     sets.Weapon_melee.index = {'Melee','Prange','Mrange'}
     Wm_ind = 1
@@ -56,7 +56,7 @@ function get_sets()
     sets.DW_mode.DW = {}
     sets.DW_mode.notDW = {sub="Nusku Shield",}
 
-	--Idle Sets--	
+    --Idle Sets--    
     sets.Idle = {}
     sets.Idle.index = {'Standard','DT'}
     Idle_ind = 1
@@ -89,12 +89,12 @@ function get_sets()
         back="Solemnity Cape",
     }
 
-	--CP mantle set--
+    --CP mantle set--
     sets.CP = {
         back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','HP+22','"Mag.Atk.Bns."+2','DEF+4',}},   
     }
 
-	--TP Sets--
+    --TP Sets--
     sets.TP = {}
     sets.TP.index = {'Standard', 'MidAccuracy', 'HighAccuracy', 'Hybride'}
     TP_ind = 1
@@ -310,7 +310,7 @@ function get_sets()
         back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10',}},
     }
 
-	--Defence Sets--
+    --Defence Sets--
     set.PDT = {
         head={ name="Iuitl Headgear +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -4%','"Dbl.Atk."+1',}},
         body="Meg. Cuirie +2",
@@ -341,12 +341,12 @@ function get_sets()
     }
 
 
-	--Weaponskill Sets--
+    --Weaponskill Sets--
     sets.WS = {}
     sets.WS.index = {'Attack','Accuracy'}
     WS_ind = 1
                 
-    sets.Ruinator = {}		
+    sets.Ruinator = {}        
     sets.Ruinator.Attack = {
         head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
         body={ name="Herculean Vest", augments={'Pet: STR+1','STR+9','Quadruple Attack +2','Accuracy+19 Attack+19','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
@@ -376,7 +376,7 @@ function get_sets()
         back={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
     }
 
-    sets.OtherAxe = {}		
+    sets.OtherAxe = {}        
     sets.OtherAxe.Attack = {
         head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','MND+2','Weapon skill damage +10%',}},
         body={ name="Herculean Vest", augments={'CHR+2','Mag. Acc.+4','Weapon skill damage +6%','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
@@ -420,7 +420,7 @@ function get_sets()
         left_ring="Ifrit Ring +1",
         right_ring="Ifrit Ring +1",
         back={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
-    }			   
+    }               
     sets.Rampage.Accuracy = {
         head="Mummu Bonnet +2",
         body="Meg. Cuirie +2",
@@ -450,7 +450,7 @@ function get_sets()
         left_ring="Ramuh Ring +1",
         right_ring="Begrudging Ring",
         back={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
-    }			   
+    }               
     sets.Evisceration.Accuracy = {
         head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
         body="Mummu Jacket +2",
@@ -497,7 +497,7 @@ function get_sets()
         back={ name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}},
     }
 
-    sets.OtherWS = {}		
+    sets.OtherWS = {}        
     sets.OtherWS.Attack = {
         head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
         body={ name="Herculean Vest", augments={'CHR+2','Mag. Acc.+4','Weapon skill damage +6%','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
@@ -511,7 +511,7 @@ function get_sets()
         left_ring="Ifrit Ring +1",
         right_ring="Ifrit Ring +1",
         back={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
-    }	
+    }    
     sets.OtherWS.Accuracy = {
         head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','MND+2','Weapon skill damage +10%',}},
         body={ name="Herculean Vest", augments={'"Triple Atk."+2','Accuracy+16','Accuracy+18 Attack+18','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
@@ -527,7 +527,7 @@ function get_sets()
         back={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
     }
 
-    sets.RangedWS = {}		
+    sets.RangedWS = {}        
     sets.RangedWS.Attack = {
         head={ name="Herculean Helm", augments={'Accuracy+18 Attack+18','MND+2','Weapon skill damage +10%',}},
         body={ name="Herculean Vest", augments={'CHR+2','Mag. Acc.+4','Weapon skill damage +6%','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
@@ -541,7 +541,7 @@ function get_sets()
         left_ring="Dingir Ring",
         right_ring="Garuda Ring",
         back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}},
-    }	
+    }    
     sets.RangedWS.Accuracy = {
         head="Meghanada Visor +2",
         body="Meg. Cuirie +2",
@@ -557,7 +557,7 @@ function get_sets()
         back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}},
     }
 
-    sets.RangedWScrit = {}		
+    sets.RangedWScrit = {}        
     sets.RangedWScrit.Attack = {
         head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
         body="Meg. Cuirie +2",
@@ -571,7 +571,7 @@ function get_sets()
         left_ring="Dingir Ring",
         right_ring="Begrudging Ring",
         back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}},
-    }	
+    }    
     sets.RangedWScrit.Accuracy = {
         head="Mummu Bonnet +2",
         body="Meg. Cuirie +2",
@@ -603,7 +603,7 @@ function get_sets()
         back={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
     }
 
-	--Job Ability Sets--
+    --Job Ability Sets--
     sets.JA = {}
     sets.JA.EES = {legs="Arcadian Braccae +1",}
     sets.JA.Scavange = {feet="Orion Socks +2",}
@@ -615,7 +615,7 @@ function get_sets()
     sets.JA.BShot = {hands="Amini glovelettes +1",}
 
 
-	--Other special gear--
+    --Other special gear--
     sets.obi = {
         waist="Hachirin-no-Obi",
     }
@@ -624,7 +624,7 @@ function get_sets()
         left_ring="Weatherspoon Ring",
     }
 
-	--Precast Sets--
+    --Precast Sets--
     sets.snapshot = {
         head="Amini Gapette +1",
         body={ name="Skopos Jerkin", augments={'"Snapshot"+5','VIT+1','Ice resistance-2 Wind resistance+2',}},
@@ -633,9 +633,9 @@ function get_sets()
         feet="Meg. Jam. +2",
         waist="Impulse Belt",
         back={ name="Belenus's Cape", augments={'"Snapshot"+10',}},
-    }	
+    }    
         
-	send_command('input /macro book 1;wait .1;input /macro set 1')	
+    send_command('input /macro book 1;wait .1;input /macro set 1')    
 
 end
 
@@ -661,13 +661,13 @@ function is_ranged_weaponskill(spell)
 end
 
 function precast(spell)
-	if spell.action_type == 'Ranged Attack' then
-		equip(sets.snapshot)
+    if spell.action_type == 'Ranged Attack' then
+        equip(sets.snapshot)
 
         return
     end
 
-	if spell.type == 'WeaponSkill' then 
+    if spell.type == 'WeaponSkill' then 
         if player.tp < 800 then 
             return
         end
@@ -683,19 +683,19 @@ function precast(spell)
             if spell.english == "Trueflight" then 
                 equip(set_combine(sets.MagicGun[sets.WS.index[WS_ind]], sets.lightnuke))
 
-				if world.day_element == 'Light' or world.weather_element == 'Light' then 
+                if world.day_element == 'Light' or world.weather_element == 'Light' then 
                     equip(set_combine(sets.obi, sets.lightnuke))
-				end
+                end
 
                 return
             end
 
-			if spell.english == "Wildfire" or spell.english == "Hot Shot" or spell.english == "Flaming Arrow" then 
+            if spell.english == "Wildfire" or spell.english == "Hot Shot" or spell.english == "Flaming Arrow" then 
                 equip(sets.MagicGun[sets.WS.index[WS_ind]])
 
-				if world.day_element == 'Fire' or world.weather_element == 'Fire'
-					then equip(sets.obi)
-				end
+                if world.day_element == 'Fire' or world.weather_element == 'Fire'
+                    then equip(sets.obi)
+                end
 
                 return
             end
@@ -724,56 +724,56 @@ function precast(spell)
             return
         end
 
-		if spell.english == 'Ruinator' then 
+        if spell.english == 'Ruinator' then 
             equip(sets.Ruinator[sets.WS.index[WS_ind]])
 
             return
         end
 
-		if spell.english == 'Rampage' then
+        if spell.english == 'Rampage' then
             equip(sets.Rampage[sets.WS.index[WS_ind]])
 
             return
         end
 
-		if spell.english == 'Aeolian Edge' then 
+        if spell.english == 'Aeolian Edge' then 
             equip(sets.AeolianEdge)
 
-			if world.day_element == 'Wind' or world.weather_element == 'Wind' then 
+            if world.day_element == 'Wind' or world.weather_element == 'Wind' then 
                 equip(sets.obi)
-			end
+            end
 
             return
         end
 
-		if spell.english == 'Evisceration' then 
+        if spell.english == 'Evisceration' then 
             equip(sets.Evisceration[sets.WS.index[WS_ind]])
 
             return
         end
 
-		if spell.english == 'Bora Axe' or spell.english == 'Decimation' or spell.english == 'Avalanche' or spell.english == 'Gale Axe' or spell.english == 'Smash Axe' or spell.english == 'Raging Axe' then 
+        if spell.english == 'Bora Axe' or spell.english == 'Decimation' or spell.english == 'Avalanche' or spell.english == 'Gale Axe' or spell.english == 'Smash Axe' or spell.english == 'Raging Axe' then 
             equip(sets.OtherAxe[sets.WS.index[WS_ind]])
 
             return
         end
-		
+        
         equip(sets.OtherWS[sets.WS.index[WS_ind]])
 
         return
-	end
+    end
 
-	if spell.english == "Scavange" then 
+    if spell.english == "Scavange" then 
         equip(sets.JA.Scavange)
 
         return
     end
 
-	if spell.english == "Eagle Eye Shot" then 
+    if spell.english == "Eagle Eye Shot" then 
         equip(sets.Ranged[sets.Ranged.index[WS_ind]], sets.JA.EES)
 
         return
-	end
+    end
 
     if spell.english == "Shadowbind" then 
         equip(sets.JA.SBind)
@@ -781,41 +781,41 @@ function precast(spell)
         return
     end
 
-	if spell.english == "Camouflage" then 
+    if spell.english == "Camouflage" then 
         equip(sets.JA.Camo)
 
         return
     end
 
-	if spell.english == "Sharpshot" then 
+    if spell.english == "Sharpshot" then 
         equip(sets.JA.SShot)
 
         return
     end 
-	
+    
     if spell.english == "Bounty Shot" then 
         equip(sets.JA.BShot)
 
         return
     end
 end
-	
+    
 function midcast(spell,act)
-	if spell.action_type == 'Ranged Attack' then 
+    if spell.action_type == 'Ranged Attack' then 
         equip(sets.Ranged[sets.Ranged.index[WS_ind]])
 
-		if buffactive['Velocity Shot'] then 
+        if buffactive['Velocity Shot'] then 
             equip(sets.JA.VShot)
-		end
+        end
 
-		if buffactive['Barrage'] then 
+        if buffactive['Barrage'] then 
             equip(sets.JA.Barrage)
-		end
-	end
+        end
+    end
 end
 
 function aftercast(spell)
-	if player.status == 'Engaged' then 
+    if player.status == 'Engaged' then 
         equip(
             sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
             sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
@@ -826,7 +826,7 @@ function aftercast(spell)
         return
     end
 
-	equip(
+    equip(
         sets.Idle[sets.Idle.index[Idle_ind]],
         sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
         sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
@@ -834,7 +834,7 @@ function aftercast(spell)
 end
 
 function status_change(new, old)
-	if new == 'Engaged' then 
+    if new == 'Engaged' then 
         equip(
             sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
             sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
@@ -843,9 +843,9 @@ function status_change(new, old)
         )
 
         return
-	end
+    end
 
-	equip(
+    equip(
         sets.Idle[sets.Idle.index[Idle_ind]],
         sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
         sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
@@ -853,104 +853,24 @@ function status_change(new, old)
 end
 
 function self_command(command)
-	if command == 'toggle TP set' then 
+    if command == 'toggle TP set' then 
         TP_ind = TP_ind +1
 
-		if TP_ind > #sets.TP.index then 
+        if TP_ind > #sets.TP.index then 
             TP_ind = 1 
-		end
+        end
 
-		send_command('@input /echo <----- TP Set changed to '..sets.TP.index[TP_ind]..' ----->')
+        send_command('@input /echo <----- TP Set changed to '..sets.TP.index[TP_ind]..' ----->')
 
-		if TP_ind > 1 then 
+        if TP_ind > 1 then 
             WS_ind = 2
-		else 
+        else 
             WS_ind = 1 
-		end
+        end
 
-		send_command('@input /echo <----- WS set changed to '..sets.WS.index[WS_ind]..' ----->')
-		send_command('@input /echo <----- SJ Set changed to '..sets.SJ.index[SJ_ind]..' ----->')
+        send_command('@input /echo <----- WS set changed to '..sets.WS.index[WS_ind]..' ----->')
+        send_command('@input /echo <----- SJ Set changed to '..sets.SJ.index[SJ_ind]..' ----->')
 
-		equip(
-            sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
-            sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
-            sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
-            sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
-        )
-
-        return
-    end
-
-	if command == 'toggle SJ set' then 
-        SJ_ind = SJ_ind +1
-
-		if SJ_ind > #sets.SJ.index then 
-            SJ_ind = 1
-		end
-
-		send_command('@input /echo <----- TP Set changed to '..sets.TP.index[TP_ind]..' ----->')
-		send_command('@input /echo <----- WS set changed to '..sets.WS.index[WS_ind]..' ----->')
-		send_command('@input /echo <----- SJ Set changed to '..sets.SJ.index[SJ_ind]..' ----->')
-
-		equip(
-            sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
-            sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
-            sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
-            sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
-        )
-
-        return
-    end
-
-	if command == 'toggle Melee Weapon set' then 
-        Wm_ind = Wm_ind +1
-
-		if Wm_ind > #sets.Weapon_melee.index then 
-            Wm_ind = 1
-		end
-
-		send_command('@input /echo <----- Melee weapon changed to '..sets.Weapon_melee.index[Wm_ind]..' ----->')
-		send_command('@input /echo <----- Range weapon changed to '..sets.Weapon_range.index[Wr_ind]..' ----->')
-
-		equip(
-            sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
-            sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
-            sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
-            sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
-        )
-
-        return
-    end
-
-	if command == 'toggle Range Weapon set' then 
-        Wr_ind = Wr_ind +1
-
-		if Wr_ind > #sets.Weapon_range.index then 
-            Wr_ind = 1
-		end
-
-		send_command('@input /echo <----- Melee weapon changed to '..sets.Weapon_melee.index[Wm_ind]..' ----->')
-		send_command('@input /echo <----- Range weapon changed to '..sets.Weapon_range.index[Wr_ind]..' ----->')
-
-		equip(
-            sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
-            sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
-            sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
-            sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
-        )
-
-        return
-    end
-
-	if command == 'toggle DW set' then 
-        DW_mode_ind = DW_mode_ind +1
-
-		if DW_mode_ind > #sets.DW_mode.index then 
-            DW_mode_ind = 1
-		end
-
-		send_command('@input /echo <----- DW status changed to '..sets.DW_mode.index[DW_mode_ind]..' ----->')
-		
         equip(
             sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
             sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
@@ -961,15 +881,95 @@ function self_command(command)
         return
     end
 
-	if command == 'toggle idle set' then
-		Idle_ind = Idle_ind +1
+    if command == 'toggle SJ set' then 
+        SJ_ind = SJ_ind +1
 
-		if Idle_ind > #sets.Idle.index then 
+        if SJ_ind > #sets.SJ.index then 
+            SJ_ind = 1
+        end
+
+        send_command('@input /echo <----- TP Set changed to '..sets.TP.index[TP_ind]..' ----->')
+        send_command('@input /echo <----- WS set changed to '..sets.WS.index[WS_ind]..' ----->')
+        send_command('@input /echo <----- SJ Set changed to '..sets.SJ.index[SJ_ind]..' ----->')
+
+        equip(
+            sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
+            sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
+            sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
+            sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
+        )
+
+        return
+    end
+
+    if command == 'toggle Melee Weapon set' then 
+        Wm_ind = Wm_ind +1
+
+        if Wm_ind > #sets.Weapon_melee.index then 
+            Wm_ind = 1
+        end
+
+        send_command('@input /echo <----- Melee weapon changed to '..sets.Weapon_melee.index[Wm_ind]..' ----->')
+        send_command('@input /echo <----- Range weapon changed to '..sets.Weapon_range.index[Wr_ind]..' ----->')
+
+        equip(
+            sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
+            sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
+            sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
+            sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
+        )
+
+        return
+    end
+
+    if command == 'toggle Range Weapon set' then 
+        Wr_ind = Wr_ind +1
+
+        if Wr_ind > #sets.Weapon_range.index then 
+            Wr_ind = 1
+        end
+
+        send_command('@input /echo <----- Melee weapon changed to '..sets.Weapon_melee.index[Wm_ind]..' ----->')
+        send_command('@input /echo <----- Range weapon changed to '..sets.Weapon_range.index[Wr_ind]..' ----->')
+
+        equip(
+            sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
+            sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
+            sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
+            sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
+        )
+
+        return
+    end
+
+    if command == 'toggle DW set' then 
+        DW_mode_ind = DW_mode_ind +1
+
+        if DW_mode_ind > #sets.DW_mode.index then 
+            DW_mode_ind = 1
+        end
+
+        send_command('@input /echo <----- DW status changed to '..sets.DW_mode.index[DW_mode_ind]..' ----->')
+        
+        equip(
+            sets.TP[sets.TP.index[TP_ind]][sets.SJ.index[SJ_ind]],
+            sets.Weapon_melee[sets.Weapon_melee.index[Wm_ind]],
+            sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
+            sets.DW_mode[sets.DW_mode.index[DW_mode_ind]]
+        )
+
+        return
+    end
+
+    if command == 'toggle idle set' then
+        Idle_ind = Idle_ind +1
+
+        if Idle_ind > #sets.Idle.index then 
             Idle_ind = 1 
         end
 
-		send_command('@input /echo <----- Idle Set changed to '..sets.Idle.index[Idle_ind]..' ----->')
-		
+        send_command('@input /echo <----- Idle Set changed to '..sets.Idle.index[Idle_ind]..' ----->')
+        
         equip(
             sets.Idle[sets.Idle.index[Idle_ind]],
             sets.Weapon_range[sets.Weapon_range.index[Wr_ind]],
@@ -979,27 +979,27 @@ function self_command(command)
         return
     end
 
-	if command == 'toggle pdt set' then
-		equip(set.PDT)
-		send_command('@input /echo <----- PDT set Equipped ----->')
+    if command == 'toggle pdt set' then
+        equip(set.PDT)
+        send_command('@input /echo <----- PDT set Equipped ----->')
 
         return
     end
 
-	if command == 'toggle mdt set' then
-		equip(set.MDT)
-		send_command('@input /echo <----- MDT set Equipped ----->')
+    if command == 'toggle mdt set' then
+        equip(set.MDT)
+        send_command('@input /echo <----- MDT set Equipped ----->')
 
         return
     end
 
-	if command == 'status check' then 
+    if command == 'status check' then 
         send_command('@input /echo <----- Melee weapon changed to '..sets.Weapon_melee.index[Wm_ind]..' ----->')
-		send_command('@input /echo <----- Range weapon changed to '..sets.Weapon_range.index[Wr_ind]..' ----->')
-		send_command('@input /echo <----- SJ Set changed to '..sets.SJ.index[SJ_ind]..' ----->')
-		send_command('@input /echo <----- TP Set changed to '..sets.TP.index[TP_ind]..' ----->')
-		send_command('@input /echo <----- WS set changed to '..sets.WS.index[WS_ind]..' ----->')
+        send_command('@input /echo <----- Range weapon changed to '..sets.Weapon_range.index[Wr_ind]..' ----->')
+        send_command('@input /echo <----- SJ Set changed to '..sets.SJ.index[SJ_ind]..' ----->')
+        send_command('@input /echo <----- TP Set changed to '..sets.TP.index[TP_ind]..' ----->')
+        send_command('@input /echo <----- WS set changed to '..sets.WS.index[WS_ind]..' ----->')
 
         return
-	end
+    end
 end
