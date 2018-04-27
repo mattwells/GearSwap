@@ -114,7 +114,7 @@ function get_sets()
 		hands="Fili manchettes +1",
 		ring1="Dawnsoul ring",
 		back="Kumbira cape",
-		waist="Ovate Rope"
+		waist="Ovate Rope",
 		legs="Mdk. Shalwar +1", -- Inyanga Shalwar +2
 		feet="Brioso Slippers +1" -- Brioso Slippers +3
 	}

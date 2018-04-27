@@ -43,9 +43,12 @@ function get_sets()
 		hands="Macu. Bangles +1",
 		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Rev. Flourish"+29','Weapon skill damage +1%',}},
 	}
+	sets.Flourish["Violent Flourish"] = {
+		body="Horos Casaque +2",
+	}
 
 	sets["No Foot Rise"] = {
-		body="Horos Casaque +1",
+		body="Horos Casaque +2",
 	}
 
 	sets.Waltz = {
@@ -66,7 +69,7 @@ function get_sets()
 
 	sets.Step = {
 		head="Maxixi Tiara +1",
-		body="Horos Casaque +1",
+		body="Horos Casaque +2",
 		hands="Maxixi Bangles +1",
 		legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','STR+5 DEX+5',}},
 		feet="Horos Toe Shoes +2",
@@ -82,7 +85,7 @@ function get_sets()
 	-- WS Sets --
 	sets.WS = {
 		ammo="Jukukik Feather",
-		head="Mummu Bonnet +1",
+		head="Adhemar Bonnet +1",
 		body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
 		hands="Meg. Gloves +1",
 		legs="Mummu Kecks +2",
@@ -120,7 +123,7 @@ function get_sets()
 	-- Melee --
 	sets.TP = {
 		ammo="Yamarang",
-		head="Mummu Bonnet +1",
+		head="Adhemar Bonnet +1",
 		body="Mummu Jacket +2",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Mummu Kecks +2",
@@ -133,6 +136,10 @@ function get_sets()
 		right_ring="Petrov Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','System: 1 ID: 1155 Val: 4',}},
 	}
+end
+
+function user_setup()
+	debug('function user_setup()')
 end
 
 function precast(spell,action)

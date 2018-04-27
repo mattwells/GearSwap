@@ -104,6 +104,7 @@ function get_sets()
         right_ring = "Ramuh Ring +1",
         back = "Canny Cape"
     }
+    sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
 
     sets.JobAbility = {}
     sets.JobAbility.Despoil = {
