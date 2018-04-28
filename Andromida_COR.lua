@@ -17,7 +17,7 @@ function get_sets()
     sets.Engaged = {
         head="Meghanada Visor +1",
         body="Meg. Cuirie +2",
-        hands="Adherar Wrist. +1",
+        hands="Adhemar Wrist. +1",
         legs="Meg. Chausses +2",
         feet="Meg. Jam. +1",
         neck="Iqabi Necklace",
@@ -48,7 +48,7 @@ function get_sets()
     -- sets.WeaponSkill["Last Stand"] = {}
     sets.WeaponSkill["Leaden Salute"] = {
         head="Pixie Hairpin +1",
-        body="Meg. Cuirie +2",
+        body="Carm. Scale Mail",
         hands="Carmine Fin. Ga. +1",
         legs="Meg. Chausses +2",
         feet="Meg. Jam. +1",
