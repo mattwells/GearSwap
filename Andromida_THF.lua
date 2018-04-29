@@ -22,24 +22,29 @@ function get_sets()
         head = "Mummu Bonnet +1",
         body = "Mummu Jacket +2",
         hands = {
-            name = "Plun. Armlets +1",
-            augments = {'Enhances "Perfect Dodge" effect'}
+            name = "Adhemar Wrist. +1",
+            augments = {"DEX+12", "AGI+12", "Accuracy+20"}
         },
-        -- hands = {
-        --     name = "Adhemar Wrist. +1",
-        --     augments = {"DEX+12", "AGI+12", "Accuracy+20"}
-        -- },
         legs = "Mummu Kecks +2",
         feet = "Raid. Poulaines +2",
-        -- feet = "Mummu Gamash. +1",
-        neck = "Asperity Necklace",
-        waist = "Chaac Belt",
-        -- waist = "Windbuffet Belt +1",
+        feet = "Mummu Gamash. +1",
+        neck = "Erudit. Necklace",
+        waist = "Windbuffet Belt +1",
         left_ear = "Sherida Earring",
         right_ear = "Telos Earring",
         left_ring = "Ilabrat Ring",
         right_ring = "Epona's Ring",
         back = "Canny Cape"
+    }
+
+    TH = false
+    sets.TH = {
+        hands = {
+            name = "Plun. Armlets +1",
+            augments = {'Enhances "Perfect Dodge" effect'}
+        },
+        feet = "Raid. Poulaines +2",
+        waist = "Chaac Belt",
     }
 
     sets.Misc = {}
@@ -107,8 +112,17 @@ function get_sets()
     sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
 
     sets.JobAbility = {}
+    sets.JobAbility["Assassin's Charge"] = {
+        feet = "Plun. Poulaines +1"
+    }
     sets.JobAbility.Despoil = {
-        feet = "Raid. Poulaines +2"
+        feet = "Raid. Poulaines +2",
+    }
+    sets.JobAbility.Flee = {
+        feet = "Pillager's poulaines",
+    }
+    sets.JobAbility.Hide = {
+        body = "Pillager's Vest +1",
     }
     sets.JobAbility["Perfect Dodge"] = {
         hands = {
@@ -116,37 +130,25 @@ function get_sets()
             augments = {'Enhances "Perfect Dodge" effect'}
         }
     }
-
-    sets.BardSong = {
-        head = "Meghanada Visor +1",
-        body = "Meg. Cuirie +2",
-        hands = {
-            name = "Plun. Armlets +1",
-            augments = {'Enhances "Perfect Dodge" effect'}
-        },
-        legs = "Meg. Chausses +2",
-        feet = "Raid. Poulaines +2",
-        neck = "Twilight Torque",
-        waist = "Chaac Belt",
-        left_ear = "Reraise Earring",
-        right_ear = "Infused Earring",
-        left_ring = {
-            name = "Dark Ring",
-            augments = {"Magic dmg. taken -5%", "Phys. dmg. taken -3%"}
-        },
-        right_ring = "Warden's Ring",
-        back = "Mollusca Mantle"
+    sets.JobAbility.Steal = {
+        hands = "Pillager's Armlets +1",
+        legs = "Pill. Culottes +1",
+        feet = "Pillager's poulaines",
     }
+
+    sets.BardSong = TH
 end
 
 function precast(spell, action)
     if sets[spell.type] and sets[spell.type][spell.english] then
         equip(sets[spell.type][spell.english])
-        debug(spell.type .. "." .. spell.english)
+
         return
-    elseif sets[spell.type] then
+    end
+
+    if sets[spell.type] then
         equip(sets[spell.type])
-        debug(spell.type)
+
         return
     end
 
@@ -158,9 +160,34 @@ function aftercast(spell, action)
 end
 
 function status_change(new, old)
+    if _G['status_change_' .. new] then
+        _G['status_change_' .. new]()
+
+        return
+    end
+
     if (sets[new]) then
         equip(sets[new])
-    debug(new)
+    end
+end
+
+function status_change_engaged()
+    equip(sets.Engaged)
+
+    if TH then
+        equip(sets.TH)
+    end
+end
+
+function self_command(command)
+    command = command:lower()
+
+    if 'th' == command then
+        TH = not TH
+
+        status_change(player.status, player.status)
+
+        return
     end
 end
 
