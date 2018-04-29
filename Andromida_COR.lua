@@ -44,8 +44,49 @@ function get_sets()
         back="Buquwik Cape",
     }
 
-    sets.WeaponSkill = {}
-    -- sets.WeaponSkill["Last Stand"] = {}
+    sets.WeaponSkill = {
+        head="Meghanada Visor +1",
+        body="Meg. Cuirie +2",
+        hands="Mummu Wrists +1",
+        legs="Meg. Chausses +2",
+        feet={ name="Herculean Boots", augments={'Attack+24','Weapon skill damage +3%','DEX+14',}},
+        neck="Fotia Gorget",
+        waist="Fotia Belt",
+        left_ear="Ishvara Earring",
+        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+        left_ring="Ilabrat Ring",
+        right_ring="Apate Ring",
+        back="Buquwik Cape",
+    }
+    sets.WeaponSkill["Savage Blade"] = {
+        head="Meghanada Visor +1",
+        body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
+        hands="Meg. Gloves +1",
+        legs="Meg. Chausses +2",
+        feet={ name="Herculean Boots", augments={'Attack+24','Weapon skill damage +3%','DEX+14',}},
+        neck="Fotia Gorget",
+        waist="Metalsinger Belt",
+        left_ear="Ishvara Earring",
+        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+        left_ring="Ifrit Ring",
+        right_ring="Ifrit Ring +1",
+        back="Buquwik Cape",
+    }
+
+    sets.WeaponSkill["Last Stand"] = {
+        head="Meghanada Visor +1",
+        body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
+        hands="Meg. Gloves +1",
+        legs="Meg. Chausses +2",
+        feet={ name="Herculean Boots", augments={'Attack+24','Weapon skill damage +3%','DEX+14',}},
+        neck="Fotia Gorget",
+        waist="Metalsinger Belt",
+        left_ear="Ishvara Earring",
+        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+        left_ring="Ifrit Ring",
+        right_ring="Ifrit Ring +1",
+        back="Buquwik Cape",
+    }
     sets.WeaponSkill["Leaden Salute"] = {
         head="Pixie Hairpin +1",
         body="Carm. Scale Mail",
@@ -59,21 +100,6 @@ function get_sets()
         left_ring="Ilabrat Ring",
         right_ring="Acumen Ring",
         back="Toro Cape",
-    }
-
-    sets.WeaponSkill["Savage Blade"] = {
-        head="Mummu Bonnet +1",
-        body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
-        hands="Meg. Gloves +1",
-        legs="Meg. Chausses +2",
-        feet={ name="Herculean Boots", augments={'Attack+24','Weapon skill damage +3%','DEX+14',}},
-        neck="Fotia Gorget",
-        waist="Fotia Belt",
-        left_ear="Telos Earring",
-        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-        left_ring="Ifrit Ring",
-        right_ring="Ifrit Ring +1",
-        back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
     sets.CorsairRoll = {
