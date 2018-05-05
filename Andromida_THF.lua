@@ -4,7 +4,7 @@ function get_sets()
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +1",
         legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +1",
+        feet = "Pill. Poulaines +1",
         neck = "Twilight Torque",
         waist = "Flume Belt",
         left_ear = "Reraise Earring",
@@ -26,7 +26,6 @@ function get_sets()
             augments = {"DEX+12", "AGI+12", "Accuracy+20"}
         },
         legs = "Mummu Kecks +2",
-        feet = "Raid. Poulaines +2",
         feet = "Mummu Gamash. +1",
         neck = "Erudit. Necklace",
         waist = "Windbuffet Belt +1",
@@ -43,7 +42,7 @@ function get_sets()
             name = "Plun. Armlets +1",
             augments = {'Enhances "Perfect Dodge" effect'}
         },
-        feet = "Raid. Poulaines +2",
+        feet = "Skulk. Poulaines +1",
         waist = "Chaac Belt",
     }
 
@@ -116,10 +115,10 @@ function get_sets()
         feet = "Plun. Poulaines +1"
     }
     sets.JobAbility.Despoil = {
-        feet = "Raid. Poulaines +2",
+        feet = "Skulk. Poulaines +1",
     }
     sets.JobAbility.Flee = {
-        feet = "Pillager's poulaines",
+        feet = "Pill. Poulaines +1",
     }
     sets.JobAbility.Hide = {
         body = "Pillager's Vest +1",
@@ -133,13 +132,22 @@ function get_sets()
     sets.JobAbility.Steal = {
         hands = "Pillager's Armlets +1",
         legs = "Pill. Culottes +1",
-        feet = "Pillager's poulaines",
+        feet = "Pill. Poulaines +1",
     }
 
-    sets.BardSong = TH
+    sets.BardSong = sets.TH
 end
 
 function precast(spell, action)
+	if 'Trust' == spell.type then
+		return
+	end
+
+	if spell.english == 'Spectral Jig' and buffactive.Sneak then
+		cast_delay(0.2)
+		send_command('cancel Sneak')
+	end
+
     if sets[spell.type] and sets[spell.type][spell.english] then
         equip(sets[spell.type][spell.english])
 
@@ -160,9 +168,7 @@ function aftercast(spell, action)
 end
 
 function status_change(new, old)
-    if _G['status_change_' .. new] then
-        _G['status_change_' .. new]()
-
+    if _G['status_change_' .. new:lower()] and not _G['status_change_' .. new:lower()]() then
         return
     end
 
