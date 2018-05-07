@@ -17,10 +17,7 @@ function get_sets()
 		right_ear = "Loquac. Earring",
 		left_ring = "Serket Ring",
 		right_ring = "Prolix Ring",
-		back = {
-			name = "Alaunus's Cape",
-			augments = {"MND+20", "Eva.+20 /Mag. Eva.+20", "MND+10", '"Cure" potency +10%', "Damage taken-3%"}
-		}
+		back = "Mecisto. Mantle",
 	}
 
 	sets.Precast = {}
@@ -162,5 +159,5 @@ function aftercast(spell, action)
 end
 
 function debug(s)
-	-- windower.add_to_chat(123, s)
+	windower.add_to_chat(123, s)
 end

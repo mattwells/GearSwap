@@ -188,6 +188,18 @@ function precast(spell, action)
 		send_command("cancel Sneak")
 	end
 
+	if 'Step' == spell.type then
+        local allRecasts = windower.ffxi.get_ability_recasts()
+        local prestoCooldown = allRecasts[236]
+		local missingEnoughFM = not buffactive['Finishing Move 5']
+			and not buffactive['Finishing Move (6+)']
+        
+        if prestoCooldown < 1 and missingEnoughFM then
+            cast_delay(1.1)
+            send_command('@input /ja "Presto" <me>')
+        end
+	end
+	
 	if sets[spell.type] and sets[spell.type][spell.english] then
 		equip(sets[spell.type][spell.english])
 
@@ -228,3 +240,7 @@ end
 function debug(s)
 	send_command("@input /echo " .. s)
 end
+
+-- function self_command(command)
+-- 	command = command:lower()
+-- end
