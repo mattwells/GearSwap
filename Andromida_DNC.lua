@@ -1,9 +1,9 @@
 function get_sets()
 	sets.Idle = {
 		ammo = "Yamarang",
-		head = "Mummu Bonnet +1",
+		head = "Meghanada Visor +1",
 		body = "Meg. Cuirie +2",
-		hands = "Meg. Gloves +1",
+		hands = "Meg. Gloves +2",
 		legs = "Meg. Chausses +2",
 		feet = "Tandava Crackows",
 		neck = "Twilight Torque",
@@ -27,7 +27,7 @@ function get_sets()
 		body = "Mummu Jacket +2",
 		hands = {name = "Adhemar Wrist. +1", augments = {"DEX+12", "AGI+12", "Accuracy+20"}},
 		legs = "Mummu Kecks +2",
-		feet = "Mummu Gamash. +1",
+		feet = "Mummu Gamash. +2",
 		neck = "Iqabi Necklace",
 		waist = "Windbuffet Belt +1",
 		left_ear = "Sherida Earring",
@@ -98,13 +98,10 @@ function get_sets()
 	}
 
 	sets.Step = {
-		head = "Maxixi Tiara +1",
+		head = "Maxixi Tiara +2",
 		body = "Horos Casaque +2",
 		hands = "Maxixi Bangles +3",
-		legs = {
-			name = "Taeon Tights", 
-			augments = {"Accuracy+20 Attack+20", '"Triple Atk."+2', "STR+5 DEX+5"}
-		},
+		legs = "Meg. Chausses +2",
 		feet = "Horos Toe Shoes +2",
 		neck = "Iqabi Necklace",
 		waist = "Olseni Belt",
