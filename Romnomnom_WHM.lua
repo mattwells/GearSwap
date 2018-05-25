@@ -3,12 +3,12 @@ function get_sets()
 		main = "Queller Rod",
 		sub = "Sors Shield",
 		ammo = "Incantor Stone",
-		head = "Inyanga Tiara +1",
+		head = "Inyanga Tiara +2",
 		body = {
 			name = "Gende. Bilaut +1",
 			augments = {"Phys. dmg. taken -1%", '"Cure" potency +3%'}
 		},
-		hands = "Inyan. Dastanas +1",
+		hands = "Inyan. Dastanas +2",
 		legs = "Assiduity Pants",
 		feet = "Inyan. Crackows +1",
 		neck = "Phalaina Locket",
@@ -16,7 +16,7 @@ function get_sets()
 		left_ear = "Roundel Earring",
 		right_ear = "Loquac. Earring",
 		left_ring = "Serket Ring",
-		right_ring = "Prolix Ring",
+		right_ring = "Inyanga Ring",
 		back = "Mecisto. Mantle",
 	}
 
@@ -159,5 +159,5 @@ function aftercast(spell, action)
 end
 
 function debug(s)
-	windower.add_to_chat(123, s)
+	-- windower.add_to_chat(123, s)
 end
