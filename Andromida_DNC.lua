@@ -22,22 +22,31 @@ function get_sets()
 	}
 
 	sets.Engaged = {
-		ammo = "Yamarang",
-		head = "Adhemar Bonnet +1",
-		body = "Mummu Jacket +2",
-		hands = {name = "Adhemar Wrist. +1", augments = {"DEX+12", "AGI+12", "Accuracy+20"}},
-		legs = "Mummu Kecks +2",
-		feet = "Mummu Gamash. +2",
-		neck = "Iqabi Necklace",
-		waist = "Windbuffet Belt +1",
-		left_ear = "Sherida Earring",
-		right_ear = "Telos Earring",
-		left_ring = "Ilabrat Ring",
-		right_ring = "Petrov Ring",
-		back = {
-			name = "Senuna's Mantle",
-			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "System: 1 ID: 1155 Val: 4"}
-		}
+		ammo="Yamarang",
+		head={ 
+			name="Adhemar Bonnet +1", 
+			augments={'DEX+12','AGI+12','Accuracy+20',}
+		},
+		body={ 
+			name="Horos Casaque +3", 
+			augments={'Enhances "No Foot Rise" effect',}
+		},
+		hands={ 
+			name="Adhemar Wrist. +1", 
+			augments={'DEX+12','AGI+12','Accuracy+20',}
+		},
+		legs="Meg. Chausses +2",
+		feet="Mummu Gamash. +2",
+		neck="Sanctity Necklace",
+		waist="Windbuffet Belt +1",
+		left_ear="Sherida Earring",
+		right_ear="Telos Earring",
+		left_ring="Ilabrat Ring",
+		right_ring="Petrov Ring",
+		back={ 
+			name="Senuna's Mantle", 
+			augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}
+		},
 	}
 
 	-- JA Sets --
