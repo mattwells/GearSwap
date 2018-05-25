@@ -1,32 +1,52 @@
 function get_sets()
     sets.Idle = {
+        ammo="Eminent Bullet",
         head="Meghanada Visor +1",
         body="Meg. Cuirie +2",
-        hands="Meg. Gloves +1",
+        hands="Meg. Gloves +2",
         legs="Meg. Chausses +2",
         feet="Meg. Jam. +1",
         neck="Twilight Torque",
         waist="Flume Belt",
         left_ear="Telos Earring",
         right_ear="Infused Earring",
-        left_ring={ name="Dark Ring", augments={'Magic dmg. taken -5%','Phys. dmg. taken -3%',}},
+        left_ring={ 
+            name="Dark Ring", 
+            augments={'Magic dmg. taken -5%','Phys. dmg. taken -3%',}
+        },
         right_ring="Warden's Ring",
-        back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
+        back={ 
+            name="Camulus's Mantle", 
+            augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}
+        },
     }
 
     sets.Engaged = {
-		head="Adhemar Bonnet +1",
-        body="Meg. Cuirie +2",
-        hands="Adhemar Wrist. +1",
+        ammo="Eminent Bullet",
+        head={ 
+            name="Adhemar Bonnet +1", 
+            augments={'DEX+12','AGI+12','Accuracy+20',}
+        },
+        body={ 
+            name="Herculean Vest", 
+            augments={'AGI+13','Weapon skill damage +2%','Quadruple Attack +3','Accuracy+18 Attack+18','Mag. Acc.+18 "Mag.Atk.Bns."+18',}
+        },
+        hands={ 
+            name="Adhemar Wrist. +1", 
+            augments={'DEX+12','AGI+12','Accuracy+20',}
+        },
         legs="Meg. Chausses +2",
         feet="Meg. Jam. +1",
         neck="Iqabi Necklace",
-        waist="Dynamic Belt",
+        waist="Windbuffet Belt +1",
         left_ear="Telos Earring",
         right_ear="Brutal Earring",
         left_ring="Ilabrat Ring",
         right_ring="Petrov Ring",
-        back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
+        back={ 
+            name="Camulus's Mantle", 
+            augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}
+        },
     }
 
     sets.Misc = {}
@@ -49,25 +69,40 @@ function get_sets()
         body="Meg. Cuirie +2",
         hands="Mummu Wrists +1",
         legs="Meg. Chausses +2",
-        feet={ name="Herculean Boots", augments={'Attack+24','Weapon skill damage +3%','DEX+14',}},
+        feet={ 
+            name="Herculean Boots", 
+            augments={'Attack+24','Weapon skill damage +3%','DEX+14',}
+        },
         neck="Fotia Gorget",
         waist="Fotia Belt",
         left_ear="Ishvara Earring",
-        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+        right_ear={ 
+            name="Moonshade Earring", 
+            augments={'Attack+4','TP Bonus +25',}
+        },
         left_ring="Ilabrat Ring",
         right_ring="Apate Ring",
         back="Buquwik Cape",
     }
     sets.WeaponSkill["Savage Blade"] = {
         head="Meghanada Visor +1",
-        body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
-        hands="Meg. Gloves +1",
+        body={ 
+            name="Herculean Vest", 
+            augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}
+        },
+        hands="Meg. Gloves +2",
         legs="Meg. Chausses +2",
-        feet={ name="Herculean Boots", augments={'Attack+24','Weapon skill damage +3%','DEX+14',}},
+        feet={ 
+            name="Herculean Boots", 
+            augments={'Attack+24','Weapon skill damage +3%','DEX+14',}
+        },
         neck="Fotia Gorget",
         waist="Metalsinger Belt",
         left_ear="Ishvara Earring",
-        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+        right_ear={ 
+            name="Moonshade Earring", 
+            augments={'Attack+4','TP Bonus +25',}
+        },
         left_ring="Ifrit Ring",
         right_ring="Ifrit Ring +1",
         back="Buquwik Cape",
@@ -75,38 +110,75 @@ function get_sets()
 
     sets.WeaponSkill["Last Stand"] = {
         head="Meghanada Visor +1",
-        body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
-        hands="Meg. Gloves +1",
+        body={ 
+            name="Herculean Vest", 
+            augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}
+        },
+        hands="Meg. Gloves +2",
         legs="Meg. Chausses +2",
-        feet={ name="Herculean Boots", augments={'Attack+24','Weapon skill damage +3%','DEX+14',}},
+        feet={ 
+            name="Herculean Boots", 
+            augments={'Attack+24','Weapon skill damage +3%','DEX+14',}
+        },
         neck="Fotia Gorget",
         waist="Metalsinger Belt",
         left_ear="Ishvara Earring",
-        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+        right_ear={ 
+            name="Moonshade Earring", 
+            augments={'Attack+4','TP Bonus +25',}
+        },
         left_ring="Ifrit Ring",
         right_ring="Ifrit Ring +1",
-        back="Buquwik Cape",
+        back={ 
+            name="Camulus's Mantle", 
+            augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}
+        },
     }
     sets.WeaponSkill["Leaden Salute"] = {
+        ammo="Orichalc. Bullet",
         head="Pixie Hairpin +1",
-        body="Carm. Scale Mail",
-        hands="Carmine Fin. Ga. +1",
-        legs="Meg. Chausses +2",
-        feet="Meg. Jam. +1",
-        neck="Iqabi Necklace",
+        body={ 
+            name="Carm. Scale Mail", 
+            augments={'Attack+15','"Mag.Atk.Bns."+10','"Dbl.Atk."+2',}
+        },
+        hands={ 
+            name="Carmine Fin. Ga. +1", 
+            augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}
+        },
+        legs={ 
+            name="Herculean Trousers", 
+            augments={'AGI+9','VIT+4','"Refresh"+1','Accuracy+19 Attack+19','Mag. Acc.+16 "Mag.Atk.Bns."+16',}
+        },
+        feet={ 
+            name="Herculean Boots", 
+            augments={'Attack+24','Weapon skill damage +3%','DEX+14',}
+        },
+        neck="Sanctity Necklace",
         waist="Eschan Stone",
         left_ear="Friomisi Earring",
-        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
+        right_ear={ 
+            name="Moonshade Earring", 
+            augments={'Attack+4','TP Bonus +25',}
+        },
         left_ring="Ilabrat Ring",
         right_ring="Acumen Ring",
-        back="Toro Cape",
+        back={ 
+            name="Camulus's Mantle", 
+            augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}
+        },
     }
 
     sets.CorsairRoll = {
-        head={ name="Lanun Tricorne", augments={'Enhances "Winning Streak" effect',}},
+        head={ 
+            name="Lanun Tricorne", 
+            augments={'Enhances "Winning Streak" effect',}
+        },
         hands="Chasseur's Gants",
         left_ring="Barataria Ring",
-        back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}},
+        back={ 
+            name="Camulus's Mantle", 
+            augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','System: 1 ID: 1155 Val: 4',}
+        },
     }
     -- sets.CorsairRoll["Fighter's Roll"] = {}
 
