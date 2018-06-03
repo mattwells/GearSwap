@@ -4,10 +4,7 @@ function get_sets()
 		sub = "Sors Shield",
 		ammo = "Incantor Stone",
 		head = "Inyanga Tiara +2",
-		body = {
-			name = "Gende. Bilaut +1",
-			augments = {"Phys. dmg. taken -1%", '"Cure" potency +3%'}
-		},
+		body = "Ebers Bliaud",
 		hands = "Inyan. Dastanas +2",
 		legs = "Assiduity Pants",
 		feet = "Inyan. Crackows +1",
@@ -17,7 +14,7 @@ function get_sets()
 		right_ear = "Loquac. Earring",
 		left_ring = "Serket Ring",
 		right_ring = "Inyanga Ring",
-		back = "Mecisto. Mantle",
+		back = "Mecisto. Mantle"
 	}
 
 	sets.Precast = {}
@@ -33,16 +30,21 @@ function get_sets()
 		right_ring = "Prolix Ring"
 	}
 
-	sets.Precast.Cure = set_combine(
+	sets.Precast.Cure =
+		set_combine(
 		sets.Precast.FastCast,
 		{
 			main = "Queller Rod",
 			sub = "Sors Shield",
-			head = "Theo. Cap +1",
+			head = "Theophany Cap +2",
 			body = "Heka's Kalasiris",
 			ear1 = "Nourish. Earring +1",
 			legs = "Ebers Pantaloons",
-			feet = "Cure Clogs"
+			feet = "Cure Clogs",
+			back = {
+				name = "Alaunus's Cape",
+				augments = {"MND+20", "Mag. Acc+20 /Mag. Dmg.+20", "MND+5", '"Fast Cast"+10', "Damage taken-5%"}
+			}
 		}
 	)
 
@@ -54,30 +56,28 @@ function get_sets()
 			augments = {"Healing magic skill +15", '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
 		},
 		sub = "Sors Shield",
-		head = "Theo. Cap +1",
+		head = "Theophany Cap +2",
 		body = "Heka's Kalasiris",
-		hands = "Augur's Gloves",
+		hands = "Theophany Mitts +2",
 		legs = "Ebers Pantaloons",
 		feet = "Ebers Duckbills",
-		neck = "Colossus's Torque",
 		waist = "Cascade Belt",
 		left_ear = "Nourish. Earring +1",
-		right_ear = "Psystorm Earring",
 		back = {
 			name = "Alaunus's Cape",
-			augments = {"MND+20", "Eva.+20 /Mag. Eva.+20", "MND+10", '"Cure" potency +10%', "Damage taken-3%"}
+			augments = {"MND+20", "Eva.+20 /Mag. Eva.+20", "MND+10", '"Cure" potency +10%', "Damage taken-5%"}
 		}
 	}
 
 	sets.Midcast.Cursna = {
-		legs = "Theo. Pantaloons",
-		waist = "Alaunus's Cape",
+		legs = "Theo. Pant. +1",
+		waist = "Alaunus's Cape"
 	}
 
 	sets.Midcast.Regen = {
 		body = "Cleric's Briault",
 		hands = "Ebers Mitts",
-		legs = "Theo. Pantaloons",
+		legs = "Theo. Pant. +1"
 	}
 
 	sets.Midcast.Bar = {
@@ -86,13 +86,11 @@ function get_sets()
 end
 
 function is_magic(spell)
-	return spell.type:endswith("Magic") 
-		or spell.type == "BardSong" 
-		or spell.type == "Ninjutsu"
+	return spell.type:endswith("Magic") or spell.type == "BardSong" or spell.type == "Ninjutsu"
 end
 
 function precast(spell, action)
-	if 'Trust' == spell.type then
+	if "Trust" == spell.type then
 		return
 	end
 
@@ -114,21 +112,21 @@ function precast(spell, action)
 			debug("Midcast: Bar")
 			return
 		end
-		
+
 		equip(sets.Precast.FastCast)
 		debug("Precast: Fast Cast")
 	end
 end
 
 function midcast(spell, action)
-	if 'Trust' == spell.type then
+	if "Trust" == spell.type then
 		return
 	end
 
 	if is_magic(spell) then
 		if spell.english == "Cursna" then
 			equip(sets.Midcast.Cursna)
-			debug('Cursna')
+			debug("Cursna")
 			return
 		end
 
@@ -144,7 +142,7 @@ function midcast(spell, action)
 			debug("Midcast: Cure")
 			return
 		end
-		
+
 		if string.find(spell.english, "Bar") then
 			equip(sets.Midcast.Bar)
 			debug("Midcast: Bar")

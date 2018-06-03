@@ -7,35 +7,60 @@ function get_sets()
         feet = "Pill. Poulaines +1",
         neck = "Twilight Torque",
         waist = "Flume Belt",
-        left_ear = "Reraise Earring",
+        left_ear = "Sherida Earring",
         right_ear = "Infused Earring",
-        left_ring = {
-            name = "Dark Ring",
-            augments = {"Magic dmg. taken -5%", "Phys. dmg. taken -3%"}
-        },
+        left_ring = "Defending Ring",
         right_ring = "Warden's Ring",
-        back = "Mollusca Mantle"
+        back={ 
+            name="Toutatis's Cape", 
+            augments={
+                'DEX+20',
+                'Accuracy+20 Attack+20',
+                'DEX+5',
+                '"Dbl.Atk."+10','Phys. dmg. taken-10%',
+            }
+        },
     }
 
     sets.Engaged = {
         ammo="Yamarang",
-        head="Mummu Bonnet +1",
-        body="Mummu Jacket +2",
+        head={ 
+            name="Adhemar Bonnet +1", 
+            augments={'DEX+12','AGI+12','Accuracy+20',}
+        },
+        body={ 
+            name="Herculean Vest", 
+            augments={
+                'AGI+13',
+                'Weapon skill damage +2%',
+                'Quadruple Attack +3',
+                'Accuracy+18 Attack+18',
+                'Mag. Acc.+18 "Mag.Atk.Bns."+18',
+            }
+        },
         hands={ 
             name="Adhemar Wrist. +1", 
             augments={'DEX+12','AGI+12','Accuracy+20',}
         },
-        legs="Mummu Kecks +2",
+        legs={ 
+            name="Herculean Trousers", 
+            augments={'"Triple Atk."+4','DEX+7','Accuracy+15','Attack+4',}
+        },
         feet="Mummu Gamash. +2",
         neck="Erudit. Necklace",
         waist="Windbuffet Belt +1",
         left_ear="Sherida Earring",
         right_ear="Telos Earring",
         left_ring="Ilabrat Ring",
-        right_ring="Epona's Ring",
+        right_ring="Petrov Ring",
         back={ 
             name="Toutatis's Cape", 
-            augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}
+            augments={
+                'DEX+20',
+                'Accuracy+20 Attack+20',
+                'DEX+5',
+                '"Dbl.Atk."+10','Phys. dmg. taken-10%',
+            }
         },
     }
 
@@ -58,10 +83,10 @@ function get_sets()
         feet = "Meg. Jam. +1",
         neck = "Iqabi Necklace",
         left_ear = "Telos Earring",
-        right_ear = "Neritic Earring",
+        -- right_ear = "Neritic Earring",
         left_ring = "Ilabrat Ring",
         right_ring = "Haverton Ring",
-        back = "Buquwik Cape"
+        -- back = "Buquwik Cape"
     }
 
     sets.WeaponSkill = {
@@ -118,7 +143,7 @@ function get_sets()
     }
     sets.JobAbility["Perfect Dodge"] = {
         hands = {
-            name = "Plun. Armlets +2",
+            name = "Plun. Armlets +3",
             augments = {'Enhances "Perfect Dodge" effect'}
         }
     }
