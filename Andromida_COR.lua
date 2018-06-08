@@ -1,7 +1,7 @@
 function get_sets()
     sets.Idle = {
         ammo = "Eminent Bullet",
-        head = "Meghanada Visor +1",
+        head = "Meghanada Visor +2",
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +2",
         legs = "Meg. Chausses +2",
@@ -20,7 +20,7 @@ function get_sets()
 
     DT = false
     sets.PDT = {
-        head = "Meghanada Visor +1",
+        head = "Meghanada Visor +2",
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +2",
         legs = "Meg. Chausses +2",
@@ -74,7 +74,7 @@ function get_sets()
 
     sets.Misc = {}
     sets.Misc.Ranged = {
-        head = "Meghanada Visor +1",
+        head = "Meghanada Visor +2",
         body = "Meg. Cuirie +2",
         hands = "Carmine Fin. Ga. +1",
         legs = "Meg. Chausses +2",
@@ -88,7 +88,7 @@ function get_sets()
     }
 
     sets.WeaponSkill = {
-        head = "Meghanada Visor +1",
+        head = "Lilitu Headpiece",
         body = "Meg. Cuirie +2",
         hands = "Mummu Wrists +1",
         legs = "Meg. Chausses +2",
@@ -138,31 +138,43 @@ function get_sets()
     }
 
     sets.WeaponSkill["Last Stand"] = {
-        head = "Meghanada Visor +1",
-        body = {
-            name = "Herculean Vest",
-            augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
+        head={ 
+            name="Lilitu Headpiece", 
+            augments={'STR+10','DEX+10','Attack+15','Weapon skill damage +3%',}
         },
-        hands = "Meg. Gloves +2",
-        legs = "Meg. Chausses +2",
-        feet = {
-            name = "Herculean Boots",
-            augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
+        body={ 
+            name="Herculean Vest", 
+            augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}
         },
-        neck = "Fotia Gorget",
-        waist = "Metalsinger Belt",
-        left_ear = "Ishvara Earring",
-        right_ear = {
-            name = "Moonshade Earring",
-            augments = {"Attack+4", "TP Bonus +25"}
+        hands="Meg. Gloves +2",
+        legs={ 
+            name="Herculean Trousers", 
+            augments={'Rng.Acc.+9','Weapon skill damage +5%','AGI+7',}
         },
-        left_ring = "Ifrit Ring",
-        right_ring = "Ifrit Ring +1",
-        back = {
-            name = "Camulus's Mantle",
-            augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "AGI+10", "Weapon skill damage +10%"}
-        }
+        feet={ 
+            name="Herculean Boots", 
+            augments={'Attack+24','Weapon skill damage +3%','DEX+14',}
+        },
+        neck="Fotia Gorget",
+        waist="Elanid Belt",
+        left_ear="Ishvara Earring",
+        right_ear={ 
+            name="Moonshade Earring", 
+            augments={'Attack+4','TP Bonus +25',}
+        },
+        left_ring="Ilabrat Ring",
+        right_ring="Apate Ring",
+        back={ 
+            name="Camulus's Mantle", 
+            augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}
+        },
     }
+    sets.WeaponSkill["Detonator"] = sets.WeaponSkill["Last Stand"]
+    sets.WeaponSkill["Slug Shot"] = sets.WeaponSkill["Last Stand"]
+    sets.WeaponSkill["Sniper Shot"] = sets.WeaponSkill["Last Stand"]
+    sets.WeaponSkill["Split Shot"] = sets.WeaponSkill["Last Stand"]
+    sets.WeaponSkill["Numbing Shot"] = sets.WeaponSkill["Last Stand"]
+    
     sets.WeaponSkill["Leaden Salute"] = {
         ammo = "Orichalc. Bullet",
         head = "Pixie Hairpin +1",
@@ -196,6 +208,10 @@ function get_sets()
             augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "AGI+10", "Weapon skill damage +10%"}
         }
     }
+    sets.WeaponSkill["Wildfire"] = set_combine(
+        sets.WeaponSkill["Leaden Salute"],
+        {head = "Lilitu Headpiece"}
+    )
 
     sets.CorsairRoll = {
         head = {
@@ -216,6 +232,10 @@ function get_sets()
 end
 
 function precast(spell, action)
+	if "Trust" == spell.type then
+		return
+    end
+    
     if sets[spell.type] and sets[spell.type][spell.english] then
         equip(sets[spell.type][spell.english])
         debug(spell.type .. "." .. spell.english)

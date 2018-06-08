@@ -1,6 +1,6 @@
 function get_sets()
     sets.Idle = {
-        head = "Meghanada Visor +1",
+        head = "Meghanada Visor +2",
         body = "Meg. Cuirie +2",
         hands="Meg. Gloves +2",
         legs = "Meg. Chausses +2",
@@ -76,7 +76,7 @@ function get_sets()
 
     sets.Misc = {}
     sets.Misc.Ranged = {
-        head = "Meghanada Visor +1",
+        head = "Meghanada Visor +2",
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +2",
         legs = "Meg. Chausses +2",
