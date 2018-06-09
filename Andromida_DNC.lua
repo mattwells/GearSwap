@@ -141,36 +141,10 @@ function get_sets()
 	-- WS Sets --
 	sets.WeaponSkill = {
 		ammo = "Jukukik Feather",
-		head = "Adhemar Bonnet +1",
-		body = {
-			name = "Herculean Vest",
-			augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
-		},
-		hands = "Maxixi Bangles +3",
-		legs = "Mummu Kecks +2",
-		feet = {
-			name = "Herculean Boots",
-			augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
-		},
-		neck = "Fotia Gorget",
-		waist = "Fotia Belt",
-		left_ear = "Sherida Earring",
-		right_ear = {
-			name = "Moonshade Earring",
-			augments = {"Attack+4", "TP Bonus +25"}
-		},
-		left_ring = "Ilabrat Ring",
-		right_ring = "Ramuh Ring +1",
-		back = {
-			name = "Senuna's Mantle",
-			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "System: 1 ID: 1155 Val: 4"}
-		}
-		-- DEX30 Acc/Att DblAtt
-	}
-
-	sets.WeaponSkill["Rudra's Storm"] = {
-		ammo = "Jukukik Feather",
-		head = "Adhemar Bonnet +1",
+        head = {
+            name = "Lilitu Headpiece",
+            augments = {"STR+10", "DEX+10", "Attack+15", "Weapon skill damage +3%"}
+        },
 		body = {
 			name = "Herculean Vest",
 			augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
@@ -181,13 +155,10 @@ function get_sets()
 			name = "Herculean Boots",
 			augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
 		},
-		neck = "Caro Necklace",
-		waist = "Chiner's Belt +1",
+		neck = "Fotia Gorget",
+		waist = "Fotia Belt",
 		left_ear = "Sherida Earring",
-		right_ear = {
-			name = "Moonshade Earring",
-			augments = {"Attack+4", "TP Bonus +25"}
-		},
+		right_ear = "Moonshade Earring",
 		left_ring = "Ilabrat Ring",
 		right_ring = "Ramuh Ring +1",
 		back = {
@@ -195,6 +166,14 @@ function get_sets()
 			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", "Weapon skill damage +10%"}
 		}
 	}
+
+	sets.WeaponSkill["Rudra's Storm"] = set_combine(
+		sets.WeaponSkill,
+		{
+			neck = "Caro Necklace",
+			waist = "Chiner's Belt +1",
+		}
+	)
 	sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
 end
 
