@@ -36,7 +36,6 @@ function get_sets()
     }
 
     sets.Engaged = {
-        ammo = "Eminent Bullet",
         head = {
             name = "Adhemar Bonnet +1",
             augments = {"DEX+12", "AGI+12", "Accuracy+20"}
@@ -59,11 +58,11 @@ function get_sets()
             name = "Herculean Trousers",
             augments = {'"Triple Atk."+4', "DEX+7", "Accuracy+15", "Attack+4"}
         },
-        feet = "Meg. Jam. +1",
+        feet = "Mummu Gamash. +2",
         neck = "Iqabi Necklace",
         waist = "Windbuffet Belt +1",
         left_ear = "Telos Earring",
-        right_ear = "Brutal Earring",
+        right_ear = "Digni. Earring",
         left_ring = "Ilabrat Ring",
         right_ring = "Petrov Ring",
         back = {
@@ -99,16 +98,13 @@ function get_sets()
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Ishvara Earring",
-        right_ear = {
-            name = "Moonshade Earring",
-            augments = {"Attack+4", "TP Bonus +25"}
-        },
+        right_ear = "Moonshade Earring",
         left_ring = "Ilabrat Ring",
         right_ring = "Apate Ring",
-        back={ 
-            name="Camulus's Mantle", 
-            augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}
-        },
+        back = {
+            name = "Camulus's Mantle",
+            augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "AGI+10", "Weapon skill damage +10%"}
+        }
     }
     sets.WeaponSkill["Savage Blade"] = {
         head = "Lilitu Headpiece",
@@ -125,56 +121,50 @@ function get_sets()
         neck = "Fotia Gorget",
         waist = "Metalsinger Belt",
         left_ear = "Ishvara Earring",
-        right_ear = {
-            name = "Moonshade Earring",
-            augments = {"Attack+4", "TP Bonus +25"}
-        },
+        right_ear = "Moonshade Earring",
         left_ring = "Ifrit Ring",
         right_ring = "Ifrit Ring +1",
-        back={ 
-            name="Camulus's Mantle", 
-            augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}
-        },
+        back = {
+            name = "Camulus's Mantle",
+            augments = {"STR+20", "Accuracy+20 Attack+20", "STR+10", "Weapon skill damage +10%"}
+        }
     }
 
     sets.WeaponSkill["Last Stand"] = {
-        head={ 
-            name="Lilitu Headpiece", 
-            augments={'STR+10','DEX+10','Attack+15','Weapon skill damage +3%',}
+        head = {
+            name = "Lilitu Headpiece",
+            augments = {"STR+10", "DEX+10", "Attack+15", "Weapon skill damage +3%"}
         },
-        body={ 
-            name="Herculean Vest", 
-            augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}
+        body = {
+            name = "Herculean Vest",
+            augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
         },
-        hands="Meg. Gloves +2",
-        legs={ 
-            name="Herculean Trousers", 
-            augments={'Rng.Acc.+9','Weapon skill damage +5%','AGI+7',}
+        hands = "Meg. Gloves +2",
+        legs = {
+            name = "Herculean Trousers",
+            augments = {"Rng.Acc.+9", "Weapon skill damage +5%", "AGI+7"}
         },
-        feet={ 
-            name="Herculean Boots", 
-            augments={'Attack+24','Weapon skill damage +3%','DEX+14',}
+        feet = {
+            name = "Herculean Boots",
+            augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
         },
-        neck="Fotia Gorget",
-        waist="Elanid Belt",
-        left_ear="Ishvara Earring",
-        right_ear={ 
-            name="Moonshade Earring", 
-            augments={'Attack+4','TP Bonus +25',}
-        },
-        left_ring="Ilabrat Ring",
-        right_ring="Apate Ring",
-        back={ 
-            name="Camulus's Mantle", 
-            augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}
-        },
+        neck = "Fotia Gorget",
+        waist = "Elanid Belt",
+        left_ear = "Ishvara Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Ilabrat Ring",
+        right_ring = "Apate Ring",
+        back = {
+            name = "Camulus's Mantle",
+            augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "AGI+10", "Weapon skill damage +10%"}
+        }
     }
     sets.WeaponSkill["Detonator"] = sets.WeaponSkill["Last Stand"]
     sets.WeaponSkill["Slug Shot"] = sets.WeaponSkill["Last Stand"]
     sets.WeaponSkill["Sniper Shot"] = sets.WeaponSkill["Last Stand"]
     sets.WeaponSkill["Split Shot"] = sets.WeaponSkill["Last Stand"]
     sets.WeaponSkill["Numbing Shot"] = sets.WeaponSkill["Last Stand"]
-    
+
     sets.WeaponSkill["Leaden Salute"] = {
         ammo = "Orichalc. Bullet",
         head = "Pixie Hairpin +1",
@@ -197,10 +187,7 @@ function get_sets()
         neck = "Sanctity Necklace",
         waist = "Eschan Stone",
         left_ear = "Friomisi Earring",
-        right_ear = {
-            name = "Moonshade Earring",
-            augments = {"Attack+4", "TP Bonus +25"}
-        },
+        right_ear = "Moonshade Earring",
         left_ring = "Ilabrat Ring",
         right_ring = "Acumen Ring",
         back = {
@@ -209,7 +196,7 @@ function get_sets()
         }
     }
     sets.WeaponSkill["Wildfire"] = set_combine(
-        sets.WeaponSkill["Leaden Salute"],
+        sets.WeaponSkill["Leaden Salute"], 
         {head = "Lilitu Headpiece"}
     )
 
@@ -232,10 +219,18 @@ function get_sets()
 end
 
 function precast(spell, action)
-	if "Trust" == spell.type then
-		return
+    if "Trust" == spell.type then
+        return
     end
-    
+
+    if "Leaden Salute" == spell.english then
+        equip(sets.WeaponSkill["Leaden Salute"])
+
+        if spell.element == world.day_element or spell.element == world.weather_element then
+            equip({waist = "Anrin Obi"})
+        end
+    end
+
     if sets[spell.type] and sets[spell.type][spell.english] then
         equip(sets[spell.type][spell.english])
         debug(spell.type .. "." .. spell.english)
