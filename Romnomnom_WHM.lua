@@ -19,19 +19,34 @@ function get_sets()
 
 	sets.Precast = {}
 
-	sets.Precast.FastCast = {
-		ammo = "Incantor Stone",
-		body = "Inyanga Jubbah +1",
-		ear2 = "Loquac. Earring",
-		ring2 = "Prolix Ring",
-		neck = "Orison Locket",
-		waist = "Witful Belt",
-		right_ear = "Loquac. Earring",
-		right_ring = "Prolix Ring"
+	sets.Precast.Haste = {
+		head = "Theophany Cap +2",
+		body = "Shango Robe",
+		hands = "Inyan. Dastanas +2",
+		legs = "Chironic Hose",
+		feet = "Ebers Duckbills",
+		waist = "Witful Belt"
 	}
 
-	sets.Precast.Cure =
-		set_combine(
+	sets.Precast.FastCast = set_combine(
+		sets.Precast.Haste,
+		{
+			ammo = "Incantor Stone",
+			body = "Inyanga Jubbah +1",
+			ear2 = "Loquac. Earring",
+			ring2 = "Prolix Ring",
+			neck = "Orison Locket",
+			waist = "Witful Belt",
+			right_ear = "Loquac. Earring",
+			right_ring = "Prolix Ring",
+			back = {
+				name = "Alaunus's Cape",
+				augments = {"MND+20", "Mag. Acc+20 /Mag. Dmg.+20", "MND+5", '"Fast Cast"+10', "Damage taken-5%"}
+			}
+		}
+	)
+
+	sets.Precast.Cure = set_combine(
 		sets.Precast.FastCast,
 		{
 			main = "Queller Rod",
