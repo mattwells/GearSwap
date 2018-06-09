@@ -2,7 +2,7 @@ function get_sets()
     sets.Idle = {
         head = "Meghanada Visor +2",
         body = "Meg. Cuirie +2",
-        hands="Meg. Gloves +2",
+        hands = "Meg. Gloves +2",
         legs = "Meg. Chausses +2",
         feet = "Pill. Poulaines +1",
         neck = "Twilight Torque",
@@ -11,57 +11,59 @@ function get_sets()
         right_ear = "Infused Earring",
         left_ring = "Defending Ring",
         right_ring = "Warden's Ring",
-        back={ 
-            name="Toutatis's Cape", 
-            augments={
-                'DEX+20',
-                'Accuracy+20 Attack+20',
-                'DEX+5',
-                '"Dbl.Atk."+10','Phys. dmg. taken-10%',
+        back = {
+            name = "Toutatis's Cape",
+            augments = {
+                "DEX+20",
+                "Accuracy+20 Attack+20",
+                "DEX+5",
+                '"Dbl.Atk."+10',
+                "Phys. dmg. taken-10%"
             }
-        },
+        }
     }
 
     sets.Engaged = {
-        ammo="Yamarang",
-        head={ 
-            name="Adhemar Bonnet +1", 
-            augments={'DEX+12','AGI+12','Accuracy+20',}
+        ammo = "Yamarang",
+        head = {
+            name = "Adhemar Bonnet +1",
+            augments = {"DEX+12", "AGI+12", "Accuracy+20"}
         },
-        body={ 
-            name="Herculean Vest", 
-            augments={
-                'AGI+13',
-                'Weapon skill damage +2%',
-                'Quadruple Attack +3',
-                'Accuracy+18 Attack+18',
-                'Mag. Acc.+18 "Mag.Atk.Bns."+18',
+        body = {
+            name = "Herculean Vest",
+            augments = {
+                "AGI+13",
+                "Weapon skill damage +2%",
+                "Quadruple Attack +3",
+                "Accuracy+18 Attack+18",
+                'Mag. Acc.+18 "Mag.Atk.Bns."+18'
             }
         },
-        hands={ 
-            name="Adhemar Wrist. +1", 
-            augments={'DEX+12','AGI+12','Accuracy+20',}
+        hands = {
+            name = "Adhemar Wrist. +1",
+            augments = {"DEX+12", "AGI+12", "Accuracy+20"}
         },
-        legs={ 
-            name="Herculean Trousers", 
-            augments={'"Triple Atk."+4','DEX+7','Accuracy+15','Attack+4',}
+        legs = {
+            name = "Herculean Trousers",
+            augments = {'"Triple Atk."+4', "DEX+7", "Accuracy+15", "Attack+4"}
         },
-        feet="Mummu Gamash. +2",
-        neck="Erudit. Necklace",
-        waist="Windbuffet Belt +1",
-        left_ear="Sherida Earring",
-        right_ear="Telos Earring",
-        left_ring="Ilabrat Ring",
-        right_ring="Petrov Ring",
-        back={ 
-            name="Toutatis's Cape", 
-            augments={
-                'DEX+20',
-                'Accuracy+20 Attack+20',
-                'DEX+5',
-                '"Dbl.Atk."+10','Phys. dmg. taken-10%',
+        feet = "Mummu Gamash. +2",
+        neck = "Erudit. Necklace",
+        waist = "Windbuffet Belt +1",
+        left_ear = "Sherida Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Ilabrat Ring",
+        right_ring = "Petrov Ring",
+        back = {
+            name = "Toutatis's Cape",
+            augments = {
+                "DEX+20",
+                "Accuracy+20 Attack+20",
+                "DEX+5",
+                '"Dbl.Atk."+10',
+                "Phys. dmg. taken-10%"
             }
-        },
+        }
     }
 
     TH = false
@@ -85,47 +87,42 @@ function get_sets()
         left_ear = "Telos Earring",
         -- right_ear = "Neritic Earring",
         left_ring = "Ilabrat Ring",
-        right_ring = "Haverton Ring",
+        right_ring = "Haverton Ring"
         -- back = "Buquwik Cape"
     }
 
     sets.WeaponSkill = {
-        ammo="Jukukik Feather",
-        head="Mummu Bonnet +1",
-        body={ name="Herculean Vest", augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}},
-        hands="Meg. Gloves +2",
-        legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +2",
-        neck="Fotia Gorget",
-        waist="Fotia Belt",
-        left_ear="Sherida Earring",
-        right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-        left_ring="Ilabrat Ring",
-        right_ring="Ramuh Ring +1",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
-    }
-
-    sets.WeaponSkill["Rudra's Storm"] = {
         ammo = "Jukukik Feather",
-        head = "Mummu Bonnet +1",
+        head = {
+            name = "Lilitu Headpiece",
+            augments = {"STR+10", "DEX+10", "Attack+15", "Weapon skill damage +3%"}
+        },
         body = {
-            name = "Herculean Vest", 
+            name = "Herculean Vest",
             augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
         },
         hands = "Meg. Gloves +2",
         legs = "Mummu Kecks +2",
         feet = {
-            name = "Herculean Boots", 
+            name = "Herculean Boots",
             augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
         },
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
-        left_ear = "Ishvara Earring",
-        right_ear = {name = "Moonshade Earring", augments = {"Attack+4", "TP Bonus +25"}},
+        left_ear = "Sherida Earring",
+        right_ear = "Moonshade Earring",
         left_ring = "Ilabrat Ring",
         right_ring = "Ramuh Ring +1",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+        back = {
+            name = "Toutatis's Cape",
+            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", "Weapon skill damage +10%", "Phys. dmg. taken-10%"}
+        }
     }
+
+    sets.WeaponSkill["Rudra's Storm"] = set_combine(
+        sets.WeaponSkill,
+        {left_ear = "Ishvara Earring"}
+    )
     sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
 
     sets.JobAbility = {}
