@@ -86,6 +86,10 @@ function get_sets()
         back = "Buquwik Cape"
     }
 
+    sets.JobAbility = {}
+
+    sets.JobAbility["Wild Card"] = {feet = "Lanun Bottes +1"}
+
     sets.WeaponSkill = {
         head = "Lilitu Headpiece",
         body = "Meg. Cuirie +2",
@@ -195,10 +199,7 @@ function get_sets()
             augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "AGI+10", "Weapon skill damage +10%"}
         }
     }
-    sets.WeaponSkill["Wildfire"] = set_combine(
-        sets.WeaponSkill["Leaden Salute"], 
-        {head = "Lilitu Headpiece"}
-    )
+    sets.WeaponSkill["Wildfire"] = set_combine(sets.WeaponSkill["Leaden Salute"], {head = "Lilitu Headpiece"})
 
     sets.CorsairRoll = {
         head = {
@@ -216,13 +217,50 @@ function get_sets()
 
     -- sets.CorsairShot = {}
     -- sets.CorsairShot["Ice Shot"] = {}
+
+    sets.ConserveMP = {
+        left_ear = "Gwati Earring",
+        right_ear = "Magnetic Earring"
+    }
+
+    sets.Precast = {}
+    sets.Precast.Haste = {
+        head="Mummu Bonnet +1",
+        body="Herculean Vest",
+        hands={ 
+            name="Leyline Gloves", 
+            augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}
+        },
+        legs="Herculean Trousers", 
+        feet="Herculean Boots",
+        waist="Dynamic Belt",
+    }
+    sets.Precast.FastCast = set_combine(
+        sets.ConserveMP,
+        sets.Precast.Haste,
+        {
+            hands = {
+                name = "Leyline Gloves",
+                augments = {"Accuracy+12", "Mag. Acc.+14", '"Mag.Atk.Bns."+15', '"Fast Cast"+2'}
+            },
+            left_ear = "Loquac. Earring",
+            left_ring = "Prolix Ring"
+        }
+    )
+
+    sets.Midcast = {}
+    sets.Midcast.Cure = {
+        head = "Meghanada Visor +2",
+        body = "Meg. Cuirie +2",
+        hands = "Nilas Gloves",
+        legs = "Meg. Chausses +2",
+        feet = "Meg. Jam. +1",
+        neck = "Phalaina Locket",
+        left_ring = "Globidonta Ring"
+    }
 end
 
 function precast(spell, action)
-    if "Trust" == spell.type then
-        return
-    end
-
     if "Leaden Salute" == spell.english then
         equip(sets.WeaponSkill["Leaden Salute"])
 
@@ -241,7 +279,27 @@ function precast(spell, action)
         return
     end
 
+    if is_magic(spell) then
+        equip(sets.Precast.FastCast)
+        debug("Fast Cast")
+        return
+    end
+
     debug("No set for " .. spell.type .. "." .. spell.english)
+end
+
+function is_magic(spell)
+    return spell.type:endswith("Magic") 
+        or spell.type == "BardSong" 
+        or spell.type == "Ninjutsu" 
+        or spell.type == "Trust"
+end
+
+function midcast(spell)
+    if spell.english:startswith("Cure") then
+        equip(sets.Midcast.Cure)
+        return
+    end
 end
 
 function aftercast(spell, action)
@@ -249,7 +307,8 @@ function aftercast(spell, action)
 end
 
 function status_change(new, old)
-    if _G["status_change_" .. new:lower()] and not _G["status_change_" .. new:lower()]() then
+    local status_change_function = "status_change_" .. new:lower()
+    if _G[status_change_function] and not _G[status_change_function]() then
         return
     end
 
