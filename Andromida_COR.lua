@@ -89,6 +89,7 @@ function get_sets()
     sets.JobAbility = {}
 
     sets.JobAbility["Wild Card"] = {feet = "Lanun Bottes +1"}
+    sets.JobAbility["Random Deal"] = {body = "Lanun Frac +2"}
 
     sets.WeaponSkill = {
         head = "Lilitu Headpiece",

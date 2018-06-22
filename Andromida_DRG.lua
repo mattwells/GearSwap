@@ -20,28 +20,22 @@ function get_sets()
     sets.Idle = set_combine(sets.PDT, {})
 
     sets.Engaged = {
-        ammo = "Ginsen",
-        head = "Flam. Zucchetto +2",
-        body = "Pelt. Plackart +1",
-        hands = {
-            name = "Acro Gauntlets",
-            augments = {"Attack+25", '"Store TP"+6', "STR+5 DEX+5"}
+        ammo="Ginsen",
+        head="Flam. Zucchetto +2",
+        body="Flamma Korazin +1",
+        hands="Flam. Manopolas +1", -- Sulevia +2
+        legs="Flamma Dirs +1", -- Sulevia +2
+        feet="Flam. Gambieras +2",
+        neck="Ganesha's Mala",
+        waist="Ioskeha Belt",
+        left_ear="Telos Earring",
+        right_ear="Sherida Earring",
+        left_ring="Petrov Ring",
+        right_ring="Niqmaddu Ring",
+        back={ 
+            name="Brigantia's Mantle", 
+            augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}
         },
-        legs = {
-            name = "Valor. Hose",
-            augments = {"Attack+26", '"Store TP"+6', "STR+9", "Accuracy+11"}
-        },
-        feet = "Flam. Gambieras +2",
-        neck = "Ganesha's Mala",
-        waist = "Windbuffet Belt +1",
-        left_ear = "Telos Earring",
-        right_ear = "Sherida Earring",
-        left_ring = "Petrov Ring",
-        right_ring = "Niqmaddu Ring",
-        back = {
-            name = "Brigantia's Mantle",
-            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Dbl.Atk."+10', "Phys. dmg. taken-10%"}
-        }
     }
 
     -- JA Sets --
@@ -70,15 +64,12 @@ function get_sets()
     sets.WeaponSkill.Drakesbane = {
         ammo = "Knobkierrie",
         head = "Flam. Zucchetto +2",
-        body = {
-            name = "Valorous Mail",
-            augments = {"Attack+30", "Sklchn.dmg.+1%", "STR+14", "Accuracy+14"}
-        },
+        body="Sulevia's Plate. +1",
         hands = "Flam. Manopolas +1",
         legs = "Pelt. Cuissots +1",
         feet = "Sulev. Leggings +2",
         neck = "Fotia Gorget",
-        waist = "Windbuffet Belt +1",
+        waist="Ioskeha Belt",
         left_ear = "Brutal Earring",
         right_ear = "Sherida Earring",
         left_ring = "Ifrit Ring +1",
