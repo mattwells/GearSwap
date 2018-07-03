@@ -23,6 +23,29 @@ function get_sets()
         }
     }
 
+	DT = false
+	sets.PDT = {
+		head = "Meghanada Visor +2",
+		body = "Meg. Cuirie +2",
+		hands = "Meg. Gloves +2",
+		legs = "Meg. Chausses +2",
+		feet = "Meg. Jam. +1",
+		neck = "Twilight Torque",
+		waist = "Flume Belt",
+		left_ring = "Warden's ring",
+		right_ring = "Defending Ring",
+        back = {
+            name = "Toutatis's Cape",
+            augments = {
+                "DEX+20",
+                "Accuracy+20 Attack+20",
+                "DEX+5",
+                '"Dbl.Atk."+10',
+                "Phys. dmg. taken-10%"
+            }
+        }
+	}
+
     sets.Engaged = {
         ammo = "Yamarang",
         head = {
@@ -198,10 +221,24 @@ function status_change_engaged()
     if TH then
         equip(sets.TH)
     end
+
+	if DT then
+		equip(sets.PDT)
+	end
 end
 
 function self_command(command)
     command = command:lower()
+
+    if "dt" == command then
+        DT = not DT
+
+        windower.add_to_chat(123, "DT: " .. (DT and "on" or "off"))
+
+        status_change(player.status, player.status)
+
+        return
+    end
 
     if "th" == command then
         TH = not TH
