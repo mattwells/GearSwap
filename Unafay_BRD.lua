@@ -1,6 +1,5 @@
 function get_sets()
-	debug('Rommi>> <3')
-
+	debug("Rommi>> <3")
 	-- Idle Sets --
 	sets.Idle = {
 		main="Terra's Staff",
@@ -9,24 +8,28 @@ function get_sets()
 		neck="Twilight Torque",
 		ear1="Loquac. Earring",
 		ear2="Enchanter Earring +1",
-		body="Bihu justaucorps +1",
-		hands="Marduk's dastanas +1",
+		body="Ayanmo corazza +1",
+		hands="Ayanmo manopolas +1",
 		ring1="Patricius Ring",
 		ring2="Sangoma ring",
 		back="Mecistopins mantle",
 		waist="Ovate rope",
-		legs="Bihu cannions +1",
-		feet="Fili cothurnes +1"
+		legs="Jokushu haidate",
+		feet="Ayanmo gambieras +1"
 	}
 
-	sets.Resting = set_combine(sets.Idle, {
-		ear1="Moonshade earring",
-		body="Respite cloak",
-		waist="Fucho-no-obi",
-		legs="Assiduity pants",
-		hands="Serpentes cuffs",
-		feet="Sepentes sabots"
-	})
+	sets.Resting =
+		set_combine(
+		sets.Idle,
+		{
+			ear1="Moonshade earring",
+			body="Respite cloak",
+			waist="Fucho-no-obi",
+			legs="Assiduity pants",
+			hands="Serpentes cuffs",
+			feet="Sepentes sabots"
+		}
+	)
 
 	-- JA Sets --
 	sets.JA = {}
@@ -74,12 +77,12 @@ function get_sets()
 		neck="Orunmila's Torque",
 		ear2="Loquac. Earring",
 		body="Heka's Kalasiris",
-		hands="Gendewitha Gages +1",
+		hands="Bokwus gloves",
 		ring1="Prolix Ring",
 		back="Pahtli Cape",
 		waist="Witful Belt",
-		legs="Artsieq hose",
-		feet="Chelona Boots"
+		legs="Nabu's shalwar",
+		feet="Medium's sabots"
 	}
 
 	sets.Midcast = {}
@@ -89,20 +92,20 @@ function get_sets()
 		main="Carnwenhan",
 		range="Gjallarhorn",
 		head="Brioso Roundlet +1",
-		neck="Piper's Torque",
+		neck="Moonbow whistle",
 		ear1="Gwati earring",
 		ear2="Enchanter earring +1",
 		body="Brioso Just. +2",
-		hands="Brioso cuffs +1",
-		ring1="Carbuncle ring +1",
+		hands="chironic gloves",
+		ring1="Kishar Ring",
 		ring2="Carbuncle ring +1",
 		back="Rhapsode's Cape",
 		waist="Ovate rope",
-		legs="Bihu Cannions +1",
+		legs="chironic hose",
 		feet="Artsieq Boots"
 	}
 
-			-- Song Buff Set --
+	-- Song Buff Set --
 	sets.Midcast.WindBuff = {
 		main="Carnwenhan",
 		range="",
@@ -114,9 +117,9 @@ function get_sets()
 		hands="Fili manchettes +1",
 		ring1="Dawnsoul ring",
 		back="Kumbira cape",
-		waist="Ovate Rope",
-		legs="Mdk. Shalwar +1", -- Inyanga Shalwar +2
-		feet="Brioso Slippers +1" -- Brioso Slippers +3
+		waist="Ovate rope",
+		legs="Mdk. Shalwar +1",
+		feet="Brioso Slippers +2"
 	}
 
 	sets.Midcast.March = {hands="Fili manchettes +1"}
@@ -127,7 +130,7 @@ function get_sets()
 	sets.Midcast.Mazurka = {head="Nahtirah hat"}
 	sets.Midcast.Paeon = {head="Brioso Roundlet +1"}
 	sets.Midcast.Finale = {}
-	sets.Midcast.Lullaby = {hands= "Brioso cuffs +1"}
+	sets.Midcast.Lullaby = {hands="Brioso cuffs +1"}
 
 	-- Cure Set --
 	sets.Midcast.Cure = {
@@ -137,14 +140,14 @@ function get_sets()
 		neck="Colossus's torque",
 		ear1="Loquac. Earring",
 		ear2="Beatific earring",
-		body="chironic doublet",
+		body="Chironic doublet",
 		hands="Bokwus gloves",
 		ring1="Ephedra ring",
 		ring2="Sirona's ring",
 		back="Pahtli cape",
 		waist="Cascade belt",
-		legs="Nabu's shalwar",
-		feet="Bihu slippers +1"
+		legs="Gyve trousers",
+		feet="Medium's sabots"
 	}
 
 	-- Curaga Set --
@@ -167,34 +170,42 @@ function get_sets()
 	}
 
 	-- Haste Set --
-	sets.Midcast.Haste = set_combine(sets.Precast.FastCast, {
-		head="Nahtirah Hat",
-		neck="Orunmila's Torque",
-		ear1="Loquac. Earring",
-		-- body="Hedera Cotehardie",
-		hands="Gendewitha Gages +1",
-		ring1="Prolix Ring",
-		ring2="Weatherspoon ring",
-		back="Swith Cape +1",
-		-- waist="Pya'ekue Belt",
-		legs="Bihu Cannions +1",
-		feet="Brioso Slippers +1"
-	})
+	sets.Midcast.Haste =
+		set_combine(
+		sets.Precast.FastCast,
+		{
+			head="Nahtirah Hat",
+			neck="Orunmila's Torque",
+			ear1="Loquac. Earring",
+			-- body="Hedera Cotehardie",
+			hands="Gendewitha Gages +1",
+			ring1="Prolix Ring",
+			ring2="Weatherspoon ring",
+			back="Swith Cape +1",
+			-- waist="Pya'ekue Belt",
+			legs="Bihu Cannions +1",
+			feet="Brioso Slippers +2"
+		}
+	)
 
 	-- Cursna Set --
-	sets.Midcast.Cursna = set_combine(sets.Midcast.Haste, {
-		ring1="Ephedra ring",
-		neck="Malison medallion",
-		feet="Gendewitha Galoshes +1"
-	})
+	sets.Midcast.Cursna =
+		set_combine(
+		sets.Midcast.Haste,
+		{
+			ring1="Ephedra ring",
+			neck="Malison medallion",
+			feet="Gendewitha Galoshes +1"
+		}
+	)
 
 	-- Stoneskin Set --
 	sets.Midcast.Stoneskin = set_combine(sets.Midcast.Haste)
-	
+
 	-- Melee --
 	sets.TP = {
 		main="Carnwenhan",
-		sub="Izhiikoh",	
+		sub="Taming sari",
 		head="Ayanmo zucchetto +1",
 		neck="Asperity Necklace",
 		ear1="Steelflash Earring",
@@ -203,43 +214,43 @@ function get_sets()
 		hands="Ayanmo manopolas +1",
 		ring1="Rajas Ring",
 		ring2="Ayanmo Ring",
-		back="Boxer's Mantle",
-		waist="Cetl belt",
-		legs="Ayanmo cosciales +1",
+		back="Atheling mantle",
+		waist="eschan stone",
+		legs="Jokushu Haidate",
 		feet="Ayanmo gambieras +1"
 	}
 end
 
-function precast(spell,action)
-	if spell.type:endswith('Magic') or spell.type == "BardSong" or spell.type == "Ninjutsu" then
+function precast(spell, action)
+	if spell.type:endswith("Magic") or spell.type == "BardSong" or spell.type == "Ninjutsu" then
 		if buffactive.silence then -- Cancel Magic or Ninjutsu or BardSong If You Are Silenced or Out of Range --
 			cancel_spell()
-			debug(spell.name..' Canceled: [Silence has fallen]')
+			debug(spell.name .. " Canceled: [Silence has fallen]")
 			return
 		else
-			if spell.type == 'BardSong' then
+			if spell.type == "BardSong" then
 				if buffactive.nightingale then
 					song_equip(spell)
 					return
 				else
 					equip(sets.Precast.SongCast)
-					debug('Precast: Song')
+					debug("Precast: Song")
 				end
-			elseif string.find(spell.english,'Cur') and spell.english ~= "Cursna" then
+			elseif string.find(spell.english, "Cur") and spell.english ~= "Cursna" then
 				equip(sets.Precast.Cure)
-				debug('Precast: Cure')
+				debug("Precast: Cure")
 			else
 				equip(sets.Precast.FastCast)
-				debug('Precast: Fast Cast')
+				debug("Precast: Fast Cast")
 			end
 		end
-	elseif spell.english == 'Spectral Jig' and buffactive.Sneak then
+	elseif spell.english == "Spectral Jig" and buffactive.Sneak then
 		cast_delay(0.2)
-		send_command('cancel Sneak')
+		send_command("cancel Sneak")
 	elseif spell.type == "JobAbility" then
 		if sets.JA[spell.english] then
 			equip(sets.JA[spell.english])
-			debug('Precast: ' ..  spell.english)
+			debug("Precast: " .. spell.english)
 		end
 	end
 end
@@ -247,36 +258,33 @@ end
 function midcast(spell, action)
 	if sets.Midcast[spell.english] then
 		equip(sets.Midcast[spell.english])
-		debug('Midcast: ' .. spell.english)
+		debug("Midcast: " .. spell.english)
 		return
-
-	elseif spell.type:endswith('Magic') or spell.type == 'Ninjutsu' or spell.type == "BardSong" then
-
+	elseif spell.type:endswith("Magic") or spell.type == "Ninjutsu" or spell.type == "BardSong" then
 		if spell.type == "BardSong" then
 			song_equip(spell)
-		elseif string.find(spell.english,'Cure') then
+		elseif string.find(spell.english, "Cure") then
 			equip(sets.Midcast.Cure)
-			debug('Midcast: Cure')
-		elseif string.find(spell.english,'Cura') then
+			debug("Midcast: Cure")
+		elseif string.find(spell.english, "Cura") then
 			equip(sets.Midcast.Curaga)
-			debug('Midcast: Curaga')
+			debug("Midcast: Curaga")
 		end
-
 	end
 end
 
-function aftercast(spell,action)
+function aftercast(spell, action)
 	status_change(player.status)
 end
 
-function status_change(new,old)
-	if new == 'Idle' then
+function status_change(new, old)
+	if new == "Idle" then
 		equip(sets.Idle)
-		debug('Aftercast: Idle')
-	elseif new == 'Resting' then
+		debug("Aftercast: Idle")
+	elseif new == "Resting" then
 		equip(sets.Resting)
-		debug('Aftercast: Resting')
-	elseif new == 'Engaged' then
+		debug("Aftercast: Resting")
+	elseif new == "Engaged" then
 		equipSet = sets.TP
 		equip(equipSet)
 	else
@@ -291,26 +299,26 @@ function status_change(new,old)
 	end
 end
 
-song_set_names = {'Finale', 'Lullaby', 'March', 'Minuet', 'Madrigal', 'Ballad', 'Scherzo', 'Mazurka', 'Paeon'}
+song_set_names = {"Finale", "Lullaby", "March", "Minuet", "Madrigal", "Ballad", "Scherzo", "Mazurka", "Paeon"}
 function song_equip(spell)
-	if spell.target.type == 'MONSTER' then
+	if spell.target.type == "MONSTER" then
 		equip(sets.Midcast.Wind)
-		debug('Midcast: Wind')
+		debug("Midcast: Wind")
 	else
-		if 'Daurdabla' == player.equipment.range then
-			debug('Midcast: Dummy Song')
+		if "Daurdabla" == player.equipment.range then
+			debug("Midcast: Dummy Song")
 			return
 		end
 
 		equip(sets.Midcast.WindBuff)
-		debug('Midcast: WindBuff')
+		debug("Midcast: WindBuff")
 	end
 
 	for _, song in ipairs(song_set_names) do
 		if string.find(spell.english, song) then
 			if sets.Midcast[song] then
 				equip(sets.Midcast[song])
-				debug('Midcast: ' .. song)
+				debug("Midcast: " .. song)
 				break
 			end
 		end
@@ -318,5 +326,5 @@ function song_equip(spell)
 end
 
 function debug(s)
-	send_command('@input /echo ' .. s)
+	send_command("@input /echo " .. s)
 end
