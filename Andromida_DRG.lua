@@ -3,7 +3,7 @@ function get_sets()
     sets.PDT = {
         head = "Sulevia's Mask +1",
         body = "Sulevia's Plate. +1",
-        hands = "Sulev. Gauntlets +1",
+        hands = "Sulev. Gauntlets +2",
         legs = "Sulevi. Cuisses +1",
         feet = "Sulev. Leggings +2",
         neck = "Twilight Torque",
@@ -20,7 +20,7 @@ function get_sets()
     sets.Idle = set_combine(sets.PDT, {})
 
     sets.Engaged = {
-        ammo="Ginsen",
+        ammo="Hasty Pinion +1",
         head="Flam. Zucchetto +2",
         body="Flamma Korazin +1",
         hands="Flam. Manopolas +1", -- Sulevia +2
@@ -57,6 +57,10 @@ function get_sets()
         sets.JobAbility["Jump"], 
         {legs = "Ptero. Brais"}
     )
+    sets.JobAbility["Spirit Link"] = {}
+
+    sets.JobAbility.Hasso = {}
+    sets.JobAbility.Meditate = {}
 
     -- WS Sets --
     sets.WeaponSkill = {}
@@ -84,7 +88,7 @@ function get_sets()
         set_combine(
         sets.WeaponSkill.Drakesbane,
         {
-            hands = "Sulev. Gauntlets +1",
+            hands = "Sulev. Gauntlets +2",
             legs = "Sulevi. Cuisses +1",
             waist = "Fotia Belt",
             left_ear = "Moonshade Earring",
@@ -149,8 +153,6 @@ function precast(spell, action)
 
     if sets[spell.type] and sets[spell.type][spell.english] then
         equip(sets[spell.type][spell.english])
-
-        debug(spell.type .. " " .. spell.english)
 
         return
     end
