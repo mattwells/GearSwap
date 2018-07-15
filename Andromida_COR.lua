@@ -170,13 +170,10 @@ function get_sets()
     sets.WeaponSkill["Split Shot"] = sets.WeaponSkill["Last Stand"]
     sets.WeaponSkill["Numbing Shot"] = sets.WeaponSkill["Last Stand"]
 
-    sets.WeaponSkill["Leaden Salute"] = {
+    sets.WeaponSkill["Wildfire"] = {
         ammo = "Orichalc. Bullet",
-        head = "Pixie Hairpin +1",
-        body = {
-            name = "Carm. Scale Mail",
-            augments = {"Attack+15", '"Mag.Atk.Bns."+10', '"Dbl.Atk."+2'}
-        },
+        head = "Lilitu Headpiece",
+        body = "Lanun Frac +3",
         hands = {
             name = "Carmine Fin. Ga. +1",
             augments = {"Rng.Atk.+20", '"Mag.Atk.Bns."+12', '"Store TP"+6'}
@@ -200,7 +197,10 @@ function get_sets()
             augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "AGI+10", "Weapon skill damage +10%"}
         }
     }
-    sets.WeaponSkill["Wildfire"] = set_combine(sets.WeaponSkill["Leaden Salute"], {head = "Lilitu Headpiece"})
+    sets.WeaponSkill["Leaden Salute"] = set_combine(
+        sets.WeaponSkill["Wildfire"],
+        {head = "Pixie Hairpin +1"}
+    )
 
     sets.CorsairRoll = {
         head = {
@@ -216,8 +216,7 @@ function get_sets()
     }
     -- sets.CorsairRoll["Fighter's Roll"] = {}
 
-    -- sets.CorsairShot = {}
-    -- sets.CorsairShot["Ice Shot"] = {}
+    sets.CorsairShot = sets.WeaponSkill["Wildfire"]
 
     sets.ConserveMP = {
         left_ear = "Gwati Earring",
@@ -268,21 +267,23 @@ function precast(spell, action)
         if spell.element == world.day_element or spell.element == world.weather_element then
             equip({waist = "Anrin Obi"})
         end
+
+        return
     end
 
     if sets[spell.type] and sets[spell.type][spell.english] then
         equip(sets[spell.type][spell.english])
-        debug(spell.type .. "." .. spell.english)
+
         return
     elseif sets[spell.type] then
         equip(sets[spell.type])
-        debug(spell.type)
+
         return
     end
 
     if is_magic(spell) then
         equip(sets.Precast.FastCast)
-        debug("Fast Cast")
+
         return
     end
 
