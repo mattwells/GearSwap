@@ -88,8 +88,8 @@ function get_sets()
 
     sets.JobAbility = {}
 
-    sets.JobAbility["Wild Card"] = {feet = "Lanun Bottes +1"}
-    sets.JobAbility["Random Deal"] = {body = "Lanun Frac +2"}
+    sets.JobAbility["Wild Card"] = {feet = "Lanun Bottes +2"}
+    sets.JobAbility["Random Deal"] = {body = "Lanun Frac +3"}
 
     sets.WeaponSkill = {
         head = "Lilitu Headpiece",
@@ -178,14 +178,11 @@ function get_sets()
             name = "Carmine Fin. Ga. +1",
             augments = {"Rng.Atk.+20", '"Mag.Atk.Bns."+12', '"Store TP"+6'}
         },
-        legs = {
-            name = "Herculean Trousers",
-            augments = {"Rng.Acc.+9", "Weapon skill damage +5%", "AGI+7"}
+        legs={ 
+            name="Herculean Trousers", 
+            augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Dbl.Atk."+1','INT+5','"Mag.Atk.Bns."+13',}
         },
-        feet = {
-            name = "Herculean Boots",
-            augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
-        },
+        feet = "Lanun bottes +2",
         neck = "Sanctity Necklace",
         waist = "Eschan Stone",
         left_ear = "Friomisi Earring",
