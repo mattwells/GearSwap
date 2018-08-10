@@ -249,6 +249,12 @@ function self_command(command)
     end
 end
 
+function buff_change(name, gain, buff_details)
+    -- if not gain and name:endswith("Roll") then
+    --     send_command('@input /t Ajirha ' .. name .. ' off')
+    -- end
+end
+
 function debug(s)
     send_command("@input /echo " .. s)
 end
