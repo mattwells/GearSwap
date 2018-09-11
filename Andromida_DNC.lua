@@ -1,37 +1,31 @@
 function get_sets()
 	sets.Idle = {
+		main = "Aeneas",
+		sub = "Twashtar",
 		ammo = "Yamarang",
-		head = "Meghanada Visor +2",
-		body = "Meg. Cuirie +2",
-		hands = "Meg. Gloves +2",
-		legs = "Meg. Chausses +2",
-		feet = "Tandava Crackows",
-		neck = "Twilight Torque",
-		waist = "Flume Belt",
-		left_ear = "Telos Earring",
-		right_ear = "Infused Earring",
-		left_ring = "Warden's ring",
-		right_ring = "Defending Ring",
+		head = {
+			name = "Adhemar Bonnet +1",
+			augments = {"DEX+12", "AGI+12", "Accuracy+20"}
+		},
+		body = "Horos Casaque +3",
+		hands = {
+			name = "Adhemar Wrist. +1",
+			augments = {"DEX+12", "AGI+12", "Accuracy+20"}
+		},
+		legs = {
+			name = "Samnuha Tights",
+			augments = {"STR+10", "DEX+10", '"Dbl.Atk."+3', '"Triple Atk."+3'}
+		},
+		feet = "Horos T. Shoes +2",
+		neck = "Anu Torque",
+		waist = "Windbuffet Belt +1",
+		left_ear = "Sherida Earring",
+		right_ear = "Telos Earring",
+		left_ring = "Epona's Ring",
+		right_ring = "Petrov Ring",
 		back = {
 			name = "Senuna's Mantle",
-			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "System: 1 ID: 1155 Val: 4"}
-		}
-	}
-
-	DT = false
-	sets.PDT = {
-		head = "Meghanada Visor +2",
-		body = "Meg. Cuirie +2",
-		hands = "Meg. Gloves +2",
-		legs = "Meg. Chausses +2",
-		feet = "Meg. Jam. +1",
-		neck = "Twilight Torque",
-		waist = "Flume Belt",
-		left_ring = "Warden's ring",
-		right_ring = "Defending Ring",
-		back = {
-			name = "Senuna's Mantle",
-			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "System: 1 ID: 1155 Val: 4"}
+			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "Phys. dmg. taken-10%"}
 		}
 	}
 
@@ -41,10 +35,7 @@ function get_sets()
 			name = "Adhemar Bonnet +1",
 			augments = {"DEX+12", "AGI+12", "Accuracy+20"}
 		},
-		body = {
-			name = "Horos Casaque +3",
-			augments = {'Enhances "No Foot Rise" effect'}
-		},
+		body = "Horos Casaque +3",
 		hands = {
 			name = "Adhemar Wrist. +1",
 			augments = {"DEX+12", "AGI+12", "Accuracy+20"}
@@ -62,6 +53,30 @@ function get_sets()
 			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "Phys. dmg. taken-10%"}
 		}
 	}
+
+	DT = false
+	sets.PDT =
+		set_combine(
+		sets.Engaged,
+		{
+			ammo = "Staunch Tathlum +1",
+			body = "Horos Casaque +3",
+			hands = {
+				name = "Herculean Gloves",
+				augments = {'"Store TP"+5', "STR+7", "Accuracy+14"}
+			},
+			legs = "Mummu Kecks +2",
+			feet = "Meg. Jam. +2",
+			neck = "Twilight Torque",
+			waist = "Dynamic Belt",
+			left_ring = "Moonlight Ring",
+			right_ring = "Defending Ring",
+			back = {
+				name = "Senuna's Mantle",
+				augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "Phys. dmg. taken-10%"}
+			}
+		}
+	)
 
 	-- JA Sets --
 	sets.JobAbility = {}
@@ -104,7 +119,7 @@ function get_sets()
 			name = "Horos Tiara +1",
 			augments = {'Enhances "Trance" effect'}
 		},
-		body = "Maxixi Casaque +2",
+		body = "Maxixi Casaque +3",
 		feet = "Maxixi Toeshoes +2",
 		back = {
 			name = "Toetapper Mantle",
@@ -127,11 +142,7 @@ function get_sets()
 		legs = "Meg. Chausses +2",
 		feet = "Horos Toe Shoes +2",
 		neck = "Iqabi Necklace",
-		waist = "Olseni Belt",
-		left_ear = "Zennaroi Earring",
-		right_ear = "Heartseeker Earring",
 		left_ring = "Ramuh Ring +1",
-		right_ring = "Oneiros Ring",
 		back = {
 			name = "Senuna's Mantle",
 			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", "Weapon skill damage +10%"}
@@ -140,11 +151,11 @@ function get_sets()
 
 	-- WS Sets --
 	sets.WeaponSkill = {
-		ammo = "Jukukik Feather",
-        head = {
-            name = "Lilitu Headpiece",
-            augments = {"STR+10", "DEX+10", "Attack+15", "Weapon skill damage +3%"}
-        },
+		ammo = "Charis Feather",
+		head = {
+			name = "Lilitu Headpiece",
+			augments = {"STR+10", "DEX+10", "Attack+15", "Weapon skill damage +3%"}
+		},
 		body = {
 			name = "Herculean Vest",
 			augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
@@ -167,11 +178,12 @@ function get_sets()
 		}
 	}
 
-	sets.WeaponSkill["Rudra's Storm"] = set_combine(
+	sets.WeaponSkill["Rudra's Storm"] =
+		set_combine(
 		sets.WeaponSkill,
 		{
 			neck = "Caro Necklace",
-			waist = "Chiner's Belt +1",
+			waist = "Chiner's Belt +1"
 		}
 	)
 	sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
