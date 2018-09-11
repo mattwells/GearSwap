@@ -4,7 +4,7 @@ function get_sets()
 		sub = "Sors Shield",
 		ammo = "Incantor Stone",
 		head = "Inyanga Tiara +2",
-		body = "Ebers Bliaud",
+		body = "Ebers Bliaud +1",
 		hands = "Inyan. Dastanas +2",
 		legs = "Assiduity Pants",
 		feet = "Inyan. Crackows +1",
@@ -24,7 +24,7 @@ function get_sets()
 		body = "Shango Robe",
 		hands = "Inyan. Dastanas +2",
 		legs = "Chironic Hose",
-		feet = "Ebers Duckbills",
+		feet = "Ebers Duckbills +1",
 		waist = "Witful Belt"
 	}
 
@@ -54,7 +54,7 @@ function get_sets()
 			head = "Theophany Cap +2",
 			body = "Heka's Kalasiris",
 			ear1 = "Nourish. Earring +1",
-			legs = "Ebers Pantaloons",
+			legs = "Ebers Pantaloons +1",
 			feet = "Cure Clogs",
 			back = {
 				name = "Alaunus's Cape",
@@ -74,8 +74,8 @@ function get_sets()
 		head = "Theophany Cap +2",
 		body = "Heka's Kalasiris",
 		hands = "Theophany Mitts +2",
-		legs = "Ebers Pantaloons",
-		feet = "Ebers Duckbills",
+		legs = "Ebers Pantaloons +1",
+		feet = "Ebers Duckbills +1",
 		waist = "Cascade Belt",
 		left_ear = "Nourish. Earring +1",
 		back = {
