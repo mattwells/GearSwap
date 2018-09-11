@@ -2,10 +2,10 @@ function get_sets()
     DT = false
     sets.PDT = {
         head = "Sulevia's Mask +1",
-        body = "Sulevia's Plate. +1",
-        hands = "Sulev. Gauntlets +2",
-        legs = "Sulevi. Cuisses +1",
-        feet = "Sulev. Leggings +2",
+        body = "Sulevia's Plate. +2",
+        hands = "Sulevia's Gauntlets +2",
+        legs = "Sulevia's Cuisses +2",
+        feet = "Sulevia's Leggings +2",
         neck = "Twilight Torque",
         waist = "Flume Belt",
         left_ear = "Infused Earring",
@@ -21,11 +21,11 @@ function get_sets()
 
     sets.Engaged = {
         ammo="Hasty Pinion +1",
-        head="Flam. Zucchetto +2",
-        body="Flamma Korazin +1",
-        hands="Flam. Manopolas +1", -- Sulevia +2
+        head="Flamma Zucchetto +2",
+        body="Flamma Korazin +2",
+        hands="Flamma Manopolas +2", -- Sulevia +2
         legs="Flamma Dirs +1", -- Sulevia +2
-        feet="Flam. Gambieras +2",
+        feet="Flamma Gambieras +2",
         neck="Ganesha's Mala",
         waist="Ioskeha Belt",
         left_ear="Telos Earring",
@@ -55,7 +55,7 @@ function get_sets()
     )
     sets.JobAbility["High Jump"] = set_combine(
         sets.JobAbility["Jump"], 
-        {legs = "Ptero. Brais"}
+        {legs = "Pteroslaver Brais"}
     )
     sets.JobAbility["Spirit Link"] = {}
 
@@ -67,11 +67,11 @@ function get_sets()
 
     sets.WeaponSkill.Drakesbane = {
         ammo = "Knobkierrie",
-        head = "Flam. Zucchetto +2",
-        body="Sulevia's Plate. +1",
-        hands = "Flam. Manopolas +1",
+        head = "Flamma Zucchetto +2",
+        body="Sulevia's Plate. +2",
+        hands = "Flamma Manopolas +2",
         legs = "Pelt. Cuissots +1",
-        feet = "Sulev. Leggings +2",
+        feet = "Sulevia's Leggings +2",
         neck = "Fotia Gorget",
         waist="Ioskeha Belt",
         left_ear = "Brutal Earring",
@@ -88,8 +88,8 @@ function get_sets()
         set_combine(
         sets.WeaponSkill.Drakesbane,
         {
-            hands = "Sulev. Gauntlets +2",
-            legs = "Sulevi. Cuisses +1",
+            hands = "Sulevia's Gauntlets +2",
+            legs = "Sulevia's Cuisses +2",
             waist = "Fotia Belt",
             left_ear = "Moonshade Earring",
             right_ear = "Sherida Earring"
@@ -104,8 +104,8 @@ function get_sets()
             augments={'Attack+30','Sklchn.dmg.+1%','STR+14','Accuracy+14',}
         },
         hands="Wyrm Fng.Gnt.",
-        legs="Vishap Brais +1",
-        feet="Sulev. Leggings +2",
+        legs="Vishap Brais +2",
+        feet="Sulevia's Leggings +2",
         neck="Fotia Gorget",
         waist="Fotia Belt",
         left_ear="Ishvara Earring",
@@ -121,8 +121,8 @@ function get_sets()
 
     sets.WeaponSkill["Leg Sweep"] = {
         head = "Flam. Zucchetto +2",
-        body = "Flamma Korazin +1",
-        hands = "Flam. Manopolas +1",
+        body = "Flamma Korazin +2",
+        hands = "Flam. Manopolas +2",
         legs = "Flamma Dirs +1",
         feet = "Flam. Gambieras +2",
         neck = "Fotia Gorget",
