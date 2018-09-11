@@ -5,7 +5,7 @@ function get_sets()
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +2",
         legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +1",
+        feet = "Meg. Jam. +2",
         neck = "Twilight Torque",
         waist = "Flume Belt",
         left_ear = "Telos Earring",
@@ -24,7 +24,7 @@ function get_sets()
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +2",
         legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +1",
+        feet = "Meg. Jam. +2",
         neck = "Twilight Torque",
         waist = "Flume Belt",
         left_ring = "Warden's ring",
@@ -77,8 +77,8 @@ function get_sets()
         body = "Meg. Cuirie +2",
         hands = "Carmine Fin. Ga. +1",
         legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +1",
-        neck = "Iqabi Necklace",
+        feet = "Meg. Jam. +2",
+        neck = "Iskur Gorget",
         left_ear = "Telos Earring",
         right_ear = "Neritic Earring",
         left_ring = "Ilabrat Ring",
@@ -180,7 +180,7 @@ function get_sets()
         },
         legs={ 
             name="Herculean Trousers", 
-            augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Dbl.Atk."+1','INT+5','"Mag.Atk.Bns."+13',}
+            augments={'"Store TP"+4','Accuracy+10','Weapon skill damage +8%','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}
         },
         feet = "Lanun bottes +2",
         neck = "Sanctity Necklace",
@@ -251,7 +251,7 @@ function get_sets()
         body = "Meg. Cuirie +2",
         hands = "Nilas Gloves",
         legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +1",
+        feet = "Meg. Jam. +2",
         neck = "Phalaina Locket",
         left_ring = "Globidonta Ring"
     }
