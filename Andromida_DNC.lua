@@ -2,27 +2,18 @@ function get_sets()
 	sets.Idle = {
 		main = "Aeneas",
 		sub = "Twashtar",
-		ammo = "Yamarang",
-		head = {
-			name = "Adhemar Bonnet +1",
-			augments = {"DEX+12", "AGI+12", "Accuracy+20"}
-		},
-		body = "Horos Casaque +3",
-		hands = {
-			name = "Adhemar Wrist. +1",
-			augments = {"DEX+12", "AGI+12", "Accuracy+20"}
-		},
-		legs = {
-			name = "Samnuha Tights",
-			augments = {"STR+10", "DEX+10", '"Dbl.Atk."+3', '"Triple Atk."+3'}
-		},
-		feet = "Horos T. Shoes +2",
-		neck = "Anu Torque",
-		waist = "Windbuffet Belt +1",
+		ammo = "Staunch Tathlum +1",
+		head = "Meghanada Visor +2",
+		body = "Meg. Cuirie +2",
+		hands = "Meg. Gloves +2",
+		legs = "Mummu Kecks +2",
+		feet = "Meg. Jam. +2",
+		neck = "Twilight Torque",
+		waist = "Flume Belt",
 		left_ear = "Sherida Earring",
 		right_ear = "Telos Earring",
-		left_ring = "Epona's Ring",
-		right_ring = "Petrov Ring",
+		left_ring = "Moonlight Ring",
+		right_ring = "Defending Ring",
 		back = {
 			name = "Senuna's Mantle",
 			augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "Phys. dmg. taken-10%"}
