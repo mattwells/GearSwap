@@ -215,24 +215,6 @@ function get_sets()
 
 	-- Stoneskin Set --
 	sets.Midcast.Stoneskin = set_combine(sets.Midcast.Haste)
-
-	-- Melee --
-	sets.TP = {
-		main = "Carnwenhan",
-		sub = "Taming sari",
-		head = "Ayanmo zucchetto +1",
-		neck = "Asperity Necklace",
-		ear1 = "Steelflash Earring",
-		ear2 = "Bladeborn Earring",
-		body = "Ayanmo corazza +1",
-		hands = "Ayanmo manopolas +1",
-		ring1 = "Rajas Ring",
-		ring2 = "Ayanmo Ring",
-		back = "Atheling mantle",
-		waist = "eschan stone",
-		legs = "Jokushu Haidate",
-		feet = "Ayanmo gambieras +1"
-	}
 end
 
 function precast(spell, action)
