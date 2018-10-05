@@ -1,11 +1,12 @@
 function get_sets()
     sets.Idle = {
+        ammo = "Staunch Tathlum +1",
         head = "Meghanada Visor +2",
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +2",
-        legs = "Meg. Chausses +2",
-        feet = "Pill. Poulaines +1",
-        neck = "Twilight Torque",
+        legs = "Mummu Kecks +2",
+        feet = "Meg. Jam. +2",
+        neck = "Loricate Torque +1",
         waist = "Flume Belt",
         left_ear = "Sherida Earring",
         right_ear = "Infused Earring",
@@ -13,38 +14,9 @@ function get_sets()
         right_ring = "Warden's Ring",
         back = {
             name = "Toutatis's Cape",
-            augments = {
-                "DEX+20",
-                "Accuracy+20 Attack+20",
-                "DEX+5",
-                '"Dbl.Atk."+10',
-                "Phys. dmg. taken-10%"
-            }
+            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+5", '"Dbl.Atk."+10', "Phys. dmg. taken-10%"}
         }
     }
-
-	DT = false
-	sets.PDT = {
-		head = "Meghanada Visor +2",
-		body = "Meg. Cuirie +2",
-		hands = "Meg. Gloves +2",
-		legs = "Meg. Chausses +2",
-		feet = "Meg. Jam. +1",
-		neck = "Twilight Torque",
-		waist = "Flume Belt",
-		left_ring = "Warden's ring",
-		right_ring = "Defending Ring",
-        back = {
-            name = "Toutatis's Cape",
-            augments = {
-                "DEX+20",
-                "Accuracy+20 Attack+20",
-                "DEX+5",
-                '"Dbl.Atk."+10',
-                "Phys. dmg. taken-10%"
-            }
-        }
-	}
 
     sets.Engaged = {
         ammo = "Yamarang",
@@ -71,7 +43,7 @@ function get_sets()
             augments = {'"Triple Atk."+4', "DEX+7", "Accuracy+15", "Attack+4"}
         },
         feet = "Mummu Gamash. +2",
-        neck = "Erudit. Necklace",
+        neck = "Assassin's Gorget",
         waist = "Windbuffet Belt +1",
         left_ear = "Sherida Earring",
         right_ear = "Telos Earring",
@@ -89,6 +61,36 @@ function get_sets()
         }
     }
 
+    DT = false
+    sets.PDT = set_combine(
+        sets.Engaged,
+        {
+            ammo = "Staunch Tathlum +1",
+            head = {
+                name = "Adhemar Bonnet +1",
+                augments = {"DEX+12", "AGI+12", "Accuracy+20"}
+            },
+            body = "Meg. Cuirie +2",
+            hands = "Meg. Gloves +2",
+            legs = "Meg. Chausses +2",
+            feet = "Meg. Jam. +2",
+            neck = "Loricate Torque +1",
+			waist = "Dynamic Belt",
+            left_ring = "Warden's ring",
+            right_ring = "Defending Ring",
+            back = {
+                name = "Toutatis's Cape",
+                augments = {
+                    "DEX+20",
+                    "Accuracy+20 Attack+20",
+                    "DEX+5",
+                    '"Dbl.Atk."+10',
+                    "Phys. dmg. taken-10%"
+                }
+            }
+        }
+    )
+
     TH = false
     sets.TH = {
         hands = {
@@ -105,7 +107,7 @@ function get_sets()
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +2",
         legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +1",
+        feet = "Meg. Jam. +2",
         neck = "Iqabi Necklace",
         left_ear = "Telos Earring",
         -- right_ear = "Neritic Earring",
@@ -125,7 +127,10 @@ function get_sets()
             augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
         },
         hands = "Meg. Gloves +2",
-        legs = "Mummu Kecks +2",
+        legs={
+            name="Lustr. Subligar +1", 
+            augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}
+        },
         feet = {
             name = "Herculean Boots",
             augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
@@ -142,10 +147,7 @@ function get_sets()
         }
     }
 
-    sets.WeaponSkill["Rudra's Storm"] = set_combine(
-        sets.WeaponSkill,
-        {left_ear = "Ishvara Earring"}
-    )
+    sets.WeaponSkill["Rudra's Storm"] = set_combine(sets.WeaponSkill, {left_ear = "Ishvara Earring"})
     sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
 
     sets.JobAbility = {}
@@ -174,6 +176,16 @@ function get_sets()
     }
 
     sets.BardSong = sets.TH
+
+    window = texts.new({
+        pos={x=513,y=642},
+        text={
+            font='Segoe UI Symbol',
+            size=12,
+            Fonts={'sans-serif'},
+        },
+        bg={alpha=255}
+    })
 end
 
 function precast(spell, action)
@@ -222,9 +234,9 @@ function status_change_engaged()
         equip(sets.TH)
     end
 
-	if DT then
-		equip(sets.PDT)
-	end
+    if DT then
+        equip(sets.PDT)
+    end
 end
 
 function self_command(command)
@@ -234,6 +246,7 @@ function self_command(command)
         DT = not DT
 
         windower.add_to_chat(123, "DT: " .. (DT and "on" or "off"))
+        screen_notices()
 
         status_change(player.status, player.status)
 
@@ -243,10 +256,30 @@ function self_command(command)
     if "th" == command then
         TH = not TH
 
+        windower.add_to_chat(123, "TH: " .. (TH and "on" or "off"))
+        screen_notices()
+
         status_change(player.status, player.status)
 
         return
     end
+end
+
+function screen_notices()
+    window:clear()
+
+    local text = ''
+
+    if TH then
+        text = text .. 'TH '
+    end
+
+    if DT then
+        text = text .. 'DT '
+    end
+
+    window:append(text:trim())
+    window:show()
 end
 
 function buff_change(name, gain, buff_details)
