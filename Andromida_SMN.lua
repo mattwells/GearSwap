@@ -101,7 +101,7 @@ function get_sets()
 			name = "Apogee Crown +1",
 			augments = {"MP+80", 'Pet: "Mag.Atk.Bns."+35', "Blood Pact Dmg.+8"}
 		},
-		body = "Con. Doublet +1",
+		body = "Con. Doublet +2",
 		hands = {
 			name = "Merlinic Dastanas",
 			augments = {"Pet: Attack+18 Pet: Rng.Atk.+18", "Blood Pact Dmg.+8", "Pet: STR+10"}
