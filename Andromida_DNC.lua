@@ -106,8 +106,6 @@ function get_sets()
 
 	sets.Waltz = {
 		ammo = "Yamarang",
-		head = {
-			name = "Horos Tiara +1",
 		head = "Horos Tiara +3",
 		body = "Maxixi Casaque +3",
 		feet = "Maxixi Toeshoes +2",
