@@ -117,38 +117,32 @@ function get_sets()
     }
 
     sets.WeaponSkill = {
-        ammo = "Jukukik Feather",
-        head = {
-            name = "Lilitu Headpiece",
-            augments = {"STR+10", "DEX+10", "Attack+15", "Weapon skill damage +3%"}
+        ammo="Jukukik Feather",
+        head="Pill. Bonnet +3",
+        body={ 
+            name="Herculean Vest", 
+            augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}
         },
-        body = {
-            name = "Herculean Vest",
-            augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
+        hands="Meg. Gloves +2",
+        legs="Plun. Culottes +3",
+        feet={ 
+            name="Herculean Boots", 
+            augments={'Attack+24','Weapon skill damage +3%','DEX+14',}
         },
-        hands = "Meg. Gloves +2",
-        legs={
-            name="Lustr. Subligar +1", 
-            augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}
+        neck="Assassin's Gorget",
+        waist="Chiner's Belt +1",
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        left_ring="Ilabrat Ring",
+        right_ring="Ramuh Ring +1",
+        back={ 
+            name="Toutatis's Cape", 
+            augments={
+                'DEX+20','Accuracy+20 Attack+20','DEX+10',
+                'Weapon skill damage +10%','Phys. dmg. taken-10%',
+            }
         },
-        feet = {
-            name = "Herculean Boots",
-            augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
-        },
-        neck = "Fotia Gorget",
-        waist = "Fotia Belt",
-        left_ear = "Sherida Earring",
-        right_ear = "Moonshade Earring",
-        left_ring = "Ilabrat Ring",
-        right_ring = "Ramuh Ring +1",
-        back = {
-            name = "Toutatis's Cape",
-            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", "Weapon skill damage +10%", "Phys. dmg. taken-10%"}
-        }
     }
-
-    sets.WeaponSkill["Rudra's Storm"] = set_combine(sets.WeaponSkill, {left_ear = "Ishvara Earring"})
-    sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
 
     sets.JobAbility = {}
     sets.JobAbility["Assassin's Charge"] = {
