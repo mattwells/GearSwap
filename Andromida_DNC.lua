@@ -108,8 +108,7 @@ function get_sets()
 		ammo = "Yamarang",
 		head = {
 			name = "Horos Tiara +1",
-			augments = {'Enhances "Trance" effect'}
-		},
+		head = "Horos Tiara +3",
 		body = "Maxixi Casaque +3",
 		feet = "Maxixi Toeshoes +2",
 		back = {
@@ -131,7 +130,7 @@ function get_sets()
 		body = "Horos Casaque +3",
 		hands = "Maxixi Bangles +3",
 		legs = "Meg. Chausses +2",
-		feet = "Horos Toe Shoes +2",
+		feet = "Horos Toe Shoes +3",
 		neck = "Iqabi Necklace",
 		left_ring = "Ramuh Ring +1",
 		back = {
