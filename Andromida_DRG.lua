@@ -1,41 +1,79 @@
 function get_sets()
-    DT = false
-    sets.PDT = {
+    sets.Idle = {
+        ammo = "Staunch Tathlum +1",
         head = "Sulevia's Mask +1",
         body = "Sulevia's Plate. +2",
         hands = "Sulevia's Gauntlets +2",
         legs = "Sulevia's Cuisses +2",
         feet = "Sulevia's Leggings +2",
-        neck = "Twilight Torque",
+        -- neck = "Loricate Torque +1",
+        neck = "Dgn. Collar +2",
         waist = "Flume Belt",
         left_ear = "Infused Earring",
         left_ring = "Sulevia's Ring",
         right_ring = "Defending Ring",
         back = {
             name = "Brigantia's Mantle",
-            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Dbl.Atk."+10', "Phys. dmg. taken-10%"}
+            augments = {
+                "DEX+20",
+                "Accuracy+20 Attack+20",
+                "DEX+10",
+                '"Dbl.Atk."+10',
+                "Phys. dmg. taken-10%"
+            }
         }
     }
 
-    sets.Idle = set_combine(sets.PDT, {})
-
     sets.Engaged = {
-        ammo="Hasty Pinion +1",
-        head="Flamma Zucchetto +2",
-        body="Flamma Korazin +2",
-        hands="Flamma Manopolas +2", -- Sulevia +2
-        legs="Flamma Dirs +1", -- Sulevia +2
-        feet="Flamma Gambieras +2",
-        neck="Ganesha's Mala",
-        waist="Ioskeha Belt",
-        left_ear="Telos Earring",
-        right_ear="Sherida Earring",
-        left_ring="Petrov Ring",
-        right_ring="Niqmaddu Ring",
-        back={ 
-            name="Brigantia's Mantle", 
-            augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}
-        },
+        ammo = "Ginsen",
+        head = "Flam. Zucchetto +2",
+        body = "Flamma Korazin +2",
+        hands = "Sulev. Gauntlets +2",
+        legs = "Sulev. Cuisses +2",
+        feet = "Flam. Gambieras +2",
+        neck = "Dgn. Collar +2",
+        waist = "Ioskeha Belt",
+        left_ear = "Telos Earring",
+        right_ear = "Sherida Earring",
+        left_ring = "Petrov Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Brigantia's Mantle",
+            augments = {
+                "DEX+20",
+                "Accuracy+20 Attack+20",
+                "DEX+10",
+                '"Dbl.Atk."+10',
+                "Phys. dmg. taken-10%"
+            }
+        }
+    }
+
+    DT = false
+    sets.PDT = {
+        ammo = "Staunch Tathlum +1",
+        head = "Sulevia's Mask +1",
+        body = "Sulevia's Plate. +2",
+        hands = "Sulev. Gauntlets +2",
+        legs = "Sulev. Cuisses +2",
+        feet = "Sulev. Leggings +2",
+        -- neck = "Loricate Torque +1",
+        neck = "Dgn. Collar +2",
+        waist = "Ioskeha Belt", -- Tempus Fugit
+        left_ear = "Telos Earring",
+        right_ear = "Sherida Earring",
+        left_ring = "Moonlight Ring",
+        right_ring = "Defending Ring",
+        back = {
+            name = "Brigantia's Mantle",
+            augments = {
+                "DEX+20",
+                "Accuracy+20 Attack+20",
+                "DEX+10",
+                '"Dbl.Atk."+10',
+                "Phys. dmg. taken-10%"
+            }
+        }
     }
 
     -- JA Sets --
@@ -43,7 +81,7 @@ function get_sets()
 
     sets.JobAbility["Soul Jump"] = {}
     sets.JobAbility["Spirit Jump"] = set_combine(
-        sets.JobAbility["Soul Jump"],
+        sets.JobAbility["Soul Jump"], 
         {feet = "Pelt. Schyn. +1"}
     )
     sets.JobAbility["Jump"] = set_combine(
@@ -68,12 +106,12 @@ function get_sets()
     sets.WeaponSkill.Drakesbane = {
         ammo = "Knobkierrie",
         head = "Flamma Zucchetto +2",
-        body="Sulevia's Plate. +2",
+        body = "Sulevia's Plate. +2",
         hands = "Flamma Manopolas +2",
         legs = "Pelt. Cuissots +1",
         feet = "Sulevia's Leggings +2",
-        neck = "Fotia Gorget",
-        waist="Ioskeha Belt",
+        neck = "Dgn. Collar +2",
+        waist = "Ioskeha Belt",
         left_ear = "Brutal Earring",
         right_ear = "Sherida Earring",
         left_ring = "Ifrit Ring +1",
@@ -84,8 +122,7 @@ function get_sets()
         }
     }
 
-    sets.WeaponSkill.Stardiver =
-        set_combine(
+    sets.WeaponSkill.Stardiver = set_combine(
         sets.WeaponSkill.Drakesbane,
         {
             hands = "Sulevia's Gauntlets +2",
@@ -97,25 +134,25 @@ function get_sets()
     )
 
     sets.WeaponSkill["Camlann's Torment"] = {
-        ammo="Knobkierrie",
-        head="Flam. Zucchetto +2",
-        body={ 
-            name="Valorous Mail", 
-            augments={'Attack+30','Sklchn.dmg.+1%','STR+14','Accuracy+14',}
+        ammo = "Knobkierrie",
+        head = "Flam. Zucchetto +2",
+        body = {
+            name = "Valorous Mail",
+            augments = {"Attack+30", "Sklchn.dmg.+1%", "STR+14", "Accuracy+14"}
         },
-        hands="Wyrm Fng.Gnt.",
-        legs="Vishap Brais +2",
-        feet="Sulevia's Leggings +2",
-        neck="Fotia Gorget",
-        waist="Fotia Belt",
-        left_ear="Ishvara Earring",
-        right_ear="Sherida Earring",
-        left_ring="Ifrit Ring +1",
-        right_ring="Niqmaddu Ring",
-        back={ 
-            name="Brigantia's Mantle", 
-            augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}
-        },
+        hands = "Wyrm Fng.Gnt.",
+        legs = "Vishap Brais +2",
+        feet = "Sulevia's Leggings +2",
+        neck = "Dgn. Collar +2",
+        waist = "Fotia Belt",
+        left_ear = "Ishvara Earring",
+        right_ear = "Sherida Earring",
+        left_ring = "Ifrit Ring +1",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Brigantia's Mantle",
+            augments = {"STR+20", "Accuracy+20 Attack+20", '"Dbl.Atk."+10'}
+        }
     }
     sets.WeaponSkill["Sonic Thrust"] = sets.WeaponSkill["Camlann's Torment"]
 
@@ -125,7 +162,7 @@ function get_sets()
         hands = "Flam. Manopolas +2",
         legs = "Flamma Dirs +1",
         feet = "Flam. Gambieras +2",
-        neck = "Fotia Gorget",
+        neck = "Dgn. Collar +2",
         waist = "Fotia Belt",
         left_ear = {
             name = "Moonshade Earring",
