@@ -8,7 +8,7 @@ function get_sets()
 		hands = "Inyan. Dastanas +2",
 		legs = "Assiduity Pants",
 		feet = "Inyan. Crackows +1",
-		neck = "Phalaina Locket",
+        neck = "Cleric's Torque",
 		waist = "Cascade Belt",
 		left_ear = "Roundel Earring",
 		right_ear = "Loquac. Earring",

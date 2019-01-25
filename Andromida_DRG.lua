@@ -59,7 +59,7 @@ function get_sets()
         feet = "Sulev. Leggings +2",
         -- neck = "Loricate Torque +1",
         neck = "Dgn. Collar +2",
-        waist = "Ioskeha Belt", -- Tempus Fugit
+        waist = "Tempus Fugit",
         left_ear = "Telos Earring",
         right_ear = "Sherida Earring",
         left_ring = "Moonlight Ring",
@@ -79,17 +79,14 @@ function get_sets()
     -- JA Sets --
     sets.JobAbility = {}
 
-    sets.JobAbility["Soul Jump"] = {}
+    sets.JobAbility["Jump"] = {
+        body = "Vishap Mail +2",
+        hands="Vis. Fng. Gaunt. +2"
+    }
+    sets.JobAbility["Soul Jump"] = sets.JobAbility["Jump"]
     sets.JobAbility["Spirit Jump"] = set_combine(
         sets.JobAbility["Soul Jump"], 
         {feet = "Pelt. Schyn. +1"}
-    )
-    sets.JobAbility["Jump"] = set_combine(
-        sets.JobAbility["Soul Jump"],
-        {
-            body = "Vishap Mail +1",
-            hands = "Vishap F. G. +1"
-        }
     )
     sets.JobAbility["High Jump"] = set_combine(
         sets.JobAbility["Jump"], 
@@ -107,7 +104,7 @@ function get_sets()
         ammo = "Knobkierrie",
         head = "Flamma Zucchetto +2",
         body = "Sulevia's Plate. +2",
-        hands = "Flamma Manopolas +2",
+        hands = "Ptero. Fin. G. +3",
         legs = "Pelt. Cuissots +1",
         feet = "Sulevia's Leggings +2",
         neck = "Dgn. Collar +2",
@@ -125,7 +122,6 @@ function get_sets()
     sets.WeaponSkill.Stardiver = set_combine(
         sets.WeaponSkill.Drakesbane,
         {
-            hands = "Sulevia's Gauntlets +2",
             legs = "Sulevia's Cuisses +2",
             waist = "Fotia Belt",
             left_ear = "Moonshade Earring",
@@ -140,7 +136,7 @@ function get_sets()
             name = "Valorous Mail",
             augments = {"Attack+30", "Sklchn.dmg.+1%", "STR+14", "Accuracy+14"}
         },
-        hands = "Wyrm Fng.Gnt.",
+        hands = "Ptero. Fin. G. +3",
         legs = "Vishap Brais +2",
         feet = "Sulevia's Leggings +2",
         neck = "Dgn. Collar +2",
@@ -160,7 +156,7 @@ function get_sets()
         head = "Flam. Zucchetto +2",
         body = "Flamma Korazin +2",
         hands = "Flam. Manopolas +2",
-        legs = "Flamma Dirs +1",
+        legs = "Flamma Dirs +2",
         feet = "Flam. Gambieras +2",
         neck = "Dgn. Collar +2",
         waist = "Fotia Belt",

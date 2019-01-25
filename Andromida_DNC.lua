@@ -1,7 +1,5 @@
 function get_sets()
 	sets.Idle = {
-		main = "Aeneas",
-		sub = "Twashtar",
 		ammo = "Staunch Tathlum +1",
 		head = "Meghanada Visor +2",
 		body = "Meg. Cuirie +2",
