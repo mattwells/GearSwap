@@ -111,7 +111,7 @@ function get_sets()
         waist = "Ioskeha Belt",
         left_ear = "Brutal Earring",
         right_ear = "Sherida Earring",
-        left_ring = "Ifrit Ring +1",
+        left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Brigantia's Mantle",
@@ -143,7 +143,7 @@ function get_sets()
         waist = "Fotia Belt",
         left_ear = "Ishvara Earring",
         right_ear = "Sherida Earring",
-        left_ring = "Ifrit Ring +1",
+        left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Brigantia's Mantle",
@@ -165,7 +165,7 @@ function get_sets()
             augments = {"Attack+4", "TP Bonus +250"}
         },
         right_ear = "Digni. Earring",
-        left_ring = "Ifrit Ring +1",
+        left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Brigantia's Mantle",

@@ -134,7 +134,7 @@ function get_sets()
         left_ear="Ishvara Earring",
         right_ear="Moonshade Earring",
         left_ring="Ilabrat Ring",
-        right_ring="Ramuh Ring +1",
+        right_ring="Regal Ring",
         back={ 
             name="Toutatis's Cape", 
             augments={
