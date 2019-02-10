@@ -52,6 +52,7 @@ function get_sets()
 			main = "Queller Rod",
 			sub = "Sors Shield",
 			head = "Theophany Cap +2",
+			neck = "Cleric's Neck",
 			body = "Heka's Kalasiris",
 			ear1 = "Nourish. Earring +1",
 			legs = "Ebers Pantaloons +1",
@@ -72,6 +73,7 @@ function get_sets()
 		},
 		sub = "Sors Shield",
 		head = "Theophany Cap +2",
+		neck = "Cleric's Neck",
 		body = "Heka's Kalasiris",
 		hands = "Theophany Mitts +2",
 		legs = "Ebers Pantaloons +1",
@@ -84,33 +86,46 @@ function get_sets()
 		}
 	}
 
-	sets.Midcast.Cursna = {
-		legs = "Theo. Pant. +1",
-		waist = "Alaunus's Cape"
+	sets.Midcast["Divine Veil"] = {
+		main = "Yagrush",
 	}
 
+	sets.Midcast.Erase = set_combine(
+		sets.Midcast["Divine Veil"],
+		{
+			neck = "Cleric's Neck",
+		}
+	)
+
+	sets.Midcast.Cursna = set_combine(
+		sets.Midcast["Divine Veil"],
+		{
+			legs = "Theo. Pant. +1",
+			waist = "Alaunus's Cape"
+		}
+	)
+
 	sets.Midcast.Regen = {
-		body = "Cleric's Briault",
+		body = "Piety Briault +1",
 		hands = "Ebers Mitts",
 		legs = "Theo. Pant. +1"
 	}
 
 	sets.Midcast.Bar = {
-		legs = "Piety pantaloons"
+		legs = "Piety pantaloons +1"
 	}
 end
 
 function is_magic(spell)
-	return spell.type:endswith("Magic") or spell.type == "BardSong" or spell.type == "Ninjutsu"
+	return spell.type:endswith("Magic") 
+		or spell.type == "BardSong" 
+		or spell.type == "Ninjutsu"
+		or spell.type == "Trust"
 end
 
 function precast(spell, action)
-	if "Trust" == spell.type then
-		return
-	end
-
 	if is_magic(spell) then
-		if buffactive.silence then -- Cancel Magic or Ninjutsu or BardSong If You Are Silenced or Out of Range --
+		if buffactive.silence then
 			cancel_spell()
 			debug(spell.name .. " Canceled: [Silence has fallen]")
 			return
@@ -127,9 +142,6 @@ function precast(spell, action)
 			debug("Midcast: Bar")
 			return
 		end
-
-		equip(sets.Precast.FastCast)
-		debug("Precast: Fast Cast")
 	end
 end
 
@@ -139,9 +151,17 @@ function midcast(spell, action)
 	end
 
 	if is_magic(spell) then
-		if spell.english == "Cursna" then
-			equip(sets.Midcast.Cursna)
-			debug("Cursna")
+		if sets.Midcast[spell.english] then
+			equip(sets.Midcast[spell.english])
+			debug("Midcast: " .. spell.english)
+
+			return
+		end
+
+		if spell.english:endswith("na") then
+			equip(sets.Midcast["Divine Veil"])
+			debug("Midcast: Devine Veil")
+
 			return
 		end
 
@@ -152,15 +172,24 @@ function midcast(spell, action)
 			return
 		end
 
-		if string.find(spell.english, "Cure") then
+		if spell.english:startswith("Cure") then
 			equip(sets.Midcast.Cure)
 			debug("Midcast: Cure")
+
+			return
+		end
+
+		if spell.english:startswith("Regen") then
+			equip(sets.Midcast.Regen)
+			debug("Midcast: Regen")
+
 			return
 		end
 
 		if string.find(spell.english, "Bar") then
 			equip(sets.Midcast.Bar)
 			debug("Midcast: Bar")
+			
 			return
 		end
 	end
