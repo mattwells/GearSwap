@@ -14,7 +14,22 @@ function get_sets()
 		right_ear = "Loquac. Earring",
 		left_ring = "Serket Ring",
 		right_ring = "Inyanga Ring",
-		back = "Mecisto. Mantle"
+		back={ 
+			name="Alaunus's Cape", 
+			augments={
+				'MND+20',
+				'Mag. Acc+20 /Mag. Dmg.+20',
+				'MND+5',
+				'"Fast Cast"+10',
+				'Damage taken-5%',
+			}
+		},
+	}
+
+	sets.JobAbility = {}
+
+	sets.JobAbility.Benediction = {
+		body = "Piety Briault +2",
 	}
 
 	sets.Precast = {}
@@ -41,7 +56,13 @@ function get_sets()
 			right_ring = "Prolix Ring",
 			back = {
 				name = "Alaunus's Cape",
-				augments = {"MND+20", "Mag. Acc+20 /Mag. Dmg.+20", "MND+5", '"Fast Cast"+10', "Damage taken-5%"}
+				augments = {
+					"MND+20", 
+					"Mag. Acc+20 /Mag. Dmg.+20", 
+					"MND+5", 
+					'"Fast Cast"+10', 
+					"Damage taken-5%"
+				}
 			}
 		}
 	)
@@ -52,14 +73,20 @@ function get_sets()
 			main = "Queller Rod",
 			sub = "Sors Shield",
 			head = "Theophany Cap +2",
-			neck = "Cleric's Neck",
+			neck = "Cleric's Torque",
 			body = "Heka's Kalasiris",
 			ear1 = "Nourish. Earring +1",
 			legs = "Ebers Pantaloons +1",
 			feet = "Cure Clogs",
 			back = {
 				name = "Alaunus's Cape",
-				augments = {"MND+20", "Mag. Acc+20 /Mag. Dmg.+20", "MND+5", '"Fast Cast"+10', "Damage taken-5%"}
+				augments = {
+					"MND+20", 
+					"Mag. Acc+20 /Mag. Dmg.+20", 
+					"MND+5", 
+					'"Fast Cast"+10', 
+					"Damage taken-5%"
+				}
 			}
 		}
 	)
@@ -69,11 +96,15 @@ function get_sets()
 	sets.Midcast.Cure = {
 		main = {
 			name = "Queller Rod",
-			augments = {"Healing magic skill +15", '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+			augments = {
+				"Healing magic skill +15", 
+				'"Cure" potency +10%', 
+				'"Cure" spellcasting time -7%'
+			}
 		},
 		sub = "Sors Shield",
 		head = "Theophany Cap +2",
-		neck = "Cleric's Neck",
+		neck = "Cleric's Torque",
 		body = "Heka's Kalasiris",
 		hands = "Theophany Mitts +2",
 		legs = "Ebers Pantaloons +1",
@@ -82,7 +113,13 @@ function get_sets()
 		left_ear = "Nourish. Earring +1",
 		back = {
 			name = "Alaunus's Cape",
-			augments = {"MND+20", "Eva.+20 /Mag. Eva.+20", "MND+10", '"Cure" potency +10%', "Damage taken-5%"}
+			augments = {
+				"MND+20", 
+				"Eva.+20 /Mag. Eva.+20", 
+				"MND+10", 
+				'"Cure" potency +10%', 
+				"Damage taken-5%"
+			}
 		}
 	}
 
@@ -93,7 +130,7 @@ function get_sets()
 	sets.Midcast.Erase = set_combine(
 		sets.Midcast["Divine Veil"],
 		{
-			neck = "Cleric's Neck",
+			neck = "Cleric's Torque",
 		}
 	)
 
@@ -105,15 +142,39 @@ function get_sets()
 		}
 	)
 
-	sets.Midcast.Regen = {
-		body = "Piety Briault +1",
-		hands = "Ebers Mitts",
-		legs = "Theo. Pant. +1"
+	sets.Midcast["Enhancing Magic"] = {
+		feet = "Theo. Duckbills +2"
 	}
 
-	sets.Midcast.Bar = {
-		legs = "Piety pantaloons +1"
-	}
+	sets.Midcast["Shellra V"] = set_combine(
+		sets.Midcast["Enhancing Magic"],
+		{
+			legs = "Piety pantaloons +2"
+		}
+	)
+
+	sets.Midcast.Regen = set_combine(
+		sets.Midcast["Enhancing Magic"],
+		{
+			body = "Piety Briault +2",
+			hands = "Ebers Mitts",
+			legs = "Theo. Pant. +1"
+		}
+	)
+
+	sets.Midcast.Bar = set_combine(
+		sets.Midcast["Enhancing Magic"],
+		{
+			legs = "Piety pantaloons +2"
+		}
+	)
+
+	sets.Midcast.Auspice = set_combine(
+		sets.Midcast["Enhancing Magic"],
+		{
+			feet = "Ebers Duckbills +1",
+		}
+	)
 end
 
 function is_magic(spell)
@@ -127,6 +188,7 @@ function precast(spell, action)
 	if is_magic(spell) then
 		if buffactive.silence then
 			cancel_spell()
+			send_command('@input /item "Echo Drops" <me>')
 			debug(spell.name .. " Canceled: [Silence has fallen]")
 			return
 		end
@@ -136,13 +198,15 @@ function precast(spell, action)
 			debug("Precast: Cure")
 			return
 		end
-
-		if spell.english:startswith("Bar") then
-			equip(sets.Midcast.Bar)
-			debug("Midcast: Bar")
-			return
-		end
 	end
+
+    if sets[spell.type] and sets[spell.type][spell.english] then
+        equip(sets[spell.type][spell.english])
+
+        debug("Precast: " .. spell.type .. " " .. spell.english)
+
+        return
+    end
 end
 
 function midcast(spell, action)
@@ -186,11 +250,16 @@ function midcast(spell, action)
 			return
 		end
 
-		if string.find(spell.english, "Bar") then
+		if spell.english:startswith("Bar") then
 			equip(sets.Midcast.Bar)
 			debug("Midcast: Bar")
-			
+
 			return
+		end
+
+		if sets.Midcast[spell.skill] then
+			equip(sets.Midcast[spell.skill])
+			debug("Midcast Skill: " .. spell.skill)
 		end
 	end
 end
