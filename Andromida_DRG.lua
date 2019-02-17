@@ -88,7 +88,7 @@ function get_sets()
     )
     sets.JobAbility["High Jump"] = set_combine(
         sets.JobAbility["Jump"], 
-        {legs = "Pteroslaver Brais"}
+        {legs = "Pteroslaver Brais +1"}
     )
     sets.JobAbility["Spirit Link"] = {}
 
