@@ -1,22 +1,29 @@
 function get_sets()
 	sets.Idle = {
-		main = "Queller Rod",
+		main = { 
+			name = "Queller Rod", 
+			augments = {
+				'Healing magic skill +15',
+				'"Cure" potency +10%',
+				'"Cure" spellcasting time -7%',
+			}
+		},
 		sub = "Sors Shield",
-		ammo = "Incantor Stone",
-		head = "Inyanga Tiara +2",
-		body = "Ebers Bliaud +1",
-		hands = "Inyan. Dastanas +2",
-		legs = "Assiduity Pants",
-		feet = "Inyan. Crackows +1",
-        neck = "Cleric's Torque",
+		ammo = "Staunch Tathlum",
+		head = "Aya. Zucchetto +2",
+    	body="Theo. Briault +3",
+		hands = "Aya. Manopolas +2",
+		legs = "Assiduity Pants +1",
+		feet = "Aya. Gambieras +2",
+		neck = "Cleric's Torque",
 		waist = "Cascade Belt",
 		left_ear = "Roundel Earring",
 		right_ear = "Loquac. Earring",
-		left_ring = "Serket Ring",
-		right_ring = "Inyanga Ring",
-		back={ 
-			name="Alaunus's Cape", 
-			augments={
+		left_ring = "Defending Ring",
+		right_ring = "Ayanmo Ring",
+		back = {
+			name = "Alaunus's Cape", 
+			augments = {
 				'MND+20',
 				'Mag. Acc+20 /Mag. Dmg.+20',
 				'MND+5',
@@ -77,7 +84,7 @@ function get_sets()
 			body = "Heka's Kalasiris",
 			ear1 = "Nourish. Earring +1",
 			legs = "Ebers Pantaloons +1",
-			feet = "Cure Clogs",
+			feet = "Hygieia clogs +1",
 			back = {
 				name = "Alaunus's Cape",
 				augments = {
@@ -137,13 +144,13 @@ function get_sets()
 	sets.Midcast.Cursna = set_combine(
 		sets.Midcast["Divine Veil"],
 		{
-			legs = "Theo. Pant. +1",
+		    legs="Th. Pantaloons +2",
 			waist = "Alaunus's Cape"
 		}
 	)
 
 	sets.Midcast["Enhancing Magic"] = {
-		feet = "Theo. Duckbills +2"
+		feet = "Theophany Duckbills +2"
 	}
 
 	sets.Midcast["Shellra V"] = set_combine(
@@ -157,8 +164,8 @@ function get_sets()
 		sets.Midcast["Enhancing Magic"],
 		{
 			body = "Piety Briault +2",
-			hands = "Ebers Mitts",
-			legs = "Theo. Pant. +1"
+			hands = "Ebers Mitts +1",
+    		legs="Th. Pantaloons +2",
 		}
 	)
 
