@@ -104,11 +104,19 @@ function get_sets()
 		body = "Con. Doublet +2",
 		hands = {
 			name = "Merlinic Dastanas",
-			augments = {"Pet: Attack+18 Pet: Rng.Atk.+18", "Blood Pact Dmg.+8", "Pet: STR+10"}
+			augments = {
+				"Pet: Attack+18 Pet: Rng.Atk.+18", 
+				"Blood Pact Dmg.+8", 
+				"Pet: STR+10"
+			}
 		},
 		legs = {
 			name = "Apogee Slacks +1",
-			augments = {"Pet: STR+20", "Blood Pact Dmg.+14", 'Pet: "Dbl. Atk."+4'}
+			augments = {
+				"Pet: STR+20", 
+				"Blood Pact Dmg.+14", 
+				'Pet: "Dbl. Atk."+4'
+			}
 		},
 		feet = {
 			name = "Apogee Pumps +1",
