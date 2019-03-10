@@ -150,7 +150,11 @@ function get_sets()
 	)
 
 	sets.Midcast["Enhancing Magic"] = {
-		feet = "Theophany Duckbills +2"
+		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +7',}},
+		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}},
+		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +7',}},
+		legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}},
+		feet="Theo. Duckbills +2",
 	}
 
 	sets.Midcast["Shellra V"] = set_combine(
