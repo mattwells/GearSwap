@@ -85,6 +85,7 @@ function get_sets()
 			augments = {"MP+80", 'Pet: "Mag.Atk.Bns."+35', "Blood Pact Dmg.+8"}
 		},
 		neck = "Adad Amulet",
+		left_ear = "Gelos Earring",
 		right_ear = "Enmerkar Earring",
 		left_ring = "Varar Ring +1",
 		right_ring = "Varar Ring +1",
@@ -95,49 +96,103 @@ function get_sets()
 	}
 
 	sets.BloodPact.Physical = {
-		main = "Gridarvor",
-		sub = "Elan Strap +1",
-		head = {
-			name = "Apogee Crown +1",
-			augments = {"MP+80", 'Pet: "Mag.Atk.Bns."+35', "Blood Pact Dmg.+8"}
-		},
-		body = "Con. Doublet +2",
-		hands = {
-			name = "Merlinic Dastanas",
-			augments = {
-				"Pet: Attack+18 Pet: Rng.Atk.+18", 
-				"Blood Pact Dmg.+8", 
-				"Pet: STR+10"
+		main="Was",
+		sub="Elan Strap +1",
+		ammo="Sancus Sachet +1",
+		head="Helios Band",
+		body="Con. Doublet +2",
+		hands={ 
+			name="Merlinic Dastanas", 
+			augments={
+				'Pet: Attack+18 Pet: Rng.Atk.+18',
+				'Blood Pact Dmg.+8',
+				'Pet: STR+10',
 			}
 		},
-		legs = {
-			name = "Apogee Slacks +1",
-			augments = {
-				"Pet: STR+20", 
-				"Blood Pact Dmg.+14", 
-				'Pet: "Dbl. Atk."+4'
+		legs={ 
+			name="Apogee Slacks +1", 
+			augments={
+				'Pet: STR+20',
+				'Blood Pact Dmg.+14',
+				'Pet: "Dbl. Atk."+4',
 			}
 		},
-		feet = {
-			name = "Apogee Pumps +1",
-			augments = {"MP+80", 'Pet: "Mag.Atk.Bns."+35', "Blood Pact Dmg.+8"}
-		},
-		neck = "Shulmanu Collar",
-		right_ear = "Enmerkar Earring",
-		left_ring = "Varar Ring +1",
-		right_ring = "Varar Ring +1",
-		back = {
-			name = "Campestres's Cape",
-			augments = {
-				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-				"Pet: Attack+10 Pet: Rng.Atk.+10",
+		feet="Helios Boots",
+		neck="Smn. Collar +1",
+		waist="Kobo Obi",
+		left_ear="Gelos Earring",
+		right_ear="Enmerkar Earring",
+		left_ring="Varar Ring +1",
+		right_ring="Varar Ring +1",
+		back={ 
+			name="Campestres's Cape", 
+			augments={
+				'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',
+				'Pet: Attack+10 Pet: Rng.Atk.+10',
 				'Pet: "Regen"+10',
-				"Phys. dmg. taken-10%"
+				'Phys. dmg. taken-10%',
 			}
-		}
+		},
 	}
 
-	sets.BloodPact.Hybrid = sets.BloodPact.Magic
+	sets.BloodPact.Hybrid = {
+		main={ 
+			name="Gridarvor", 
+			augments={
+				'Pet: Accuracy+70',
+				'Pet: Attack+70',
+				'Pet: "Dbl. Atk."+15',
+			}
+		},
+		sub="Elan Strap +1",
+		ammo="Sancus Sachet +1",
+		head={ 
+			name="Apogee Crown +1", 
+			augments={
+				'MP+80',
+				'Pet: "Mag.Atk.Bns."+35',
+				'Blood Pact Dmg.+8',
+			}
+		},
+		body="Con. Doublet +2",
+		hands={ 
+			name="Merlinic Dastanas", 
+			augments={
+				'Pet: Attack+18 Pet: Rng.Atk.+18',
+				'Blood Pact Dmg.+8','Pet: STR+10',
+			}
+		},
+		legs={ 
+			name="Apogee Slacks +1", 
+			augments={
+				'Pet: STR+20',
+				'Blood Pact Dmg.+14',
+				'Pet: "Dbl. Atk."+4',
+			}
+		},
+		feet={ 
+			name="Apogee Pumps +1", 
+			augments={
+				'MP+80',
+				'Pet: "Mag.Atk.Bns."+35',
+				'Blood Pact Dmg.+8',
+			}
+		},
+		neck="Smn. Collar +1",
+		waist="Kobo Obi",
+		left_ear="Gelos Earring",
+		right_ear="Enmerkar Earring",
+		left_ring="Varar Ring +1",
+		right_ring="Varar Ring +1",
+		back={ 
+			name="Campestres's Cape", 
+			augments={
+				'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',
+				'Pet: Attack+10 Pet: Rng.Atk.+10',
+				'Pet: "Regen"+10','Phys. dmg. taken-10%',
+			}
+		},
+	}
 
 	sets.BloodPact.Skill = {
 		main = "Gridarvor",
