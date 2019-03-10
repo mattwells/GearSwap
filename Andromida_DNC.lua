@@ -106,6 +106,7 @@ function get_sets()
         ammo = "Yamarang",
         head = "Horos Tiara +3",
         body = "Maxixi Casaque +3",
+        legs = "Dashing Subligar",
         feet = "Maxixi Toeshoes +2",
         back = {
             name = "Toetapper Mantle",
@@ -188,7 +189,7 @@ function precast(spell)
     if "Step" == spell.type then
         local allRecasts = windower.ffxi.get_ability_recasts()
         local prestoCooldown = allRecasts[236]
-        local missingEnoughFM = not buffactive["Finishing Move 5"] and not buffactive["Finishing Move (6+)"]
+        local missingEnoughFM = not buffactive["Finishing Move (6+)"]
 
         if prestoCooldown < 1 and missingEnoughFM then
             cast_delay(1.1)
@@ -267,6 +268,16 @@ function self_command(command)
     end
 end
 
+function find_player_in_alliance(name)
+    for party_index,ally_party in ipairs(alliance) do
+        for player_index,_player in ipairs(ally_party) do
+            if _player.name == name then
+                return _player
+            end
+        end
+    end
+end
+
 function get_target_missing_hp(target)
     if target.type == "SELF" then
         return player.max_hp - player.hp
@@ -302,12 +313,6 @@ function refine_waltz(spell)
 
     if not missingHP then
         return true
-    end
-
-    if spell.target.type == "SELF" and missingHP < 40 then
-        add_to_chat(122, "Full HP!")
-        cancel_spell()
-        return
     end
 
     local waltzes =
