@@ -56,43 +56,64 @@ function get_sets()
 
 	sets.BloodPact = {}
 	sets.BloodPact.Magic = {
-		main = "Keraunos",
-		sub = "Elan Strap +1",
-		head = {
-			name = "Apogee Crown +1",
-			augments = {"MP+80", 'Pet: "Mag.Atk.Bns."+35', "Blood Pact Dmg.+8"}
-		},
-		body = {
-			name = "Apo. Dalmatica +1",
-			augments = {"MP+80", 'Pet: "Mag.Atk.Bns."+35', "Blood Pact Dmg.+8"}
-		},
-		hands = {
-			name = "Merlinic Dastanas",
-			augments = {
-				'Pet: Mag. Acc.+23 Pet: "Mag.Atk.Bns."+23',
-				"Pet: Phys. dmg. taken -1%",
-				"Pet: DEX+6",
-				"Pet: Mag. Acc.+6",
-				'Pet: "Mag.Atk.Bns."+12'
+		main={ 
+			name="Keraunos", 
+			augments={
+				'Pet: "Mag.Atk.Bns."+19',
+				'"Elemental Siphon"+25',
+				'MP+62',
 			}
 		},
-		legs = {
-			name = "Apogee Slacks +1",
-			augments = {"Pet: STR+20", "Blood Pact Dmg.+14", 'Pet: "Dbl. Atk."+4'}
+		sub="Elan Strap +1",
+		ammo="Sancus Sachet +1",
+		head={ 
+			name="Apogee Crown +1", 
+			augments={
+				'MP+80',
+				'Pet: "Mag.Atk.Bns."+35',
+				'Blood Pact Dmg.+8',
+			}
 		},
-		feet = {
-			name = "Apogee Pumps +1",
-			augments = {"MP+80", 'Pet: "Mag.Atk.Bns."+35', "Blood Pact Dmg.+8"}
+		body={ 
+			name="Apo. Dalmatica +1", 
+			augments={
+				'MP+80',
+				'Pet: "Mag.Atk.Bns."+35',
+				'Blood Pact Dmg.+8',
+			}
 		},
-		neck = "Adad Amulet",
-		left_ear = "Gelos Earring",
-		right_ear = "Enmerkar Earring",
-		left_ring = "Varar Ring +1",
-		right_ring = "Varar Ring +1",
-		back = {
-			name = "Campestres's Cape",
-			augments = {"Pet: M.Acc.+20 Pet: M.Dmg.+20", "Pet: Mag. Acc.+10", '"Fast Cast"+10'}
-		}
+		hands={ 
+			name="Merlinic Dastanas", 
+			augments={
+				'Pet: Mag. Acc.+23 Pet: "Mag.Atk.Bns."+23',
+				'Pet: Phys. dmg. taken -1%',
+				'Pet: DEX+6',
+				'Pet: Mag. Acc.+6',
+				'Pet: "Mag.Atk.Bns."+12',}
+			},
+		legs="Beck. Spats +1",
+		feet={ 
+			name="Apogee Pumps +1", 
+			augments={
+				'MP+80',
+				'Pet: "Mag.Atk.Bns."+35',
+				'Blood Pact Dmg.+8',
+			}
+		},
+		neck="Smn. Collar +1",
+		waist="Kobo Obi",
+		left_ear="Gelos Earring",
+		right_ear="Enmerkar Earring",
+		left_ring="Varar Ring +1",
+		right_ring="Varar Ring +1",
+		back={ 
+			name="Campestres's Cape", 
+			augments={
+				'Pet: M.Acc.+20 Pet: M.Dmg.+20',
+				'Pet: Mag. Acc.+10',
+				'"Fast Cast"+10',
+			}
+		},
 	}
 
 	sets.BloodPact.Physical = {
@@ -243,6 +264,17 @@ function get_sets()
 
 	-- JA Sets --
 	sets.JobAbility = {}
+	sets.JobAbility["Elemental Siphon"] = {
+		sub="Vox Grip",
+		head="Con. Horn +1",
+		body="Beckoner's Doublet",
+		hands="Summoner's Brcr.",
+		legs="Beck. Spats +1",
+		feet="Caller's Pgch. +1",
+		neck="Caller's Pendant",
+		waist="Kobo Obi",
+		left_ring="Globidonta Ring",
+	}
 end
 
 function precast(spell, action)
