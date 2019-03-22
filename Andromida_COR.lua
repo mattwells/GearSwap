@@ -213,6 +213,19 @@ function get_sets()
     }
     -- sets.CorsairRoll["Fighter's Roll"] = {}
 
+    sets.CorsairShot = {
+        head="Mummu Bonnet +1",
+        body="Mummu Jacket +2",
+        hands="Mummu Wrists +1",
+        legs="Mummu Kecks +2",
+        feet="Mummu Gamash. +2",
+        neck="Sanctity Necklace",
+        waist="Eschan Stone",
+        left_ear="Digni. Earring",
+        right_ear="Gwati Earring",
+        left_ring="Vertigo Ring",
+        right_ring="Archon Ring",
+    }
     sets.CorsairShot = sets.WeaponSkill["Wildfire"]
 
     sets.ConserveMP = {

@@ -44,7 +44,7 @@ function get_sets()
 		neck = "Moonbow whistle +1",
 		ear1 = "Loquac. Earring",
 		ear2 = "Enchanter Earring +1",
-		body = "Inyanga jubbah +1",
+		body = "Inyanga jubbah +2",
 		hands = "Marduk's dastanas +1",
 		ring1 = "Prolix Ring",
 		ring2 = "Weatherspoon ring",
@@ -66,7 +66,7 @@ function get_sets()
 		ring2 = "Weatherspoon ring",
 		back = "Swith Cape +1",
 		waist = "Witful Belt",
-		legs = "Artsieq hose",
+		legs = "Ayanmo Cosciales +1",
 		feet = "Chelona Boots"
 	}
 
@@ -106,7 +106,7 @@ function get_sets()
 		neck = "Moonbow whistle +1",
 		ear1 = "Gwati earring",
 		ear2 = "Dignitary's earring",
-		body = "Brioso Just. +2",
+		body = "Brioso Justau. +2",
 		hands = "Vanya Cuffs",
 		ring1 = "Stikini ring +1",
 		ring2 = "Stikini ring",
@@ -217,25 +217,7 @@ function get_sets()
 	sets.Midcast.Stoneskin = sets.Midcast.Haste
 
 	-- Melee --
-	sets.Engaged = {
-		main = "Carnwenhan",
-		sub = "Taming sari",
-		sub = "Taming sari",
-		sub = "Taming sari",
-		head = "Ayanmo zucchetto +1",
-		neck = "Bard's charm +1",
-		ear1 = "Telos Earring",
-		ear2 = "Infused Earring",
-		ammo = "Ginsen",
-		body = "Ayanmo corazza +2",
-		hands = "Ayanmo manopolas +2",
-		ring1 = "Ilabrat ring",
-		ring2 = "Ayanmo Ring",
-		back = "Atheling mantle",
-		waist = "Sarissaphoroi belt",
-		legs = "Jokushu Haidate",
-		feet = "Ayanmo gambieras +1"
-	}
+	sets.Engaged = {}
 end
 
 function precast(spell, action)

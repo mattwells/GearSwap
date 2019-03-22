@@ -62,7 +62,8 @@ function get_sets()
     }
 
     DT = false
-    sets.PDT = set_combine(
+    sets.PDT =
+        set_combine(
         sets.Engaged,
         {
             ammo = "Staunch Tathlum +1",
@@ -75,7 +76,7 @@ function get_sets()
             legs = "Meg. Chausses +2",
             feet = "Meg. Jam. +2",
             neck = "Loricate Torque +1",
-			waist = "Dynamic Belt",
+            waist = "Dynamic Belt",
             left_ring = "Warden's ring",
             right_ring = "Defending Ring",
             back = {
@@ -117,31 +118,34 @@ function get_sets()
     }
 
     sets.WeaponSkill = {
-        ammo="Jukukik Feather",
-        head="Pill. Bonnet +3",
-        body={ 
-            name="Herculean Vest", 
-            augments={'Attack+25','Weapon skill damage +3%','DEX+12','Accuracy+11',}
+        ammo = "Jukukik Feather",
+        head = "Pill. Bonnet +3",
+        body = {
+            name = "Herculean Vest",
+            augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
         },
-        hands="Meg. Gloves +2",
-        legs="Plun. Culottes +3",
-        feet={ 
-            name="Herculean Boots", 
-            augments={'Attack+24','Weapon skill damage +3%','DEX+14',}
+        hands = "Meg. Gloves +2",
+        legs = "Plun. Culottes +3",
+        feet = {
+            name = "Herculean Boots",
+            augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
         },
-        neck="Assassin's Gorget",
-        waist="Chiner's Belt +1",
-        left_ear="Ishvara Earring",
-        right_ear="Moonshade Earring",
-        left_ring="Ilabrat Ring",
-        right_ring="Regal Ring",
-        back={ 
-            name="Toutatis's Cape", 
-            augments={
-                'DEX+20','Accuracy+20 Attack+20','DEX+10',
-                'Weapon skill damage +10%','Phys. dmg. taken-10%',
+        neck = "Assassin's Gorget",
+        waist = "Chiner's Belt +1",
+        left_ear = "Ishvara Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Ilabrat Ring",
+        right_ring = "Ramuh Ring +1",
+        back = {
+            name = "Toutatis's Cape",
+            augments = {
+                "DEX+20",
+                "Accuracy+20 Attack+20",
+                "DEX+10",
+                "Weapon skill damage +10%",
+                "Phys. dmg. taken-10%"
             }
-        },
+        }
     }
 
     sets.JobAbility = {}
@@ -171,15 +175,18 @@ function get_sets()
 
     sets.BardSong = sets.TH
 
-    window = texts.new({
-        pos={x=513,y=642},
-        text={
-            font='Segoe UI Symbol',
-            size=12,
-            Fonts={'sans-serif'},
-        },
-        bg={alpha=255}
-    })
+    window =
+        texts.new(
+        {
+            pos = {x = 513, y = 642},
+            text = {
+                font = "Segoe UI Symbol",
+                size = 12,
+                Fonts = {"sans-serif"}
+            },
+            bg = {alpha = 255}
+        }
+    )
 end
 
 function precast(spell, action)
@@ -257,19 +264,28 @@ function self_command(command)
 
         return
     end
+
+    if "koc" == command then
+        for party_index, ally_party in ipairs(alliance) do
+            for player_index, _player in ipairs(ally_party) do
+                print(_player.name)
+            end
+        end
+    -- windower.ffxi.get_mob_by_name(name)
+    end
 end
 
 function screen_notices()
     window:clear()
 
-    local text = ''
+    local text = ""
 
     if TH then
-        text = text .. 'TH '
+        text = text .. "TH "
     end
 
     if DT then
-        text = text .. 'DT '
+        text = text .. "DT "
     end
 
     window:append(text:trim())

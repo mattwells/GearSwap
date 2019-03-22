@@ -108,16 +108,16 @@ function get_sets()
 				'"Cure" potency +10%', 
 				'"Cure" spellcasting time -7%'
 			}
-		},
-		sub = "Sors Shield",
-		head = "Theophany Cap +2",
-		neck = "Cleric's Torque",
-		body = "Heka's Kalasiris",
-		hands = "Theophany Mitts +2",
+		}, -- 10/2
+		sub = "Sors Shield", -- 3/0
+		head = "Theophany Cap +2", -- 11/0
+		neck = "Cleric's Torque", -- 5/0
+		body = "Heka's Kalasiris", -- 15/0
+		hands = "Theophany Mitts +2", -- 0/2
 		legs = "Ebers Pantaloons +1",
 		feet = "Ebers Duckbills +1",
 		waist = "Cascade Belt",
-		left_ear = "Nourish. Earring +1",
+		left_ear = "Nourish. Earring +1", -- 3/0
 		back = {
 			name = "Alaunus's Cape",
 			augments = {
@@ -127,7 +127,7 @@ function get_sets()
 				'"Cure" potency +10%', 
 				"Damage taken-5%"
 			}
-		}
+		} -- 10/0
 	}
 
 	sets.Midcast["Divine Veil"] = {
