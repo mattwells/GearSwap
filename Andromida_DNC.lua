@@ -6,7 +6,7 @@ function get_sets()
         hands = "Meg. Gloves +2",
         legs = "Mummu Kecks +2",
         feet = "Meg. Jam. +2",
-        neck = "Twilight Torque",
+        neck = "Loricate Torque +1",
         waist = "Flume Belt",
         left_ear = "Sherida Earring",
         right_ear = "Telos Earring",
@@ -31,7 +31,7 @@ function get_sets()
         },
         legs = "Samnuha Tights",
         feet = "Mummu Gamash. +2",
-        neck = "Sanctity Necklace",
+        neck = "Etoile gorget +2",
         waist = "Windbuffet Belt +1",
         left_ear = "Sherida Earring",
         right_ear = "Telos Earring",
@@ -56,7 +56,7 @@ function get_sets()
             },
             legs = "Mummu Kecks +2",
             feet = "Meg. Jam. +2",
-            neck = "Twilight Torque",
+            neck = "Loricate Torque +1",
             waist = "Dynamic Belt",
             left_ring = "Moonlight Ring",
             right_ring = "Defending Ring",
@@ -103,15 +103,14 @@ function get_sets()
     sets.Flourish3 = {}
 
     sets.Waltz = {
-        ammo = "Yamarang",
-        head = "Horos Tiara +3",
-        body = "Maxixi Casaque +3",
-        legs = "Dashing Subligar",
-        feet = "Maxixi Toeshoes +2",
-        back = {
-            name = "Toetapper Mantle",
-            augments = {'"Store TP"+2', '"Rev. Flourish"+29', "Weapon skill damage +1%"}
-        }
+        ammo="Yamarang",
+        head="Horos Tiara +3",
+        body="Maxixi Casaque +3",
+        hands="Maxixi Bangles +3",
+        legs="Dashing Subligar",
+        feet="Horos T. Shoes +3",
+        neck="Etoile Gorget +2",
+        waist="Chaac Belt",
     }
 
     sets.Samba = {
@@ -128,7 +127,7 @@ function get_sets()
         hands = "Maxixi Bangles +3",
         legs = "Meg. Chausses +2",
         feet = "Horos Toe Shoes +3",
-        neck = "Iqabi Necklace",
+        neck = "Etoile gorget +2",
         left_ring = "Regal Ring",
         back = {
             name = "Senuna's Mantle",
@@ -165,14 +164,111 @@ function get_sets()
         }
     }
 
-    sets.WeaponSkill["Rudra's Storm"] =
-        set_combine(
-        sets.WeaponSkill,
-        {
-            neck = "Caro Necklace",
-            waist = "Chiner's Belt +1"
-        }
-    )
+    sets.WeaponSkill["Evisceration"] = {
+        ammo="Charis Feather",
+        head={ 
+            name="Adhemar Bonnet +1", 
+            augments={
+                'DEX+12',
+                'AGI+12',
+                'Accuracy+20',
+            }
+        },
+        body="Meg. Cuirie +2",
+        hands="Mummu Wrists +1",
+        legs={ 
+            name="Lustr. Subligar +1", 
+            augments={
+                'Accuracy+20',
+                'DEX+8',
+                'Crit. hit rate+3%',
+            }
+        },
+        feet="Mummu Gamash. +2",
+        neck="Fotia Gorget",
+        waist="Fotia Belt",
+        left_ear="Sherida Earring",
+        right_ear="Mache Earring +1",
+        left_ring="Mummu Ring",
+        right_ring="Regal Ring",
+        back={ 
+            name="Senuna's Mantle", 
+            augments={
+                'DEX+20',
+                'Accuracy+20 Attack+20',
+                'DEX+10',
+                'Weapon skill damage +10%',
+            }
+        },
+    }
+
+    sets.WeaponSkill["Pyrrhic Kleos"] = {
+        ammo="Charis Feather",
+        head="Horos Tiara +3",
+        body="Horos Casaque +3",
+        hands={ 
+            name="Adhemar Wrist. +1", 
+            augments={'STR+12','DEX+12','Attack+20',}
+        },
+        legs="Samnuha Tights",
+        feet={ 
+            name="Lustra. Leggings +1", 
+            augments={'Attack+20','STR+8','"Dbl.Atk."+3',}
+        },
+        neck="Fotia Gorget",
+        waist="Fotia Belt",
+        left_ear="Sherida Earring",
+        right_ear="Mache Earring +1",
+        left_ring="Epona's Ring",
+        right_ring="Regal Ring",
+        back={ 
+            name="Senuna's Mantle", 
+            augments={
+                'STR+20',
+                'Accuracy+20 Attack+20',
+                'STR+10',
+                '"Dbl.Atk."+10',
+            }
+        },
+    }
+
+    sets.WeaponSkill["Rudra's Storm"] = {
+        ammo="Charis Feather",
+        head="Lilitu Headpiece",
+        body={ 
+            name="Herculean Vest", 
+            augments={
+                'Attack+25',
+                'Weapon skill damage +3%',
+                'DEX+12','Accuracy+11',
+            }
+        },
+        hands="Maxixi Bangles +3",
+        legs="Horos Tights +3",
+        feet={ 
+            name="Herculean Boots", 
+            augments={
+                'Attack+24',
+                'Weapon skill damage +3%',
+                'DEX+14',
+            }
+        },
+        neck="Etoile Gorget +2",
+        waist="Chiner's Belt +1",
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        left_ring="Ilabrat Ring",
+        right_ring="Regal Ring",
+        back={ 
+            name="Senuna's Mantle", 
+            augments={
+                'DEX+20',
+                'Accuracy+20 Attack+20',
+                'DEX+10',
+                'Weapon skill damage +10%',
+            }
+        },
+    }
     sets.WeaponSkill["Shark Bite"] = sets.WeaponSkill["Rudra's Storm"]
 end
 
