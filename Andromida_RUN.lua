@@ -173,11 +173,11 @@ function precast(spell, action)
 end
 
 function midcast(spell, action)
-    if (~is_magic(spell)) then
+    if not is_magic(spell) then
         return
     end
     
-    if (sets["Midcast"][spell.skill] and sets["Midcast"][spell.skill][spell.english]) then
+    if sets["Midcast"][spell.skill] and sets["Midcast"][spell.skill][spell.english] then
         equip(sets["Midcast"][spell.skill][spell.english])
 
         return 
