@@ -54,8 +54,17 @@ function get_sets()
 		}
 	}
 
-	sets.BloodPact = {}
-	sets.BloodPact.Magic = {
+	sets.BloodPactRage = {
+		head="Con. Horn +1",
+		body="Con. Doublet +2",
+		hands="Glyphic Bracers +2",
+		feet="Glyph. Pigaches +2",
+	}
+	sets.BloodPactWard = sets.BloodPactRage
+
+	sets.Pet = {}
+	sets.Pet.BloodPact = {}
+	sets.Pet.BloodPact.Magic = {
 		main={ 
 			name="Keraunos", 
 			augments={
@@ -116,7 +125,7 @@ function get_sets()
 		},
 	}
 
-	sets.BloodPact.Physical = {
+	sets.Pet.BloodPact.Physical = {
 		main="Was",
 		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
@@ -156,7 +165,7 @@ function get_sets()
 		},
 	}
 
-	sets.BloodPact.Hybrid = {
+	sets.Pet.BloodPact.Hybrid = {
 		main={ 
 			name="Gridarvor", 
 			augments={
@@ -215,50 +224,54 @@ function get_sets()
 		},
 	}
 
-	sets.BloodPact.Skill = {
-		main = "Gridarvor",
-		sub = "Vox Grip",
-    	ammo = "Sancus Sachet +1",
-		head = "Con. Horn +1",
-		body = "Beckoner's Doublet",
-		legs = "Beck. Spats +1",
-		neck = "Caller's Pendant"
+	sets.Pet.BloodPact.Skill = {
+		sub="Vox Grip",
+		ammo="Sancus Sachet +1",
+		head="Con. Horn +1",
+		body="Beckoner's Doublet",
+		hands="Glyphic Bracers +2",
+		legs="Beck. Spats +1",
+		neck="Caller's Pendant",
+		waist="Kobo Obi",
+		left_ear="Andoaa Earring",
+		left_ring="Globidonta Ring",
+		back="Conveyance Cape",
 	}
 
-	sets.BloodPactRage = sets.BloodPact.Hybrid
+	sets.Pet.BloodPactRage = sets.Pet.BloodPact.Hybrid
 
 	-- Garuda
-	sets.BloodPactRage["Claw"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Aero II"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Aero IV"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Predator Claws"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Wind Blade"] = sets.BloodPact.Magic
+	sets.Pet.BloodPactRage["Claw"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Aero II"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Aero IV"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Predator Claws"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Wind Blade"] = sets.Pet.BloodPact.Magic
 	-- Ifrit
-	sets.BloodPactRage["Punch"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Fire II"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Burning Strike"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Double Punch"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Fire IV"] = sets.BloodPact.Magic	
-	sets.BloodPactRage["Flaming Crush"] = sets.BloodPact.Hybrid
-	sets.BloodPactRage["Meteor Strike"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Conflag Strike"] = sets.BloodPact.Physical
+	sets.Pet.BloodPactRage["Punch"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Fire II"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Burning Strike"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Double Punch"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Fire IV"] = sets.Pet.BloodPact.Magic	
+	sets.Pet.BloodPactRage["Flaming Crush"] = sets.Pet.BloodPact.Hybrid
+	sets.Pet.BloodPactRage["Meteor Strike"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Conflag Strike"] = sets.Pet.BloodPact.Physical
 	-- Ramuh
-	sets.BloodPactRage["Shock Strike"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Thunder II"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Thunderspark"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Thunder IV"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Chaotic Strike"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Thunderstorm"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Volt Strike"] = sets.BloodPact.Magic
+	sets.Pet.BloodPactRage["Shock Strike"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Thunder II"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Thunderspark"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Thunder IV"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Chaotic Strike"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Thunderstorm"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Volt Strike"] = sets.Pet.BloodPact.Magic
 	-- Shiva
-	sets.BloodPactRage["Axe Kick"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Blizzard II"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Double Slap"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Blizzard IV"] = sets.BloodPact.Magic
-	sets.BloodPactRage["Rush"] = sets.BloodPact.Physical
-	sets.BloodPactRage["Heavenly Strike"] = sets.BloodPact.Magic
+	sets.Pet.BloodPactRage["Axe Kick"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Blizzard II"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Double Slap"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Blizzard IV"] = sets.Pet.BloodPact.Magic
+	sets.Pet.BloodPactRage["Rush"] = sets.Pet.BloodPact.Physical
+	sets.Pet.BloodPactRage["Heavenly Strike"] = sets.Pet.BloodPact.Magic
 
-	sets.BloodPactWard = sets.BloodPact.Skill
+	sets.Pet.BloodPactWard = sets.Pet.BloodPact.Skill
 
 	sets.SummonerPact = {}
 
@@ -311,8 +324,16 @@ function ignore_spell_type(spell)
 	return spell.type ~= "JobAbility"
 end
 
-function aftercast(spell, action)
+function aftercast(spell)
 	status_change(player.status)
+end
+
+function pet_midcast(spell)
+	equip(sets.Pet[spell.type][spell.english])
+end
+
+function pet_aftercast(spell)
+	aftercast(spell)
 end
 
 function status_change(new, old)
@@ -325,32 +346,6 @@ function status_change(new, old)
 	end
 end
 
-function status_change_engaged()
-	equip(sets.Engaged)
-
-	if DT then
-		equip(sets.PDT)
-	end
-end
-
-function buff_change(name, gain, buff_details)
-	debug(name .. " " .. (gain and "on" or "off"))
-end
-
 function debug(s)
 	send_command("@input /echo " .. s)
-end
-
-function self_command(command)
-	command = command:lower()
-
-	if "dt" == command then
-		DT = not DT
-
-		windower.add_to_chat(123, "DT: " .. (DT and "on" or "off"))
-
-		status_change(player.status, player.status)
-
-		return
-	end
 end
