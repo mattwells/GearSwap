@@ -25,22 +25,16 @@ function get_sets()
             augments = {"DEX+12", "AGI+12", "Accuracy+20"}
         },
         body = {
-            name = "Herculean Vest",
-            augments = {
-                "AGI+13",
-                "Weapon skill damage +2%",
-                "Quadruple Attack +3",
-                "Accuracy+18 Attack+18",
-                'Mag. Acc.+18 "Mag.Atk.Bns."+18'
-            }
+            name = "Adhemar Jacket +1",
+            augments = {"STR+12", "DEX+12", "Attack+20"}
         },
         hands = {
             name = "Adhemar Wrist. +1",
             augments = {"DEX+12", "AGI+12", "Accuracy+20"}
         },
         legs = {
-            name = "Herculean Trousers",
-            augments = {'"Triple Atk."+4', "DEX+7", "Accuracy+15", "Attack+4"}
+            name = "Samnuha Tights",
+            augments = {"STR+10", "DEX+10", '"Dbl.Atk."+3', '"Triple Atk."+3'}
         },
         feet = "Mummu Gamash. +2",
         neck = "Assassin's Gorget",
