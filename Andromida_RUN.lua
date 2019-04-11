@@ -1,8 +1,9 @@
 function get_sets()
     send_command("@input /macro book 6;wait .1;input /macro set 1")
 
-    sets.Idle = {
-        ammo = "Staunch Tathlum +1",
+    sets.Idle = {mode = "Default"}
+    sets.Idle.Default = {
+        ammo = "Homiliary",
         head = "Meghanada Visor +2",
         body = "Meg. Cuirie +2",
         hands = "Meg. Gloves +2",
@@ -24,6 +25,25 @@ function get_sets()
             }
         }
     }
+    sets.Idle.DT = {
+        ammo = "Staunch Tathlum +1",
+        head = "Aya. Zucchetto +1",
+        body = "Futhark Coat +1",
+        hands = "Aya. Manopolas +1",
+        legs = "Aya. Cosciales +2",
+        feet = "Aya. Gambieras +1",
+        neck = "Futhark Torque +2",
+        waist = "Flume Belt",
+        left_ear = "Genmei Earring",
+        right_ear = "Hearty Earring",
+        left_ring = "Moonlight Ring",
+        right_ring = "Defending Ring",
+        back = {
+            name = "Ogma's cape",
+            augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Mag. Evasion+10", "Enmity+10", "Mag. Evasion+15"}
+        }
+    }
+    sets.Idle.Pull = {}
 
     sets.Engaged = {mode = "Melee"}
     sets.Engaged.Melee = {
@@ -61,9 +81,57 @@ function get_sets()
             }
         }
     }
-    sets.Engaged.Parry = {}
-    sets.Engaged.Magic = {}
-    sets.Engaged.Hybrid = {}
+    sets.Engaged.Parry =
+        set_combine(
+        sets.Engaged.Melee,
+        {
+            ammo = "Staunch Tathlum +1",
+            head = {name = "Futhark Bandeau", augments = {'Enhances "Battuta" effect'}},
+            body = {name = "Futhark Coat", augments = {'Enhances "Elemental Sforzo" effect'}},
+            -- hands="Turms Mittens",
+            -- legs="Eri. Leg Guards +1",
+            -- feet="Turms Leggings",
+            neck = "Futhark Torque +2",
+            waist = "Flume Belt",
+            -- left_ear = "Genmei Earring",
+            -- right_ear = "Odnowa Earring +1",
+            -- left_ring = "Gelatinous Ring +1",
+            right_ring = "Defending Ring",
+            back = {
+                name = "Ogma's cape",
+                augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Mag. Evasion+10", "Enmity+10", "Mag. Evasion+15"}
+            }
+        }
+    )
+    sets.Engaged.Magic = set_combine(sets.Engaged.Parry, {})
+    sets.Engaged.Hybrid =
+        set_combine(
+        sets.Engaged.Melee,
+        {
+            ammo = "Staunch Tathlum +1",
+            head = "Meghanada Visor +2",
+            body = "Ayanmo Corazza +2",
+            -- hands={
+            --     name="Herculean Gloves",
+            --     augments={'DEX','Acc/Att','TA'}
+            -- },
+            legs = "Meg. Chausses +2",
+            feet = {
+                name = "Herculean Boots",
+                augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
+            },
+            neck = "Futhark Torque +2",
+            waist = "Ioskeha Belt",
+            left_ear = "Telos Earring",
+            right_ear = "Sherida Earring",
+            left_ring = "Niqmaddu Ring",
+            right_ring = "Defending Ring",
+            back = {
+                name = "Ogma's cape",
+                augments = {"STR+20", "Accuracy+20 Attack+20", "STR+10", '"Dbl.Atk."+10'}
+            }
+        }
+    )
 
     sets.Rune = {}
     sets.Ward = {}
@@ -89,6 +157,7 @@ function get_sets()
     -- sets.WeaponSkill['Spinning Slash'] = {}
     -- sets.WeaponSkill['Ground Strike'] = {}
     -- sets.WeaponSkill['Herculean Slash'] = {}
+    -- sets.WeaponSkill['Dimidiation'] = {}
 
     sets.WeaponSkill["Resolution"] = {
         main = "Aettir",
@@ -111,7 +180,7 @@ function get_sets()
             name = "Adhemar Wrist. +1",
             augments = {"STR+12", "DEX+12", "Attack+20"}
         },
-        legs = "Meg. Chausses +2",
+        legs = "Lustra. Subligar +1",
         feet = {
             name = "Lustra. Leggings +1",
             augments = {"Attack+20", "STR+8", '"Dbl.Atk."+3'}
@@ -133,6 +202,8 @@ function get_sets()
         }
     }
 
+    sets.WeaponSkill["Dimidiation"] = set_combine(sets.WeaponSkill["Resolution"], {})
+
     sets.FastCast = {
         ammo = "Impatiens",
         head = "Runeist Bandeau",
@@ -144,7 +215,7 @@ function get_sets()
         feet = "Carmine Greaves +1",
         neck = "Futhark Torque +2",
         waist = "Flume Belt",
-        left_ear = "Magnetic Earring",
+        left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
         left_ring = "Prolix Ring",
         right_ring = "Defending Ring"
@@ -215,6 +286,10 @@ function status_change(new, old)
     end
 end
 
+function status_change_idle()
+    equip(sets.Idle[sets.Idle.mode])
+end
+
 function status_change_engaged()
     equip(sets.Engaged[sets.Engaged.mode])
 end
@@ -235,6 +310,27 @@ function self_command(argsString)
     if _G["self_command_" .. args[1]] then
         _G["self_command_" .. args[1]](args:slice(2))
     end
+end
+
+function self_command_idle(args)
+    if not args[1] then
+        error(4, "Error: No Idle Mode Specified")
+        return
+    end
+
+    local mode = args[1]:ucfirst()
+    if not sets.Idle[mode] then
+        error(4, "Error: Invalid Idle Mode: " .. mode)
+        return
+    end
+
+    sets.Engaged.mode = mode
+    status_change(player.status)
+    notce("Idle Mode Set: " .. mode)
+end
+
+function self_command_e(args)
+    return self_command_engaged(args)
 end
 
 function self_command_engaged(args)
