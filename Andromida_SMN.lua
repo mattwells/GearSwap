@@ -291,6 +291,11 @@ function get_sets()
 end
 
 function precast(spell, action)
+	if (buffactive["Apogee"] or buffactive["Astral Conduit"]) and spell.type:startswith("BloodPact")  then
+		pet_midcast(spell)
+		return
+	end
+
 	if "Trust" == spell.type then
 		equip(sets.FastCast)
 		return
