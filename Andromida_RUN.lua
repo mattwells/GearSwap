@@ -86,8 +86,8 @@ function get_sets()
         sets.Engaged.Melee,
         {
             ammo = "Staunch Tathlum +1",
-            head = {name = "Futhark Bandeau", augments = {'Enhances "Battuta" effect'}},
-            body = {name = "Futhark Coat", augments = {'Enhances "Elemental Sforzo" effect'}},
+            head = "Futhark Bandeau +1",
+            body = "Futhark Coat +1",
             -- hands="Turms Mittens",
             -- legs="Eri. Leg Guards +1",
             -- feet="Turms Leggings",
@@ -103,7 +103,27 @@ function get_sets()
             }
         }
     )
-    sets.Engaged.Magic = set_combine(sets.Engaged.Parry, {})
+    sets.Engaged.Magic = {
+        ammo = "Staunch Tathlum +1", -- DT3  PDT  MDT
+        head = "Futhark Bandeau +1", -- DT3  PDT  MDT
+        body = "Futhark Coat +1", -- DT7  PDT  MDT
+        hands = {
+            name = "Herculean Gloves",
+            augments = {"Phys. dmg. taken -5%", "STR+10", "Accuracy+7", "Attack+7"}
+        }, -- DT   PDT7 MDT
+        legs = "Eri. Leg Guards +1", -- DT   PDT7 MDT
+        feet = "Erilaz Greaves +1", -- DT   PDT4 MDT
+        neck = "Futhark Torque +2", -- DT7  PDT  MDT
+        waist = "Flume Belt", -- DT   PDT2 MDT
+        left_ear = "Genmei Earring", -- DT   PDT2 MDT
+        right_ear = "Sherida Earring", -- DT   PDT  MDT
+        left_ring = "Shadow Ring", -- DT   PDT  MDT
+        right_ring = "Defending Ring", -- DT10 PDT  MDT
+        back = {
+            name = "Ogma's cape",
+            augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Mag. Evasion+10", "Enmity+10", "Mag. Evasion+15"}
+        }
+    } -- DT23 PDT22 MDT
     sets.Engaged.Hybrid =
         set_combine(
         sets.Engaged.Melee,
@@ -160,8 +180,6 @@ function get_sets()
     -- sets.WeaponSkill['Dimidiation'] = {}
 
     sets.WeaponSkill["Resolution"] = {
-        main = "Aettir",
-        sub = "Utu Grip",
         ammo = "Knobkierrie",
         head = {
             name = "Lilitu Headpiece",
@@ -180,11 +198,8 @@ function get_sets()
             name = "Adhemar Wrist. +1",
             augments = {"STR+12", "DEX+12", "Attack+20"}
         },
-        legs = "Lustra. Subligar +1",
-        feet = {
-            name = "Lustra. Leggings +1",
-            augments = {"Attack+20", "STR+8", '"Dbl.Atk."+3'}
-        },
+        legs = "Lustr. Subligar +1",
+        feet = "Lustra. Leggings +1",
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Moonshade Earring",
@@ -206,10 +221,10 @@ function get_sets()
 
     sets.FastCast = {
         ammo = "Impatiens",
-        head = "Runeist Bandeau",
+        head = "Runeist Bandeau +1",
         hands = {
             name = "Leyline Gloves",
-            augments = {'"Fast Cast"+2'}
+            augments = {'"Fast Cast"+3'}
         },
         legs = "Aya. Cosciales +2",
         feet = "Carmine Greaves +1",
@@ -221,12 +236,28 @@ function get_sets()
         right_ring = "Defending Ring"
     }
 
+    sets.Emnity = {
+        body = "Emet Harness +1",
+        hands = "Futhark Mitons +1",
+        legs = "Eri. Leg Guards +1",
+        feet = "Erilaz Greaves +1",
+        neck = "Futhark Torque +2",
+        back = {
+            name = "Ogma's cape",
+            augments = {"Enmity+10"}
+        }
+    }
+
     sets.Midcast = {}
+    sets.Midcast.Flash = sets.Emnity
+    sets.Midcast.Stun = sets.Emnity
+
     sets.Midcast["Enhancing Magic"] = {
         hands = "Runeist Mitons +1",
         legs = "Carmine Cuisses +1",
         waist = "Olympus Sash",
-        left_ear = "Andoaa Earring"
+        left_ear = "Andoaa Earring",
+        back = "Merciful Cape"
     }
 end
 
@@ -347,7 +378,7 @@ function self_command_engaged(args)
 
     sets.Engaged.mode = mode
     status_change(player.status)
-    notce("Engaged Mode Set: " .. mode)
+    notice("Engaged Mode Set: " .. mode)
 end
 
 function is_magic(spell)
