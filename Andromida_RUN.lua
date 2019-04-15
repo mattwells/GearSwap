@@ -3,16 +3,16 @@ function get_sets()
 
     sets.Idle = {mode = "Default"}
     sets.Idle.Default = {
-        ammo = "Homiliary",
-        head = "Meghanada Visor +2",
-        body = "Meg. Cuirie +2",
-        hands = "Meg. Gloves +2",
-        legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +2",
+        ammo = "Staunch Tathlum +1",
+        head = "Fu. Bandeau +1",
+        body = "Runeist Coat +1",
+        hands = "Erilaz Gauntlets +1",
+        legs = "Eri. Leg Guards +1",
+        feet = "Erilaz Greaves +1",
         neck = "Futhark Torque +2",
         waist = "Flume Belt",
-        left_ear = "Telos Earring",
-        right_ear = "Sherida Earring",
+        left_ear = "Genmei Earring",
+        right_ear = "Hearty Earring",
         left_ring = "Moonlight Ring",
         right_ring = "Defending Ring",
         back = {
@@ -25,13 +25,16 @@ function get_sets()
             }
         }
     }
-    sets.Idle.DT = {
+    sets.Idle.Dt = {
         ammo = "Staunch Tathlum +1",
-        head = "Aya. Zucchetto +1",
+        head = "Fu. Bandeau +1",
         body = "Futhark Coat +1",
-        hands = "Aya. Manopolas +1",
-        legs = "Aya. Cosciales +2",
-        feet = "Aya. Gambieras +1",
+        hands = {
+            name = "Herculean Gloves",
+            augments = {"Phys. dmg. taken -5%", "STR+10", "Accuracy+7", "Attack+7"}
+        },
+        legs = "Carmine Cuisses +1",
+        feet = "Erilaz Greaves +1",
         neck = "Futhark Torque +2",
         waist = "Flume Belt",
         left_ear = "Genmei Earring",
@@ -40,10 +43,16 @@ function get_sets()
         right_ring = "Defending Ring",
         back = {
             name = "Ogma's cape",
-            augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Mag. Evasion+10", "Enmity+10", "Mag. Evasion+15"}
+            augments = {
+                "HP+60",
+                "Eva.+20 /Mag. Eva.+20",
+                "Mag. Evasion+10",
+                "Enmity+10",
+                "Mag. Evasion+15"
+            }
         }
     }
-    sets.Idle.Pull = {}
+    -- sets.Idle.Kite = {}
 
     sets.Engaged = {mode = "Melee"}
     sets.Engaged.Melee = {
@@ -89,11 +98,11 @@ function get_sets()
             head = "Futhark Bandeau +1",
             body = "Futhark Coat +1",
             -- hands="Turms Mittens",
-            -- legs="Eri. Leg Guards +1",
+            legs = "Eri. Leg Guards +1",
             -- feet="Turms Leggings",
             neck = "Futhark Torque +2",
             waist = "Flume Belt",
-            -- left_ear = "Genmei Earring",
+            left_ear = "Genmei Earring",
             -- right_ear = "Odnowa Earring +1",
             -- left_ring = "Gelatinous Ring +1",
             right_ring = "Defending Ring",
@@ -105,16 +114,16 @@ function get_sets()
     )
     sets.Engaged.Magic = {
         ammo = "Staunch Tathlum +1", -- DT3  PDT  MDT
-        head = "Futhark Bandeau +1", -- DT3  PDT  MDT
+        head = "Futhark Bandeau +1", -- DT   PDT4 MDT
         body = "Futhark Coat +1", -- DT7  PDT  MDT
         hands = {
             name = "Herculean Gloves",
             augments = {"Phys. dmg. taken -5%", "STR+10", "Accuracy+7", "Attack+7"}
         }, -- DT   PDT7 MDT
         legs = "Eri. Leg Guards +1", -- DT   PDT7 MDT
-        feet = "Erilaz Greaves +1", -- DT   PDT4 MDT
+        feet = "Erilaz Greaves +1", -- DT   PDT5 MDT
         neck = "Futhark Torque +2", -- DT7  PDT  MDT
-        waist = "Flume Belt", -- DT   PDT2 MDT
+        waist = "Flume Belt", -- DT   PDT4 MDT
         left_ear = "Genmei Earring", -- DT   PDT2 MDT
         right_ear = "Sherida Earring", -- DT   PDT  MDT
         left_ring = "Shadow Ring", -- DT   PDT  MDT
@@ -123,7 +132,7 @@ function get_sets()
             name = "Ogma's cape",
             augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Mag. Evasion+10", "Enmity+10", "Mag. Evasion+15"}
         }
-    } -- DT23 PDT22 MDT
+    } -- DT27 PDT29 MDT
     sets.Engaged.Hybrid =
         set_combine(
         sets.Engaged.Melee,
@@ -153,17 +162,37 @@ function get_sets()
         }
     )
 
+    sets.Emnity = {
+        equipable = true,
+        body = "Emet Harness +1",
+        hands = "Futhark Mitons +1",
+        legs = "Eri. Leg Guards +1",
+        feet = "Ahosi Leggings",
+        neck = "Futhark Torque +2",
+        back = {
+            name = "Ogma's cape",
+            augments = {"Enmity+10"}
+        }
+    }
+
     sets.Rune = {}
     sets.Ward = {}
 
     -- JA Sets --
     sets.JobAbility = {}
-    -- sets.JobAbility['Elemental Sforzo'] = {}
-    -- sets.JobAbility['Swordplay'] = {}
-    -- sets.JobAbility['Embolden'] = {}
-    -- sets.JobAbility['Vivacious Pulse'] = {}
-    -- sets.JobAbility['One for All'] = {}
-    -- sets.JobAbility['Odyllic Subterfuge'] = {}
+
+    sets.JobAbility["Battuta"] = {head = "Futhark Bandeau +1"}
+    sets.JobAbility["Elemental Sforzo"] = {body = "Futhark Coat +1"}
+    sets.JobAbility["Gambit"] = {hands = "Runeist mitons +1"}
+    sets.JobAbility["Inspiration"] = {legs = "Futhark Trousers +1"}
+    sets.JobAbility["Liement"] = {body = "Futhark Coat +1"}
+    sets.JobAbility["Pflug"] = {feet = "Runeist Bottes +1"}
+    sets.JobAbility["Rayke"] = {feet = "Futhark Boots +1"}
+    sets.JobAbility["Sleight of Sword"] = {hands = "Futhark mitons +1"}
+    sets.JobAbility["Swordplay"] = {hands = "Futhark mitons +1"}
+    sets.JobAbility["Valiance"] = {body = "Runeist Coat +1"}
+    sets.JobAbility["Vallation"] = {body = "Runeist Coat +1"}
+    sets.JobAbility["Vivacious Pulse"] = {head = "Erilaz Galea +1"}
 
     -- WS Sets --
     sets.WeaponSkill = {}
@@ -199,7 +228,7 @@ function get_sets()
             augments = {"STR+12", "DEX+12", "Attack+20"}
         },
         legs = "Lustr. Subligar +1",
-        feet = "Lustra. Leggings +1",
+        feet = {name = "Lustra. Leggings +1", augments = {"Attack+20", "STR+8", '"Dbl.Atk."+3'}},
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Moonshade Earring",
@@ -217,7 +246,46 @@ function get_sets()
         }
     }
 
-    sets.WeaponSkill["Dimidiation"] = set_combine(sets.WeaponSkill["Resolution"], {})
+    sets.WeaponSkill["Dimidiation"] = {
+        ammo = "Knobkierrie",
+        head = {
+            name = "Lilitu Headpiece",
+            augments = {
+                "STR+10",
+                "DEX+10",
+                "Attack+15",
+                "Weapon skill damage +3%"
+            }
+        },
+        body = {
+            name = "Adhemar Jacket +1",
+            augments = {"STR+12", "DEX+12", "Attack+20"}
+        },
+        hands = "Meg. Gloves +2",
+        legs = {
+            name = "Lustr. Subligar +1",
+            augments = {"Accuracy+20", "DEX+8", "Crit. hit rate+3%"}
+        },
+        feet = {
+            name = "Lustra. Leggings +1",
+            augments = {"Attack+20", "STR+8", '"Dbl.Atk."+3'}
+        },
+        neck = "Caro Necklace",
+        waist = "Chiner's Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Sherida Earring",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Ilabrat Ring",
+        back = {
+            name = "Ogma's cape",
+            augments = {
+                "STR+20",
+                "Accuracy+20 Attack+20",
+                "STR+10",
+                '"Dbl.Atk."+10'
+            }
+        }
+    }
 
     sets.FastCast = {
         ammo = "Impatiens",
@@ -236,31 +304,39 @@ function get_sets()
         right_ring = "Defending Ring"
     }
 
-    sets.Emnity = {
-        body = "Emet Harness +1",
-        hands = "Futhark Mitons +1",
-        legs = "Eri. Leg Guards +1",
-        feet = "Erilaz Greaves +1",
-        neck = "Futhark Torque +2",
-        back = {
-            name = "Ogma's cape",
-            augments = {"Enmity+10"}
-        }
-    }
-
     sets.Midcast = {}
-    sets.Midcast.Flash = sets.Emnity
-    sets.Midcast.Stun = sets.Emnity
 
     sets.Midcast["Enhancing Magic"] = {
+        equipable = true,
         hands = "Runeist Mitons +1",
-        legs = "Carmine Cuisses +1",
+        legs = "Futhark Trousers +1",
         waist = "Olympus Sash",
         left_ear = "Andoaa Earring",
         back = "Merciful Cape"
     }
+
+    sets.Midcast["Enhancing Magic"].Phalanx =
+        set_combine(sets.Midcast["Enhancing Magic"], {head = "Futhark Bandeau +1"})
+    sets.Midcast["Enhancing Magic"].Refresh = set_combine(sets.Midcast["Enhancing Magic"], {head = "Erilaz Galea +1"})
+    sets.Midcast["Enhancing Magic"].Regen = set_combine(sets.Midcast["Enhancing Magic"], {head = "Runeist Bandeau +1"})
+    sets.Midcast["Enhancing Magic"]["Regen II"] = sets.Midcast["Enhancing Magic"].Regen
+    sets.Midcast["Enhancing Magic"]["Regen III"] = sets.Midcast["Enhancing Magic"].Regen
+    sets.Midcast["Enhancing Magic"]["Regen IV"] = sets.Midcast["Enhancing Magic"].Regen
+
+    sets.Midcast["Divine Magic"] = set_combine(sets.Emnity, {})
+    sets.Midcast["Dark Magic"] = set_combine(sets.Emnity, {})
+    sets.Midcast["Blue Magic"] = set_combine(sets.Emnity, {})
 end
 
+--[[
+    Healing Breeze
+    Refueling
+    Cacoon
+    Sheep Song
+    Blank Gaze
+    Geist Wall
+    Jettatura
+]]
 function precast(spell, action)
     if (spell.english == "Spectral Jig" or spell.english == "Sneak") and buffactive.Sneak then
         cast_delay(0.2)
@@ -341,6 +417,12 @@ function self_command(argsString)
     if _G["self_command_" .. args[1]] then
         _G["self_command_" .. args[1]](args:slice(2))
     end
+
+    status_change(player.status)
+end
+
+function self_command_i(args)
+    self_command_idle(args)
 end
 
 function self_command_idle(args)
@@ -355,9 +437,9 @@ function self_command_idle(args)
         return
     end
 
-    sets.Engaged.mode = mode
+    sets.Idle.mode = mode
     status_change(player.status)
-    notce("Idle Mode Set: " .. mode)
+    notice("Idle Mode Set: " .. mode)
 end
 
 function self_command_e(args)
