@@ -1,5 +1,6 @@
 -- Local Settings, setting the zones prior to use
-toau_zones = S{
+toau_zones =
+	S {
 	"Leujaoam Sanctum",
 	"Mamool Ja Training Grounds",
 	"Lebros Cavern",
@@ -12,9 +13,10 @@ toau_zones = S{
 	"Zhayolm Remnants"
 }
 
-naSpells = S{"Paralyna", "Silena", "Viruna", "Erase", "Stona", "Blindna", "Poisona"}
+naSpells = S {"Paralyna", "Silena", "Viruna", "Erase", "Stona", "Blindna", "Poisona"}
 
-resSpells = S{
+resSpells =
+	S {
 	"Barstonra",
 	"Barwatera",
 	"Baraera",
@@ -28,11 +30,11 @@ resSpells = S{
 	"Barblizzard",
 	"Barthunder"
 }
-ST_Cure_Spells = S{"Cure", "Cure II", "Cure III", "Cure IV", "Cure V", "Cure VI"}
-MT_Cure_Spells = S{"Curaga", "Curaga II", "Curaga III", "Curaga IV", "Curaga V"}
-FC_Spells = S{"Haste", "Utsusemi: Ichi", "Utsusemi: Ni", "Refresh", "Flurry"}
-Regen_Spells = S{"Regen", "Regen II", "Regen III", "Regen IV"}
-Holy_Spells = S{"Banish", "Banish II", "Banish III", "Banishga", "Banishga II", "Holy", "Holy II"}
+ST_Cure_Spells = S {"Cure", "Cure II", "Cure III", "Cure IV", "Cure V", "Cure VI"}
+MT_Cure_Spells = S {"Curaga", "Curaga II", "Curaga III", "Curaga IV", "Curaga V"}
+FC_Spells = S {"Haste", "Utsusemi: Ichi", "Utsusemi: Ni", "Refresh", "Flurry"}
+Regen_Spells = S {"Regen", "Regen II", "Regen III", "Regen IV"}
+Holy_Spells = S {"Banish", "Banish II", "Banish III", "Banishga", "Banishga II", "Holy", "Holy II"}
 Gear_Debug = 0
 
 -- Start Functions here
@@ -46,13 +48,13 @@ function get_sets()
 		neck = "Cleric's torque +1",
 		ear1 = "Moonshade earring",
 		ear2 = "Etiolation Earring",
-		body = "Theophany briault +3",
+		body = "Piety briault +3",
 		hands = "Ayanmo manopolas +2",
 		ring1 = "Stikini Ring +1",
 		ring2 = "Defending Ring",
 		back = "Moonbeam cape",
 		waist = "Luminary sash",
-		legs = "Ayanmo cosciales +1",
+		legs = "Assiduity pants +1",
 		feet = "Ayanmo gambieras +1"
 	}
 
@@ -74,7 +76,7 @@ function get_sets()
 		ring2 = "Lebeche Ring ",
 		back = "Perimede cape",
 		waist = "Witful belt",
-		legs = "Nabu's shalwar",
+		legs = "Ebers pantaloons +1",
 		feet = "Medium's Sabots"
 	}
 
@@ -117,76 +119,75 @@ function get_sets()
 	sets.midcast_Haste = {
 		main = "Bolelabunga",
 		sub = "Genbu shield",
-		-- ammo = "",
-		-- head = "",
-		-- neck = "",
-		-- ear1 = "",
+		ammo = "",
+		head = "",
+		neck = "",
+		ear1 = "",
 		ear2 = "Etiolation Earring",
 		body = "Artsieq jubbah",
 		hands = "Dynasty mitts",
 		ring1 = "Sangoma Ring",
 		ring2 = "Prolix Ring",
-		-- back = "",
-		-- waist = "",
-		-- legs = "",
-		-- feet = ""
+		back = "",
+		waist = "",
+		legs = "",
+		feet = ""
 	}
 
 	sets.precast_Devotion = {}
 
 	sets.Resting = {
-		-- main = "",
-		-- sub = "",
+		main = "Bolelabunga",
+		sub = "",
 		ammo = "Homiliary",
-		-- head = "",
-		neck = "Cleric's torque +1",
-		-- ear1 = "",
+		head = "Befouled crown",
+		neck = "",
+		ear1 = "",
 		ear2 = "Moonshade Earring",
-		body = "Piety briault +2",
-		hands = "Serpentes Cuffs",
-		ring1 = "Sangoma Ring",
-		ring2 = "Patricius Ring",
-		back = "Kumbira Cape",
+		body = "Piety briault +3",
+		hands = "",
+		ring1 = "Stikini ring +1",
+		ring2 = "Stikini ring",
+		back = "",
 		waist = "Cleric belt",
 		legs = "Assiduity Pants +1",
-		feet = "Serpentes Sabots"
+		feet = ""
 	}
 
 	sets.midcast_EnfeeblingMagic = {
 		main = "Gada",
-		sub = "Genbu shield",
-		-- ranged = "",
-		-- ammo = "",
-		head = "Befouled crown",
-		neck = "Cleric's torque +1",
-		ear1 = "Lifestorm Earring",
-		ear2 = "Psystorm Earring",
-		body = "Ischemia Chasuble",
-		hands = "Piety mitts +1",
-		ring1 = "Sangoma ring",
-		ring2 = "Leviathan ring",
-		back = "Refraction cape",
-		waist = "Luminary sash",
-		legs = "Artsieq hose",
-		feet = "Piety Duckbills +1"
+		sub = {name = "Genbu's Shield", augments = {'"Cure" potency +4%', '"Cure" spellcasting time -8%'}},
+		ammo = "Homiliary",
+		head = "Theophany Cap +2",
+		body = "Theo. Briault +3",
+		hands = {name = "Piety Mitts +1", augments = {'Enhances "Martyr" effect'}},
+		legs = "Th. Pant. +3",
+		feet = "Aya. Gambieras +1",
+		neck = "Sanctity Necklace",
+		waist = "Luminary Sash",
+		left_ear = "Digni. Earring",
+		right_ear = "Enchntr. Earring +1",
+		left_ring = "Stikini Ring +1",
+		right_ring = "Stikini Ring",
+		back = "Ogapepo Cape"
 	}
 
 	sets.midcast_BarSpells_Solace = {
 		main = "Beneficus",
-		sub = "Genbu's shield",
+		sub = {name = "Genbu's Shield", augments = {'"Cure" potency +4%', '"Cure" spellcasting time -8%'}},
 		ammo = "Incantor Stone",
-		head = "Befouled crown",
-		neck = "Cleric's torque +1",
-		ear1 = "Andoaa earring",
-		-- ear2 = "",
-		body = "Ebers bliaud +1",
-		hands = "Dynasty Mitts",
-		ring1 = "Stikini ring +1",
-		ring2 = "Prolix Ring",
-		back = "Mending cape",
-		waist = "Luminary sash",
-		legs = "Piety pantaloons +1",
-		feet = "Piety duckbills +1"
+		head = "Ebers Cap +1",
+		body = "Ebers Bliaud +1",
+		hands = "Ebers Mitts +1",
+		legs = {name = "Piety Pantaln. +2", augments = {'Enhances "Shellra V" effect'}},
+		feet = {name = "Piety Duckbills +2", augments = {'Enhances "Protectra V" effect'}},
+		neck = "Incanter's Torque",
+		waist = "Cascade Belt",
+		left_ear = "Andoaa Earring",
+		right_ear = "Etiolation Earring",
+		left_ring = "Stikini Ring +1",
+		right_ring = "Stikini Ring",
+		back = "Fi follet cape +1"
 	}
 
 	sets.midcast_Barspells_noSolace = sets.midcast_BarSpells_Solace
@@ -196,17 +197,17 @@ function get_sets()
 		sub = "Genbu's shield",
 		ammo = "Incantor Stone",
 		head = "Befouled crown",
-		-- neck = "",
+		neck = "",
 		ear1 = "Andoaa earring",
-		-- ear2 = "",
+		ear2 = "",
 		body = "Ebers bliaud +1",
 		hands = "Dynasty Mitts",
 		ring1 = "Stikini ring +1",
 		ring2 = "Prolix Ring",
 		back = "Fi follet cape +1",
 		waist = "Luminary sash",
-		legs = "Piety pantaloons +1",
-		feet = "Piety duckbills +1"
+		legs = "Piety pantaloons +2",
+		feet = "Piety duckbills +2"
 	}
 
 	sets.midcast_MAB = {
@@ -228,23 +229,28 @@ function get_sets()
 	}
 
 	sets.midcast_Regen = {
-		main = "Gada",
-		sub = "Genbu shield",
-		head = "Telchine cap",
-		legs = "Theophany pantaloons +2",
-		neck = "Cleric's torque +1",
-		ear1 = "Andoa earring",
-		body = "Telchine chasuble",
-		feet = "Telchine pigaches",
-		back = "Mending cape",
-		hands = "Ebers Mitts +1"
+		main = "Bolelabunga",
+		sub = {name = "Genbu's Shield", augments = {'"Cure" potency +4%', '"Cure" spellcasting time -8%'}},
+		ammo = "Incantor Stone",
+		head = "Inyanga Tiara +1",
+		body = {name = "Piety Briault +3", augments = {'Enhances "Benediction" effect'}},
+		hands = "Ebers Mitts +1",
+		legs = "Th. Pant. +3",
+		feet = {name = "Telchine Pigaches", augments = {"Enh. Mag. eff. dur. +9"}},
+		neck = "Orunmila's Torque",
+		waist = "Rumination Sash",
+		left_ear = "Enchntr. Earring +1",
+		right_ear = "Etiolation Earring",
+		left_ring = "Stikini Ring +1",
+		right_ring = "Prolix Ring",
+		back = "Fi Follet Cape +1"
 	}
 
-	sets.midcast_Protectra = {feet = "Piety Duckbills +1"}
+	sets.midcast_Protectra = {feet = "Piety Duckbills +2"}
 
-	sets.midcast_Shellra = {legs = "Piety Pantaloons +1"}
+	sets.midcast_Shellra = {legs = "Piety Pantaloons +2"}
 
-	sets.midcast_Auspice = {feet = "Piety Duckbills +1"}
+	sets.midcast_Auspice = {feet = "Piety Duckbills +2"}
 
 	sets.midcast_Cure = {
 		main = "Queller rod",
@@ -279,7 +285,7 @@ function get_sets()
 		back = "Mending Cape",
 		waist = "Channeler's stone",
 		legs = "Ebers pantaloons +1",
-		feet = "Piety duckbills +1"
+		feet = "Piety duckbills +2"
 	}
 
 	sets.midcast_Stoneskin = sets.midcast_EnhancingMagic
@@ -317,7 +323,7 @@ function get_sets()
 		back = "Alaunus's cape",
 		waist = "Channeler's stone",
 		legs = "Theophany pantaloons +3",
-		feet = "Gendewitha galoshes +1"
+		feet = "Vanya clogs"
 	}
 
 	sets.Obi = {}
@@ -416,7 +422,6 @@ function aftercast(spell)
 	if Gear_Debug == 0 then
 		equip(sets.aftercast_Idle)
 		send_command("@input /echo Idle Set")
-	else
 	end
 end
 
