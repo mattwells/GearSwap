@@ -4,8 +4,8 @@ function get_sets()
     sets.Idle = {mode = "Default"}
     sets.Idle.Default = {
         ammo = "Staunch Tathlum +1",
-        head = "Fu. Bandeau +1",
-        body = "Runeist Coat +1",
+        head = "Turms Cap +1",
+        body = "Runeist's Coat +2",
         hands = "Erilaz Gauntlets +1",
         legs = "Eri. Leg Guards +1",
         feet = "Erilaz Greaves +1",
@@ -97,7 +97,7 @@ function get_sets()
             ammo = "Staunch Tathlum +1",
             head = "Futhark Bandeau +1",
             body = "Futhark Coat +1",
-            -- hands="Turms Mittens",
+            hands = "Turms Mittens +1",
             legs = "Eri. Leg Guards +1",
             -- feet="Turms Leggings",
             neck = "Futhark Torque +2",
@@ -164,11 +164,15 @@ function get_sets()
 
     sets.Emnity = {
         equipable = true,
+        ammo = "Aqreqaq Bomblet",
+        head = "Halitus Helm",
         body = "Emet Harness +1",
         hands = "Futhark Mitons +1",
         legs = "Eri. Leg Guards +1",
         feet = "Ahosi Leggings",
         neck = "Futhark Torque +2",
+        left_ear = "Trux Earring",
+        right_ear = "Cryptic Earring",
         back = {
             name = "Ogma's cape",
             augments = {"Enmity+10"}
@@ -190,8 +194,8 @@ function get_sets()
     sets.JobAbility["Rayke"] = {feet = "Futhark Boots +1"}
     sets.JobAbility["Sleight of Sword"] = {hands = "Futhark mitons +1"}
     sets.JobAbility["Swordplay"] = {hands = "Futhark mitons +1"}
-    sets.JobAbility["Valiance"] = {body = "Runeist Coat +1"}
-    sets.JobAbility["Vallation"] = {body = "Runeist Coat +1"}
+    sets.JobAbility["Valiance"] = {body = "Runeist's Coat +2"}
+    sets.JobAbility["Vallation"] = {body = "Runeist's Coat +2"}
     sets.JobAbility["Vivacious Pulse"] = {head = "Erilaz Galea +1"}
 
     -- WS Sets --
@@ -287,9 +291,12 @@ function get_sets()
         }
     }
 
+    sets.WeaponSkill["Fell Cleave"] = sets.WeaponSkill["Resolution"]
+    sets.WeaponSkill["Steel Cyclone"] = sets.WeaponSkill["Dimidiation"]
+
     sets.FastCast = {
         ammo = "Impatiens",
-        head = "Runeist Bandeau +1",
+        head = "Runeist's Bandeau +2",
         hands = {
             name = "Leyline Gloves",
             augments = {'"Fast Cast"+3'}
@@ -318,7 +325,8 @@ function get_sets()
     sets.Midcast["Enhancing Magic"].Phalanx =
         set_combine(sets.Midcast["Enhancing Magic"], {head = "Futhark Bandeau +1"})
     sets.Midcast["Enhancing Magic"].Refresh = set_combine(sets.Midcast["Enhancing Magic"], {head = "Erilaz Galea +1"})
-    sets.Midcast["Enhancing Magic"].Regen = set_combine(sets.Midcast["Enhancing Magic"], {head = "Runeist Bandeau +1"})
+    sets.Midcast["Enhancing Magic"].Regen =
+        set_combine(sets.Midcast["Enhancing Magic"], {head = "Runeist's Bandeau +2"})
     sets.Midcast["Enhancing Magic"]["Regen II"] = sets.Midcast["Enhancing Magic"].Regen
     sets.Midcast["Enhancing Magic"]["Regen III"] = sets.Midcast["Enhancing Magic"].Regen
     sets.Midcast["Enhancing Magic"]["Regen IV"] = sets.Midcast["Enhancing Magic"].Regen
