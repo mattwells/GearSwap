@@ -1,4 +1,6 @@
 function get_sets()
+    send_command("@input /macro book 5;wait .1;input /macro set 1")
+
     sets.Idle = {
         ammo = "Eminent Bullet",
         head = "Meghanada Visor +2",
