@@ -31,16 +31,15 @@ function get_sets()
 		right_ear = "Enmerkar Earring",
 		left_ring = "Defending Ring",
 		right_ring = "Warden's Ring",
-		back = "Mecisto. Mantle"
-		-- back = {
-		-- 	name = "Campestres's Cape",
-		-- 	augments = {
-		-- 		"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-		-- 		"Pet: Attack+10 Pet: Rng.Atk.+10",
-		-- 		'Pet: "Regen"+10',
-		-- 		"Phys. dmg. taken-10%"
-		-- 	}
-		-- }
+		back = {
+			name = "Campestres's Cape",
+			augments = {
+				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
+				"Pet: Attack+10 Pet: Rng.Atk.+10",
+				'Pet: "Regen"+10',
+				"Phys. dmg. taken-10%"
+			}
+		}
 	}
 
 	DT = false
