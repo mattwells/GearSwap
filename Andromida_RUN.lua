@@ -18,37 +18,41 @@ function get_sets()
         back = {
             name = "Ogma's cape",
             augments = {
-                "STR+20",
-                "Accuracy+20 Attack+20",
-                "STR+10",
-                '"Dbl.Atk."+10'
+                "HP+60",
+                "Eva.+20 /Mag. Eva.+20",
+                "Mag. Evasion+10",
+                "Enmity+10",
+                "Phys. dmg. taken-10%"
             }
         }
     }
     sets.Idle.Dt = {
         ammo = "Staunch Tathlum +1",
-        head = "Fu. Bandeau +1",
-        body = "Futhark Coat +1",
+        head = "Turms Cap +1",
+        body = "Runeist's Coat +2",
         hands = {
-            name = "Herculean Gloves",
+            name = "Herculean Gloves", 
             augments = {"Phys. dmg. taken -5%", "STR+10", "Accuracy+7", "Attack+7"}
         },
-        legs = "Carmine Cuisses +1",
-        feet = "Erilaz Greaves +1",
+        legs = {
+            name = "Carmine Cuisses +1", 
+            augments = {"Accuracy+20", "Attack+12", '"Dual Wield"+6'}
+        },
+        feet = "Turms Leggings +1",
         neck = "Futhark Torque +2",
-        waist = "Flume Belt",
-        left_ear = "Genmei Earring",
-        right_ear = "Hearty Earring",
-        left_ring = "Moonlight Ring",
+        waist = "Flume Belt", -- Engraved Belt
+        left_ear = "Genmei Earring", -- Odnowa Earring +1
+        right_ear = "Odnowa Earring",
+        left_ring = "Vocane Ring",
         right_ring = "Defending Ring",
         back = {
             name = "Ogma's cape",
             augments = {
-                "HP+60",
-                "Eva.+20 /Mag. Eva.+20",
-                "Mag. Evasion+10",
-                "Enmity+10",
-                "Mag. Evasion+15"
+                "HP+60", 
+                "Eva.+20 /Mag. Eva.+20", 
+                "Mag. Evasion+10", 
+                "Enmity+10", 
+                "Phys. dmg. taken-10%"
             }
         }
     }
@@ -90,49 +94,53 @@ function get_sets()
             }
         }
     }
-    sets.Engaged.Parry =
-        set_combine(
-        sets.Engaged.Melee,
-        {
-            ammo = "Staunch Tathlum +1",
-            head = "Futhark Bandeau +1",
-            body = "Futhark Coat +1",
-            hands = "Turms Mittens +1",
-            legs = "Eri. Leg Guards +1",
-            -- feet="Turms Leggings",
-            neck = "Futhark Torque +2",
-            waist = "Flume Belt",
-            left_ear = "Genmei Earring",
-            -- right_ear = "Odnowa Earring +1",
-            -- left_ring = "Gelatinous Ring +1",
-            right_ring = "Defending Ring",
-            back = {
-                name = "Ogma's cape",
-                augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Mag. Evasion+10", "Enmity+10", "Mag. Evasion+15"}
-            }
-        }
-    )
-    sets.Engaged.Magic = {
-        ammo = "Staunch Tathlum +1", -- DT3  PDT  MDT
-        head = "Futhark Bandeau +1", -- DT   PDT4 MDT
-        body = "Futhark Coat +1", -- DT7  PDT  MDT
-        hands = {
-            name = "Herculean Gloves",
-            augments = {"Phys. dmg. taken -5%", "STR+10", "Accuracy+7", "Attack+7"}
-        }, -- DT   PDT7 MDT
-        legs = "Eri. Leg Guards +1", -- DT   PDT7 MDT
-        feet = "Erilaz Greaves +1", -- DT   PDT5 MDT
-        neck = "Futhark Torque +2", -- DT7  PDT  MDT
-        waist = "Flume Belt", -- DT   PDT4 MDT
-        left_ear = "Genmei Earring", -- DT   PDT2 MDT
-        right_ear = "Sherida Earring", -- DT   PDT  MDT
-        left_ring = "Shadow Ring", -- DT   PDT  MDT
-        right_ring = "Defending Ring", -- DT10 PDT  MDT
+    sets.Engaged.Parry = {
+        ammo = "Staunch Tathlum +1",
+        head = "Turms Cap +1",
+        body = "Futhark Coat +1",
+        hands = "Turms Mittens +1",
+        legs = "Eri. Leg Guards +1",
+        feet = "Turms Leggings +1",
+        neck = "Futhark Torque +2",
+        waist = "Flume Belt",
+        left_ear = "Genmei Earring",
+        right_ear = "Odnowa Earring", -- +1
+        left_ring = "Vocane Ring",
+        right_ring = "Defending Ring",
         back = {
             name = "Ogma's cape",
-            augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Mag. Evasion+10", "Enmity+10", "Mag. Evasion+15"}
+            augments = {
+                "HP+60",
+                "Eva.+20 /Mag. Eva.+20",
+                "Enmity+10",
+                "Parrying rate+5%"
+            }
         }
-    } -- DT27 PDT29 MDT
+    }
+    sets.Engaged.Tank = {
+        ammo = "Staunch Tathlum +1",
+        head = "Turms Cap +1",
+        body = "Runeist's Coat +2",
+        hands = "Turms Mittens +1",
+        legs = "Eri. Leg Guards +1",
+        feet = "Turms Leggings +1",
+        neck = "Futhark Torque +2",
+        waist = "Flume Belt", -- Engraved Belt
+        left_ear = "Genmei Earring",
+        right_ear = "Odnowa Earring", -- +1
+        left_ring = "Vocane Ring",
+        right_ring = "Defending Ring",
+        back = {
+            name = "Ogma's cape",
+            augments = {
+                "HP+60",
+                "Eva.+20 /Mag. Eva.+20",
+                "Mag. Evasion+10",
+                "Enmity+10",
+                "Phys. dmg. taken-10%"
+            }
+        }
+    }
     sets.Engaged.Hybrid =
         set_combine(
         sets.Engaged.Melee,
@@ -167,15 +175,21 @@ function get_sets()
         ammo = "Aqreqaq Bomblet",
         head = "Halitus Helm",
         body = "Emet Harness +1",
-        hands = "Futhark Mitons +1",
+        hands = "Kurys Gloves",
         legs = "Eri. Leg Guards +1",
         feet = "Ahosi Leggings",
         neck = "Futhark Torque +2",
+        waist = "Trance Belt",
         left_ear = "Trux Earring",
         right_ear = "Cryptic Earring",
+        left_ring = "Supershear Ring",
+        right_ring = "Defending Ring",
         back = {
             name = "Ogma's cape",
-            augments = {"Enmity+10"}
+            augments = {
+                "Enmity+10",
+                "Phys. dmg. taken-10%"
+            }
         }
     }
 
@@ -213,15 +227,10 @@ function get_sets()
     -- sets.WeaponSkill['Dimidiation'] = {}
 
     sets.WeaponSkill["Resolution"] = {
-        ammo = "Knobkierrie",
+        ammo = "Knobkierrie", -- Seething +1
         head = {
-            name = "Lilitu Headpiece",
-            augments = {
-                "STR+10",
-                "DEX+10",
-                "Attack+15",
-                "Weapon skill damage +3%"
-            }
+            name = "Adhemar Bonnet +1",
+            augments = {"DEX+12", "AGI+12", "Accuracy+20"}
         },
         body = {
             name = "Adhemar Jacket +1",
@@ -231,8 +240,14 @@ function get_sets()
             name = "Adhemar Wrist. +1",
             augments = {"STR+12", "DEX+12", "Attack+20"}
         },
-        legs = "Lustr. Subligar +1",
-        feet = {name = "Lustra. Leggings +1", augments = {"Attack+20", "STR+8", '"Dbl.Atk."+3'}},
+        legs = {
+            name = "Samnuha Tights",
+            augments = {"STR+10", "DEX+10", '"Dbl.Atk."+3', '"Triple Atk."+3'}
+        },
+        feet = {
+            name = "Carmine Greaves +1",
+            augments = {"Accuracy+12", "DEX+12", "MND+20"}
+        },
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Moonshade Earring",
@@ -252,15 +267,7 @@ function get_sets()
 
     sets.WeaponSkill["Dimidiation"] = {
         ammo = "Knobkierrie",
-        head = {
-            name = "Lilitu Headpiece",
-            augments = {
-                "STR+10",
-                "DEX+10",
-                "Attack+15",
-                "Weapon skill damage +3%"
-            }
-        },
+        head = "Lilitu Headpiece",
         body = {
             name = "Adhemar Jacket +1",
             augments = {"STR+12", "DEX+12", "Attack+20"}
@@ -277,16 +284,17 @@ function get_sets()
         neck = "Caro Necklace",
         waist = "Chiner's Belt +1",
         left_ear = "Moonshade Earring",
-        right_ear = "Sherida Earring",
+        right_ear = "Mache Earring +1",
         left_ring = "Niqmaddu Ring",
         right_ring = "Ilabrat Ring",
         back = {
             name = "Ogma's cape",
             augments = {
-                "STR+20",
+                "STR+20", -- DEX
                 "Accuracy+20 Attack+20",
-                "STR+10",
-                '"Dbl.Atk."+10'
+                "STR+10", -- DEX
+                '"Dbl.Atk."+10' -- WSD
+                -- PDT
             }
         }
     }
