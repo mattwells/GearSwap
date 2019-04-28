@@ -1,32 +1,9 @@
 function get_sets()
     send_command("@input /macro book 6;wait .1;input /macro set 1")
 
-    sets.Idle = {mode = "Default"}
-    sets.Idle.Default = {
-        ammo = "Staunch Tathlum +1",
-        head = "Turms Cap +1",
-        body = "Runeist's Coat +2",
-        hands = "Erilaz Gauntlets +1",
-        legs = "Eri. Leg Guards +1",
-        feet = "Erilaz Greaves +1",
-        neck = "Futhark Torque +2",
-        waist = "Flume Belt",
-        left_ear = "Genmei Earring",
-        right_ear = "Hearty Earring",
-        left_ring = "Moonlight Ring",
-        right_ring = "Defending Ring",
-        back = {
-            name = "Ogma's cape",
-            augments = {
-                "HP+60",
-                "Eva.+20 /Mag. Eva.+20",
-                "Mag. Evasion+10",
-                "Enmity+10",
-                "Phys. dmg. taken-10%"
-            }
-        }
-    }
-    sets.Idle.Dt = {
+    incapacitated_states = T{"stun", "petrification", "terror", "sleep"}
+
+    sets.Idle = {
         ammo = "Staunch Tathlum +1",
         head = "Turms Cap +1",
         body = "Runeist's Coat +2",
@@ -41,8 +18,8 @@ function get_sets()
         feet = "Turms Leggings +1",
         neck = "Futhark Torque +2",
         waist = "Flume Belt", -- Engraved Belt
-        left_ear = "Genmei Earring", -- Odnowa Earring +1
-        right_ear = "Odnowa Earring",
+        left_ear = "Odnowa Earring",
+        right_ear = "Odnowa Earring +1",
         left_ring = "Vocane Ring",
         right_ring = "Defending Ring",
         back = {
@@ -104,7 +81,7 @@ function get_sets()
         neck = "Futhark Torque +2",
         waist = "Flume Belt",
         left_ear = "Genmei Earring",
-        right_ear = "Odnowa Earring", -- +1
+        right_ear = "Odnowa Earring +1",
         left_ring = "Vocane Ring",
         right_ring = "Defending Ring",
         back = {
@@ -127,7 +104,7 @@ function get_sets()
         neck = "Futhark Torque +2",
         waist = "Flume Belt", -- Engraved Belt
         left_ear = "Genmei Earring",
-        right_ear = "Odnowa Earring", -- +1
+        right_ear = "Odnowa Earring +1",
         left_ring = "Vocane Ring",
         right_ring = "Defending Ring",
         back = {
@@ -354,6 +331,10 @@ end
     Jettatura
 ]]
 function precast(spell, action)
+    if incapacitated() then
+        return
+    end
+    
     if (spell.english == "Spectral Jig" or spell.english == "Sneak") and buffactive.Sneak then
         cast_delay(0.2)
         send_command("cancel Sneak")
@@ -380,6 +361,10 @@ function precast(spell, action)
 end
 
 function midcast(spell, action)
+    if incapacitated() then
+        return
+    end
+
     if not is_magic(spell) then
         return
     end
@@ -400,6 +385,10 @@ function midcast(spell, action)
 end
 
 function status_change(new, old)
+    if incapacitated() then
+        return
+    end
+
     if _G["status_change_" .. new:lower()] and not _G["status_change_" .. new:lower()]() then
         return
     end
@@ -407,10 +396,6 @@ function status_change(new, old)
     if (sets[new]) then
         equip(sets[new])
     end
-end
-
-function status_change_idle()
-    equip(sets.Idle[sets.Idle.mode])
 end
 
 function status_change_engaged()
@@ -422,7 +407,16 @@ function aftercast(spell, action)
 end
 
 function buff_change(name, gain, buff_details)
-    debug(name .. " " .. (gain and "on" or "off"))
+    if incapacitated_states:contains(name) then
+        status_change(player.status)
+    end
+end
+
+function incapacitated()
+    if incapacitated_states:find(function (value) return buffactive[value] or false end) then
+        equip(sets.Idle)
+        return true
+    end
 end
 
 function self_command(argsString)
@@ -435,27 +429,6 @@ function self_command(argsString)
     end
 
     status_change(player.status)
-end
-
-function self_command_i(args)
-    self_command_idle(args)
-end
-
-function self_command_idle(args)
-    if not args[1] then
-        error(4, "Error: No Idle Mode Specified")
-        return
-    end
-
-    local mode = args[1]:ucfirst()
-    if not sets.Idle[mode] then
-        error(4, "Error: Invalid Idle Mode: " .. mode)
-        return
-    end
-
-    sets.Idle.mode = mode
-    status_change(player.status)
-    notice("Idle Mode Set: " .. mode)
 end
 
 function self_command_e(args)
