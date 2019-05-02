@@ -1,6 +1,6 @@
 function get_sets()
 	send_command("@input /macro book 5;wait .1;input /macro set 1")
-	
+
 	sets.Idle = {
 		main = "Gridarvor",
 		sub = "Elan Strap +1",
@@ -66,8 +66,8 @@ function get_sets()
 	sets.Pet = {}
 	sets.Pet.BloodPact = {}
 	sets.Pet.BloodPact.Magic = {
-		main={ 
-			name="Keraunos", 
+		main={
+			name="Keraunos",
 			augments={
 				'Pet: "Mag.Atk.Bns."+19',
 				'"Elemental Siphon"+25',
@@ -76,24 +76,24 @@ function get_sets()
 		},
 		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
-		head={ 
-			name="Apogee Crown +1", 
+		head={
+			name="Apogee Crown +1",
 			augments={
 				'MP+80',
 				'Pet: "Mag.Atk.Bns."+35',
 				'Blood Pact Dmg.+8',
 			}
 		},
-		body={ 
-			name="Apo. Dalmatica +1", 
+		body={
+			name="Apo. Dalmatica +1",
 			augments={
 				'MP+80',
 				'Pet: "Mag.Atk.Bns."+35',
 				'Blood Pact Dmg.+8',
 			}
 		},
-		hands={ 
-			name="Merlinic Dastanas", 
+		hands={
+			name="Merlinic Dastanas",
 			augments={
 				'Pet: Mag. Acc.+23 Pet: "Mag.Atk.Bns."+23',
 				'Pet: Phys. dmg. taken -1%',
@@ -102,8 +102,8 @@ function get_sets()
 				'Pet: "Mag.Atk.Bns."+12',}
 			},
 		legs="Beck. Spats +1",
-		feet={ 
-			name="Apogee Pumps +1", 
+		feet={
+			name="Apogee Pumps +1",
 			augments={
 				'MP+80',
 				'Pet: "Mag.Atk.Bns."+35',
@@ -111,13 +111,13 @@ function get_sets()
 			}
 		},
 		neck="Smn. Collar +1",
-		waist="Kobo Obi",
+    	waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Enmerkar Earring",
 		left_ring="Varar Ring +1",
 		right_ring="Varar Ring +1",
-		back={ 
-			name="Campestres's Cape", 
+		back={
+			name="Campestres's Cape",
 			augments={
 				'Pet: M.Acc.+20 Pet: M.Dmg.+20',
 				'Pet: Mag. Acc.+10',
@@ -126,22 +126,27 @@ function get_sets()
 		},
 	}
 
+	sets.Pet.BloodPact.Merit = set_combine(
+		sets.Pet.BloodPact.Magic,
+		{legs = "Enticer's Pants"}
+	)
+
 	sets.Pet.BloodPact.Physical = {
 		main="Was",
 		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
 		head="Helios Band",
 		body="Con. Doublet +2",
-		hands={ 
-			name="Merlinic Dastanas", 
+		hands={
+			name="Merlinic Dastanas",
 			augments={
 				'Pet: Attack+18 Pet: Rng.Atk.+18',
 				'Blood Pact Dmg.+8',
 				'Pet: STR+10',
 			}
 		},
-		legs={ 
-			name="Apogee Slacks +1", 
+		legs={
+			name="Apogee Slacks +1",
 			augments={
 				'Pet: STR+20',
 				'Blood Pact Dmg.+14',
@@ -150,13 +155,13 @@ function get_sets()
 		},
 		feet="Helios Boots",
 		neck="Smn. Collar +1",
-		waist="Kobo Obi",
+    	waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Enmerkar Earring",
 		left_ring="Varar Ring +1",
 		right_ring="Varar Ring +1",
-		back={ 
-			name="Campestres's Cape", 
+		back={
+			name="Campestres's Cape",
 			augments={
 				'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',
 				'Pet: Attack+10 Pet: Rng.Atk.+10',
@@ -167,8 +172,8 @@ function get_sets()
 	}
 
 	sets.Pet.BloodPact.Hybrid = {
-		main={ 
-			name="Gridarvor", 
+		main={
+			name="Gridarvor",
 			augments={
 				'Pet: Accuracy+70',
 				'Pet: Attack+70',
@@ -177,8 +182,8 @@ function get_sets()
 		},
 		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
-		head={ 
-			name="Apogee Crown +1", 
+		head={
+			name="Apogee Crown +1",
 			augments={
 				'MP+80',
 				'Pet: "Mag.Atk.Bns."+35',
@@ -186,23 +191,23 @@ function get_sets()
 			}
 		},
 		body="Con. Doublet +2",
-		hands={ 
-			name="Merlinic Dastanas", 
+		hands={
+			name="Merlinic Dastanas",
 			augments={
 				'Pet: Attack+18 Pet: Rng.Atk.+18',
 				'Blood Pact Dmg.+8','Pet: STR+10',
 			}
 		},
-		legs={ 
-			name="Apogee Slacks +1", 
+		legs={
+			name="Apogee Slacks +1",
 			augments={
 				'Pet: STR+20',
 				'Blood Pact Dmg.+14',
 				'Pet: "Dbl. Atk."+4',
 			}
 		},
-		feet={ 
-			name="Apogee Pumps +1", 
+		feet={
+			name="Apogee Pumps +1",
 			augments={
 				'MP+80',
 				'Pet: "Mag.Atk.Bns."+35',
@@ -210,13 +215,13 @@ function get_sets()
 			}
 		},
 		neck="Smn. Collar +1",
-		waist="Kobo Obi",
+    	waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Enmerkar Earring",
 		left_ring="Varar Ring +1",
 		right_ring="Varar Ring +1",
-		back={ 
-			name="Campestres's Cape", 
+		back={
+			name="Campestres's Cape",
 			augments={
 				'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',
 				'Pet: Attack+10 Pet: Rng.Atk.+10',
@@ -246,15 +251,13 @@ function get_sets()
 	sets.Pet.BloodPactRage["Aero II"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Aero IV"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Predator Claws"] = sets.Pet.BloodPact.Physical
-	sets.Pet.BloodPactRage["Wind Blade"] = sets.Pet.BloodPact.Magic
 	-- Ifrit
 	sets.Pet.BloodPactRage["Punch"] = sets.Pet.BloodPact.Physical
 	sets.Pet.BloodPactRage["Fire II"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Burning Strike"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Double Punch"] = sets.Pet.BloodPact.Physical
-	sets.Pet.BloodPactRage["Fire IV"] = sets.Pet.BloodPact.Magic	
+	sets.Pet.BloodPactRage["Fire IV"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Flaming Crush"] = sets.Pet.BloodPact.Hybrid
-	sets.Pet.BloodPactRage["Meteor Strike"] = sets.Pet.BloodPact.Physical
 	sets.Pet.BloodPactRage["Conflag Strike"] = sets.Pet.BloodPact.Physical
 	-- Ramuh
 	sets.Pet.BloodPactRage["Shock Strike"] = sets.Pet.BloodPact.Magic
@@ -262,7 +265,6 @@ function get_sets()
 	sets.Pet.BloodPactRage["Thunderspark"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Thunder IV"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Chaotic Strike"] = sets.Pet.BloodPact.Physical
-	sets.Pet.BloodPactRage["Thunderstorm"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Volt Strike"] = sets.Pet.BloodPact.Magic
 	-- Shiva
 	sets.Pet.BloodPactRage["Axe Kick"] = sets.Pet.BloodPact.Physical
@@ -270,7 +272,14 @@ function get_sets()
 	sets.Pet.BloodPactRage["Double Slap"] = sets.Pet.BloodPact.Physical
 	sets.Pet.BloodPactRage["Blizzard IV"] = sets.Pet.BloodPact.Magic
 	sets.Pet.BloodPactRage["Rush"] = sets.Pet.BloodPact.Physical
-	sets.Pet.BloodPactRage["Heavenly Strike"] = sets.Pet.BloodPact.Magic
+
+	-- Meritted
+	sets.Pet.BloodPactRage["Meteor Strike"] = sets.Pet.BloodPact.Merit
+	sets.Pet.BloodPactRage["Geocrush"] = sets.Pet.BloodPact.Merit
+	sets.Pet.BloodPactRage["Grand Fall"] = sets.Pet.BloodPact.Merit
+	sets.Pet.BloodPactRage["Wind Blade"] = sets.Pet.BloodPact.Merit
+	sets.Pet.BloodPactRage["Heavenly Strike"] = sets.Pet.BloodPact.Merit
+	sets.Pet.BloodPactRage["Thunderstorm"] = sets.Pet.BloodPact.Merit
 
 	sets.Pet.BloodPactWard = sets.Pet.BloodPact.Skill
 
