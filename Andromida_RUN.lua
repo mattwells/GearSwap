@@ -1,34 +1,28 @@
 function get_sets()
     send_command("@input /macro book 6;wait .1;input /macro set 1")
 
-    incapacitated_states = T{"stun", "petrification", "terror", "sleep"}
+    incapacitated_states = T {"stun", "petrification", "terror", "sleep"}
 
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
         head = "Turms Cap +1",
         body = "Runeist's Coat +2",
-        hands = {
-            name = "Herculean Gloves", 
-            augments = {"Phys. dmg. taken -5%", "STR+10", "Accuracy+7", "Attack+7"}
-        },
-        legs = {
-            name = "Carmine Cuisses +1", 
-            augments = {"Accuracy+20", "Attack+12", '"Dual Wield"+6'}
-        },
-        feet = "Turms Leggings +1",
+        hands = "Turms Mittens +1",
+        legs = "Eri. Leg Guards +1",
+        feet = "Erilaz Greaves +1",
         neck = "Futhark Torque +2",
-        waist = "Flume Belt", -- Engraved Belt
-        left_ear = "Odnowa Earring",
+        waist = "Engraved Belt",
+        left_ear = "Genmei Earring",
         right_ear = "Odnowa Earring +1",
         left_ring = "Vocane Ring",
         right_ring = "Defending Ring",
         back = {
             name = "Ogma's cape",
             augments = {
-                "HP+60", 
-                "Eva.+20 /Mag. Eva.+20", 
-                "Mag. Evasion+10", 
-                "Enmity+10", 
+                "HP+60",
+                "Eva.+20 /Mag. Eva.+20",
+                "Mag. Evasion+10",
+                "Enmity+10",
                 "Phys. dmg. taken-10%"
             }
         }
@@ -102,7 +96,7 @@ function get_sets()
         legs = "Eri. Leg Guards +1",
         feet = "Turms Leggings +1",
         neck = "Futhark Torque +2",
-        waist = "Flume Belt", -- Engraved Belt
+        waist = "Flume Belt",
         left_ear = "Genmei Earring",
         right_ear = "Odnowa Earring +1",
         left_ring = "Vocane Ring",
@@ -334,7 +328,7 @@ function precast(spell, action)
     if incapacitated() then
         return
     end
-    
+
     if (spell.english == "Spectral Jig" or spell.english == "Sneak") and buffactive.Sneak then
         cast_delay(0.2)
         send_command("cancel Sneak")
@@ -413,7 +407,13 @@ function buff_change(name, gain, buff_details)
 end
 
 function incapacitated()
-    if incapacitated_states:find(function (value) return buffactive[value] or false end) then
+    if
+        incapacitated_states:find(
+            function(value)
+                return buffactive[value] or false
+            end
+        )
+     then
         equip(sets.Idle)
         return true
     end
