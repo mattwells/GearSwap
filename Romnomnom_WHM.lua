@@ -1,17 +1,17 @@
 function get_sets()
 	sets.Idle = {
-		main = { 
-			name = "Queller Rod", 
+		main = {
+			name = "Queller Rod",
 			augments = {
-				'Healing magic skill +15',
+				"Healing magic skill +15",
 				'"Cure" potency +10%',
-				'"Cure" spellcasting time -7%',
+				'"Cure" spellcasting time -7%'
 			}
 		},
-		sub = "Sors Shield",
+		sub = "Genmei Shield",
 		ammo = "Staunch Tathlum",
 		head = "Aya. Zucchetto +2",
-    	body="Theo. Briault +3",
+		body = "Theo. Briault +3",
 		hands = "Aya. Manopolas +2",
 		legs = "Assiduity Pants +1",
 		feet = "Aya. Gambieras +2",
@@ -22,21 +22,21 @@ function get_sets()
 		left_ring = "Defending Ring",
 		right_ring = "Ayanmo Ring",
 		back = {
-			name = "Alaunus's Cape", 
+			name = "Alaunus's Cape",
 			augments = {
-				'MND+20',
-				'Mag. Acc+20 /Mag. Dmg.+20',
-				'MND+5',
+				"MND+20",
+				"Mag. Acc+20 /Mag. Dmg.+20",
+				"MND+5",
 				'"Fast Cast"+10',
-				'Damage taken-5%',
+				"Damage taken-5%"
 			}
-		},
+		}
 	}
 
 	sets.JobAbility = {}
 
 	sets.JobAbility.Benediction = {
-		body = "Piety Briault +2",
+		body = "Piety Briault +2"
 	}
 
 	sets.Precast = {}
@@ -50,7 +50,8 @@ function get_sets()
 		waist = "Witful Belt"
 	}
 
-	sets.Precast.FastCast = set_combine(
+	sets.Precast.FastCast =
+		set_combine(
 		sets.Precast.Haste,
 		{
 			ammo = "Incantor Stone",
@@ -64,17 +65,18 @@ function get_sets()
 			back = {
 				name = "Alaunus's Cape",
 				augments = {
-					"MND+20", 
-					"Mag. Acc+20 /Mag. Dmg.+20", 
-					"MND+5", 
-					'"Fast Cast"+10', 
+					"MND+20",
+					"Mag. Acc+20 /Mag. Dmg.+20",
+					"MND+5",
+					'"Fast Cast"+10',
 					"Damage taken-5%"
 				}
 			}
 		}
 	)
 
-	sets.Precast.Cure = set_combine(
+	sets.Precast.Cure =
+		set_combine(
 		sets.Precast.FastCast,
 		{
 			main = "Queller Rod",
@@ -88,10 +90,10 @@ function get_sets()
 			back = {
 				name = "Alaunus's Cape",
 				augments = {
-					"MND+20", 
-					"Mag. Acc+20 /Mag. Dmg.+20", 
-					"MND+5", 
-					'"Fast Cast"+10', 
+					"MND+20",
+					"Mag. Acc+20 /Mag. Dmg.+20",
+					"MND+5",
+					'"Fast Cast"+10',
 					"Damage taken-5%"
 				}
 			}
@@ -104,8 +106,8 @@ function get_sets()
 		main = {
 			name = "Queller Rod",
 			augments = {
-				"Healing magic skill +15", 
-				'"Cure" potency +10%', 
+				"Healing magic skill +15",
+				'"Cure" potency +10%',
 				'"Cure" spellcasting time -7%'
 			}
 		}, -- 10/2
@@ -121,78 +123,81 @@ function get_sets()
 		back = {
 			name = "Alaunus's Cape",
 			augments = {
-				"MND+20", 
-				"Eva.+20 /Mag. Eva.+20", 
-				"MND+10", 
-				'"Cure" potency +10%', 
+				"MND+20",
+				"Eva.+20 /Mag. Eva.+20",
+				"MND+10",
+				'"Cure" potency +10%',
 				"Damage taken-5%"
 			}
 		} -- 10/0
 	}
 
 	sets.Midcast["Divine Veil"] = {
-		main = "Yagrush",
+		main = "Yagrush"
 	}
 
-	sets.Midcast.Erase = set_combine(
+	sets.Midcast.Erase =
+		set_combine(
 		sets.Midcast["Divine Veil"],
 		{
-			neck = "Cleric's Torque",
+			neck = "Cleric's Torque"
 		}
 	)
 
-	sets.Midcast.Cursna = set_combine(
+	sets.Midcast.Cursna =
+		set_combine(
 		sets.Midcast["Divine Veil"],
 		{
-		    legs="Th. Pantaloons +2",
+			legs = "Th. Pantaloons +2",
 			waist = "Alaunus's Cape"
 		}
 	)
 
 	sets.Midcast["Enhancing Magic"] = {
-		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +7',}},
-		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}},
-		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +7',}},
-		legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}},
-		feet="Theo. Duckbills +2",
+		head = {name = "Telchine Cap", augments = {"Enh. Mag. eff. dur. +7"}},
+		body = {name = "Telchine Chas.", augments = {"Enh. Mag. eff. dur. +8"}},
+		hands = {name = "Telchine Gloves", augments = {"Enh. Mag. eff. dur. +7"}},
+		legs = {name = "Telchine Braconi", augments = {"Enh. Mag. eff. dur. +9"}},
+		feet = "Theo. Duckbills +2"
 	}
 
-	sets.Midcast["Shellra V"] = set_combine(
+	sets.Midcast["Shellra V"] =
+		set_combine(
 		sets.Midcast["Enhancing Magic"],
 		{
 			legs = "Piety pantaloons +2"
 		}
 	)
 
-	sets.Midcast.Regen = set_combine(
+	sets.Midcast.Regen =
+		set_combine(
 		sets.Midcast["Enhancing Magic"],
 		{
 			body = "Piety Briault +2",
 			hands = "Ebers Mitts +1",
-    		legs="Th. Pantaloons +2",
+			legs = "Th. Pantaloons +2"
 		}
 	)
 
-	sets.Midcast.Bar = set_combine(
+	sets.Midcast.Bar =
+		set_combine(
 		sets.Midcast["Enhancing Magic"],
 		{
 			legs = "Piety pantaloons +2"
 		}
 	)
 
-	sets.Midcast.Auspice = set_combine(
+	sets.Midcast.Auspice =
+		set_combine(
 		sets.Midcast["Enhancing Magic"],
 		{
-			feet = "Ebers Duckbills +1",
+			feet = "Ebers Duckbills +1"
 		}
 	)
 end
 
 function is_magic(spell)
-	return spell.type:endswith("Magic") 
-		or spell.type == "BardSong" 
-		or spell.type == "Ninjutsu"
-		or spell.type == "Trust"
+	return spell.type:endswith("Magic") or spell.type == "BardSong" or spell.type == "Ninjutsu" or spell.type == "Trust"
 end
 
 function precast(spell, action)
@@ -211,13 +216,13 @@ function precast(spell, action)
 		end
 	end
 
-    if sets[spell.type] and sets[spell.type][spell.english] then
-        equip(sets[spell.type][spell.english])
+	if sets[spell.type] and sets[spell.type][spell.english] then
+		equip(sets[spell.type][spell.english])
 
-        debug("Precast: " .. spell.type .. " " .. spell.english)
+		debug("Precast: " .. spell.type .. " " .. spell.english)
 
-        return
-    end
+		return
+	end
 end
 
 function midcast(spell, action)
