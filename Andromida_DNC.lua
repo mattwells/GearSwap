@@ -3,24 +3,39 @@ function get_sets()
 
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
-        head = "Meghanada Visor +2",
-        body = "Meg. Cuirie +2",
-        hands = "Meg. Gloves +2",
+        head = "Turms Cap +1",
+        body = "Horos Casaque +3",
+        hands = { 
+            name = "Herculean Gloves", 
+            augments = {
+                'Phys. dmg. taken -5%',
+                'STR+10',
+                'Accuracy+7',
+                'Attack+7',
+            }
+        },
         legs = "Mummu Kecks +2",
-        feet = "Meg. Jam. +2",
+        feet = "Turms Leggings +1",
         neck = "Loricate Torque +1",
-        waist = "Flume Belt",
-        left_ear = "Sherida Earring",
-        right_ear = "Telos Earring",
+        waist = "Engraved Belt",
+        left_ear = "Hearty Earring",
+        right_ear = "Genmei Earring",
         left_ring = "Moonlight Ring",
         right_ring = "Defending Ring",
-        back = {
-            name = "Senuna's Mantle",
-            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "Phys. dmg. taken-10%"}
-        }
+        back = { 
+            name = "Senuna's Mantle", 
+            augments = {
+                'DEX+20',
+                'Accuracy+20 Attack+20',
+                'DEX+10',
+                '"Store TP"+10',
+                'Phys. dmg. taken-10%',
+            }
+        },
     }
 
-    sets.Engaged = {
+    sets.Engaged = { mode = "Melee" }
+    sets.Engaged.Melee = {
         ammo = "Yamarang",
         head = {
             name = "Adhemar Bonnet +1",
@@ -46,28 +61,38 @@ function get_sets()
     }
 
     DT = false
-    sets.PDT =
-        set_combine(
-        sets.Engaged,
-        {
-            ammo = "Staunch Tathlum +1",
-            body = "Horos Casaque +3",
-            hands = {
-                name = "Herculean Gloves",
-                augments = {'"Store TP"+5', "STR+7", "Accuracy+14"}
-            },
-            legs = "Mummu Kecks +2",
-            feet = "Meg. Jam. +2",
-            neck = "Loricate Torque +1",
-            waist = "Dynamic Belt",
-            left_ring = "Moonlight Ring",
-            right_ring = "Defending Ring",
-            back = {
-                name = "Senuna's Mantle",
-                augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+10", '"Store TP"+10', "Phys. dmg. taken-10%"}
+    sets.PDT = {
+        ammo = "Staunch Tathlum +1",
+        head = "Turms Cap +1",
+        body = "Horos Casaque +3",
+        hands = { 
+            name = "Herculean Gloves", 
+            augments = {
+                'Phys. dmg. taken -5%',
+                'STR+10',
+                'Accuracy+7',
+                'Attack+7',
             }
-        }
-    )
+        },
+        legs = "Mummu Kecks +2",
+        feet = "Turms Leggings +1",
+        neck = "Loricate Torque +1",
+        waist = "Engraved Belt",
+        left_ear = "Hearty Earring",
+        right_ear = "Genmei Earring",
+        left_ring = "Moonlight Ring",
+        right_ring = "Defending Ring",
+        back = { 
+            name = "Senuna's Mantle", 
+            augments = {
+                'DEX+20',
+                'Accuracy+20 Attack+20',
+                'DEX+10',
+                '"Store TP"+10',
+                'Phys. dmg. taken-10%',
+            }
+        },
+    }
 
     -- JA Sets --
     sets.JobAbility = {}
@@ -144,9 +169,14 @@ function get_sets()
             name = "Lilitu Headpiece",
             augments = {"STR+10", "DEX+10", "Attack+15", "Weapon skill damage +3%"}
         },
-        body = {
-            name = "Herculean Vest",
-            augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
+        body = { 
+            name = "Herculean Vest", 
+            augments = {
+                'MND+9',
+                'Attack+29',
+                'Weapon skill damage +6%',
+                'Accuracy+15 Attack+15',
+            }
         },
         hands = "Maxixi Bangles +3",
         legs = "Horos Tights +3",
@@ -237,12 +267,13 @@ function get_sets()
     sets.WeaponSkill["Rudra's Storm"] = {
         ammo="Charis Feather",
         head="Lilitu Headpiece",
-        body={ 
-            name="Herculean Vest", 
-            augments={
-                'Attack+25',
-                'Weapon skill damage +3%',
-                'DEX+12','Accuracy+11',
+        body = { 
+            name = "Herculean Vest", 
+            augments = {
+                'MND+9',
+                'Attack+29',
+                'Weapon skill damage +6%',
+                'Accuracy+15 Attack+15',
             }
         },
         hands="Maxixi Bangles +3",
@@ -327,6 +358,10 @@ function aftercast(spell, action)
 end
 
 function status_change(new, old)
+    if incapacitated() then
+        return
+    end
+
     if _G["status_change_" .. new:lower()] and not _G["status_change_" .. new:lower()]() then
         return
     end
@@ -337,11 +372,7 @@ function status_change(new, old)
 end
 
 function status_change_engaged()
-    equip(sets.Engaged)
-
-    if DT then
-        equip(sets.PDT)
-    end
+    equip(sets.Engaged[sets.Engaged.Set])
 end
 
 function buff_change(name, gain, buff_details)
