@@ -3,22 +3,36 @@ function get_sets()
 
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
-        head = "Meghanada Visor +2",
+        head = "Turms Cap +1",
         body = "Meg. Cuirie +2",
-        hands = "Meg. Gloves +2",
+        hands = {
+            name = "Herculean Gloves",
+            augments = {
+                "Phys. dmg. taken -5%",
+                "STR+10",
+                "Accuracy+7",
+                "Attack+7"
+            }
+        },
         legs = "Mummu Kecks +2",
         feet = "Meg. Jam. +2",
         neck = "Loricate Torque +1",
-        waist = "Flume Belt",
-        left_ear = "Sherida Earring",
-        right_ear = "Infused Earring",
+        waist = "Engraved Belt",
+        left_ear = "Genmei Earring",
+        right_ear = "Hearty Earring",
         left_ring = "Defending Ring",
-        right_ring = "Warden's Ring",
+        right_ring = "Vocane Ring",
         back = {
             name = "Toutatis's Cape",
-            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+5", '"Dbl.Atk."+10', "Phys. dmg. taken-10%"}
+            augments = {
+                "DEX+20",
+                "Accuracy+20 Attack+20",
+                "DEX+5",
+                '"Dbl.Atk."+10',
+                "Phys. dmg. taken-10%"
+            }
         }
-    }
+    } -- DT 28
 
     sets.Engaged = {
         ammo = "Yamarang",
@@ -94,44 +108,36 @@ function get_sets()
             name = "Plun. Armlets +3",
             augments = {'Enhances "Perfect Dodge" effect'}
         },
-        feet = "Skulk. Poulaines +1",
-        waist = "Chaac Belt"
-    }
-
-    sets.Misc = {}
-    sets.Misc.Ranged = {
-        head = "Meghanada Visor +2",
-        body = "Meg. Cuirie +2",
-        hands = "Meg. Gloves +2",
-        legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +2",
-        neck = "Iqabi Necklace",
-        left_ear = "Telos Earring",
-        -- right_ear = "Neritic Earring",
-        left_ring = "Ilabrat Ring",
-        right_ring = "Haverton Ring"
-        -- back = "Buquwik Cape"
     }
 
     sets.WeaponSkill = {
-        ammo = "Jukukik Feather",
+        ammo = "Yamarang",
         head = "Pill. Bonnet +3",
         body = {
             name = "Herculean Vest",
-            augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
+            augments = {
+                "MND+9",
+                "Attack+29",
+                "Weapon skill damage +6%",
+                "Accuracy+15 Attack+15"
+            }
         },
         hands = "Meg. Gloves +2",
         legs = "Plun. Culottes +3",
         feet = {
             name = "Herculean Boots",
-            augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
+            augments = {
+                "Attack+24",
+                "Weapon skill damage +3%",
+                "DEX+14"
+            }
         },
         neck = "Assassin's Gorget",
         waist = "Chiner's Belt +1",
         left_ear = "Ishvara Earring",
         right_ear = "Moonshade Earring",
         left_ring = "Ilabrat Ring",
-        right_ring = "Ramuh Ring +1",
+        right_ring = "Regal Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {
@@ -227,12 +233,12 @@ end
 function status_change_engaged()
     equip(sets.Engaged)
 
-    if TH then
-        equip(sets.TH)
-    end
-
     if DT then
         equip(sets.PDT)
+    end
+
+    if TH then
+        equip(sets.TH)
     end
 end
 
