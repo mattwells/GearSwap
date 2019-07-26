@@ -6,7 +6,7 @@ function get_sets()
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
         head = "Turms Cap +1",
-        body = "Runeist's Coat +2",
+        body = "Runeist's Coat +3",
         hands = "Turms Mittens +1",
         legs = "Eri. Leg Guards +1",
         feet = "Erilaz Greaves +1",
@@ -68,7 +68,7 @@ function get_sets()
     sets.Engaged.Parry = {
         ammo = "Staunch Tathlum +1",
         head = "Turms Cap +1",
-        body = "Futhark Coat +1",
+        body = "Futhark Coat +3",
         hands = "Turms Mittens +1",
         legs = "Eri. Leg Guards +1",
         feet = "Turms Leggings +1",
@@ -91,7 +91,7 @@ function get_sets()
     sets.Engaged.Tank = {
         ammo = "Staunch Tathlum +1",
         head = "Turms Cap +1",
-        body = "Runeist's Coat +2",
+        body = "Runeist's Coat +3",
         hands = "Turms Mittens +1",
         legs = "Eri. Leg Guards +1",
         feet = "Turms Leggings +1",
@@ -171,16 +171,16 @@ function get_sets()
     sets.JobAbility = {}
 
     sets.JobAbility["Battuta"] = {head = "Futhark Bandeau +1"}
-    sets.JobAbility["Elemental Sforzo"] = {body = "Futhark Coat +1"}
+    sets.JobAbility["Elemental Sforzo"] = {body = "Futhark Coat +3"}
     sets.JobAbility["Gambit"] = {hands = "Runeist mitons +1"}
     sets.JobAbility["Inspiration"] = {legs = "Futhark Trousers +1"}
-    sets.JobAbility["Liement"] = {body = "Futhark Coat +1"}
+    sets.JobAbility["Liement"] = {body = "Futhark Coat +3"}
     sets.JobAbility["Pflug"] = {feet = "Runeist Bottes +1"}
     sets.JobAbility["Rayke"] = {feet = "Futhark Boots +1"}
     sets.JobAbility["Sleight of Sword"] = {hands = "Futhark mitons +1"}
     sets.JobAbility["Swordplay"] = {hands = "Futhark mitons +1"}
-    sets.JobAbility["Valiance"] = {body = "Runeist's Coat +2"}
-    sets.JobAbility["Vallation"] = {body = "Runeist's Coat +2"}
+    sets.JobAbility["Valiance"] = {body = "Runeist's Coat +3"}
+    sets.JobAbility["Vallation"] = {body = "Runeist's Coat +3"}
     sets.JobAbility["Vivacious Pulse"] = {head = "Erilaz Galea +1"}
 
     -- WS Sets --
@@ -195,7 +195,6 @@ function get_sets()
     -- sets.WeaponSkill['Spinning Slash'] = {}
     -- sets.WeaponSkill['Ground Strike'] = {}
     -- sets.WeaponSkill['Herculean Slash'] = {}
-    -- sets.WeaponSkill['Dimidiation'] = {}
 
     sets.WeaponSkill["Resolution"] = {
         ammo = "Knobkierrie", -- Seething +1
@@ -275,7 +274,7 @@ function get_sets()
 
     sets.FastCast = {
         ammo = "Impatiens",
-        head = "Runeist's Bandeau +2",
+        head = "Rune. Bandeau +3",
         hands = {
             name = "Leyline Gloves",
             augments = {'"Fast Cast"+3'}
@@ -305,7 +304,7 @@ function get_sets()
         set_combine(sets.Midcast["Enhancing Magic"], {head = "Futhark Bandeau +1"})
     sets.Midcast["Enhancing Magic"].Refresh = set_combine(sets.Midcast["Enhancing Magic"], {head = "Erilaz Galea +1"})
     sets.Midcast["Enhancing Magic"].Regen =
-        set_combine(sets.Midcast["Enhancing Magic"], {head = "Runeist's Bandeau +2"})
+        set_combine(sets.Midcast["Enhancing Magic"], {head = "Rune. Bandeau +3"})
     sets.Midcast["Enhancing Magic"]["Regen II"] = sets.Midcast["Enhancing Magic"].Regen
     sets.Midcast["Enhancing Magic"]["Regen III"] = sets.Midcast["Enhancing Magic"].Regen
     sets.Midcast["Enhancing Magic"]["Regen IV"] = sets.Midcast["Enhancing Magic"].Regen
@@ -393,6 +392,11 @@ function status_change(new, old)
 end
 
 function status_change_engaged()
+    if sets.Engaged.mode == "Tank" and buffactive["Battuta"] then
+        equip(sets.Engaged.Parry)
+        return
+    end
+
     equip(sets.Engaged[sets.Engaged.mode])
 end
 
@@ -402,6 +406,10 @@ end
 
 function buff_change(name, gain, buff_details)
     if incapacitated_states:contains(name) then
+        status_change(player.status)
+    end
+
+    if name == "Battuta" then
         status_change(player.status)
     end
 end
