@@ -1,6 +1,8 @@
 function get_sets()
     send_command("@input /macro book 1;wait .1;input /macro set 1")
 
+    incapacitated_states = T {"stun", "petrification", "terror", "sleep", "weakness"}
+
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
         head = "Turms Cap +1",
@@ -371,11 +373,28 @@ function status_change(new, old)
     end
 end
 
+function incapacitated()
+    if
+        incapacitated_states:find(
+            function(value)
+                return buffactive[value] or false
+            end
+        )
+     then
+        equip(sets.Idle)
+        return true
+    end
+end
+
 function status_change_engaged()
     equip(sets.Engaged[sets.Engaged.Set])
 end
 
 function buff_change(name, gain, buff_details)
+    if incapacitated_states:contains(name) then
+        status_change(player.status)
+    end
+
     debug(name .. " " .. (gain and "on" or "off"))
 end
 
@@ -454,7 +473,9 @@ function refine_waltz(spell)
             {id = 194, name = "Curing Waltz V", level = 87, tp = 800, hp = 2000}
         },
         function(waltz)
-            return waltz.level <= dncLevel and waltz.tp <= player.tp and spellRecasts[waltz.id] < 1
+            return waltz.level <= dncLevel 
+                and waltz.tp <= player.tp 
+                and spellRecasts[waltz.id] < 1
         end
     )
 
