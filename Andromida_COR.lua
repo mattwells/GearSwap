@@ -1,91 +1,45 @@
+-- sam/drk
+-- pld/casters
+--
+
+
 function get_sets()
-    send_command("@input /macro book 5;wait .1;input /macro set 1")
-
     sets.Idle = {
-        ammo = "Eminent Bullet",
-        head = "Meghanada Visor +2",
-        body = "Meg. Cuirie +2",
-        hands = "Meg. Gloves +2",
-        legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +2",
-        neck = "Twilight Torque",
-        waist = "Flume Belt",
-        left_ear = "Telos Earring",
-        right_ear = "Infused Earring",
-        left_ring = "Defending Ring",
-        right_ring = "Warden's Ring",
+        head = "Nyame Helm",
+        body = "Nyame Mail",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Warder's Charm +1",
+        waist = "Carrier's Sash",
+        left_ear = "Tuisto Earring",
+        right_ear = "Odnowa Earring +1",
+        left_ring = "Vocane Ring +1",
+        right_ring = "Shadow Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+5", '"Dbl.Atk."+10', "System: 1 ID: 1155 Val: 4"}
-        }
-    }
-
-    DT = false
-    sets.PDT = {
-        head = "Meghanada Visor +2",
-        body = "Meg. Cuirie +2",
-        hands = "Meg. Gloves +2",
-        legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +2",
-        neck = "Twilight Torque",
-        waist = "Flume Belt",
-        left_ring = "Warden's ring",
-        right_ring = "Defending Ring",
-        back = {
-            name = "Camulus's Mantle",
-            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+5", '"Dbl.Atk."+10', "System: 1 ID: 1155 Val: 4"}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
     }
 
     sets.Engaged = {
-        head = {
-            name = "Adhemar Bonnet +1",
-            augments = {"DEX+12", "AGI+12", "Accuracy+20"}
-        },
-        body = {
-            name = "Herculean Vest",
-            augments = {
-                "AGI+13",
-                "Weapon skill damage +2%",
-                "Quadruple Attack +3",
-                "Accuracy+18 Attack+18",
-                'Mag. Acc.+18 "Mag.Atk.Bns."+18'
-            }
-        },
-        hands = {
-            name = "Adhemar Wrist. +1",
-            augments = {"DEX+12", "AGI+12", "Accuracy+20"}
-        },
-        legs = {
-            name = "Herculean Trousers",
-            augments = {'"Triple Atk."+4', "DEX+7", "Accuracy+15", "Attack+4"}
-        },
-        feet = "Mummu Gamash. +2",
-        neck = "Iqabi Necklace",
-        waist = "Windbuffet Belt +1",
+        main = "Naegling",
+        ranged = "Anarchy +2",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Caro Necklace",
+        waist = "Sailfi Belt +1",
         left_ear = "Telos Earring",
-        right_ear = "Digni. Earring",
-        left_ring = "Ilabrat Ring",
-        right_ring = "Petrov Ring",
+        right_ear = "Mache Earring +1",
+        left_ring = "Petrov Ring",
+        right_ring = "Ilabrat Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+5", '"Dbl.Atk."+10', "Phys. dmg. taken-10%"}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
-    }
-
-    sets.Misc = {}
-    sets.Misc.Ranged = {
-        head = "Meghanada Visor +2",
-        body = "Meg. Cuirie +2",
-        hands = "Carmine Fin. Ga. +1",
-        legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +2",
-        neck = "Iskur Gorget",
-        left_ear = "Telos Earring",
-        right_ear = "Neritic Earring",
-        left_ring = "Ilabrat Ring",
-        right_ring = "Haverton Ring",
-        back = "Buquwik Cape"
     }
 
     sets.JobAbility = {}
@@ -96,7 +50,7 @@ function get_sets()
     sets.WeaponSkill = {
         head = "Lilitu Headpiece",
         body = "Meg. Cuirie +2",
-        hands = "Mummu Wrists +1",
+        hands = "Mummu Wrists +2",
         legs = "Meg. Chausses +2",
         feet = {
             name = "Herculean Boots",
@@ -114,63 +68,34 @@ function get_sets()
         }
     }
     sets.WeaponSkill["Savage Blade"] = {
-        head = "Lilitu Headpiece",
-        body = {
-            name = "Herculean Vest",
-            augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
-        },
-        hands = "Meg. Gloves +2",
-        legs = "Meg. Chausses +2",
-        feet = {
-            name = "Herculean Boots",
-            augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
-        },
-        neck = "Fotia Gorget",
-        waist = "Metalsinger Belt",
-        left_ear = "Ishvara Earring",
-        right_ear = "Moonshade Earring",
-        left_ring = "Ifrit Ring",
-        right_ring = "Ifrit Ring +1",
+        head = "Nyame Helm",
+        body = "Nyame Mail",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Caro Necklace",
+        waist = "Sailfi Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Ishvara Earring",
+        left_ring = "Epaminondas's Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {"STR+20", "Accuracy+20 Attack+20", "STR+10", "Weapon skill damage +10%"}
+            augments = {
+                'STR+20',
+                'Accuracy+20 Attack+20',
+                'STR+10',
+                'Weapon skill damage +10%'
+            }
         }
     }
 
-    sets.WeaponSkill["Last Stand"] = {
-        head = {
-            name = "Lilitu Headpiece",
-            augments = {"STR+10", "DEX+10", "Attack+15", "Weapon skill damage +3%"}
-        },
-        body = {
-            name = "Herculean Vest",
-            augments = {"Attack+25", "Weapon skill damage +3%", "DEX+12", "Accuracy+11"}
-        },
-        hands = "Meg. Gloves +2",
-        legs = {
-            name = "Herculean Trousers",
-            augments = {"Rng.Acc.+9", "Weapon skill damage +5%", "AGI+7"}
-        },
-        feet = {
-            name = "Herculean Boots",
-            augments = {"Attack+24", "Weapon skill damage +3%", "DEX+14"}
-        },
-        neck = "Fotia Gorget",
-        waist = "Elanid Belt",
-        left_ear = "Ishvara Earring",
-        right_ear = "Moonshade Earring",
-        left_ring = "Ilabrat Ring",
-        right_ring = "Apate Ring",
-        back = {
-            name = "Camulus's Mantle",
-            augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "AGI+10", "Weapon skill damage +10%"}
-        }
-    }
-    sets.WeaponSkill["Detonator"] = sets.WeaponSkill["Last Stand"]
-    sets.WeaponSkill["Slug Shot"] = sets.WeaponSkill["Last Stand"]
-    sets.WeaponSkill["Sniper Shot"] = sets.WeaponSkill["Last Stand"]
-    sets.WeaponSkill["Split Shot"] = sets.WeaponSkill["Last Stand"]
-    sets.WeaponSkill["Numbing Shot"] = sets.WeaponSkill["Last Stand"]
+    -- sets.WeaponSkill["Last Stand"] = {}
+    -- sets.WeaponSkill["Detonator"] = sets.WeaponSkill["Last Stand"]
+    -- sets.WeaponSkill["Slug Shot"] = sets.WeaponSkill["Last Stand"]
+    -- sets.WeaponSkill["Sniper Shot"] = sets.WeaponSkill["Last Stand"]
+    -- sets.WeaponSkill["Split Shot"] = sets.WeaponSkill["Last Stand"]
+    -- sets.WeaponSkill["Numbing Shot"] = sets.WeaponSkill["Last Stand"]
 
     sets.WeaponSkill["Wildfire"] = {
         ammo = "Orichalc. Bullet",
@@ -180,8 +105,8 @@ function get_sets()
             name = "Carmine Fin. Ga. +1",
             augments = {"Rng.Atk.+20", '"Mag.Atk.Bns."+12', '"Store TP"+6'}
         },
-        legs={ 
-            name="Herculean Trousers", 
+        legs={
+            name="Herculean Trousers",
             augments={'"Store TP"+4','Accuracy+10','Weapon skill damage +8%','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}
         },
         feet = "Lanun bottes +2",
@@ -196,80 +121,59 @@ function get_sets()
             augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "AGI+10", "Weapon skill damage +10%"}
         }
     }
-    sets.WeaponSkill["Leaden Salute"] = set_combine(
-        sets.WeaponSkill["Wildfire"],
-        {head = "Pixie Hairpin +1"}
-    )
+    sets.WeaponSkill["Leaden Salute"] = {
+        main = "Naegling",
+        sub = "Blurred Knife +1",
+        range = "Fomalhaut",
+        ammo = "Chrono Bullet",
+        head = "Pixie Hairpin +1",
+        body = "Lanun Frac +3",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Lanun Bottes +2",
+        neck = "Warder's Charm +1",
+        waist = "Eschan Stone",
+        left_ear = "Friomisi Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Archon Ring",
+        right_ring = "Acumen Ring",
+        back = {
+            name = "Camulus's Mantle",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    }
 
     sets.CorsairRoll = {
-        head = {
-            name = "Lanun Tricorne",
-            augments = {'Enhances "Winning Streak" effect'}
-        },
-        hands = "Chasseur's Gants",
-        left_ring = "Barataria Ring",
+        main = "Rostam",
+        range = "Compensator",
+        head = "Lanun Tricorne",
+        neck = "Regal necklace",
+        body = "Chasseur's Frac +1",
+        hands = "Chasseur's Gants +1",
+        legs = "Chasseur's Culottes",
+        -- right_ring = "Luzaf's Ring",
         back = {
             name = "Camulus's Mantle",
             augments = {"DEX+20", "Accuracy+20 Attack+20", "DEX+5", '"Dbl.Atk."+10', "System: 1 ID: 1155 Val: 4"}
         }
     }
-    -- sets.CorsairRoll["Fighter's Roll"] = {}
+    sets.JobAbility["Double-Up"] = {
+        legs = "Lanun Trews",
+        -- right_ring = "Luzaf's Ring",
+    }
 
     sets.CorsairShot = {
-        head="Mummu Bonnet +1",
-        body="Mummu Jacket +2",
-        hands="Mummu Wrists +1",
-        legs="Mummu Kecks +2",
-        feet="Mummu Gamash. +2",
-        neck="Sanctity Necklace",
-        waist="Eschan Stone",
-        left_ear="Digni. Earring",
-        right_ear="Gwati Earring",
-        left_ring="Vertigo Ring",
-        right_ring="Archon Ring",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        left_ear = "Telos Earring",
+        right_ear = "Dedition Earring",
+        left_ring = "Chirich Ring +1",
+        right_ring = "Chirich Ring +1"
     }
-    sets.CorsairShot = sets.WeaponSkill["Wildfire"]
-
-    sets.ConserveMP = {
-        left_ear = "Gwati Earring",
-        right_ear = "Magnetic Earring"
-    }
-
-    sets.Precast = {}
-    sets.Precast.Haste = {
-        head="Mummu Bonnet +1",
-        body="Herculean Vest",
-        hands={ 
-            name="Leyline Gloves", 
-            augments={'Accuracy+12','Mag. Acc.+14','"Mag.Atk.Bns."+15','"Fast Cast"+2',}
-        },
-        legs="Herculean Trousers", 
-        feet="Herculean Boots",
-        waist="Dynamic Belt",
-    }
-    sets.Precast.FastCast = set_combine(
-        sets.ConserveMP,
-        sets.Precast.Haste,
-        {
-            hands = {
-                name = "Leyline Gloves",
-                augments = {"Accuracy+12", "Mag. Acc.+14", '"Mag.Atk.Bns."+15', '"Fast Cast"+2'}
-            },
-            left_ear = "Loquac. Earring",
-            left_ring = "Prolix Ring"
-        }
-    )
-
-    sets.Midcast = {}
-    sets.Midcast.Cure = {
-        head = "Meghanada Visor +2",
-        body = "Meg. Cuirie +2",
-        hands = "Nilas Gloves",
-        legs = "Meg. Chausses +2",
-        feet = "Meg. Jam. +2",
-        neck = "Phalaina Locket",
-        left_ring = "Globidonta Ring"
-    }
+    --sets.CorsairShot = sets.WeaponSkill["Wildfire"]
 end
 
 function precast(spell, action)
@@ -303,9 +207,9 @@ function precast(spell, action)
 end
 
 function is_magic(spell)
-    return spell.type:endswith("Magic") 
-        or spell.type == "BardSong" 
-        or spell.type == "Ninjutsu" 
+    return spell.type:endswith("Magic")
+        or spell.type == "BardSong"
+        or spell.type == "Ninjutsu"
         or spell.type == "Trust"
 end
 

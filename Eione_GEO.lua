@@ -6,51 +6,51 @@ function get_sets()
     }
     sets.Idle.Refresh = {
         main = "Idris",
-        sub = "Ammurapi Shield",
+        sub = "Genmei Shield",
         range = "Dunna",
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
-        hands = "Azimuth Gloves +3",
+        hands = "Geo. Mitaines +2",
         legs = "Nyame Flanchard",
-        feet = "Geo. Sandals +3",
-        neck = "Loricate Torque +1",
-        waist = "Carrier's Sash",
-        left_ear = "Odnowa Earring +1",
+        feet = "Geo. Sandals +2",
+        neck = "Bagua Charm +2",
+        waist = "Luminary Sash",
+        left_ear = "Moonshade Earring",
         right_ear = "Etiolation Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
+            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
         }
     }
     sets.Idle.Dt = set_combine(sets.Idle.Refresh, {
         main = "Malignance Pole",
         range = "Dunna",
-        -- neck = "Twilight Torque",
+        neck = "Twilight Torque",
         left_ear = "Genmei Earring",
         right_ear = "Etiolation Earring",
         left_ring = "Defending Ring",
-        -- right_ring = "Sheltered Ring"
+        right_ring = "Sheltered Ring"
     })
     sets.Idle.Pet = {
         main = "Idris",
-        sub = "Ammurapi Shield",
+        sub = "Genmei Shield",
         range = "Dunna",
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
-        hands = "Geo. Mitaines +3",
+        hands = "Geo. Mitaines +2",
         legs = "Nyame Flanchard",
         feet = "Bagua Sandals +1",
-        neck = "Loricate Torque +1",
-        waist = "Carrier's Sash",
-        left_ear = "Odnowa Earring +1",
+        neck = "Bagua Charm +2",
+        waist = "Luminary Sash",
+        left_ear = "Moonshade Earring",
         right_ear = "Etiolation Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
+            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
         }
     }
 
@@ -63,65 +63,54 @@ function get_sets()
 
     -- WS Sets --
     sets.WeaponSkill = {}
-
     sets.FastCast = {
-        main = {
-            name = "Malevolence",
-            augments = {'"Fast Cast"+5'}
-        },
-        ammo = "Sapience Orb",
-        head = "Agwu's Cap",
-        body = "Agwu's Robe",
-        hands = "Agwu's Gages",
-        legs = "Geo. Pants +1",
-        feet = "Amalric Nails +1",
+        range = "Dunna",
+        body = "Shango Robe",
+        legs = "Geomancy Pants +2",
+        feet = "Merlinic Crackows",
         neck = "Voltsurge Torque",
         waist = "Witful Belt",
         left_ear = "Malignance Earring",
         right_ear = "Loquac. Earring",
-        left_ring = "Prolix Ring",
-        right_ring = "Kishar Ring",
-        back = "Fi Follet Cape +1",
+        left_ring = "Lebeche Ring",
+        right_ring = "Kishar Ring"
     }
-
-    sets["Enfeebling Magic"] = {}
-    sets["Enfeebling Magic"]["Dispelga"] = set_combine(
-        sets.FastCast,
-        {main="Daybreak"}
-    )
 
     sets.Midcast = {}
 
     sets.Midcast["Healing Magic"] = {}
     sets.Midcast["Healing Magic"].Cure = {
         main = "Daybreak",
-        -- sub = "Genmei Shield",
+        sub = "Genmei Shield",
         range = "Dunna",
-        -- head = {
-        --     name = "Vanya Hood",
-        --     augments = {
-        --         'Healing magic skill +20',
-        --         '"Cure" spellcasting time -7%',
-        --         'Magic dmg. taken -3'
-        --     }
-        -- },
-        body = "Geomancy Tunic +1",
-        hands = "Telchine Gloves",
-        legs = "Bagua Pants +1",
-        -- feet = {
-        --     name = "Vanya Clogs",
-        --     augments = {
-        --         'Healing magic skill +20',
-        --         '"Cure" spellcasting time -7%',
-        --         'Magic dmg. taken -3'
-        --     }
-        -- },
-        -- neck = "Henic Torque",
+        head = {
+            name = "Vanya Hood",
+            augments = {
+                'Healing magic skill +20',
+                '"Cure" spellcasting time -7%',
+                'Magic dmg. taken -3'
+            }
+        },
+        body = "Geomancy Tunic +2",
+        hands = {
+            name = "Telchine Gloves",
+            augments = {'Enh. Mag. eff. dur. +7'}
+        },
+        legs = "Bagua Pants",
+        feet = {
+            name = "Vanya Clogs",
+            augments = {
+                'Healing magic skill +20',
+                '"Cure" spellcasting time -7%',
+                'Magic dmg. taken -3'
+            }
+        },
+        neck = "Henic Torque",
         waist = "Gishdubar Sash",
         left_ear = "Malignance Earring",
         right_ear = "Regal Earring",
-        -- left_ring = "Janniston Ring",
-        -- right_ring = "Sirona's Ring"
+        left_ring = "Janniston Ring",
+        right_ring = "Sirona's Ring"
     }
     sets.Midcast["Healing Magic"]["Cure II"] = sets.Midcast["Healing Magic"].Cure
     sets.Midcast["Healing Magic"]["Cure III"] = sets.Midcast["Healing Magic"].Cure
@@ -129,39 +118,25 @@ function get_sets()
 
     sets.Midcast["Enhancing Magic"] = {
         equipable = true,
-        head = "Telchine Cap",
-        body = "Telchine Chas.",
-        hands = "Telchine Gloves",
-        legs = "Telchine Braconi",
-        feet = "Geo. Sandals +3",
+        head = {
+            name = "Telchine Cap",
+            augments = {'Enh. Mag. eff. dur. +7'}
+        },
+        body = {
+            name = "Telchine Chas.",
+            augments = {'Enh. Mag. eff. dur. +8'}
+        },
+        hands = {
+            name = "Telchine Gloves",
+            augments = {'Enh. Mag. eff. dur. +7'}
+        },
+        legs = {
+            name = "Telchine Braconi",
+            augments = {'Enh. Mag. eff. dur. +9'}
+        },
+        feet = "Geo. Sandals +2",
         waist = "Gishdubar Sash"
     }
-
-    sets.Midcast["Enfeebling Magic"] = {
-        equipable = true,
-        sub = "Ammurapi Shield",
-        range = "Dunna",
-        head = "Geo. Galero +1",
-        body = "Geo. Tunic +1",
-        hands = "Geo. Mitaines +3",
-        legs = "Geo. Pants +1",
-        feet = "Geo. Sandals +3",
-        neck = "Bagua Charm +2",
-        waist = "Luminary Sash",
-        left_ear = "Malignance Earring",
-        right_ear = "Regal Earring",
-        left_ring = "Kishar Ring",
-        right_ring = "Stikini Ring +1",
-        back = {
-            name = "Nantosuelta's Cape",
-            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
-        }
-    }
-
-    sets.Midcast["Enfeebling Magic"]["Dispelga"] = set_combine(
-        sets.Midcast["Enfeebling Magic"],
-        {main="Daybreak"}
-    )
 
     sets.Midcast["Divine Magic"] = {}
 
@@ -170,17 +145,17 @@ function get_sets()
         main = "Idris",
         sub = "Ammurapi Shield",
         range = "Dunna",
-        head = "Geo. Galero +1",
-        body = "Geomancy Tunic +1",
-        hands = "Geo. Mitaines +3",
-        legs = "Geomancy Pants +1",
-        feet = "Geo. Sandals +3",
+        head = "Geo. Galero +2",
+        body = "Geomancy Tunic +2",
+        hands = "Geo. Mitaines +2",
+        legs = "Geomancy Pants +2",
+        feet = "Geo. Sandals +2",
         neck = "Bagua Charm +2",
         waist = "Luminary Sash",
         left_ear = "Etiolation Earring",
         right_ear = "Malignance Earring",
         left_ring = "Stikini Ring +1",
-        right_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring",
         back = {
             name = "Nantosuelta's Cape",
             augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
@@ -188,22 +163,23 @@ function get_sets()
     }
 
     sets.Midcast["Elemental Magic"] = {
-        main = "Bunzi's Rod",
-        sub = "Ammurapi Shield",
-        head = "Agwu's Cap",
-        body = "Amalric Doublet +1",
-        hands = "Agwu's Gages",
-        legs = "Agwu's Slops",
-        feet = "Azimuth Gaiters +3",
-        neck = "Sibyl Scarf",
-        waist = "Skrymir Cord +1",
-        left_ear = "Malignance Earring",
-        right_ear = "Azimuth Earring +1",
-        left_ring = "Acumen Ring",
-        right_ring = "Shiva Ring +1",
+        main = "Idris",
+        sub = "Genmei Shield",
+        range = "Dunna",
+        head = "Azimuth Hood +3",
+        body = "Azimuth Coat +3",
+        hands = "Geo. Mitaines +2",
+        legs = "Nyame Flanchard",
+        feet = "Geo. Sandals +2",
+        neck = "Bagua Charm +2",
+        waist = "Acuity Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Etiolation Earring",
+        left_ring = "Metamor. Ring +1",
+        right_ring = "Mujin Band",
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
+            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
         }
     }
 
@@ -212,20 +188,20 @@ function get_sets()
         main = "Idris",
         range = "Dunna",
         head = "Azimuth Hood +3",
-        body = "Bagua tunic +1",
-        -- hands = "Shrieker's Cuffs",
-        legs = "Bagua Pants +1",
-        feet = "Azimuth Gaiters +3",
+        body = "Bagua tunic",
+        hands = "Shrieker's Cuffs",
+        legs = "Bagua Pants",
+        feet = "Azimuth Gaiters +2",
         neck = "Bagua Charm +2",
         left_ear = "Magnetic Earring",
-        -- right_ear = "Calamitous Earring",
-        left_ring = "Stikini Ring +1",
-        right_ring = "Stikini Ring +1",
+        right_ear = "Calamitous Earring",
+        left_ring = "Stikini Ring",
+        right_ring = "Stikini Ring",
         back = "Nantosuelta's Cape"
     }
 
     sets.JobAbility = {}
-    sets.JobAbility.Bolster = {body = "Bagua tunic +1"}
+    sets.JobAbility.Bolster = {body = "Bagua tunic"}
 end
 
 function precast(spell, action)
@@ -238,10 +214,8 @@ function precast(spell, action)
         send_command("cancel Sneak")
     end
 
-    notice(spell.skill .. spell.english)
-
-    if sets[spell.skill] and sets[spell.skill][spell.english] then
-        equip(sets[spell.skill][spell.english])
+    if sets[spell.type] and sets[spell.type][spell.english] then
+        equip(sets[spell.type][spell.english])
 
         return
     end

@@ -1,38 +1,38 @@
 function get_sets()
     sets.Idle = {
         head="Mummu Bonnet +1",
-        body="Mummu Jacket +1",
+        body="Malignance Tabard",
         hands="Mummu Wrists +1",
-        legs="Mummu Kecks +1",
+        legs="Malignance Tights",
         feet="Mummu Gamash. +1",
         neck="Asperity Necklace",
-        waist="Twilight Belt",
-        left_ear="Sherida Earring",
+        waist="Windbuffet Belt",
+        left_ear="Suppanomimi",
         right_ear="Brutal Earring",
         left_ring="Rajas Ring",
         right_ring="Epona's Ring",
         back={ 
             name="Toutatis's Cape", 
-            augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}
-        },
+            augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'},
+        }
     }
 
     sets.Engaged = {
         head="Mummu Bonnet +1",
-        body="Mummu Jacket +1",
+        body="Malignance Tabard",
         hands="Mummu Wrists +1",
-        legs="Mummu Kecks +1",
+        legs="Malignance Tights",
         feet="Mummu Gamash. +1",
         neck="Asperity Necklace",
-        waist="Twilight Belt",
-        left_ear="Sherida Earring",
+        waist="Windbuffet Belt",
+        left_ear="Suppanomimi",
         right_ear="Brutal Earring",
         left_ring="Rajas Ring",
         right_ring="Epona's Ring",
         back={ 
             name="Toutatis's Cape", 
-            augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}
-        },
+            augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'},
+        }
     }
 
     TH = false
