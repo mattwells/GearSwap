@@ -10,8 +10,8 @@ function get_sets()
     sets.Idle.Normal = {
         main = "Daybreak",
         ammo = "Homiliary",
-        head = "Viti. Chapeau +3",
-        body = "Atrophy Tabard +3",
+        head = "Viti. Chapeau +2",
+        body = "Atrophy Tabard +2",
         hands = "Nyame Gauntlets",
         legs = "Carmine Cuisses +1",
         feet = "Nyame Sollerets",
@@ -29,7 +29,7 @@ function get_sets()
     sets.Idle.Turtle = {
         main = "Daybreak",
         ammo = "Staunch Tathlum +1",
-        head = "Viti. Chapeau +3",
+        head = "Viti. Chapeau +2",
         body = "Bunzi's Robe",
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
@@ -40,9 +40,7 @@ function get_sets()
         right_ear = "Loquac. Earring",
         left_ring = "Defending Ring",
         right_ring = "Vocane Ring +1",
-        back = {
-            name = "Sucellos's Cape",
-            augments = {'Phys. dmg. taken-10%'}
+        back = {name = "Sucellos's Cape", augments = {'Phys. dmg. taken-10%'}
         }
     }
 
@@ -69,20 +67,19 @@ function get_sets()
     sets.Midcast = {}
     sets.Midcast['Dark Magic'] = {}
     sets.Midcast['Elemental Magic'] = {
-        main = "Daybreak",
-        sub = "Ammurapi Shield",
+        equipable = true,
         ammo = "Regal Gem",
-        head = "Ea Hat +1",
-        body = "Ea Houppe. +1",
-        hands = "Amalric Gages +1",
-        legs = "Leth. Fuseau +3",
+        head = "Leth. Chappel +2",
+        body = "Amalric Doublet +1",
+        hands = "Jhakri Cuffs +2",
+        legs = "Jhakri Slops +2",
         feet = "Amalric Nails +1",
         neck = "Sanctity Necklace",
-        waist = "Skrymir Cord +1",
+        waist = "Eschan Stone",
         left_ear = "Regal Earring",
         right_ear = "Malignance Earring",
-        left_ring = "Metamor. Ring +1",
-        right_ring = "Mujin Band",
+        left_ring = "Strendu Ring",
+        right_ring = "Acumen Ring",
         back = {
             name = "Sucellos's Cape",
             augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
@@ -92,9 +89,9 @@ function get_sets()
         equipable = true,
         main = "Daybreak",
         sub = "Ammurapi Shield",
-        head = "Viti. Chapeau +3",
-        body = "Lethargy Sayon +3",
-        hands = "Leth. Ganth. +3",
+        head = "Viti. Chapeau +2",
+        body = "Atrophy Tabard +3",
+        hands = "Leth. Ganth. +2",
         legs = {
             name = "Chironic Hose",
             augments = {'Mag. Acc.+20 "Mag.Atk.Bns."+20', 'Haste+2', 'MND+13', 'Mag. Acc.+13'}
@@ -119,42 +116,29 @@ function get_sets()
     sets.Midcast['Enhancing Magic']['Other'] = {
         sub = "Ammurapi Shield",
         ammo = "Staunch Tathlum +1",
-        head = "Leth. Chappel +3",
-        body = "Lethargy Sayon +3",
-        hands = "Atrophy Gloves +3",
-        legs = "Leth. Fuseau +3",
-        feet = "Leth. Houseaux +3",
+        head = "Leth. Chappel +2",
+        body = "Lethargy Sayon +2",
+        hands = "Atrophy Gloves +2",
+        legs = "Leth. Fuseau +2",
+        feet = "Leth. Houseaux +2",
         neck = "Dls. Torque +2",
         waist = "Embla Sash",
-        left_ear = "Andoaa Earring",
+        left_ear = "Lethargy Earring +1",
         right_ear = "Mimir Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1"
     }
     sets.Midcast['Enhancing Magic']['Self'] = set_combine(sets.Midcast['Enhancing Magic']['Other'], {
-        body = "Viti. Tabard +3"
+        body = "Viti. Tabard +2"
     })
-    sets.Midcast['Phalanx'] = set_combine(
-        sets.Midcast['Enhancing Magic']['Self'],
-        {
-            head = "Fu. Bandeau +3",
-            hands = "Regal Gauntlets",
-            legs = "Futhark Trousers +1",
-            feet = "Herculean Boots",
-            waist = "Olympus Sash",
-            left_ear = "Andoaa Earring",
-            right_ear = "Mimir Earring",
-            left_ring = "Stikini Ring +1"
-        }
-    )
-    sets.Midcast['Refresh'] = set_combine(sets.Midcast['Enhancing Magic']['Other'], {
+    sets.Midcast['Enhancing Magic']['Refresh'] = set_combine(sets.Midcast['Enhancing Magic']['Other'], {
         head = "Amalric Coif +1",
         body = "Atrophy Tabard +3",
-        legs = "Leth. Fuseau +3",
+        legs = "Leth. Fuseau +2",
         waist = "Gishdubar Sash"
     })
-    sets.Midcast['Refresh II'] = sets.Midcast['Refresh']
-    sets.Midcast['Refresh III'] = sets.Midcast['Refresh']
+    sets.Midcast['Enhancing Magic']['Refresh II'] = sets.Midcast['Enhancing Magic']['Refresh']
+    sets.Midcast['Enhancing Magic']['Refresh III'] = sets.Midcast['Enhancing Magic']['Refresh']
 
     sets.Midcast['Divine Magic'] = {}
     sets.Midcast['Healing Magic'] = {
@@ -224,7 +208,7 @@ function get_sets()
         body = "Nyame Mail",
         hands = "Jhakri Cuffs +2",
         legs = "Nyame Flanchard",
-        feet = "Leth. Houseaux +3",
+        feet = "Leth. Houseaux +2",
         neck = "Dls. Torque +2",
         waist = "Orpheus's Sash",
         left_ear = "Moonshade Earring",
@@ -241,9 +225,9 @@ function get_sets()
         ammo = "Oshasha's Treatise",
         head = "Pixie Hairpin +1",
         body = "Nyame Mail",
-        hands = "Leth. Ganth. +3",
+        hands = "Leth. Ganth. +2",
         legs = "Nyame Flanchard",
-        feet = "Leth. Houseaux +3",
+        feet = "Leth. Houseaux +2",
         neck = "Sibyl Scarf",
         waist = "Orpheus's Sash",
         left_ear = "Regal Earring",
@@ -260,9 +244,9 @@ function get_sets()
         ammo = "Oshasha's Treatise",
         head = "Nyame Helm",
         body = "Nyame Mail",
-        hands = "Leth. Ganth. +3",
+        hands = "Leth. Ganth. +2",
         legs = "Nyame Flanchard",
-        feet = "Leth. Houseaux +3",
+        feet = "Leth. Houseaux +2",
         neck = "Sibyl Scarf",
         waist = "Orpheus's Sash",
         left_ear = "Moonshade Earring",
@@ -279,6 +263,7 @@ function get_sets()
 end
 
 function precast(spell, action)
+    print("Pre " .. spell.action_type)
     if incapacitated() then
         return
     end
@@ -311,8 +296,8 @@ function midcast(spell, action)
         return
     end
 
-    if sets["Midcast"][spell.english] then
-        equip(sets["Midcast"][spell.english])
+    if sets["Midcast"][spell.skill] and sets["Midcast"][spell.skill][spell.english] then
+        equip(sets["Midcast"][spell.skill][spell.english])
 
         return
     end
@@ -327,7 +312,7 @@ function midcast(spell, action)
         return
     end
 
-    if sets["Midcast"][spell.skill] then
+    if sets["Midcast"][spell.skill] and sets["Midcast"][spell.skill].equipable then
         equip(sets["Midcast"][spell.skill])
 
         return

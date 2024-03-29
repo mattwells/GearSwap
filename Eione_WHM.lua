@@ -281,6 +281,8 @@ end
 function aftercast(spell, action)
     debug("Idle")
     equip(sets.Idle)
+
+	if spell.english ~= "Dia" then windower.send_command('send Lunafay react facemob') end
 end
 
 function debug(s)

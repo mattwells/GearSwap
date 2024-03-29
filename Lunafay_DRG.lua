@@ -119,9 +119,51 @@ function get_sets()
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
+    sets.WeaponSkill["Diarmuid"] = set_combine(sets.WeaponSkill["Savage Blade"], {})
 
     sets.WeaponSkill["Impulse Drive"] = set_combine(sets.WeaponSkill["Savage Blade"], {})
     sets.WeaponSkill["Stardiver"] = set_combine(sets.WeaponSkill["Savage Blade"], {})
+    sets.WeaponSkill["Sonic Thrust"] = set_combine(sets.WeaponSkill["Savage Blade"], {})
+
+    sets.WeaponSkill["Drakesbane"] = {
+        main = "Gae Buide",
+        sub = "Utu Grip",
+        ammo = "Knobkierrie",
+        head = "Gleti's Mask",
+        body = "Gleti's Cuirass",
+        hands = "Gleti's Gauntlets",
+        legs = "Gleti's Breeches",
+        feet = "Gleti's Boots",
+        neck = "Dgn. Collar +1",
+        waist = "Sailfi Belt +1",
+        left_ear = "Sherida Earring",
+        right_ear = "Thrud Earring",
+        left_ring = "Ephramad's Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Brigantia's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    }
+
+    sets.WeaponSkill["Camlann's Torment"] = {
+        ammo = "Knobkierrie",
+        head = "Nyame Helm",
+        body = "Gleti's Cuirass",
+        hands = "Gleti's Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Dgn. Collar +1",
+        waist = "Sailfi Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Thrud Earring",
+        left_ring = "Ephramad's Ring",
+        right_ring = "Epaminondas's Ring",
+        back = {
+            name = "Brigantia's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    }
 end
 
 function precast(spell, action)

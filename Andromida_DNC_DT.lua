@@ -38,7 +38,7 @@ function get_sets()
         waist = "Sailfi Belt +1",
         left_ear = "Odnowa Earring +1",
         right_ear = "Sherida Earring",
-        left_ring = "Chirich Ring +1+",
+        left_ring = "Chirich Ring +1",
         right_ring = "Moonlight Ring",
         back = {
             name = "Senuna's Mantle",
@@ -379,7 +379,7 @@ function refine_waltz(spell)
 end
 
 function is_magic(spell)
-    return spell.type:endswith("Magic") or spell.type == "BardSong" or spell.type == "Ninjutsu" or spell.type == "Trust"
+    return spell.action_type == "Magic"
 end
 
 function notice(s)

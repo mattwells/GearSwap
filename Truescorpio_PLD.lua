@@ -2,7 +2,7 @@ local incapacitated_states = T {"stun", "petrification", "terror", "sleep"}
 
 function get_sets()
     sets.Idle = {
-		main = "Burtgang",
+		main="Burtgang",
         ammo = "Staunch Tathlum +1",
         head = "Sakpata's Helm",
         body = "Sakpata's Plate",
@@ -42,25 +42,25 @@ function get_sets()
         back = "Weard Mantle"
     }
 
-    -- sets.Midcast['Healing Magic'] = {
-    --     equipable = true,
-    --     ammo = "Staunch Tathlum +1",
-    --     head = "Souv. Schaller +1",
-    --     body = "Souv. Cuirass +1",
-    --     hands = "Souv. Handsch. +1",
-    --     legs = "Souv. Diechlings +1",
-    --     feet = "Souveran Schuhs +1",
-    --     neck = "Loricate Torque +1",
-    --     waist = "Flume Belt",
-    --     left_ear = "Odnowa Earring +1",
-    --     right_ear = "Magnetic Earring",
-    --     left_ring = "Moonbeam Ring",
-    --     right_ring = "Defending Ring",
-    --     -- back = {
-    --     --     name = "Rudianos's Mantle",
-    --     --     augments = {'"Cure" potency +10%'}
-    --     -- }
-    -- }
+    sets.Midcast['Healing Magic'] = {
+        equipable = true,
+        ammo = "Staunch Tathlum +1",
+        head = "Souv. Schaller +1",
+        body = "Souv. Cuirass +1",
+        hands = "Souv. Handsch. +1",
+        legs = "Souv. Diechlings +1",
+        feet = "Souveran Schuhs +1",
+        neck = "Moonlight necklace",
+        waist = "Flume Belt",
+        left_ear = "Cryptic earring",
+        right_ear = "Magnetic Earring",
+        left_ring = "Moonbeam Ring",
+        right_ring = "Defending Ring",
+        -- back = {
+        --     name = "Rudianos's Mantle",
+        --     augments = {'"Cure" potency +10%'}
+        -- }
+    }
 
     sets.Midcast['Divine Magic'] = {}
     sets.Midcast['Divine Magic'].Flash = {
@@ -69,15 +69,20 @@ function get_sets()
         body = "Souv. Cuirass +1",
         hands = "Souv. Handsch. +1",
         legs = "Souv. Diechlings +1",
-        feet = "Odyssean greaves",
+        feet = "",
+		greaves = "",
         neck = "Moonlight Necklace",
+        waist = "",
+        left_ear = "",
         right_ear = "Cryptic Earring",
         left_ring = "Supershear ring",
         right_ring = "Apeile Ring +1",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},	
     }
 
     sets.FastCast = {
+		main="",
+		sub="",
 		ammo="Sapience Orb", --2
 		head="Sakpata's Helm", --8
 		body="Sacro breastplate", --10
@@ -90,21 +95,21 @@ function get_sets()
 		right_ear="Etiolation Earring", --1
 		left_ring="Kishar Ring", --4
 		right_ring="Supershear Ring",
-		back={ name="Rudianos's Mantle", augments={'"Fast Cast"+10'}}, --10
-    }
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}, --10
+}
 
     sets.SIRD = {
         ammo = "Staunch Tathlum +1", -- 11
         head = "Souv. Schaller +1", -- 20 31
         body = {name = "Yorium Cuirass", augments = {'Spell interruption rate down -9%'}
         }, -- 9 40
-        hands = "Sakpata's Gauntlets",
-        legs = "Carmine Cuisses +1", -- 20 50
-        feet = "Odyssean Greaves", -- 20 70
-        neck = "Moonlight Necklace", -- 15 85
-        waist = "Rumination Sash", -- 10 95
-        left_ear = "Knightly Earring", -- 9 104
-        right_ear = "Halasz Earring", -- 4 106
+        hands = "Yorium gauntlets", -- 3  43
+        legs = "Carmine Cuisses +1", -- 20 63
+        feet = "Odyssean Greaves", -- 20 83
+        neck = "Moonlight Necklace", -- 15 98
+        waist = "Rumination Sash", -- 10 108
+        left_ear = "Knightly Earring", -- 9 119
+        right_ear = "Halasz Earring", -- 4 123
         left_ring = "Defending Ring",
         right_ring = "Warden's Ring",
         back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
@@ -119,7 +124,7 @@ function get_sets()
         feet = "Souveran Schuhs +1",
         neck = "Moonlight Necklace",
         waist = "Creed baudrier",
-        left_ear = "",
+        left_ear = "Trux earring",
         right_ear = "Cryptic Earring",
         left_ring = "Supershear Ring",
         right_ring = "Apeile Ring +1",
@@ -130,11 +135,18 @@ function get_sets()
     sets.JobAbility.equipable = true
 
     sets.JobAbility['Shield Bash'] = set_combine(sets.Emnity, {
-        hands = "Cab. Gauntlets +3"
+        hands = "Cab. Gauntlets +2"
     })
-
+	
+    sets.JobAbility['Fealty'] = set_combine(sets.Emnity, {
+        feet = "Cab. Surcoat +2"
+    })
+	    sets.JobAbility['Invinceible'] = set_combine(sets.Emnity, {
+        feet = "Cab. breeches +2"
+    })
+	
     sets.JobAbility['Sentinel'] = set_combine(sets.Emnity, {
-        feet = "Cab. Leggings +3"
+        feet = "Cab. Leggings +2"
     })
 
     sets.JobAbility['Rampart'] = set_combine(sets.Emnity, {

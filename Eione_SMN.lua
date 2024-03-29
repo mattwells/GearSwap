@@ -2,7 +2,7 @@ function get_sets()
 	sets.Idle = {
 		main = "Gridarvor",
 		sub = "Elan Strap +1",
-		ammo = "Eminent Sachet",
+		ammo = "Sancus Sachet",
 		head = "Beckoner's Horn",
 		body = "Shomonjijoe +1",
 		hands = "Merlinic Dastanas",
@@ -21,7 +21,7 @@ function get_sets()
 			}
 		}
 	}
-	
+
 	sets.FastCast = {
 		right_ear = "Loquac. Earring",
 		-- right_ring = "Prolix Ring",
@@ -43,7 +43,7 @@ function get_sets()
 
 	sets.Pet.Precast = {
 		main = "Espiritus",
-		ammo = "Eminent Sachet",
+		ammo = "Sancus Sachet",
 		head = "Beckoner's Horn",
 		body = "Con. Doublet +2",
 		neck = "Melic Torque",
@@ -56,7 +56,7 @@ function get_sets()
 	sets.Pet.BloodPact.Magic = {
 		main = "Espiritus",
 		sub = "Elan Strap +1",
-		ammo = "Eminent Sachet",
+		ammo = "Sancus Sachet",
 		head = {
 			name = "Apogee Crown +1",
 			augments = {'MP+80', 'Pet: "Mag.Atk.Bns."+35', 'Blood Pact Dmg.+8'}
@@ -251,7 +251,7 @@ function aftercast(spell)
 		pet_midcast(spell)
 		return
 	end
-	
+
 	status_change(player.status)
 end
 
@@ -275,4 +275,14 @@ end
 
 function debug(s)
 	send_command("@input /echo " .. s)
+end
+
+function pet_change(pet,gain)
+	if not gain then send_command("input /magic Shiva <me>") end
+end
+
+function buff_change(name,gain,buff_details)
+	if not gain and name == "Avatar's Favor" then
+		send_command("input /pet 'Avatar's Favor' <me>")
+	end
 end

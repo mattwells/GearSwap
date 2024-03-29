@@ -474,14 +474,18 @@ function get_sets()
     sets.Midcast["Enhancing Magic"].Phalanx = {
         ammo = "Staunch Tathlum +1",
         head = "Fu. Bandeau +3",
-        hands = "Regal Gauntlets",
+        body = "Nyame Mail",
+        hands = {
+            name = "Herculean Gloves",
+            augments = {'Phalanx +5'}
+        },
         legs = {
-            name="Herculean Trousers",
-            augments={'Phalanx +3'}
+            name = "Herculean Trousers",
+            augments = {'Phalanx +3'}
         },
         feet = {
             name = "Herculean Boots",
-            augments = {'Weapon Skill Acc.+3', 'Crit.hit rate+3', 'Phalanx +5', 'Accuracy+6 Attack+6'}
+            augments = {'Phalanx +5'}
         },
         neck = "Moonlight Necklace",
         waist = "Olympus Sash",
@@ -489,6 +493,10 @@ function get_sets()
         right_ear = "Mimir Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Defending Ring",
+        back = {
+            name = "Ogma's Cape",
+            augments = {'Phys. dmg. taken-10%'}
+        }
     }
     sets.Midcast["Enhancing Magic"].Regen = set_combine(
         sets.Midcast["Enhancing Magic"],

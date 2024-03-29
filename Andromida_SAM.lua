@@ -210,22 +210,20 @@ function get_sets()
 
     sets.Engaged = {}
     sets.Engaged.Normal = {
+        main = "Dojikiri Yasutsuna",
+        sub = "Utu Grip",
         ammo = "Aurgelmir Orb +1",
         head = "Flam. Zucchetto +2",
-        body = "Ken. Samue +1",
+        body = "Kasuga Domaru +3",
         hands = "Wakido Kote +2",
-        legs = "Ken. Hakama +1",
-        feet = "Ken. Sune-Ate +1",
+        legs = "Kasuga Haidate +3",
+        feet = "Kas. Sune-Ate +3",
         neck = "Sam. Nodowa +2",
         waist = "Sailfi Belt +1",
         left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
         left_ring = "Chirich Ring +1",
-        right_ring = "Niqmaddu Ring",
-        back = {
-            name = "Smertrios's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
-        }
+        right_ring = "Niqmaddu Ring"
     }
 
     sets.Engaged.Hybrid = {
@@ -332,12 +330,8 @@ function get_sets()
         waist = "Orpheus's Sash",
         left_ear = "Moonshade Earring",
         right_ear = "Friomisi Earring",
-        left_ring = "Karieyh Ring",
-        right_ring = "Epaminondas's Ring",
-        back = {
-            name = "Smertrios's Mantle",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
-        }
+        left_ring = "Acumen Ring",
+        right_ring = "Epaminondas's Ring"
     }
     sets.WeaponSkill["Tachi: Kagero"] = set_combine({}, sets.WeaponSkill["Tachi: Jinpu"])
     sets.WeaponSkill["Tachi: Koki"] = set_combine({}, sets.WeaponSkill["Tachi: Jinpu"])

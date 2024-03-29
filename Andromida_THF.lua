@@ -176,7 +176,7 @@ function get_sets()
 
     sets.JobAbility = {}
     sets.JobAbility["Assassin's Charge"] = {
-        feet = "Plun. Poulaines +1"
+        feet = "Plun. Poulaines +2"
     }
     sets.JobAbility.Despoil = {
         feet = "Skulk. Poulaines +1"

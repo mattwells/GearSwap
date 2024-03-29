@@ -153,7 +153,7 @@ function get_sets()
     }
 
     sets.Midcast.Auspice = set_combine(sets.Midcast["Enhancing Magic"], {
-        feet = "Ebers Duckbills +2"
+        feet = "Ebers Duckbills +3"
     })
 end
 
@@ -201,7 +201,7 @@ function midcast(spell, action)
             return
         end
 
-        if spell.english:endswith("na") then
+        if spell.english:endswith("na") or spell.english == "Erase" then
             equip(sets.Midcast["Divine Veil"])
             debug("Midcast: Devine Veil")
 

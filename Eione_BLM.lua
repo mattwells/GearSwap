@@ -19,7 +19,7 @@ function get_sets()
         sub = "Mensch Strap +1",
         ammo = "Staunch Tathlum +1",
         head = "Nyame Helm",
-        body = "Wicce Coat +3",
+        body = "Jhakri Robe +2",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Herald's Gaiters",
@@ -40,59 +40,59 @@ function get_sets()
     sets.Midcast = {}
 
     sets.Precast.FastCast = {
-        ammo = "Sapience Orb",
-        head = "Amalric Coif +1",
-        hands = "Agwu's Gages",
-        legs = "Agwu's Slops",
-        feet = "Amalric Nails +1",
-        neck = "Voltsurge Torque",
-        waist = "Embla Sash",
-        left_ear = "Etiolation Earring",
-        right_ear = "Malignance Earring",
-        left_ring = "Kishar Ring",
-        right_ring = "Prolix Ring",
-        back = "Swith Cape +1"
+        ammo="Incantor Stone",
+        head="Amalric Coif +1",
+        body="Shango Robe",
+        hands="Acad. Bracers +2",
+        legs="Volte Brais",
+        feet="Acad. Loafers +2",
+        neck="Voltsurge Torque",
+        waist="Embla Sash",
+        left_ear="Etiolation Earring",
+        right_ear="Malignance Earring",
+        left_ring="Kishar Ring",
+        right_ring="Prolix Ring",
+        back={
+            name="Lugh's Cape",
+            augments={'"Fast Cast"+10'}
+        },
     }
 
     sets.Midcast["Elemental Magic"] = {}
     sets.Midcast["Elemental Magic"].Burst = {
-        main = "Bunzi's Rod",
+        main = "Daybreak",
         sub = "Ammurapi Shield",
-        head = "Ea Hat +1",
-        body = "Wicce Coat +3",
-        hands = "Agwu's Gages",
-        legs = "Wicce Chausses +3",
-        feet = "Agwu's Pigaches",
-        neck = "Src. Stole +2",
-        waist = "Skrymir Cord +1",
+        head = "Ea Hat",
+        body = "Jhakri Robe +2",
+        hands = "Jhakri Cuffs +2",
+        legs = "Jhakri Slops +2",
+        feet = "Jhakri Pigaches +2",
+        neck = "Sanctity Necklace",
+        waist = "Refoccilation Stone",
         left_ear = "Malignance Earring",
         right_ear = "Regal Earring",
-        left_ring = "Metamor. Ring +1",
-        right_ring = "Mujin Band",
-        back = {
-            name = "Taranus's Cape",
-            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
-        }
+        left_ring = "Stikini Ring +1",
+        right_ring = "Locus Ring"
     }
-    sets.Midcast["Elemental Magic"].Free = {
-        main = "Bunzi's Rod",
-        sub = "Ammurapi Shield",
-        head = "Wicce Petasos +3",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        legs = "Wicce Chausses +3",
-        feet = "Wicce Sabots +3",
-        neck = "Src. Stole +2",
-        waist = "Skrymir Cord +1",
-        left_ear = "Malignance Earring",
-        right_ear = "Regal Earring",
-        left_ring = "Shiva Ring +1",
-        right_ring = "Metamor. Ring +1",
-        back = {
-            name = "Taranus's Cape",
-            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
-        }
-    }
+    -- sets.Midcast["Elemental Magic"].Free = {
+    --     main = "Bunzi's Rod",
+    --     sub = "Ammurapi Shield",
+    --     head = "Wicce Petasos +3",
+    --     body = "Wicce Coat +3",
+    --     hands = "Wicce Gloves +3",
+    --     legs = "Wicce Chausses +3",
+    --     feet = "Wicce Sabots +3",
+    --     neck = "Src. Stole +2",
+    --     waist = "Skrymir Cord +1",
+    --     left_ear = "Malignance Earring",
+    --     right_ear = "Regal Earring",
+    --     left_ring = "Shiva Ring +1",
+    --     right_ring = "Metamor. Ring +1",
+    --     back = {
+    --         name = "Taranus's Cape",
+    --         augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
+    --     }
+    -- }
     sets.Midcast["Elemental Magic"].ConvertDamageToMp = {
         body = "Spaekona's Coat +2",
     }

@@ -1,5 +1,5 @@
 local engagedMode = "Normal"
-local rangedMode = "Normal"
+local rangedMode = "Acc"
 local incapacitated_states = T {"stun", "petrification", "terror", "sleep"}
 local debugMode = true
 
@@ -24,15 +24,15 @@ function get_sets()
         -- main={ name="Rostam", augments={'Path: A',}},
         ammo = "Chrono Bullet",
         head = "Malignance Chapeau",
-        body = "Mummu Jacket +2",
-        hands = "Meg. Gloves +2",
+        body = "Malignance Tabard",
+        hands = "Nyame Gauntlets",
         legs = "Malignance Tights",
-        feet = "Mummu Gamash. +2",
+        feet = "Nyame Sollerets",
         neck = "Comm. Charm +2",
         waist = "Sailfi Belt +1",
         left_ear = "Telos Earring",
         right_ear = "Cessance Earring",
-        left_ring = "Ilabrat Ring",
+        left_ring = "Defending Ring",
         right_ring = "Petrov Ring",
         back = {
             name = "Camulus's Mantle",
@@ -100,25 +100,24 @@ function get_sets()
     }
 
     sets.WeaponSkill["Last Stand"] = {
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        legs = "Nyame Flanchard",
-        feet = "Lanun Bottes +3",
+        ammo = "Chrono Bullet",
+        head = "Chass. Tricorne +3",
+        body = "Chasseur's Frac +3",
+        hands = "Chasseur's Gants +3",
+        legs = "Chas. Culottes +3",
+        feet = "Chass. Bottes +3",
         neck = "Comm. Charm +2",
-        waist = "Light Belt",
+        waist = "K. Kachina Belt +1",
         left_ear = "Telos Earring",
-        right_ear = "Moonshade Earring",
-        left_ring = "Ilabrat Ring",
-        right_ring = "Karieyh Ring",
+        right_ear = "Chas. Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Hajduk Ring +1",
         back = {
             name = "Camulus's Mantle",
             augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
         }
     }
+
     sets.WeaponSkill["Detonator"] = sets.WeaponSkill["Last Stand"]
     sets.WeaponSkill["Slug Shot"] = sets.WeaponSkill["Last Stand"]
     sets.WeaponSkill["Sniper Shot"] = sets.WeaponSkill["Last Stand"]
@@ -151,24 +150,19 @@ function get_sets()
     sets.WeaponSkill["Leaden Salute"] = {
         ammo = "Living Bullet",
         head = "Pixie Hairpin +1",
-        body = "Nyame Mail",
+        body = "Lanun Frac +3",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
-        feet = "Nyame Sollerets",
+        feet = "Lanun Bottes +3",
         neck = "Comm. Charm +2",
         waist = "Orpheus's Sash",
         left_ear = "Friomisi Earring",
         right_ear = "Moonshade Earring",
         left_ring = "Dingir Ring",
-        right_ring = "Karieyh Ring",
+        right_ring = "Archon Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {
-                'AGI+20',
-                'Mag. Acc+20 /Mag. Dmg.+20',
-                'AGI+10',
-                'Weapon skill damage +10%'
-            }
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
         }
     }
 
@@ -200,7 +194,7 @@ function get_sets()
         head = "Lanun Tricorne +3",
         hands = "Chasseur's Gants +3",
         legs = "Chas. Culottes +3",
-        feet = "Chass. Bottes +2",
+        feet = "Chass. Bottes +3",
         neck = "Regal Necklace",
         right_ring = "Luzaf's Ring"
     }
@@ -222,7 +216,7 @@ function get_sets()
         waist = "Orpheus's Sash",
         left_ear = "Friomisi Earring",
         right_ear = "Dedition Earring",
-        left_ring = "Dingir Ring",
+        left_ring = "Chirich Ring +1",
         right_ring = "Chirich Ring +1",
         back = {
             name = "Camulus's Mantle",
@@ -263,11 +257,11 @@ function get_sets()
     sets.Midcast = {}
     sets.Midcast['Ranged Attack'] = {}
     sets.Midcast['Ranged Attack']['Normal'] = {
-        head = "Ikenga's Hat",
-        body = "Ikenga's Vest",
-        hands = "Ikenga's Gloves",
-        legs = "Ikenga's Trousers",
-        feet = "Ikenga's Clogs",
+        head = "Chass. Tricorne +3",
+        body = "Chasseur's Frac +3",
+        hands = "Chasseur's Gants +3",
+        legs = "Chas. Culottes +3",
+        feet = "Chass. Bottes +3",
         neck = "Comm. Charm +2",
         left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
@@ -276,6 +270,25 @@ function get_sets()
         back = {
             name = "Camulus's Mantle",
             augments = {'AGI+20', 'AGI+10'}
+        }
+    }
+
+    sets.Midcast['Ranged Attack']['Acc'] = {
+        ammo = "Chrono Bullet",
+        head = "Chass. Tricorne +3",
+        body = "Chasseur's Frac +3",
+        hands = "Chasseur's Gants +3",
+        legs = "Chas. Culottes +3",
+        feet = "Chass. Bottes +3",
+        neck = "Comm. Charm +2",
+        waist = "K. Kachina Belt +1",
+        left_ear = "Telos Earring",
+        right_ear = "Chas. Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Hajduk Ring +1",
+        back = {
+            name = "Camulus's Mantle",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
         }
     }
 
@@ -363,13 +376,16 @@ function midcast(spell, action)
         return
     end
 
+    print(spell.action_type)
     if spell.action_type == 'Ranged Attack' then
-        if sets.Midcast['Ranged Attack']['Triple Shot'] then
+        if buffactive["Triple Shot"] then
             equip(sets.Midcast['Ranged Attack']['Triple Shot'])
+            print("Tripple mOde")
             return
         end
 
         equip(sets.Midcast['Ranged Attack'][rangedMode])
+        print(rangedMode)
         return
     end
 

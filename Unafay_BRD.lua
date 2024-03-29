@@ -3,14 +3,14 @@ function get_sets()
 
     -- Idle Sets --
     sets.Idle = {
-        main = "Sangoma",
-        sub = "Genmei Shield",
+        -- main = "Sangoma",
+        -- sub = "Genmei Shield",
         range = "",
         head = "Bunzi's Hat",
         body = "Bunzi's Robe",
         hands = "Bunzi's Gloves",
         legs = "Bunzi's Pants",
-        feet = "Bunzi's Sabots",
+        feet = "Fili cothurnes +3",
         neck = "Bathy Choker",
         waist = "Flume Belt",
         left_ear = "Infused Earring",
@@ -54,7 +54,7 @@ function get_sets()
     sets.Precast = {}
     sets.Precast.SongCast = {
         main = "Felibre's dague",
-        head = "Fili Calot +2",
+        head = "Fili Calot +3",
         neck = "Moonbow Whistle +1",
         ear1 = "Loquac. Earring",
         ear2 = "Enchanter's Earring +1",
@@ -131,11 +131,11 @@ function get_sets()
     sets.Midcast.WindBuff = {
         main = "Carnwenhan",
         range = "",
-        head = "Fili calot +2",
+        head = "Fili calot +3",
         neck = "Moonbow Whistle +1",
         ear1 = "",
         ear2 = "Aoidos' Earring",
-        body = "Fili hongreline +2",
+        body = "Fili hongreline +3",
         hands = "Fili manchettes +2",
         ring1 = "Dawnsoul ring",
         back = "Kumbira Cape",
@@ -148,16 +148,16 @@ function get_sets()
         hands = "Fili manchettes +2"
     }
     sets.Midcast.Minuet = {
-        body = "Fili hongreline +2"
+        body = "Fili hongreline +3"
     }
     sets.Midcast.Madrigal = {
-        head = "Fili calot +2"
+        head = "Fili calot +3"
     }
     sets.Midcast.Ballad = {
         legs = "Fili rhingrave +2"
     }
     sets.Midcast.Scherzo = {
-        feet = "Fili cothurnes +2"
+        feet = "Fili cothurnes +3"
     }
     sets.Midcast.Mazurka = {
         head = "Cath palug crown"
@@ -166,23 +166,9 @@ function get_sets()
         head = "Brioso Roundlet +3"
     }
     sets.Midcast.Finale = {}
-    sets.Midcast.Lullaby = {
-        main = "Carnwenhan",
-        sub = "Ammurapi Shield",
-        range = "Daurdabla",
-        head = "Brioso roundlet +3",
-        neck = "Moonbow whistle +1",
-        ear1 = "Dignitary's earring",
-        ear2 = "Regal earring",
-        body = "Fili hongreline +2",
-        hands = "Brioso cuffs +3",
-        ring1 = "Stikini ring +1",
-        ring2 = "Stikini ring +1",
-        back = "Intarabus's cape",
-        waist = "Acuity Belt +1",
-        legs = "Inyanga shalwar +2",
-        feet = "Brioso slippers +3"
-    }
+    sets.Midcast.Etude = {head = "Mousai turban +1"}
+    sets.Midcast.Threnody = {body = "Mousai manteel +1"}
+    sets.Midcast.Carol = {hands = "Mousai gages +1"}
 
     -- Cure Set --
     sets.Midcast.Cure = {
@@ -261,17 +247,17 @@ function get_sets()
     -- Melee --
     sets.Engaged = {
 		main="Naegling",
-		sub="Gleti's knife",
+		sub="Crepuscular knife",
 		range="Linos",
 		head="Nyame helm",
 		body="Ashera harness",
 		hands="Nyame gauntlets",
 		legs="Volte tights",
 		feet="Nyame sollerets",
-		neck="Bard's charm +1",
-		waist="Windbuffet belt +1",
+		neck="Republican platinum medal",
+		waist="Sailfi belt +1",
 		left_ear="Telos earring",
-		right_ear="Balder earring +1",
+		right_ear="Cessance earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Ilabrat ring",
 		back="Intarabus's cape",
@@ -279,8 +265,8 @@ function get_sets()
 
     sets.WeaponSkill = {}
     sets.WeaponSkill["Rudra's Storm"] = {
-        main = "Carnwenhan",
-        sub="Gleti's knife",
+        main = "",
+        sub="",
         range = "Linos",
         head = "Lustratio cap +1",
         body = "Ashera harness",
@@ -288,16 +274,16 @@ function get_sets()
         legs = "Lustratio subligar +1",
         feet = "Lustratio leggings +1",
         neck = "Bard's Charm +1",
-        waist = "Kentarch belt",
-        left_ear = "Mache earring +1",
+        waist = "Kentarch belt +1",
+        left_ear = "Ishvara earring",
         right_ear = "Balder earring +1",
         left_ring = "Ilabrat ring",
-        right_ring = "Petrov Ring",
+        right_ring = "Epaminondas's ring",
         back = "Intarabus's cape"
     }
     sets.WeaponSkill["Mordant Rime"] = {
         main = "Carnwenhan",
-        sub="Gleti's knife",
+        sub="Crepuscular knife",
         range = "Linos",
         head = "Bihu Roundlet +3",
         body = "Bihu Jstcorps. +3",
@@ -305,7 +291,7 @@ function get_sets()
         legs = "Bihu Cannions +3",
         feet = "Bihu Slippers +3",
         neck = "Bard's Charm +1",
-        waist = "Kentarch Belt",
+        waist = "Kentarch Belt +1",
         left_ear = "Regal Earring",
         right_ear = "Telos Earring",
         left_ring = "Carbuncle ring +1",
@@ -314,7 +300,7 @@ function get_sets()
     }
     sets.WeaponSkill["Savage Blade"] = {
         main = "Naegling",
-        sub="Gleti's knife",
+        sub="Crepuscular knife",
         range = "Linos",
         head = "Nyame helm",
         body = "Bihu Jstcorps. +3",
@@ -398,7 +384,7 @@ function status_change(new, old)
     end
 end
 
-song_set_names = {'Finale', 'Lullaby', 'March', 'Minuet', 'Madrigal', 'Ballad', 'Scherzo', 'Mazurka', 'Paeon'}
+song_set_names = {'Finale', 'Lullaby', 'March', 'Minuet', 'Madrigal', 'Ballad', 'Scherzo', 'Mazurka', 'Paeon', 'Etude', 'Threnody', 'Carol'}
 function song_equip(spell)
     if spell.target.type == 'MONSTER' then
         equip(sets.Midcast.Wind)

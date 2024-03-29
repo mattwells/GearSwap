@@ -1,3 +1,18 @@
+local modes = {
+    Nuke = "Burst"
+}
+
+local obi = {
+    Fire = "Karin Obi",
+    Earth = "Dorin Obi",
+    Water = "Suirin Obi",
+    Wind = "Furin Obi",
+    Ice = "Hyorin Obi",
+    Lightning = "Rairin Obi",
+    Light = "Korin Obi",
+    Dark = "Anrin Obi",
+}
+
 function get_sets()
     incapacitated_states = T {"stun", "petrification", "terror", "sleep"}
 
@@ -62,7 +77,22 @@ function get_sets()
     sets.JobAbility = {}
 
     -- WS Sets --
-    sets.WeaponSkill = {}
+    sets.WeaponSkill = {
+        main = "Idris",
+        sub = "Ammurapi Shield",
+        range = "Dunna",
+        head = "Nyame Helm",
+        body = "Nyame Mail",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Rep. Plat. Medal",
+        waist = "Cornelia's Belt",
+        left_ear = "Regal Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Epaminondas's Ring",
+        right_ring = "Ephramad's Ring",
+    }
 
     sets.FastCast = {
         main = {
@@ -170,36 +200,38 @@ function get_sets()
         main = "Idris",
         sub = "Ammurapi Shield",
         range = "Dunna",
-        head = "Geo. Galero +1",
-        body = "Geomancy Tunic +1",
-        hands = "Geo. Mitaines +3",
-        legs = "Geomancy Pants +1",
-        feet = "Geo. Sandals +3",
+        head = "Azimuth Hood +3",
+        body = "Azimuth Coat +3",
+        hands = "Azimuth Gloves +3",
+        legs = "Azimuth Tights +3",
+        feet = "Azimuth Gaiters +3",
         neck = "Bagua Charm +2",
         waist = "Luminary Sash",
-        left_ear = "Etiolation Earring",
-        right_ear = "Malignance Earring",
+        left_ear = "Malignance Earring",
+        right_ear = "Azimuth Earring +2",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
         }
     }
 
-    sets.Midcast["Elemental Magic"] = {
+    sets.Midcast["Elemental Magic"] = {}
+    sets.Midcast["Elemental Magic"].Burst = {
         main = "Bunzi's Rod",
         sub = "Ammurapi Shield",
-        head = "Agwu's Cap",
-        body = "Amalric Doublet +1",
+        range = "Dunna",
+        head = "Ea Hat +1",
+        body = "Azimuth Coat +3",
         hands = "Agwu's Gages",
-        legs = "Agwu's Slops",
-        feet = "Azimuth Gaiters +3",
+        legs = "Azimuth Tights +3",
+        feet = "Agwu's Pigaches",
         neck = "Sibyl Scarf",
         waist = "Skrymir Cord +1",
         left_ear = "Malignance Earring",
-        right_ear = "Azimuth Earring +1",
-        left_ring = "Acumen Ring",
+        right_ear = "Azimuth Earring +2",
+        left_ring = "Metamor. Ring +1",
         right_ring = "Shiva Ring +1",
         back = {
             name = "Nantosuelta's Cape",
@@ -238,7 +270,7 @@ function precast(spell, action)
         send_command("cancel Sneak")
     end
 
-    notice(spell.skill .. spell.english)
+    debug(spell.skill .. spell.english)
 
     if sets[spell.skill] and sets[spell.skill][spell.english] then
         equip(sets[spell.skill][spell.english])
@@ -257,6 +289,11 @@ function precast(spell, action)
         return
     end
 
+    if spell.type == "WeaponSkill" then
+        equip(sets["WeaponSkill"])
+
+        return
+    end
     debug("No set for " .. spell.type .. "." .. spell.english)
 end
 
@@ -269,7 +306,18 @@ function midcast(spell, action)
         return
     end
 
-    notice("Mid - " .. spell.english .. " > " .. spell.target.name)
+    debug("Mid - " .. spell.english .. " > " .. spell.target.name)
+
+    if spell.skill == "Elemental Magic" then
+        equip(sets.Midcast["Elemental Magic"][modes.Nuke])
+
+        if spell.element == world.weather_element or spell.element == world.day_element then
+            print("Obi " .. obi[spell.element])
+            equip({waist = obi[spell.element]})
+        end
+
+        return
+    end
 
     if sets["Midcast"][spell.skill] and sets["Midcast"][spell.skill][spell.english] then
         equip(sets["Midcast"][spell.skill][spell.english])

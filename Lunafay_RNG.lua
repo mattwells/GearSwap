@@ -3,7 +3,7 @@ local rangedMode = "Normal"
 
 function get_sets()
     incapacitated_states = T {"stun", "petrification", "terror", "sleep"}
-    debugMode = true
+    debugMode = false
 
     sets.Idle = {
         head = "Nyame Helm",
@@ -97,14 +97,14 @@ function get_sets()
         back = {
             name = "Belenus's Cape",
             augments = {
-                -- 'AGI+20', 
-                -- 'Mag. Acc+20 /Mag. Dmg.+20', 
-                -- 'AGI+10', 
+                -- 'AGI+20',
+                -- 'Mag. Acc+20 /Mag. Dmg.+20',
+                -- 'AGI+10',
                 -- 'Weapon skill damage +10%'
             }
         }
     }
-    
+
     sets.WeaponSkill["Aeolian Edge"] = {
         ammo = "Living Bullet",
         head = "Nyame Helm",

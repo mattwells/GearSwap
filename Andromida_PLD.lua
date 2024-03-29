@@ -24,6 +24,22 @@ function get_sets()
         legs = "Sakpata's Cuisses"
     })
 
+    -- sets.Engaged = {
+    --     ammo="Ginsen",
+    --     head={ name="Sakpata's Helm", augments={'Path: A',}},
+    --     body={ name="Sakpata's Plate", augments={'Path: A',}},
+    --     hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
+    --     legs={ name="Sakpata's Cuisses", augments={'Path: A',}},
+    --     feet={ name="Sakpata's Leggings", augments={'Path: A',}},
+    --     neck={ name="Vim Torque +1", augments={'Path: A',}},
+    --     waist="Dynamic Belt",
+    --     left_ear="Telos Earring",
+    --     right_ear="Digni. Earring",
+    --     left_ring="Chirich Ring +1",
+    --     right_ring="Chirich Ring +1",
+    --     back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+    -- }
+
     sets.Midcast = {}
     sets.Midcast['Enhancing Magic'] = {
         hands = "Regal Gauntlets",

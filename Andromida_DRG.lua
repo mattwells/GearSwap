@@ -12,7 +12,7 @@ function get_sets()
         hands = "Gleti's Gauntlets",
         legs = "Carmine cuisses +1",
         feet = "Gleti's Boots",
-        neck = "Loricate Torque +1",
+        neck = "Rep. Plat. Medal",
         waist = "Flume Belt",
         left_ear = "Infused Earring",
         right_ear = "Etiolation Earring",
@@ -203,7 +203,7 @@ function get_sets()
         neck = "Dgn. Collar +2",
         waist = "Sailfi Belt +1",
         left_ear = "Moonshade Earring",
-        right_ear = "Thrud Earring",
+        right_ear = "Pel. Earring +2",
         left_ring = "Regal Ring",
         right_ring = "Epaminondas's Ring",
         back = {
@@ -215,6 +215,27 @@ function get_sets()
                 'Weapon skill damage +10%',
                 'Phys. dmg. taken-10%'
             }
+        }
+    }
+
+    sets.WeaponSkill["Diarmuid"] = {
+        main = "Gae Buide",
+        sub = "Utu Grip",
+        ammo = "Knobkierrie",
+        head = "Peltast's Mezail +3",
+        body = "Nyame Mail",
+        hands = "Ptero. Fin. G. +3",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Dgn. Collar +2",
+        waist = "Sailfi Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Pel. Earring +2",
+        left_ring = "Ephramad's Ring",
+        right_ring = "Epaminondas's Ring",
+        back = {
+            name = "Brigantia's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
         }
     }
 
@@ -233,8 +254,8 @@ function get_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Thrud Earring",
-        right_ear = "Sherida Earring",
+        left_ear = "Sherida Earring",
+        right_ear = "Pel. Earring +2",
         left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
@@ -253,7 +274,7 @@ function get_sets()
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Moonshade Earring",
-        right_ear = "Sherida Earring",
+        right_ear = "Pel. Earring +2",
         left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
@@ -272,7 +293,7 @@ function get_sets()
         neck = "Dgn. Collar +2",
         waist = "Sailfi Belt +1",
         left_ear = "Moonshade Earring",
-        right_ear = "Thrud Earring",
+        right_ear = "Pel. Earring +2",
         left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
@@ -291,7 +312,7 @@ function get_sets()
         neck = "Dgn. Collar +2",
         waist = "Sailfi Belt +1",
         left_ear = "Moonshade Earring",
-        right_ear = "Pel. Earring +1",
+        right_ear = "Pel. Earring +2",
         left_ring = "Epaminondas's Ring",
         right_ring = "Ephramad's Ring",
         back = {
@@ -310,7 +331,7 @@ function get_sets()
         neck = "Dgn. Collar +2",
         waist = "Sailfi Belt +1",
         left_ear = "Moonshade Earring",
-        right_ear = "Thrud Earring",
+        right_ear = "Pel. Earring +2",
         left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
@@ -327,8 +348,8 @@ function get_sets()
         feet = "Pelt. Schyn. +3",
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
-        left_ear = "Pel. Earring +1",
-        right_ear = "Digni. Earring",
+        left_ear = "Digni. Earring",
+        right_ear = "Pel. Earring +2",
         left_ring = "Crepuscular Ring",
         right_ring = "Stikini Ring +1",
         back = {
@@ -365,7 +386,7 @@ function get_sets()
         neck = "Dgn. Collar +2",
         waist = "Sailfi Belt +1",
         left_ear = "Moonshade Earring",
-        right_ear = "Pel. Earring +1",
+        right_ear = "Pel. Earring +2",
         left_ring = "Sroda Ring",
         right_ring = "Ephramad's Ring",
         back = {

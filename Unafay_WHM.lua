@@ -37,7 +37,7 @@ function get_sets()
 	sets.JobAbility = {}
 
 	sets.JobAbility.Benediction = {body = "Piety Bliaut +3"}
-	sets.JobAbility.AfflatusSolace = {body = "Ebers Bliaut +2"}
+	sets.JobAbility.AfflatusSolace = {body = "Piety Bliaut +2"}
 
 
 	sets.Precast = {}
@@ -109,13 +109,13 @@ function get_sets()
 		ring2="Sirona's Ring",
 		back="Solemnity cape",
 		waist="Embla sash",
-		legs="Ebers pantaloons +2",
+		legs="Ebers pantaloons +3",
 		feet="Theophany duckbills +3"}
 
 	sets.Midcast.Cursna = {
 }
 
-	sets.Midcast.Curaga = {
+	sets.midcast_Curaga = {
 		main = "Queller rod",
 		sub = "Sors shield",
 		ammo = "Incantor Stone",
@@ -123,14 +123,14 @@ function get_sets()
 		neck = "Cleric's torque +1",
 		ear1 = "Nourishing earring",
 		ear2 = "Glorious earring",
-		body = "Theo. Bliaut +3",
-		hands = "Piety mitts +3",
+		body = "Theophany briault +3",
+		hands = "Piety mitts +1",
 		ring1 = "Lebeche ring",
 		ring2 = "Persis ring",
 		back = "Mending Cape",
 		waist = "Channeler's stone",
-		legs = "Ebers pantaloons +2",
-		feet = "Piety duckbills +3"
+		legs = "Ebers pantaloons +3",
+		feet = "Piety duckbills +2"
 	}
 
 	sets.Midcast["Divine Veil"] = {
@@ -142,12 +142,12 @@ function get_sets()
 		ear1="",
 		ear2="Etiolation Earring",
 		body="",
-		hands="Ebers mitts +2",
+		hands="Ebers mitts +3",
 		ring1="Ephedra ring",
 		ring2="Prolix Ring",
 		back="Mending cape",
 		waist="Embla sash",
-		legs="Ebers pantaloons +2",
+		legs="Ebers pantaloons +3",
 		feet=""
 		}
 
@@ -158,7 +158,7 @@ function get_sets()
 		sub="Sors shield",
 		ammo="Incantor Stone",
 		head="Vanya hood",
-		neck="Malison medallion",
+		neck="Debilis medallion",
 		ear1="Meili earring",
 		ear2="Beatific earring",
 		body="Ebers Bliaut +2",
@@ -166,7 +166,7 @@ function get_sets()
 		ring1="Haoma's ring",
 		ring2="Menelaus's ring",
 		back="Alaunus's cape",
-		waist="Channeler's stone",
+		waist="Bishop's sash",
 		legs="Theophany pantaloons +3",
 		feet="Gende. Galosh. +1"
 	}
@@ -212,7 +212,7 @@ sets.Midcast["Enfeebling Magic"] = {
 		ammo="Incantor Stone",
 		head="Inyanga Tiara +2",
 		body={ name="Piety Bliaut +3", augments={'Enhances "Benediction" effect',}},
-		hands="Ebers Mitts +2",
+		hands="Ebers Mitts +3",
 		legs="Th. Pant. +3",
 		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}},
 		neck="Incanter's Torque",
@@ -229,7 +229,7 @@ sets.Midcast["Enfeebling Magic"] = {
 		ammo="Incantor Stone",
 		head="Befouled crown",
 		body="Ebers Bliaut +2",
-		hands="Ebers Mitts +2",
+		hands="Ebers Mitts +3",
 		legs="Piety Pantaln. +3",
 		feet="Piety Duckbills +3",
 		neck="Incanter's Torque",
@@ -330,6 +330,8 @@ end
 function aftercast(spell, action)
 	debug("Idle")
 	equip(sets.Idle)
+
+	if spell.english ~= "Dia" then windower.send_command('send Andromida react facemob;send Lunafay react facemob') end
 end
 
 function debug(s)

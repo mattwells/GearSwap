@@ -48,7 +48,7 @@ function init_gear_sets()
     lowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder',
         'Stone II', 'Water II', 'Aero II', 'Fire II', 'Blizzard II', 'Thunder II',
         'Stone III', 'Water III', 'Aero III', 'Fire III', 'Blizzard III', 'Thunder III',
-        'Stonega', 'Waterga', 'Aeroga', 'Firaga', 'Blizzaga', 'Thundaga', 
+        'Stonega', 'Waterga', 'Aeroga', 'Firaga', 'Blizzaga', 'Thundaga',
         'Stonera', 'Watera', 'Aerora', 'Fira', 'Blizzara', 'Thundara',
         'Stonega II', 'Waterga II', 'Aeroga II', 'Firaga II', 'Blizzaga II', 'Thundaga II'}
     --------------------------------------
@@ -59,12 +59,12 @@ function init_gear_sets()
     sets.precast.JA.Bolster = {body="Bagua Tunic +3"}
     sets.precast.JA['Life Cycle'] = {head="Azimuth Hood +1", body="Geomancy Tunic +2", back="Nantosuelta's Cape"}
     sets.precast.JA['Full Circle'] = {hands="Azimuth Hood +1"}
-    sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +1"}
+    sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
 
     sets.Organizer = {
-    
+
     }
 
     -- Fast cast sets for spells
@@ -73,7 +73,7 @@ function init_gear_sets()
         main="Grioavolr", ---4
 		sub="Clerisy strap +1", ---3
 		range="Dunna",---3
-        head="Amalric coif +1",---11 
+        head="Amalric coif +1",---11
         ear2="Loquacious Earring",
 		ear1="Etiolation Earring",---1
 		body="Agwu's robe",---8
@@ -106,10 +106,10 @@ function init_gear_sets()
     })
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
-        hands="Bagua Mitaines +1",
+        hands="Bagua Mitaines +2",
     })
 
-    
+
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
@@ -148,7 +148,7 @@ function init_gear_sets()
     --------------------------------------
 
     -- Base fast recast for spells
-    sets.midcast.FastRecast = { 
+    sets.midcast.FastRecast = {
     }
     sets.midcast.Trust =  {
     }
@@ -161,10 +161,10 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
 		head="Azimuth Hood +1",
-		body={ name="Bagua Tunic +1", augments={'Enhances "Bolster" effect',}},
+		body={ name="Bagua Tunic +3", augments={'Enhances "Bolster" effect',}},
 		hands="Geo. Mitaines +2",
 		legs="Azimuth Tights +1",
-		feet="Geo. Sandals +1",
+		feet="Geo. Sandals +2",
 		neck="Bagua Charm +2",
 		waist="Luminary Sash",
 		left_ear="Etiolation Earring",
@@ -173,7 +173,7 @@ function init_gear_sets()
 		right_ring="Kishar Ring",
 		back="Lifestream Cape",
 }
-	
+
 	sets.midcast['Geo-Poison'] = sets.midcast['Geo-Regen']
 	sets.midcast['Geo-Refresh'] = sets.midcast['Geo-Regen']
 	sets.midcast['Geo-Haste'] = sets.midcast['Geo-Regen']
@@ -211,12 +211,12 @@ function init_gear_sets()
         head="Azimuth hood +1",
         neck="Bagua charm +2",
         hands="Geomancy Mitaines +2",
-        body="Bagua Tunic +1",
+        body="Bagua Tunic +3",
 		ring1="Stikini ring +1",
 		ring2="Stikini ring +1",
         back="Lifestream Cape",
         feet="Azimuth gaiters +1",
-		legs="Bagua Pants +1",
+		legs="Bagua Pants +2",
     }
 
 	sets.midcast['Indi-Poison'] = sets.midcast['Indi-Regen']
@@ -248,7 +248,7 @@ function init_gear_sets()
 	sets.midcast['Indi-Slow'] = sets.midcast['Indi-Regen']
 	sets.midcast['Indi-Paralysis'] = sets.midcast['Indi-Regen']
 	sets.midcast['Indi-Gravity'] = sets.midcast['Indi-Regen']
-	
+
     sets.midcast.Cure =  {
         main="Daybreak", --30
 		sub="Genbu's shield", --4
@@ -265,7 +265,7 @@ function init_gear_sets()
 		legs="Volte brais",
 		feet="Regal pumps +1",
     }
-    
+
     sets.midcast.Curaga = sets.midcast.Cure
 
     --sets.midcast.Protectra = {ring1="Sheltered Ring"}
@@ -289,7 +289,7 @@ function init_gear_sets()
 		right_ring="Kishar Ring",
 		back="Seshaw Cape",
 }
-    
+
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
     main={ name="Grioavolr", augments={'Enfb.mag. skill +16','Mag. Acc.+18','"Mag.Atk.Bns."+25',}},
     sub="Niobid Strap",
@@ -330,7 +330,7 @@ function init_gear_sets()
     right_ring="Locus Ring",
     back="Seshaw Cape",
     })
-    
+
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
     main="Marin staff",
     sub="Niobid Strap",
@@ -349,11 +349,11 @@ function init_gear_sets()
     back="Seshaw Cape",
     })
 
-    sets.midcast.Macc = { 
+    sets.midcast.Macc = {
     main={ name="Grioavolr", augments={'Enfb.mag. skill +16','Mag. Acc.+18','"Mag.Atk.Bns."+25',}},
     sub="Enki Strap",
     ammo="Pemphredo Tathlum",
-    head="Bagua galero +2",
+    head="Bagua galero +3",
     body="Jhakri Robe +2",
     hands="Geo. Mitaines +2",
     legs="Jhakri Slops +2",
@@ -370,8 +370,8 @@ function init_gear_sets()
     main={ name="Rubicundity", augments={'Mag. Acc.+10','"Mag.Atk.Bns."+10','Dark magic skill +10','"Conserve MP"+7',}},
     sub="Ammurapi Shield",
     ammo="Pemphredo Tathlum",
-    head="Bagua galero +2",
-    body="Geo. Tunic +2",
+    head="Bagua galero +3",
+    body="Geomancy Tunic +2",
     hands="Geo. Mitaines +2",
     legs="Azimuth Tights +1",
     feet={ name="Merlinic Crackows", augments={'Weapon skill damage +1%','"Store TP"+5','"Refresh"+1','Accuracy+3 Attack+3','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},
@@ -383,13 +383,13 @@ function init_gear_sets()
     right_ring="Archon Ring",
     back="Perimede Cape",
     }
-    
-    sets.midcast.Aspir = { 
+
+    sets.midcast.Aspir = {
     main={ name="Rubicundity", augments={'Mag. Acc.+10','"Mag.Atk.Bns."+10','Dark magic skill +10','"Conserve MP"+7',}},
     sub="Ammurapi Shield",
     ammo="Pemphredo Tathlum",
-    head="Bagua galero +2",
-    body="Geo. Tunic +2",
+    head="Bagua galero +3",
+    body="Geomancy Tunic +2",
     hands="Geo. Mitaines +2",
     legs="Azimuth Tights +1",
     feet={ name="Merlinic Crackows", augments={'Weapon skill damage +1%','"Store TP"+5','"Refresh"+1','Accuracy+3 Attack+3','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},
@@ -403,36 +403,36 @@ function init_gear_sets()
     }
     sets.midcast.Drain = sets.midcast.Aspir
     sets.midcast.Stun = sets.midcast.Macc
-    
+
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
-    
+
     })
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
-   
+
     })
 
 	sets.midcast['Haste'] = {
-	
+
 	main="Gada",
 	sub="Ammurapi shield",
-	head="Bagua galero +2",
+	head="Bagua galero +3",
 	body="Telchine chasuble",
 	hands="Telchine gloves",
 	legs="Telchine braconi",
 	feet="Telchine pigaches"
 	}
-	
+
 	sets.midcast['Refresh'] = {
-	
+
 	main="Gada",
 	sub="Ammurapi shield",
-	head="Bagua galero +2",
+	head="Bagua galero +3",
 	body="Telchine chasuble",
 	hands="Telchine gloves",
 	legs="Telchine braconi",
 	feet="Inspirited boots"
 	}
-	
+
 	sets.midcast['Blink'] = sets.midcast['Haste']
 	sets.midcast['Stoneskin'] = sets.midcast['Haste']
 	sets.midcast['Aquaveil'] = sets.midcast['Haste']
@@ -442,7 +442,7 @@ function init_gear_sets()
 	sets.midcast['Invisible'] = sets.midcast['Haste']
 	sets.midcast['Sneak'] = sets.midcast['Haste']
 	sets.midcast['Deodorize'] = sets.midcast['Haste']
-	
+
     --------------------------------------
     -- Idle/resting/defense/etc sets
     --------------------------------------
@@ -483,7 +483,6 @@ function init_gear_sets()
 		right_ring="Defending ring", --10
 		back="Moonbeam Cape", --5
 	}
- 
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = {
@@ -502,40 +501,37 @@ function init_gear_sets()
 		left_ring="Stikini ring +1",
 		right_ring="Defending ring",
 		back="Lifestream cape",
-	
 	}
 
-
     sets.idle.Melee = {
-
     }
 
     -- .Indi sets are for when an Indi-spell is active.
     --sets.idle.Indi = set_combine(sets.idle, {
-    --    legs="Bagua Pants +1", 
+    --    legs="Bagua Pants +2",
     --    feet="Geomancy Sandals +2",
     --    back="Lifestream Cape",
     --    --feet="Azimuth Gaiters"
     --})
     --sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
-    --    legs="Bagua Pants +1", 
+    --    legs="Bagua Pants +2",
     --})
     --sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {
-    --    legs="Bagua Pants +1", 
+    --    legs="Bagua Pants +2",
     --    feet="Azimuth Gaiters"
     --})
     --sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {
-    --    legs="Bagua Pants +1", 
+    --    legs="Bagua Pants +2",
     --})
 
     sets.idle.Town = {
-        
+
 	main="Daybreak",
     sub="Genmei Shield",
     ammo="Staunch Tathlum",
     head="Befouled Crown",
     body="Shamash robe",
-    hands={ name="Bagua Mitaines +1", augments={'Enhances "Curative Recantation" effect',}},
+    hands={ name="Bagua Mitaines +2", augments={'Enhances "Curative Recantation" effect',}},
     legs="Volte brais",
     feet="Geo. Sandals +2",
     neck="Loricate Torque +1",
@@ -552,7 +548,7 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {
-    
+
     main="Sucellus",
     sub="Genmei Shield",
     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
@@ -560,7 +556,7 @@ function init_gear_sets()
     body="",
     hands="Geo. Mitaines +2",
     legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
-    feet={ name="Bagua Sandals +1", augments={'Enhances "Radial Arcana" effect',}},
+    feet={ name="Bagua Sandals +3", augments={'Enhances "Radial Arcana" effect',}},
     neck="Loricate Torque +1",
     waist="Isa Belt",
     left_ear="Ethereal Earring",
@@ -572,15 +568,15 @@ function init_gear_sets()
 	}
 
     sets.defense.MDT = {
-    
+
     main="Sucellus",
     sub="Genmei Shield",
     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-    head="Bagua galero +2",
+    head="Bagua galero +3",
     body="Jhakri Robe +2",
     hands="Geo. Mitaines +2",
     legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
-    feet={ name="Bagua Sandals +1", augments={'Enhances "Radial Arcana" effect',}},
+    feet={ name="Bagua Sandals +3", augments={'Enhances "Radial Arcana" effect',}},
     neck="Loricate Torque +1",
     waist="Isa Belt",
     left_ear="Ethereal Earring",
@@ -588,7 +584,7 @@ function init_gear_sets()
     left_ring={ name="Dark Ring", augments={'Breath dmg. taken -3%','Magic dmg. taken -4%','Phys. dmg. taken -6%',}},
     right_ring="Defending Ring",
     --back={ name="Nantosuelta's Cape", augments={'Pet: "Regen"+10','Pet: Damage taken -3%',}},
-    back="mecistopins mantle", 
+    back="mecistopins mantle",
 	}
 
     sets.Kiting = {}
@@ -612,7 +608,7 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Azimuth Coat +1",
-        head="Bagua galero +2",
+        head="Bagua galero +3",
         hands="Geomancy Mitaines +2",
         ring1="Rajas Ring",
         ring2="K'ayres Ring",
@@ -641,7 +637,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-    -- Make sure abilities using head gear don't swap 
+    -- Make sure abilities using head gear don't swap
 	if spell.type:lower() == 'weaponskill' then
         -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
         if state.CapacityMode.value then
@@ -790,20 +786,20 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 	'Fire VI', 'Blizzard VI', 'Aero VI', 'Stone VI', 'Thunder VI', 'Water VI',
 	'Firaga', 'Blizzaga', 'Aeroga', 'Stonega', 'Thundaga', 'Waterga',
 	'Firaga II', 'Blizzaga II', 'Aeroga II', 'Stonega II', 'Thundaga II', 'Waterga II',
-	'Firaga III', 'Blizzaga III', 'Aeroga III', 'Stonega III', 'Thundaga III', 'Waterga III',	
+	'Firaga III', 'Blizzaga III', 'Aeroga III', 'Stonega III', 'Thundaga III', 'Waterga III',
 	'Firaja', 'Blizzaja', 'Aeroja', 'Stoneja', 'Thundaja', 'Waterja',
 	}
 	cures = S{'Cure IV','Cure V','Cure IV','Cure III','Curaga III','Curaga II', 'Curaga',}
-	
+
 	if spell.skill == 'Healing Magic' then
 		if not cures:contains(spell.english) then
 			return
 		end
-		
+
 		local newSpell = spell.english
 		local spell_recasts = windower.ffxi.get_spell_recasts()
 		local cancelling = 'All '..spell.english..' spells are on cooldown. Cancelling spell casting.'
-		
+
 		if spell_recasts[spell.recast_id] > 0 then
 			if cures:contains(spell.english) then
 				if spell.english == 'Cure' then
@@ -819,7 +815,7 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				end
 			end
 		end
-		
+
 		if newSpell ~= spell.english then
 			send_command('@input /ma "'..newSpell..'" '..tostring(spell.target.raw))
 			eventArgs.cancel = true
@@ -829,7 +825,7 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 		if not aspirs:contains(spell.english) then
 			return
 		end
-		
+
 		local newSpell = spell.english
 		local spell_recasts = windower.ffxi.get_spell_recasts()
 		local cancelling = 'All '..spell.english..' spells are on cooldown. Cancelling spell casting.'
@@ -847,7 +843,7 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				end
 			end
 		end
-		
+
 		if newSpell ~= spell.english then
 			send_command('@input /ma "'..newSpell..'" '..tostring(spell.target.raw))
 			eventArgs.cancel = true
@@ -879,7 +875,7 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				elseif spell.english == 'Sleepga II' then
 					newSpell = 'Sleepga'
 				end
-			elseif nukes:contains(spell.english) then	
+			elseif nukes:contains(spell.english) then
 				if spell.english == 'Fire' then
 					eventArgs.cancel = true
 					return
@@ -888,14 +884,14 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				elseif spell.english == 'Fire V' then
 					newSpell = 'Fire IV'
 				elseif spell.english == 'Fire IV' then
-					newSpell = 'Fire III'	
+					newSpell = 'Fire III'
 				elseif spell.english == 'Fire II' then
 					newSpell = 'Fire'
 				elseif spell.english == 'Firaja' then
 					newSpell = 'Firaga III'
 				elseif spell.english == 'Firaga II' then
 					newSpell = 'Firaga'
-				end 
+				end
 				if spell.english == 'Blizzard' then
 					eventArgs.cancel = true
 					return
@@ -904,14 +900,14 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				elseif spell.english == 'Blizzard V' then
 					newSpell = 'Blizzard IV'
 				elseif spell.english == 'Blizzard IV' then
-					newSpell = 'Blizzard III'	
+					newSpell = 'Blizzard III'
 				elseif spell.english == 'Blizzard II' then
 					newSpell = 'Blizzard'
 				elseif spell.english == 'Blizzaja' then
 					newSpell = 'Blizzaga III'
 				elseif spell.english == 'Blizzaga II' then
-					newSpell = 'Blizzaga'	
-				end 
+					newSpell = 'Blizzaga'
+				end
 				if spell.english == 'Aero' then
 					eventArgs.cancel = true
 					return
@@ -920,14 +916,14 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				elseif spell.english == 'Aero V' then
 					newSpell = 'Aero IV'
 				elseif spell.english == 'Aero IV' then
-					newSpell = 'Aero III'	
+					newSpell = 'Aero III'
 				elseif spell.english == 'Aero II' then
 					newSpell = 'Aero'
 				elseif spell.english == 'Aeroja' then
 					newSpell = 'Aeroga III'
 				elseif spell.english == 'Aeroga II' then
-					newSpell = 'Aeroga'	
-				end 
+					newSpell = 'Aeroga'
+				end
 				if spell.english == 'Stone' then
 					eventArgs.cancel = true
 					return
@@ -936,14 +932,14 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				elseif spell.english == 'Stone V' then
 					newSpell = 'Stone IV'
 				elseif spell.english == 'Stone IV' then
-					newSpell = 'Stone III'	
+					newSpell = 'Stone III'
 				elseif spell.english == 'Stone II' then
 					newSpell = 'Stone'
 				elseif spell.english == 'Stoneja' then
 					newSpell = 'Stonega III'
 				elseif spell.english == 'Stonega II' then
-					newSpell = 'Stonega'	
-				end 
+					newSpell = 'Stonega'
+				end
 				if spell.english == 'Thunder' then
 					eventArgs.cancel = true
 					return
@@ -952,14 +948,14 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				elseif spell.english == 'Thunder V' then
 					newSpell = 'Thunder IV'
 				elseif spell.english == 'Thunder IV' then
-					newSpell = 'Thunder III'	
+					newSpell = 'Thunder III'
 				elseif spell.english == 'Thunder II' then
 					newSpell = 'Thunder'
 				elseif spell.english == 'Thundaja' then
 					newSpell = 'Thundaga III'
 				elseif spell.english == 'Thundaga II' then
-					newSpell = 'Thundaga'	
-				end 
+					newSpell = 'Thundaga'
+				end
 				if spell.english == 'Water' then
 					eventArgs.cancel = true
 					return
@@ -968,14 +964,14 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 				elseif spell.english == 'Water V' then
 					newSpell = 'Water IV'
 				elseif spell.english == 'Water IV' then
-					newSpell = 'Water III'	
+					newSpell = 'Water III'
 				elseif spell.english == 'Water II' then
 					newSpell = 'Water'
 				elseif spell.english == 'Waterja' then
 					newSpell = 'Waterga III'
 				elseif spell.english == 'Waterga II' then
-					newSpell = 'Waterga'	
-				end 
+					newSpell = 'Waterga'
+				end
 			end
 		end
 

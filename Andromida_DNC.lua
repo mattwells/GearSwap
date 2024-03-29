@@ -1,14 +1,20 @@
 local incapacitated_states = T {"stun", "petrification", "terror", "sleep", "weakness"}
 
+local modes = {
+    Idle = "Movement",
+    Engaged = "Turtle"
+}
+
 function get_sets()
-    sets.Idle = {
+    sets.Idle = {}
+    sets.Idle.Movement = {
         ammo = "Staunch Tathlum +1",
         head = "Turms Cap +1",
         body = "Gleti's Cuirass",
         hands = "Gleti's Gauntlets",
         legs = "Gleti's Breeches",
-        feet = "Turms Leggings +1",
-        neck = "Warder's Charm +1",
+        feet = "Skd. Jambeaux +1",
+        neck = "Rep. Plat. Medal",
         waist = "Engraved Belt",
         left_ear = "Hearty Earring",
         right_ear = "Infused Earring",
@@ -20,9 +26,26 @@ function get_sets()
         }
     }
 
-    sets.Engaged = {
-        mode = "Turtle"
+    sets.Idle.Regain = {
+        ammo = "Staunch Tathlum +1",
+        head = "Turms Cap +1",
+        body = "Gleti's Cuirass",
+        hands = "Gleti's Gauntlets",
+        legs = "Gleti's Breeches",
+        feet = "Turms Leggings +1",
+        neck = "Rep. Plat. Medal",
+        waist = "Engraved Belt",
+        left_ear = "Hearty Earring",
+        right_ear = "Infused Earring",
+        left_ring = "Chirich Ring +1",
+        right_ring = "Chirich Ring +1",
+        back = {
+            name = "Senuna's Mantle",
+            augments = {'Phys. dmg. taken-10%'}
+        }
     }
+
+    sets.Engaged = {}
     sets.Engaged.Fodder = {
         ammo = "Staunch Tathlum +1",
         head = {
@@ -45,6 +68,25 @@ function get_sets()
         back = {
             name = "Senuna's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+        }
+    }
+
+    sets.Engaged.Regain = {
+        ammo = "Staunch Tathlum +1",
+        head = "Turms Cap +1",
+        body = "Gleti's Cuirass",
+        hands = "Gleti's Gauntlets",
+        legs = "Gleti's Breeches",
+        feet = "Turms Leggings +1",
+        neck = "Rep. Plat. Medal",
+        waist = "Engraved Belt",
+        left_ear = "Hearty Earring",
+        right_ear = "Infused Earring",
+        left_ring = "Chirich Ring +1",
+        right_ring = "Chirich Ring +1",
+        back = {
+            name = "Senuna's Mantle",
+            augments = {'Phys. dmg. taken-10%'}
         }
     }
 
@@ -100,14 +142,48 @@ function get_sets()
 
     sets.FastCast = {
         ammo = "Sapience Orb",
-        hands = "Leyline Gloves",
-        legs = "Limbo Trousers",
-        left_ear = "Loquac. Earring",
-        right_ear = "Etiolation Earring",
+        head = {
+            name = "Herculean Helm",
+            augments = {'"Fast Cast"+3'}
+        },
+        body = {
+            name = "Adhemar Jacket +1",
+            augments = {'"Fast Cast"+10'}
+        },
+        hands = {
+            name = "Leyline Gloves",
+            augments = {'"Fast Cast"+3'}
+        },
+        neck = "Voltsurge Torque",
+        waist = "Plat. Mog. Belt",
+        left_ear = "Etiolation Earring",
+        right_ear = "Loquac. Earring",
         left_ring = "Prolix Ring",
         back = {
             name = "Senuna's Mantle",
             augments = {'"Fast Cast"+10'}
+        }
+    }
+
+    sets.Midcast = {}
+    sets.Midcast["Dark Magic"] = {
+        equipable = true,
+        ammo = "Yamarang",
+        head = "Maculele Tiara +3",
+        body = "Macu. Casaque +3",
+        hands = "Macu. Bangles +3",
+        legs = "Maculele Tights +3",
+        feet = "Macu. Toe Sh. +3",
+        neck = "Etoile Gorget +2",
+        waist = "Eschan Stone",
+        left_ear = "Digni. Earring",
+        right_ear = "Macu. Earring +1",
+        left_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1",
+        back = {
+            name = "Senuna's Mantle",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Magic Damage +10', '"Fast Cast"+10',
+                        'Spell interruption rate down-10%'}
         }
     }
 
@@ -256,30 +332,25 @@ function get_sets()
     }
 
     sets.WeaponSkill["Rudra's Storm"] = {
-        ammo = "Aurgelmir Orb +1",
-        head = "Nyame Helm",
+        ammo = "Coiste Bodhar",
+        head = "Maculele Tiara +3",
         body = "Nyame Mail",
-        hands = "Maxixi Bangles +3",
-        legs = "Horos Tights +3",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
         neck = "Etoile Gorget +2",
-        waist = "Sailfi Belt +1",
-        left_ear = "Ishvara Earring",
-        right_ear = "Moonshade Earring",
-        left_ring = "Ilabrat Ring",
+        waist = "Kentarch Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Macu. Earring +1",
+        left_ring = "Epaminondas's Ring",
         right_ring = "Regal Ring",
         back = {
             name = "Senuna's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
         }
     }
-    sets.WeaponSkill["Climactic Rudra's Storm"] = set_combine(sets.WeaponSkill["Rudra's Storm"], {
-        ammo = "Charis Feather",
-        head = "Maculele Tiara +3",
-        body = "Meg. Cuirie +2",
-        left_ear = "Ishvara Earring"
-    })
     sets.WeaponSkill["Shark Bite"] = set_combine(sets.WeaponSkill["Rudra's Storm"], {})
+    sets.WeaponSkill["Ruthless Stroke"] = set_combine(sets.WeaponSkill["Rudra's Storm"], {})
 end
 
 function precast(spell)
@@ -294,26 +365,26 @@ function precast(spell)
     end
 
     if "Step" == spell.type then
-        local allRecasts = windower.ffxi.get_ability_recasts()
-        local prestoAvailable = allRecasts[236] < 1 and not buffactive["Presto"]
-        local missingEnoughFM = not buffactive["Finishing Move (6+)"]
+        -- local allRecasts = windower.ffxi.get_ability_recasts()
+        -- local prestoAvailable = allRecasts[236] < 1 and not buffactive["Presto"]
+        -- local missingEnoughFM = not buffactive["Finishing Move (6+)"]
 
-        if prestoAvailable and missingEnoughFM then
+        -- if prestoAvailable and missingEnoughFM then
             cast_delay(1.1)
             send_command('@input /ja "Presto" <me>')
-        end
+        -- end
     end
 
     if spell.english:startswith("Curing Waltz") and not refine_waltz(spell) then
         return
     end
 
-    if spell.english == "Rudra's Storm" and buffactive["Climactic Flourish"] then
-        equip(sets.WeaponSkill["Climactic Rudra's Storm"])
-        debug("WeaponSkill Climactic Rudra's Storm")
+    -- if spell.english == "Rudra's Storm" and buffactive["Climactic Flourish"] then
+    --     equip(sets.WeaponSkill["Climactic Rudra's Storm"])
+    --     debug("WeaponSkill Climactic Rudra's Storm")
 
-        return
-    end
+    --     return
+    -- end
 
     if sets[spell.type] and sets[spell.type][spell.english] then
         equip(sets[spell.type][spell.english])
@@ -336,6 +407,28 @@ function ignore_spell_type(spell)
     return spell.type ~= "JobAbility" and not spell.type:startswith("Flourish")
 end
 
+function midcast(spell, action)
+    if incapacitated() then
+        return
+    end
+
+    if spell.action_type ~= "Magic" then
+        return
+    end
+
+    if sets["Midcast"][spell.skill] and sets["Midcast"][spell.skill][spell.english] then
+        equip(sets["Midcast"][spell.skill][spell.english])
+
+        return
+    end
+
+    if sets["Midcast"][spell.skill] and sets["Midcast"][spell.skill].equipable then
+        equip(sets["Midcast"][spell.skill])
+
+        return
+    end
+end
+
 function aftercast(spell, action)
     debug("Aftercast")
     status_change(player.status)
@@ -355,14 +448,12 @@ function status_change(new, old)
     end
 end
 
-function status_change_engaged()
-    if sets.Engaged.mode == "Melee" and buffactive["Aftermath: Lv.3"] then
-        equip(sets.Engaged.Am3)
-        return
-    end
+function status_change_idle()
+    equip(sets.Idle[modes.Idle])
+end
 
-    debug("Status: Engaged " .. sets.Engaged.mode)
-    equip(sets.Engaged[sets.Engaged.mode])
+function status_change_engaged()
+    equip(sets.Engaged[modes.Engaged])
 end
 
 function incapacitated()
@@ -404,15 +495,36 @@ function self_command_engaged(args)
         return
     end
 
-    local mode = args[1]:ucfirst()
-    if not sets.Engaged[mode] then
-        error("Error: Invalid Engaged Mode: " .. mode)
+    local cmdMode = args[1]:ucfirst()
+    if not sets.Engaged[cmdMode] then
+        error("Error: Invalid Engaged Mode: " .. cmdMode)
         return
     end
 
-    sets.Engaged.mode = mode
+    modes.Engaged = cmdMode
     status_change(player.status)
-    notice("Engaged Mode Set: " .. mode)
+    notice("Engaged Mode Set: " .. cmdMode)
+end
+
+function self_command_i(args)
+    return self_command_idle(args)
+end
+
+function self_command_idle(args)
+    if not args[1] then
+        error("Error: No Idle Mode Specified")
+        return
+    end
+
+    local cmdMode = args[1]:ucfirst()
+    if not sets.Idle[cmdMode] then
+        error("Error: Invalid Engaged Mode: " .. cmdMode)
+        return
+    end
+
+    modes.Idle = cmdMode
+    status_change(player.status)
+    notice("Engaged Mode Set: " .. cmdMode)
 end
 
 function find_player_in_alliance(name)
@@ -515,7 +627,7 @@ function refine_waltz(spell)
 end
 
 function is_magic(spell)
-    return spell.type:endswith("Magic") or spell.type == "BardSong" or spell.type == "Ninjutsu" or spell.type == "Trust"
+    return spell.action_type == "Magic"
 end
 
 function notice(s)

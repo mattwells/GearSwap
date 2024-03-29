@@ -1,54 +1,71 @@
+local incapacitated_states = T {"stun", "petrification", "terror", "sleep"}
+
 function get_sets()
-    incapacitated_states = T {"stun", "petrification", "terror", "sleep"}
+
 
     sets.Idle = {
-        ammo="Aurgelmir Orb +1",
-        head="Sakpata's Helm",
-        body="Sakpata's Plate",
-        hands="Sakpata's Gauntlets",
-        legs="Sakpata's Cuisses",
-        feet="Sakpata's Leggings",
-        neck="Loricate Torque +1",
-        waist="Sailfi Belt +1",
-        left_ear="Telos Earring",
-        right_ear="Dedition Earring",
-        left_ring="Petrov Ring",
-        right_ring="Niqmaddu Ring",
+        ammo = "Staunch Tathlum +1",
+        head = "Sakpata's Helm",
+        body = "Sakpata's Plate",
+        hands = "Sakpata's Gauntlets",
+        legs = "Sakpata's Cuisses",
+        feet = "Sakpata's Leggings",
+        neck = "Rep. Plat. Medal",
+        waist = "Flume Belt",
+        left_ear = "Infused Earring",
+        right_ear = "Genmei Earring",
+        left_ring = "Vocane Ring +1",
+        right_ring = "Defending Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'Phys. dmg. taken-10%'}
+        }
     }
 
     sets.Engaged = {mode = "Melee"}
     sets.Engaged.Melee = {
-        ammo="Aurgelmir Orb +1",
-        head="Sakpata's Helm",
-        body="Sakpata's Plate",
-        hands="Sakpata's Gauntlets",
-        legs="Sakpata's Cuisses",
-        feet="Sakpata's Leggings",
-        neck="War. Beads +2",
-        waist="Sailfi Belt +1",
-        left_ear="Telos Earring",
-        right_ear="Dedition Earring",
-        left_ring="Petrov Ring",
-        right_ring="Niqmaddu Ring",
+        ammo = "Aurgelmir Orb +1",
+        head = "Sakpata's Helm",
+        body = "Boii Lorica +3",
+        hands = "Sakpata's Gauntlets",
+        legs = "Sakpata's Cuisses",
+        feet = "Sakpata's Leggings",
+        neck = "War. Beads +2",
+        waist = "Ioskeha Belt +1",
+        left_ear = "Telos Earring",
+        right_ear = "Boii Earring +2",
+        left_ring = "Petrov Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
     }
 
     -- JA Sets --
     sets.JobAbility = {}
+    sets.JobAbility.Warcry = {
+        head = "Agoge Mask +3",
+    }
 
     -- WS Sets --
     sets.WeaponSkill = {
         ammo = "Knobkierrie",
-        head = "Nyame Helm",
+        head = "Agoge Mask +3",
         body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        legs = "Nyame Flanchard",
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
         feet = "Nyame Sollerets",
         neck = "War. Beads +2",
         waist = "Sailfi Belt +1",
         left_ear = "Moonshade Earring",
         right_ear = "Thrud Earring",
-        left_ring = "Epaminondas's Ring",
-        right_ring = "Niqmaddu Ring"
+        left_ring = "Sroda Ring",
+        right_ring = "Ephramad's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
+        }
     }
 
 end
@@ -73,7 +90,9 @@ function precast(spell, action)
         return
     end
 
+    print(spell.type)
     if spell.type == "WeaponSkill" then
+        print(spell.type .. "in ")
         equip(sets["WeaponSkill"])
 
         return
