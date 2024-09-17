@@ -246,14 +246,8 @@ function get_sets()
         hands = "Ptero. Fin. G. +3",
         legs = "Pelt. Cuissots +3",
         feet = "Nyame Sollerets",
-        neck = {
-            name = "Dgn. Collar +2",
-            augments = {'Path: A'}
-        },
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        neck = "Dgn. Collar +2",
+        waist = "Sailfi Belt +1",
         left_ear = "Sherida Earring",
         right_ear = "Pel. Earring +2",
         left_ring = "Regal Ring",

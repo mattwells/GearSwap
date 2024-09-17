@@ -7,7 +7,7 @@ function get_sets()
         -- sub = "Genmei Shield",
         range = "",
         head = "Bunzi's Hat",
-        body = "Bunzi's Robe",
+        body="Adamantite Armor",
         hands = "Bunzi's Gloves",
         legs = "Bunzi's Pants",
         feet = "Fili cothurnes +3",

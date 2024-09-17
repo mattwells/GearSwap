@@ -105,7 +105,7 @@ function get_sets()
         ammo = "Knobkierrie",
         head = "Nyame Helm",
         body = "Gleti's Cuirass",
-        hands = "Nyame Gauntlets",
+        hands = "Gleti's Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
         neck = "Dgn. Collar +1",
@@ -119,9 +119,47 @@ function get_sets()
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
-    sets.WeaponSkill["Diarmuid"] = set_combine(sets.WeaponSkill["Savage Blade"], {})
+    sets.WeaponSkill["Diarmuid"] = {
+        main = "Gae Buide",
+        sub = "Utu Grip",
+        ammo = "Knobkierrie",
+        head = "Peltast's Mezail +3",
+        body = "Nyame Mail",
+        hands = "Ptero. Fin. G. +3",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Dgn. Collar +1",
+        waist = "Sailfi Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Peltast's Earring",
+        left_ring = "Ephramad's Ring",
+        right_ring = "Epaminondas's Ring",
+        back = {
+            name = "Brigantia's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    }
 
-    sets.WeaponSkill["Impulse Drive"] = set_combine(sets.WeaponSkill["Savage Blade"], {})
+    sets.WeaponSkill["Impulse Drive"] = {
+        main = "Gae Buide",
+        sub = "Utu Grip",
+        ammo = "Knobkierrie",
+        head = "Peltast's Mezail +3",
+        body = "Gleti's Cuirass",
+        hands = "Nyame Gauntlets",
+        legs = "Gleti's Breeches",
+        feet = "Nyame Sollerets",
+        neck = "Dgn. Collar +1",
+        waist = "Sailfi Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Peltast's Earring",
+        left_ring = "Ephramad's Ring",
+        right_ring = "Epaminondas's Ring",
+        back = {
+            name = "Brigantia's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    }
     sets.WeaponSkill["Stardiver"] = set_combine(sets.WeaponSkill["Savage Blade"], {})
     sets.WeaponSkill["Sonic Thrust"] = set_combine(sets.WeaponSkill["Savage Blade"], {})
 
@@ -154,10 +192,10 @@ function get_sets()
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
         neck = "Dgn. Collar +1",
-        waist = "Sailfi Belt +1",
+        waist = "Light Belt",
         left_ear = "Moonshade Earring",
         right_ear = "Thrud Earring",
-        left_ring = "Ephramad's Ring",
+        left_ring = "Niqmaddu Ring",
         right_ring = "Epaminondas's Ring",
         back = {
             name = "Brigantia's Mantle",
