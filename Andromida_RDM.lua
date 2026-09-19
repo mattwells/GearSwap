@@ -11,7 +11,7 @@ function get_sets()
         main = "Daybreak",
         ammo = "Homiliary",
         head = "Viti. Chapeau +3",
-        body = "Atrophy Tabard +3",
+        body = "Atrophy Tabard +4",
         hands = "Nyame Gauntlets",
         legs = "Carmine Cuisses +1",
         feet = "Nyame Sollerets",
@@ -149,7 +149,7 @@ function get_sets()
     )
     sets.Midcast['Refresh'] = set_combine(sets.Midcast['Enhancing Magic']['Other'], {
         head = "Amalric Coif +1",
-        body = "Atrophy Tabard +3",
+        body = "Atrophy Tabard +4",
         legs = "Leth. Fuseau +3",
         waist = "Gishdubar Sash"
     })

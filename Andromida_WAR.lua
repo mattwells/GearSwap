@@ -24,7 +24,25 @@ function get_sets()
 
     sets.Engaged = {mode = "Melee"}
     sets.Engaged.Melee = {
-        ammo = "Aurgelmir Orb +1",
+        ammo="Coiste Bodhar",
+        head = "Sakpata's Helm",
+        body = "Boii Lorica +3",
+        hands = "Sakpata's Gauntlets",
+        legs = "Sakpata's Cuisses",
+        feet="Boii Calligae +3",
+        neck = "War. Beads +2",
+        waist = "Ioskeha Belt +1",
+        left_ear="Schere Earring",
+        right_ear = "Boii Earring +2",
+        left_ring = "Petrov Ring",
+        right_ring ="Moonlight Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}
+        },
+    }
+    sets.Engaged.Hybrid = {
+        ammo = "Staunch Tathlum +1",
         head = "Sakpata's Helm",
         body = "Boii Lorica +3",
         hands = "Sakpata's Gauntlets",
@@ -32,26 +50,46 @@ function get_sets()
         feet = "Sakpata's Leggings",
         neck = "War. Beads +2",
         waist = "Ioskeha Belt +1",
-        left_ear = "Telos Earring",
+        left_ear = "Schere Earring",
         right_ear = "Boii Earring +2",
-        left_ring = "Petrov Ring",
-        right_ring = "Niqmaddu Ring",
+        left_ring = "Defending Ring",
+        right_ring = "Moonlight Ring",
         back = {
             name = "Cichol's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
-        }
+            augments = {'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}
+        },
+    }
+    sets.Engaged.Savage = {
+        main = "Naegling",
+        sub = "Blurred shield +1",
+        ammo = "Coiste Bodhar",
+        head = "Sakpata's Helm",
+        body = "Boii Lorica +3",
+        hands = "Sakpata's Gauntlets",
+        legs = "Sakpata's Cuisses",
+        feet = "Boii Calligae +3",
+        neck = "War. Beads +2",
+        waist = "Ioskeha Belt +1",
+        left_ear = "Schere Earring",
+        right_ear = "Boii Earring +2",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%'}
+        },
     }
 
     -- JA Sets --
     sets.JobAbility = {}
-    sets.JobAbility.Warcry = {
-        head = "Agoge Mask +3",
-    }
+    sets.JobAbility.Warcry = { head = "Agoge Mask +4", }
+    sets.JobAbility.Restraint = { hands = "Boii Mufflers +3", }
+    sets.JobAbility['Blood Rage'] = { head = "Boii Mask +3", }
 
     -- WS Sets --
     sets.WeaponSkill = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = "Agoge Mask +4",
         body = "Nyame Mail",
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
@@ -67,6 +105,78 @@ function get_sets()
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
         }
     }
+    sets.WeaponSkill.Disaster = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +4",
+        body = "Nyame Mail",
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = "Nyame Sollerets",
+        neck = "War. Beads +2",
+        waist = "Sailfi Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Thrud Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Ephramad's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
+        }
+    }
+    sets.WeaponSkill.Upheaval = {
+        ammo="Knobkierrie",
+        head="Agoge Mask +4",
+        body="Nyame Mail",
+        hands="Boii Mufflers +3",
+        legs="Boii Cuisses +3",
+        feet="Nyame Sollerets",
+        neck="War. Beads +2",
+        waist="Sailfi Belt +1",
+        left_ear="Moonshade Earring",
+        right_ear="Thrud Earring",
+        left_ring="Sroda Ring",
+        right_ring="Ephramad's Ring",
+        back={
+            name="Cichol's Mantle",
+            augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}
+        },
+    }
+    sets.WeaponSkill["Ukko's Fury"] = {
+        ammo="Yetshila +1",
+        head="Boii Mask +3",
+        body="Sakpata's Plate",
+        hands="Sakpata's Gauntlets",
+        legs="Boii Cuisses +3",
+        feet="Boii Calligae +3",
+        neck="War. Beads +2",
+        waist="Sailfi Belt +1",
+        left_ear="Schere Earring",
+        right_ear="Boii Earring +2",
+        left_ring="Sroda Ring",
+        right_ring="Niqmaddu Ring",
+        back={
+            name="Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
+        },
+    }
+    sets.WeaponSkill["Savage Blade"] = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +4",
+        body = "Nyame Mail",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "War. Beads +2",
+        waist = "Sailfi Belt +1",
+        left_ear = "Moonshade Earring",
+        right_ear = "Thrud Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Epaminondas's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}
+        },
+    }
 
 end
 
@@ -75,13 +185,17 @@ function precast(spell, action)
         return
     end
 
-    if "Trust" == spell.type then
+    local spell_type = spell.type:lower():gsub("%s+", "_")
+    local spell_name = spell.english:lower():gsub("%s+", "_")
+
+    local specific = "precast_" .. spell_type .. "_" .. spell_name
+    if _G[specific] and not _G[specific](spell) then
         return
     end
 
-    if (spell.english == "Spectral Jig" or spell.english == "Sneak") and buffactive.Sneak then
-        cast_delay(0.2)
-        send_command("cancel Sneak")
+    local generic = "precast_" .. spell_type
+    if _G[generic] and not _G[generic](spell) then
+        return
     end
 
     if sets[spell.type] and sets[spell.type][spell.english] then
@@ -99,6 +213,29 @@ function precast(spell, action)
     end
 
     debug("No set for " .. spell.type .. "." .. spell.english)
+end
+
+function precast_trust()
+    return false
+end
+
+function precast_dancer_ability_spectral_jig(spell)
+    if buffactive.Sneak then
+        cast_delay(0.2)
+        send_command("cancel Sneak")
+    end
+
+    return true
+end
+
+function precast_weaponskill(spell)
+    if player.equipment.main == "Naegling" and spell.skill ~= "Sword"  then
+        cancel_spell()
+        send_command('@input /ws "Savage Blade" ' .. tostring(spell.target.raw))
+        return false
+    end
+
+    return true
 end
 
 function aftercast(spell, action)
@@ -177,18 +314,11 @@ end
 
 function self_command_tp(args)
     local order = T{
-        {id=162, command = '"Spirit Link" <me>'},
-        {id=167, command = '"Soul Jump" <t>'},
-        {id=166, command = '"Spirit Jump" <t>' },
         {id=158, command = '"Jump" <t>'},
         {id=159, command = '"High Jump" <t>'},
     }
 
     local recasts = windower.ffxi.get_ability_recasts()
-
-    if recasts[162] and pet.isvalid and (pet.tp > 500 or pet.hpp < 70) then
-        windower.send_command("input /ja 'Spirit Link' <me>")
-    end
 
     for _, ability in ipairs(order) do
         if recasts[ability.id] == 0 then

@@ -94,7 +94,7 @@ function get_sets()
     sets.Waltz = {
         ammo = "Staunch Tathlum +1",
         head = "Nyame Helm",
-        body = "Maxixi Casaque +3",
+        body = "Maxixi Casaque +4",
         hands = "Nyame Gauntlets",
         legs = "Dashing Subligar",
         feet = "Nyame Sollerets",
@@ -122,7 +122,7 @@ function get_sets()
         ammo = "Yamarang",
         head = "Maxixi Tiara +2",
         body = "Nyame Mail",
-        hands = "Maxixi Bangles +3",
+        hands = "Maxixi Bangles +4",
         legs = "Nyame Flanchard",
         feet = "Horos T. Shoes +3",
         neck = "Etoile Gorget +2",

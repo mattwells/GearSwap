@@ -19,7 +19,7 @@ function get_sets()
         left_ear = "Hearty Earring",
         right_ear = "Infused Earring",
         left_ring = "Chirich Ring +1",
-        right_ring = "Chirich Ring +1",
+        right_ring = "Karieyh Ring +1",
         back = {
             name = "Senuna's Mantle",
             augments = {'Phys. dmg. taken-10%'}
@@ -32,13 +32,13 @@ function get_sets()
         body = "Gleti's Cuirass",
         hands = "Gleti's Gauntlets",
         legs = "Gleti's Breeches",
-        feet = "Turms Leggings +1",
+        feet = "Gleti's Boots",
         neck = "Rep. Plat. Medal",
         waist = "Engraved Belt",
         left_ear = "Hearty Earring",
         right_ear = "Infused Earring",
         left_ring = "Chirich Ring +1",
-        right_ring = "Chirich Ring +1",
+        right_ring = "Karieyh Ring +1",
         back = {
             name = "Senuna's Mantle",
             augments = {'Phys. dmg. taken-10%'}
@@ -58,7 +58,7 @@ function get_sets()
             augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
         },
         legs = "Samnuha Tights",
-        feet = "Horos T. Shoes +3",
+        feet = "Gleti's Boots",
         neck = "Etoile Gorget +2",
         waist = "Windbuffet Belt +1",
         left_ear = "Sherida Earring",
@@ -77,17 +77,36 @@ function get_sets()
         body = "Gleti's Cuirass",
         hands = "Gleti's Gauntlets",
         legs = "Gleti's Breeches",
-        feet = "Turms Leggings +1",
+        feet = "Gleti's Boots",
         neck = "Rep. Plat. Medal",
         waist = "Engraved Belt",
-        left_ear = "Hearty Earring",
-        right_ear = "Infused Earring",
+        left_ear = "Sherida Earring",
+        right_ear = "Telos Earring",
         left_ring = "Chirich Ring +1",
-        right_ring = "Chirich Ring +1",
+        right_ring = "Karieyh Ring +1",
         back = {
             name = "Senuna's Mantle",
             augments = {'Phys. dmg. taken-10%'}
         }
+    }
+
+    sets.Engaged.Aminon = {
+        ammo = "Aurgelmir Orb +1",
+        head = "Turms Cap +1",
+        body = "Malignance Tabard",
+        hands = "Gleti's Gauntlets",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Etoile Gorget +2",
+        waist = "Kentarch Belt +1",
+        left_ear = "Sherida Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Chirich Ring +1",
+        right_ring = "Chirich Ring +1",
+        back = {
+            name = "Senuna's Mantle",
+            augments = {'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}
+        },
     }
 
     sets.Engaged.Am3 = {
@@ -198,17 +217,17 @@ function get_sets()
     }
 
     sets.JobAbility["No Foot Rise"] = {
-        body = "Horos Casaque +3"
+        body = "Horos Casaque +4"
     }
 
     sets.Jig = {
         legs = "Horos Tights +3",
-        feet = "Maxixi Toe shoes +2"
+        feet = "Maxixi Toe shoes +4"
     }
 
     sets.Flourish = {}
     sets.Flourish["Violent Flourish"] = {
-        body = "Horos Casaque +3"
+        body = "Horos Casaque +4"
     }
 
     sets.Flourish2 = {}
@@ -225,8 +244,8 @@ function get_sets()
     sets.Waltz = {
         ammo = "Yamarang",
         head = "Horos Tiara +3",
-        body = "Maxixi Casaque +3",
-        hands = "Maxixi Bangles +3",
+        body = "Maxixi Casaque +4",
+        hands = "Maxixi Bangles +4",
         legs = "Dashing Subligar",
         feet = "Horos T. Shoes +3",
         neck = "Etoile Gorget +2",
@@ -243,8 +262,8 @@ function get_sets()
 
     sets.Step = {
         head = "Maxixi Tiara +2",
-        body = "Horos Casaque +3",
-        hands = "Maxixi Bangles +3",
+        body = "Horos Casaque +4",
+        hands = "Maxixi Bangles +4",
         legs = "Meg. Chausses +2",
         feet = "Horos Toe Shoes +3",
         neck = "Etoile gorget +2",
@@ -266,7 +285,7 @@ function get_sets()
             name = "Herculean Vest",
             augments = {'MND+9', 'Attack+29', 'Weapon skill damage +6%', 'Accuracy+15 Attack+15'}
         },
-        hands = "Maxixi Bangles +3",
+        hands = "Maxixi Bangles +4",
         legs = "Horos Tights +3",
         feet = {
             name = "Herculean Boots",
