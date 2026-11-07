@@ -10,9 +10,9 @@ function get_sets()
         range = "Dunna",
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
-        hands = "Geo. Mitaines +2",
+        hands = "Geo. Mitaines +4",
         legs = "Nyame Flanchard",
-        feet = "Geo. Sandals +2",
+        feet = "Geo. Sandals +4",
         neck = "Bagua Charm +2",
         waist = "Luminary Sash",
         left_ear = "Moonshade Earring",
@@ -39,9 +39,9 @@ function get_sets()
         range = "Dunna",
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
-        hands = "Geo. Mitaines +2",
+        hands = "Geo. Mitaines +4",
         legs = "Nyame Flanchard",
-        feet = "Bagua Sandals +1",
+        feet = "Bagua Sandals +2",
         neck = "Bagua Charm +2",
         waist = "Luminary Sash",
         left_ear = "Moonshade Earring",
@@ -91,12 +91,12 @@ function get_sets()
                 'Magic dmg. taken -3'
             }
         },
-        body = "Geomancy Tunic +2",
+        body = "Geomancy Tunic +3",
         hands = {
             name = "Telchine Gloves",
             augments = {'Enh. Mag. eff. dur. +7'}
         },
-        legs = "Bagua Pants",
+        legs = "Bagua Pants +1",
         feet = {
             name = "Vanya Clogs",
             augments = {
@@ -134,7 +134,7 @@ function get_sets()
             name = "Telchine Braconi",
             augments = {'Enh. Mag. eff. dur. +9'}
         },
-        feet = "Geo. Sandals +2",
+        feet = "Geo. Sandals +4",
         waist = "Gishdubar Sash"
     }
 
@@ -146,10 +146,10 @@ function get_sets()
         sub = "Ammurapi Shield",
         range = "Dunna",
         head = "Geo. Galero +2",
-        body = "Geomancy Tunic +2",
-        hands = "Geo. Mitaines +2",
+        body = "Geomancy Tunic +3",
+        hands = "Geo. Mitaines +4",
         legs = "Geomancy Pants +2",
-        feet = "Geo. Sandals +2",
+        feet = "Geo. Sandals +4",
         neck = "Bagua Charm +2",
         waist = "Luminary Sash",
         left_ear = "Etiolation Earring",
@@ -168,9 +168,9 @@ function get_sets()
         range = "Dunna",
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
-        hands = "Geo. Mitaines +2",
+        hands = "Geo. Mitaines +4",
         legs = "Nyame Flanchard",
-        feet = "Geo. Sandals +2",
+        feet = "Geo. Sandals +4",
         neck = "Bagua Charm +2",
         waist = "Acuity Belt +1",
         left_ear = "Moonshade Earring",
@@ -188,9 +188,9 @@ function get_sets()
         main = "Idris",
         range = "Dunna",
         head = "Azimuth Hood +3",
-        body = "Bagua tunic",
+        body = "Bagua Tunic +3",
         hands = "Shrieker's Cuffs",
-        legs = "Bagua Pants",
+        legs = "Bagua Pants +1",
         feet = "Azimuth Gaiters +2",
         neck = "Bagua Charm +2",
         left_ear = "Magnetic Earring",
@@ -201,7 +201,7 @@ function get_sets()
     }
 
     sets.JobAbility = {}
-    sets.JobAbility.Bolster = {body = "Bagua tunic"}
+    sets.JobAbility.Bolster = {body = "Bagua Tunic +3"}
 end
 
 function precast(spell, action)

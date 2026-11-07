@@ -48,7 +48,7 @@ function get_sets()
         left_ear = "Odnowa Earring +1",
         right_ear = "Tuisto Earring",
         left_ring = "Defending Ring",
-        right_ring = "Vocane Ring +1"
+        right_ring = "Murky Ring"
     }
 
     -- Melee TP when you are actually swinging rather than shooting.
@@ -75,7 +75,7 @@ function get_sets()
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
         left_ring = "Defending Ring",
-        right_ring = "Vocane Ring +1"
+        right_ring = "Murky Ring"
     }
 
     ----------------------------------------------------------------------

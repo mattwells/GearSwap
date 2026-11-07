@@ -23,7 +23,7 @@ function get_sets()
         waist = "Engraved Belt",
         left_ear = "Hearty Earring",
         right_ear = "Etiolation Earring",
-        left_ring = "Vocane Ring +1",
+        left_ring = "Murky Ring",
         right_ring = "Shadow Ring",
         back = {
             name = "Ogma's Cape",
@@ -50,7 +50,7 @@ function get_sets()
         waist = "Engraved Belt",
         left_ear = "Hearty Earring",
         right_ear = "Etiolation Earring",
-        left_ring = "Vocane Ring +1",
+        left_ring = "Murky Ring",
         right_ring = "Shadow Ring",
         back = {
             name = "Ogma's Cape",
@@ -70,7 +70,7 @@ function get_sets()
         waist = "Engraved Belt",
         left_ear = "Hearty Earring",
         right_ear = "Etiolation Earring",
-        left_ring = "Vocane Ring +1",
+        left_ring = "Murky Ring",
         right_ring = "Shadow Ring",
         back = {
             name = "Ogma's Cape",
@@ -421,7 +421,7 @@ function get_sets()
         waist = "Audumbla Sash", -- 10
         left_ear = "Cryptic Earring",
         right_ear = "Odnowa Earring +1",
-        left_ring = "Vocane Ring +1",
+        left_ring = "Murky Ring",
         right_ring = "Defending Ring",
         back = {
             name = "Ogma's Cape",
@@ -448,7 +448,7 @@ function get_sets()
         waist = "Sroda Belt",
         right_ear = "Cryptic Earring",
         left_ring = "Moonlight Ring",
-        right_ring = "Vocane Ring +1",
+        right_ring = "Murky Ring",
         back = {
             name = "Ogma's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Phys. dmg. taken-10%'}

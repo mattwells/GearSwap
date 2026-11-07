@@ -102,7 +102,7 @@ function get_sets()
         waist = "Flume Belt",
         left_ear = "Tuisto Earring",
         right_ear = "Odnowa Earring +1",
-        left_ring = "Vocane Ring +1",
+        left_ring = "Murky Ring",
         right_ring = "Moonlight Ring",
         back = {
             name = "Senuna's Mantle",
@@ -129,7 +129,7 @@ function get_sets()
         waist = "Eschan Stone",
         left_ear = "Tuisto Earring",
         right_ear = "Odnowa Earring +1",
-        left_ring = "Vocane Ring +1",
+        left_ring = "Murky Ring",
         right_ring = "Moonlight Ring",
         back = {
             name = "Senuna's Mantle",

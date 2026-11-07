@@ -27,7 +27,7 @@ function get_sets()
         waist = "Carrier's Sash",
         left_ear = "Genmei Earring",
         right_ear = "Hearty Earring",
-        left_ring = "Vocane Ring +1",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Taranus's Cape",

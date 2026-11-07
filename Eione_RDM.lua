@@ -12,7 +12,7 @@ function get_sets()
 		sub = "Genmei Shield",
 		ammo = "Staunch Tathlum",
 		head = "Viti. Chapeau +1",
-		body = "Atrophy Tabard +2",
+		body = "Atrophy Tabard +4",
 		hands = "Nyame Gauntlets",
 		legs = "Nyame Flanchard",
 		feet = "Nyame Sollerets",
@@ -123,7 +123,7 @@ function get_sets()
 		sub = "Ammurapi Shield",
 		head = "Leth. Chappel +2",
 		body = "Lethargy Sayon",
-		hands = "Atrophy Gloves +2",
+		hands = "Atrophy Gloves +4",
 		legs = "Leth. Fuseau +2",
 		feet = "Leth. Houseaux +3",
 		neck = "Dls. Torque +1",
@@ -149,7 +149,7 @@ function get_sets()
     )
     sets.Midcast['Refresh'] = set_combine(sets.Midcast['Enhancing Magic']['Other'], {
         head = "Amalric Coif +1",
-        body = "Atrophy Tabard +2",
+        body = "Atrophy Tabard +4",
         waist = "Gishdubar Sash"
     })
     sets.Midcast['Refresh II'] = sets.Midcast['Refresh']
@@ -163,7 +163,7 @@ function get_sets()
 		ammo = "Staunch Tathlum",
 		head = "Kaykaus Mitra +1",
 		body = "Kaykaus Bliaut +1",
-		hands = "Atrophy Gloves +2",
+		hands = "Atrophy Gloves +4",
 		legs = "Kaykaus Tights +1",
 		feet = "Kaykaus Boots +1",
 		neck = "Dls. Torque +1",
@@ -180,7 +180,7 @@ function get_sets()
 
     sets.FastCast = {
 		ammo="Impatiens",
-		head="Atro. Chapeau +2",
+		head="Atrophy Chapeau +4",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",

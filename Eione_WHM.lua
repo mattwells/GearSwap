@@ -95,7 +95,7 @@ function get_sets()
 
     sets.Midcast.Curaga = set_combine(
         sets.Midcast.Cure,
-        { body = "Theo. Bliaut +3", }
+        { body = "Theo. Bliaut +4", }
     )
 
     sets.Midcast["Divine Veil"] = {

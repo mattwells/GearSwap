@@ -14,7 +14,7 @@ function get_sets()
         waist = "Carrier's Sash",
         left_ear = "Tuisto Earring",
         right_ear = "Odnowa Earring +1",
-        left_ring = "Vocane Ring +1",
+        left_ring = "Murky Ring",
         right_ring = "Shadow Ring",
         back = {
             name = "Camulus's Mantle",

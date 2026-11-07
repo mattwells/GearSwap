@@ -2,13 +2,23 @@ local incapacitated_states = T {"stun", "petrification", "terror", "sleep", "wea
 
 local modes = {
     Idle = "Movement",
-    Engaged = "Turtle"
+    Engaged = "Hybrid"
 }
+
+-- Retain Hoxne through all swaps while the enchantment buff (162) is active.
+-- This is the shared enchantment buff; it is not unique to Hoxne.
+local gearswap_equip = equip
+local function equip(gear)
+    if buffactive[162] then
+        gear = set_combine(gear, {ammo = "Hoxne Ampulla"})
+    end
+    gearswap_equip(gear)
+end
 
 function get_sets()
     sets.Idle = {}
     sets.Idle.Movement = {
-        ammo = "Staunch Tathlum +1",
+        ammo = "Hoxne Ampulla",
         head = "Turms Cap +1",
         body = "Gleti's Cuirass",
         hands = "Gleti's Gauntlets",
@@ -109,19 +119,44 @@ function get_sets()
         },
     }
 
-    sets.Engaged.Am3 = {
-        ammo = "Aurgelmir Orb +1",
+    -- sets.Engaged.Am3 = {
+    --     ammo = "Aurgelmir Orb +1",
+    --     head = "Malignance Chapeau",
+    --     body = "Malignance Tabard",
+    --     hands = "Malignance Gloves",
+    --     legs = "Malignance Tights",
+    --     feet = "Malignance Boots",
+    --     neck = "Etoile Gorget +2",
+    --     waist = "Windbuffet Belt +1",
+    --     left_ear = "Dedition Earring",
+    --     right_ear = "Telos Earring",
+    --     left_ring = "Chirich Ring +1",
+    --     right_ring = "Chirich Ring +1",
+    --     back = {
+    --         name = "Senuna's Mantle",
+    --         augments = {
+    --             'DEX+20',
+    --             'Accuracy+20 Attack+20',
+    --             'DEX+10',
+    --             '"Store TP"+10',
+    --             'Phys. dmg. taken-10%'
+    --         }
+    --     }
+    -- }
+
+    sets.Engaged.Turtle = {
+        ammo = "Staunch Tathlum +1",
         head = "Malignance Chapeau",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
         neck = "Etoile Gorget +2",
-        waist = "Windbuffet Belt +1",
-        left_ear = "Dedition Earring",
-        right_ear = "Telos Earring",
-        left_ring = "Chirich Ring +1",
-        right_ring = "Chirich Ring +1",
+        waist = "Engraved Belt",
+        left_ear = "Sherida Earring",
+        right_ear = "Alabaster Earring",
+        left_ring = "Murky Ring",
+        right_ring = "Defending Ring",
         back = {
             name = "Senuna's Mantle",
             augments = {
@@ -134,19 +169,19 @@ function get_sets()
         }
     }
 
-    sets.Engaged.Turtle = {
-        ammo = "Staunch Tathlum +1",
-        head = "Malignance Chapeau",
-        body = "Malignance Tabard",
+    sets.Engaged.Hybrid = {
+        ammo = "Hoxne Ampulla",
+        head = "Maculele Tiara +3",
+        body = "Duty Cyclas",
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
-        feet = "Malignance Boots",
+        feet = "Macu. Toe Sh. +3",
         neck = "Etoile Gorget +2",
-        waist = "Engraved Belt",
+        waist = "Kentarch Belt +1",
         left_ear = "Sherida Earring",
-        right_ear = "Brutal Earring",
-        left_ring = "Vocane Ring +1",
-        right_ring = "Defending Ring",
+        right_ear = "Alabaster Earring",
+        left_ring = "Murky Ring",
+        right_ring = "Chirich Ring +1",
         back = {
             name = "Senuna's Mantle",
             augments = {

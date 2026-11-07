@@ -20,7 +20,7 @@ function get_sets()
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
         left_ring = "Defending Ring",
-        right_ring = "Vocane Ring +1",
+        right_ring = "Murky Ring",
         back = {
             name = "Sucellos's Cape",
             augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
@@ -39,7 +39,7 @@ function get_sets()
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
         left_ring = "Defending Ring",
-        right_ring = "Vocane Ring +1",
+        right_ring = "Murky Ring",
         back = {
             name = "Sucellos's Cape",
             augments = {'Phys. dmg. taken-10%'}
